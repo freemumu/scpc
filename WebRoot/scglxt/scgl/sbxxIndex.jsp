@@ -70,9 +70,10 @@
         columns: [
         	{"data":null,"sWidth":"40px"},
         	{"data":'id',"sWidth":"80px"},
+        	 { "data": "sbbz","sWidth":"120px"},
             { "data": "sblx","sWidth":"120px"},
             { "data": "sbmc" ,"sWidth":"120px"},
-            { "data": "sbzt" ,"sWidth":"120px"},
+            { "data": "sbzt" ,"sWidth":"60px"},
             { "data": "sbszd" ,"sWidth":"120px"},
             { "data": "cgsj" ,"sWidth":"120px"},
             { "data": "bxjssj" ,"sWidth":"120px"},
@@ -138,6 +139,9 @@
 															</th>
 															<th>
 																操作
+															</th>
+															<th>
+																班组
 															</th>
 															<th>
 																类型
