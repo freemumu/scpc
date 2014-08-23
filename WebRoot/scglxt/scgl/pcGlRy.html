@@ -2,15 +2,20 @@
 <head>
     <meta charset="utf-8">
     <title>人员排产</title>
-    
+    <link rel="stylesheet" href="../../js/plugin/jquery-easyui-1.4.3/themes/bootstrap/easyui.css" type="text/css"></link>
+    <link rel="stylesheet" href="../../js/plugin/jquery-easyui-1.4.3/ themes/icon.css">
 </head>
 <body>
     <!--设备排产统计图-->
     <div id="rypc" style="height:600px"></div>
+    <div id="pcglInfoWindow" title="排产信息" class="easyui-window" data-options="modal:true,closed:true,collapsible:false,maximizable:false,minimizable:false"  style="width:1200px;height:550px;padding:10px;">
+     <iframe id="pcglInfo" src="http://www.baidu.com" style="  height: 450px;  width: 100%;  overflow-x: hidden;  overflow-y: hidden;  border: none;"></iframe>
+    </div>
      <!-- jquery 引入 -->
    <script type="text/javascript" src="../../js/jquery/jquery.min.js"></script>
     <!-- ECharts单文件引入 -->
     <script src="../../js/plugin/echarts-2.2.4/echarts-all.js"></script>
+    <script type="text/javascript" src="../../js/plugin/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
     <script type="text/javascript">
     
     	
@@ -143,7 +148,9 @@
         myChart.on(echarts.config.EVENT.CLICK, function(param){
 
 			
-			alert(dataArray[param.dataIndex].id);
+		//	alert(dataArray[param.dataIndex].id);
+			$('#pcglInfoWindow').window('open')
+      		$("#pcglInfo").attr("src","pcglInfoExtendsRy.html")
        });
     </script>
 </body>

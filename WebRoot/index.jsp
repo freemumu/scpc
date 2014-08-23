@@ -137,30 +137,30 @@
                                 </a>
                                 <ul class='nav nav-stacked'>
                                     <li>
-                                        <a class='dropdown-collapse' href='#'>
+                                        <a class='dropdown-collapse' href='http://localhost:8080/scpc/scglxt/scgl/pcGlRy.html'>
                                             <span id="scgl-glry-ry">人员</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class='dropdown-collapse' href='#'>
+                                        <a class='dropdown-collapse' href='http://localhost:8080/scpc/scglxt/scgl/pcGlSb.html'>
                                             <span id="scgl-glry-sb">设备</span>
                                         </a>
                                     </li>
                                 </ul>
                             </li>
                             <li>
-                                <a class='dropdown-collapse' href='#'>
+                                <a class='dropdown-collapse' href=''>
                                     <i class='icon-caret-right'></i>
                                     <span id="scryteam">生产人员组</span>
                                 </a>
                                 <ul class='nav nav-stacked'>
                                     <li>
-                                        <a class='dropdown-collapse' href='#'>
+                                        <a class='dropdown-collapse' href='http://localhost:8080/scpc/scglxt/scgl/pcGlRy.html'>
                                             <span id="scgl-scry-ry">人员</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class='dropdown-collapse' href='#'>
+                                        <a class='dropdown-collapse' href='http://localhost:8080/scpc/scglxt/scgl/pcGlSb.html'>
                                             <span id="scgl-scry-sb">设备</span>
                                         </a>
                                     </li>

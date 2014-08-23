@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
@@ -9,6 +10,9 @@
             <tr>
 				<th>
 					序号
+				</th>
+				<th>
+					排序
 				</th>
 				<th>
 					图号
@@ -37,15 +41,20 @@
 			</tr>
         </thead>
     </table>
-	<div id="editJhkssj" style="display:abslute">
-	
+    <div id="editJhkssjWindow" class="easyui-dialog" title="修改计划时间" style="width:400px;height:200px;padding:10px"
+			data-options="buttons:'#editJhkssjWindow-buttons',modal:true,closed:true">
+		<input id="editJhkssj" class="easyui-datetimebox" required style="width:200px">
+	</div>
+	<div id="editJhkssjWindow-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="savaJhkssj()">保存</a>
 	</div>
 	<!-- bootstrap css 引入 -->
 	<link href="../../js/plugin/bootstrap/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
 	<!-- bootstrap Datatables样式引入 -->
 	<link rel="stylesheet" href="../../js/datatablesExtends/dataTables.bootstrap.css" type="text/css"></link>
 	<!-- jquery ui css 引入 -->
-	<link rel="stylesheet" href="../../js/jquery_ui/jquery-ui.css" type="text/css"></link>
+	<link rel="stylesheet" href="../../js/plugin/jquery-easyui-1.4.3/themes/bootstrap/easyui.css" type="text/css"></link>
+    <link rel="stylesheet" href="../../js/plugin/jquery-easyui-1.4.3/ themes/icon.css">
 	<!-- jQueryJS引入 -->
 	<script type="text/javascript" src="../../js/jquery/jquery.min.js"></script>
 	<!-- DataTables JS引入 -->
@@ -56,10 +65,24 @@
 	<!-- datatables固定列的JS-->
 	<script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
 	<!-- jquery-ui的JS -->
-	<script type="text/javascript" src="../../js/jquery_ui/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="../../js/plugin/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/plugin/jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function() {
-			 var table = $('#sbpcInfo').DataTable( {
+	
+		var editRow = null;
+		
+		var table = 
+		$(document).ready(
+		
+			function() {
+			
+				initTable();
+			} 
+		);
+		
+		function initTable(){
+		
+			 table = $('#sbpcInfo').DataTable( {
 			"bLengthChange": true, 
 	      	"oLanguage": {
 	                    "sProcessing": "正在加载中......",
@@ -82,21 +105,26 @@
 			scrollX:        false,
 			scrollCollapse: false,
 			paging:         true,
-			columnDefs: [
-				{ width: '20%', targets: 0 }
-			]
-			,
 			"columnDefs": [ 
 	            {
 	                "render": function ( data, type, row ) {
-	                    return '<a href = "#" onclick =editJhkssj('+row.gygcid+') >'+data+'</a>';
+	                
+	                	editRow = row;
+	                    return '<a href = "#" onclick =editJhkssj() >'+data+'</a>';
 	                },
 	                "targets": 5
 	            },
-	            { "visible": true,  "targets": [ 2 ] }
+	             {
+	                "render": function ( data, type, row ) {
+	                
+	                    return '<a href = "#">升序</a>&nbsp&nbsp&nbsp<a href = "#">降序</a>';
+	                },
+	                "targets": 1
+	            },
 	        ],
 	        "columns": [
 	        	{"data":null,"width":"30px"},
+	        	{"data":null,"width":"50px"},
 	        	{"data":'zddmc',"width":"80px"},
 	            { "data": "jgsl" ,"width":"60px"},
 	            { "data": "edgs" ,"width":"60px"},
@@ -114,16 +142,45 @@
 	            cell.innerHTML = i+1;
 	        } );
 	   	  } ).draw();
-		} );
-		
+		}
 		function editJhkssj(data){
 			
-			 $( "#editJhkssj" ).dialog({ 
-           		height: 100,
-           		width: 300,
-           		draggable: false
-      		});
-      		$( "#editJhkssj" ).html(data);
+			$( "#editJhkssjWindow" ).dialog('open');
+			$("#editJhkssj").datetimebox("setValue",editRow.jhkssj); 
+			
+			
+		}
+		
+		function savaJhkssj(){
+		
+			
+			var sj = $("#editJhkssj").datetimebox("getValue");
+			var id = editRow.gygcid;
+			$.ajax({
+                type: "post",
+                url: "pcgl_editGygcJhkssjById.action",
+                dataType: "text",
+                data: {
+                    "gygcid": id,
+                    
+                    "jhkssj": sj
+                    
+                },
+                success: function (dt) {
+
+					if(dt=='success'){
+					
+						$( "#editJhkssjWindow" ).dialog('close');
+						window.location.reload();
+					}else{
+					
+						$( "#editJhkssjWindow" ).dialog('close');
+						
+						alert("对不起您选择的时间格式不正确，请联系管理员！");
+					}
+    	              	
+                }
+            });
 		}
     </script>
 </body>

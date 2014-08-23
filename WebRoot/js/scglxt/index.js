@@ -57,7 +57,7 @@
 				Main.changeNavUrl('rygl');
 			} ) ; 
 			//排产任务管理
-			$.addEvent('pcrwgl','click', function(){
+			$.addEvent('pcrwgl','click', function(){p
 				Main.changeNavUrl('pcrwgl');
 			} ) ; 
 			//生产绩效管理

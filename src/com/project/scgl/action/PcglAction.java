@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.commons.logging.Log;
 import com.project.base.service.SelectDataService;
+import com.project.commonModel.util.Request;
 import com.project.commonModel.util.Response;
 import com.project.util.JsonObjectUtil;
 
@@ -98,7 +99,7 @@ public class PcglAction {
 	
 	public void getSbTbInfo(){
 		
-		String sql = "select gygcid,zddmc,serial jgsx,jgsl,gymc,edgs,cast(jhkssj as char) jhkssj,cast(kssj as char) kssj,bzmc,sbmc from `v_scglxt_pc_tb_info` where sbid = '02'";
+		String sql = "select gygcid,zddmc,serial jgsx,jgsl,gymc,edgs,cast(jhkssj as char) jhkssj,cast(kssj as char) kssj,bzmc,sbmc from `v_scglxt_pc_tb_info` where sbid = '03'";
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":" + json + "}";
@@ -112,5 +113,21 @@ public class PcglAction {
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":" + json + "}";
 		Response.write(json);
+	}
+	
+	public void editGygcJhkssjById(){
+		
+		String id = Request.getParameter("gygcid");
+		String jhkssj = Request.getParameter("jhkssj");
+		String sql = "UPDATE `scpc`.`scglxt_t_gygc` SET `JHKSSJ`='"+jhkssj+"' WHERE `id`='"+id+"'";
+		try{
+			
+			this.selectDataService.execute(sql);
+		}catch(Exception e){
+			Response.write("error");
+			e.printStackTrace();
+		}
+		Response.write("success");
+		
 	}
 }
