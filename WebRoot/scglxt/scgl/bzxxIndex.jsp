@@ -9,7 +9,7 @@
 	<script type="text/javascript">	
 	function tableInit(){
 	
-		var table = $('#ryxx').DataTable( {
+		var table = $('#bzxx').DataTable( {
 		"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
 		"bLengthChange": false, 
       	"oLanguage": {
@@ -36,20 +36,17 @@
 		"columnDefs": [ 
             {
                 "render": function ( data, type, row ) {
-                    return '<div class="text-center"><a class="btn btn-success btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/addBzInfo.jsp?flag=edit&id='+data+'"><i class="icon-ok"></i></a><a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scglbz_deleteBzInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
+                    return '<div class="text-center"><a class="btn btn-success btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/addBzInfo.jsp?flag=edit&id='+data+'"><i class="icon-edit"></i></a>&nbsp&nbsp;<a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scglbz_deleteBzInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
                 },
                 "targets": 1
             },
             { "visible": true,  "targets": [ 2 ] }
         ],
         "columns": [
-        	{"data":null,
-        	},
-        	{"data":'id',
-        	},
+        	{"data":null,"sWidth":"40px"},
+        	{"data":'id',"sWidth":"60px"},
             { "data": "bzmc" },
             { "data": "bzfzr" }
-           
         ]
        
 	} );
@@ -93,7 +90,7 @@
 									<div class='box-content box-no-padding'>
 										<div class='responsive-table'>
 											<div class='scrollable-area'>
-												<table id="ryxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
+												<table id="bzxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th>

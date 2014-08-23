@@ -58,20 +58,22 @@
 		columnDefs: [ 
             {
                 "render": function ( data, type, row ) {
-                    return '<div class="text-center"><a class="btn btn-success btn-xs " style="margin-left:10px;" href="${pageContext.request.contextPath}/scglxt/scgl/addSbInfo.jsp?flag=edit&id='+data+'"><i class="icon-ok"></i></a><a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scglsb_deleteSbInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
+                	
+                	return '<div class="text-center">'+
+                    '<a class="btn btn-info btn-xs"  title="编辑"  href="${pageContext.request.contextPath}/scglxt/scgl/addSbInfo.jsp?flag=edit&id='+data+'"><i class="icon-edit" ></i></a>'+
+                    '&nbsp; <a class="btn btn-danger btn-xs" title="删除" href="${pageContext.request.contextPath}/scglxt/scgl/scglsb_deleteSbInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
                 },
                 "targets": 1
             },
             { "visible": true,  "targets": [ 2 ] }
         ],
         columns: [
-        	{"data":null,"sWidth":"60px"       	},
-        	{"data":'id',"sWidth":"80px"
-        	},
+        	{"data":null,"sWidth":"40px"},
+        	{"data":'id',"sWidth":"80px"},
             { "data": "sblx","sWidth":"120px"},
             { "data": "sbmc" ,"sWidth":"120px"},
-            { "data": "sbszd" ,"sWidth":"120px"},
             { "data": "sbzt" ,"sWidth":"120px"},
+            { "data": "sbszd" ,"sWidth":"120px"},
             { "data": "cgsj" ,"sWidth":"120px"},
             { "data": "bxjssj" ,"sWidth":"120px"},
             { "data": "wxjl" ,"sWidth":"120px"},
@@ -138,16 +140,16 @@
 																操作
 															</th>
 															<th>
-																设备类型
+																类型
 															</th>
 															<th>
-																设备名称
+																名称
 															</th>
 															<th>
-																设备所在地
+																状态
 															</th>
 															<th>
-																设备状态
+																存放地点
 															</th>
 															<th>
 																采购时间

@@ -78,8 +78,8 @@ public class SbglAction {
 		String sbzt = Request.getParameter("sbzt");
 		String sbwxjl = Request.getParameter("wxjl");
 		String sbremark = Request.getParameter("bz");
-		String sql = "update scglxt_t_sb set sblx='"+sblx+"',sbmc='"+sbmc+"',cgsj = "+sbcgsj+",bxjssj='"+sbbxjssj+"'" +
-				"sbszd = '"+sbszd+"',sbzt = '"+sbzt+"','"+sbwxjl+"',remark = '"+sbremark+"' where id = '"+sbid+"'";
+		String sql = "update scglxt_t_sb set sblx='"+sblx+"',sbmc='"+sbmc+"',cgsj = '"+sbcgsj+"',bxjssj='"+sbbxjssj+"'," +
+				"sbszd = '"+sbszd+"',dqzt = '"+sbzt+"',wxjl='"+sbwxjl+"',remark = '"+sbremark+"' where id = '"+sbid+"'";
 		
 		log.info("设备信息更新sql"+sql);
 		int i = this.selectDataService.update(sql);
