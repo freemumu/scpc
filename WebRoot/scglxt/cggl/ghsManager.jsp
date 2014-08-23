@@ -27,7 +27,7 @@
                         "sLast": "末页"
                     }
                 },
-        "aLengthMenu":[2,3],
+        "aLengthMenu":[5,15],
 		"ajax":"cggl_getGhsTableData.action",
 		scrollY:        "300px",
 		scrollX:        true,
