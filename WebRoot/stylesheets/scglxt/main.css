@@ -1,0 +1,134 @@
+@CHARSET "UTF-8";
+body{
+
+	font-size:12px;
+}
+/* input{ */
+/* 	margin-left: 10px; */
+/* 	border: 1px solid #cccccc; */
+/* 	padding: 5px 10px 5px 5px; */
+/* } */
+/* label { */
+/* 	display: inline-block; */
+/* 	max-width: 100%; */
+/* 	margin-bottom: 5px; */
+/* 	font-size:12px; */
+/* 	font-weight: normal; */
+/* } */
+/* th{ */
+/* 	font-size:12px; */
+/* } */
+
+/* table{ */
+/* 	font-size:12px; */
+/* } */
+/* .btn.btn-danger { */
+/* margin-left: 10px; */
+/* } */
+/* .dataTables_wrapper .dataTables_paginate { */
+/* 	color: #0F0E0E; */
+/* 	margin-left: 18px; */
+/* 	margin-top: 12px; */
+/* } */
+ 
+ 
+.rowTop{
+	margin-top:5px;
+}
+#form_add{
+	margin-top:-5px;
+	right:40px;
+	position:absolute;
+}
+#form_add a{
+	 color:white;
+}
+#form_return{
+	margin-top:-5px;
+	right:40px;
+	position:absolute;
+}
+#form_return a{
+	 color:white;
+}
+.form{
+	margin-top:5px;
+}
+ 
+.tableGrid  tr th{
+	text-align:center;
+	min-width:80px !important ;
+	/*width:100px  ;*/
+}
+.tableGrid .serial{
+	min-width:60px;
+}
+.tableGrid .operate{
+	min-width:100px;
+	width:100px;
+}
+.dataTables_filter{
+	margin-top:5px;
+	margin-right:5px;
+}
+.box-header{
+	background:#428bca;
+}
+
+.box .box-header .title {
+
+	
+}
+	
+.box-header >.title{color:white !important;}
+
+.btn-group.open .btn-success.dropdown-toggle, .btn.btn-success {
+  background-color: #f8a326 !important;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); }
+  
+  
+  
+ .btn.btn-success.active {
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #e48a07 !important;
+}
+  .btn.btn-success.disabled, .btn.btn-success[disabled] {
+    background-color: #f8a326 !important;
+}
+
+  .btn.btn-success[disabled]:hover {
+    background-color: #f8a326 !important;
+}
+
+.btn-group.open .btn-warning.dropdown-toggle:hover, .btn.btn-success:hover {
+    background-color: #e48a07 !important;
+}
+
+
+.modal_iframe{
+	width:100%;
+	height:90%;
+	overflow:auto;
+}
+	
+.modal-content{
+	height:90% !important;
+}
+#gygc .grid-form-input{
+	width:100%;
+}
+#wrapper{
+	widht:800px;
+	height500px;
+	overflow:auto;
+}
+#gygc tboody td{
+	padding:2px 4px;
+}
+
