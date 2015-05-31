@@ -33,7 +33,7 @@ body {
 </head>
 <body>
 <div align="center">
-  <h2><span class="t">访问出错啦！</span></h2>
+  <h2><span class="t">访问出错啦1！</span></h2>
   <table border="0" cellpadding="8" cellspacing="0" width="460">
     <tbody>
       <tr>
