@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `scpc` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `scpc`;
 -- MySQL dump 10.13  Distrib 5.6.19, for osx10.7 (i386)
 --
--- Host: 127.0.0.1    Database: scpc
+-- Host: 127.0.0.1       Database: scpc
 -- ------------------------------------------------------
 -- Server version	5.6.21
 
