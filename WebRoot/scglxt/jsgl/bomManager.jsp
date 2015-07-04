@@ -35,87 +35,87 @@
 											<div class='scrollable-area'>
 												<table id="bomInfo" class='display tableGrid cell-border' style='margin-bottom: 0;'>
 													<thead>
-														<tr>
-															<th>
-																序号
-															</th>
-															<th>
-																操作
-															</th>
-<!-- 															<th> -->
-<!-- 																工序编排 -->
-<!-- 															</th> -->
-															<th>
-																ID
-															</th>
-															<th>
-																子订单名称
-															</th>
-															<th>
-																子订单材质
-															</th>
-															<th>
-																工序内容
-															</th>
-															<th>
-																料的形状
-															</th>
-															<th>
-																料的大小
-															</th>
-															<th>
-																料的体积
-															</th>
-															<th>
-																料的金额
-															</th>
-															
-															<th>
-																加工数量
-															</th>
-															<th>
-																表面处理
-															</th>
-															<th>
-																子订单开始时间
-															</th>
-															<th>
-																子订单结束时间
-															</th>
-															<th>
-																子订单工时
-															</th>
-															<th>
-																当前备料情况
-															</th>
-															<th>
-																备料开始时间
-															</th>
-															<th>
-																备料结束时间
-															</th>
-															<th>
-																料的状态
-															</th>
-															<th>
-																采购人员
-															</th>
-															<th>
-																采购商家
-															</th>
-															<th>
-																子订单图纸
-															</th>
-															<th>
-																入库时间
-															</th>
-															<th>
-																报废件数
-															</th>
-															<th>
-																不合格件数
-															</th>
-														</tr>
+													<tr>
+														<th>
+															序号
+														</th>
+														<th>
+															操作
+														</th>
+														<!-- 															<th> -->
+														<!-- 																工序编排 -->
+														<!-- 															</th> -->
+														<th>
+															ID
+														</th>
+														<th>
+															子订单名称
+														</th>
+														<th>
+															子订单材质
+														</th>
+														<th>
+															工序内容
+														</th>
+														<th>
+															料的形状
+														</th>
+														<th>
+															料的大小
+														</th>
+														<th>
+															料的体积
+														</th>
+														<th>
+															料的金额
+														</th>
+
+														<th>
+															加工数量
+														</th>
+														<th>
+															表面处理
+														</th>
+														<th>
+															子订单开始时间
+														</th>
+														<th>
+															子订单结束时间
+														</th>
+														<th>
+															子订单工时
+														</th>
+														<th>
+															当前备料情况
+														</th>
+														<th>
+															备料开始时间
+														</th>
+														<th>
+															备料结束时间
+														</th>
+														<th>
+															料的状态
+														</th>
+														<th>
+															采购人员
+														</th>
+														<th>
+															采购商家
+														</th>
+														<th>
+															子订单图纸
+														</th>
+														<th>
+															入库时间
+														</th>
+														<th>
+															报废件数
+														</th>
+														<th>
+															不合格件数
+														</th>
+													</tr>
 													</thead>
 
 												</table>
@@ -125,13 +125,18 @@
 								</div>
 							</div>
 					</div>
+
+
+
 			</div>
+
+
 		</div>
 		
 		<!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
    aria-labelledby="myModalLabel" aria-hidden="true">
-   <div class="modal-dialog" style="width:750px;height:500px;">
+   <div class="modal-dialog" style="width:80%;min-height:80%;">
       <div class="modal-content" style="height:90%;"  >
          <div class="modal-header">
             <button type="button" class="close" 

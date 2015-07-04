@@ -54,7 +54,7 @@
 		"ajax":"scgl_getRyTableData.action",
 		scrollY:        "300px",
 		scrollX:        true,
-		scrollCollapse: true,
+		scrollCollapse: false,
 		paging:         true,
 		columnDefs: [
 			{ width: '20%', targets: 0 }

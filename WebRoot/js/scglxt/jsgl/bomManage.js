@@ -49,9 +49,9 @@
 		            },
 		    "aLengthMenu":[2,3],
 			"ajax":"bomInfo_getTableData.action",
-			scrollY:        "300px",
+			scrollY:        "disabled",
 			scrollX:        true,
-			scrollCollapse: true,
+			//scrollCollapse: false,
 			paging:         true,
 			columnDefs: [
 				{ width: '20%', targets: 0 }

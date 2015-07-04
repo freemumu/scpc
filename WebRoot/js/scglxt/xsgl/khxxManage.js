@@ -66,11 +66,10 @@ function tableInit(){
     "aLengthMenu":[20,40,60],
 	//"ajax":"xsgl_getRyInfo.action",
 	"ajax":"khxxgl_getKhxxData.action",
-	"sScrollY" : 450, //DataTables的高  
-    "sScrollX" : 600, //DataTables的宽  
-	scrollY:        true,
-	scrollX:        true,
-	scrollCollapse: true,
+        scrollY:        "200px",
+        scrollX:        true,
+
+	scrollCollapse: false,
 	paging:         true,
 	
 	"columnDefs": [ 

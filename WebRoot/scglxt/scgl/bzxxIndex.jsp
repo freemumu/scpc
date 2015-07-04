@@ -31,7 +31,7 @@
 		"ajax":"scglbz_getBzTableData.action",
 		scrollY:        "300px",
 		scrollX:        false,
-		scrollCollapse: true,
+		scrollCollapse: false,
 		paging:         true,
 		"columnDefs": [ 
             {

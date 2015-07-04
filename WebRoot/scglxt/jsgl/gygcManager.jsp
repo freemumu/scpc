@@ -1,8 +1,8 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="/include/topFile.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
+	<%@ include file="/include/topFile.jsp"%>
 <style type="text/css">
 .tableGrid  tr th {
 	width: 100px;
@@ -16,12 +16,15 @@
 <script type="text/javascript" src="../../js/scglxt/jsgl/gygcManage.js"></script>
 </head>
 <body>
+<div class="container" style="margin-top: 10px;">
+	<div class="  col-md-12">
+		<button id="btn-add" type="button" class="btn btn-sm btn-primary">增加</button>
+		<button id="btn-save" type="btn-save" class="btn btn-sm btn-success">保存</button>
+	</div>
+</div>
 
-	<div id='wrapper'>
-		<div  >
-			<button id="btn-add" type="button" class="btn btn-sm btn-primary">增加</button>
-			<button id="btn-save" type="btn-save" class="btn btn-sm btn-success">保存</button>
-		</div>
+	<div id='container' class="container">
+
 		<div class='container'>
 			<div class='row' id='content-wrapper'>
 				<div class='row rowTop'>
@@ -29,29 +32,20 @@
 						<div class='box-content box-no-padding'>
 							<div class='responsive-table'>
 								<div class='scrollable-area'>
-									<!-- 									<table id="gygc" class='display cell-border tableGrid' -->
-									<!-- 										style='margin-bottom: 0;'> -->
-									<!-- 										<thead> -->
-									<!-- 											<tr> -->
-									<!-- 												<th>序号</th> -->
-									<!-- 												<th>操作</th> -->
-									<!-- 												<th>工艺名称</th> -->
-									<!-- 												<th>工艺内容</th> -->
-									<!-- 												<th>额定工时</th> -->
-									<!-- 												<th>受图时间</th> -->
-									<!-- 												<th>子订单名称</th> -->
-									<!-- 											</tr> -->
-									<!-- 										</thead> -->
-									<!-- 									</table> -->
 									<table id="gygc" class="cell-border tableGrid dataTable">
 										<thead>
 											<tr>
 												<th style="width:20px">序号</th>
-												<th style="width:20px;">操作</th>
+												<th style="width:20px;">编辑</th>
+												<th class="starttime  hide" disabled="disabled" style="width:20px;">开始加工</th>
+												<th class="endtime  hide" style="width:20px;">结束加工</th>
 												<th>所用设备</th>
 												<th>工序内容</th>
 												<th>额定工时</th>
-												<th>受图</th>
+												<th style="width:20px;">受图</th>
+												<th class="starttime hide ">开始时间</th>
+												<th class="endtime  hide">结束时间</th>
+
 <!-- 												<th>子订单名称</th> -->
 											</tr>
 										</thead>

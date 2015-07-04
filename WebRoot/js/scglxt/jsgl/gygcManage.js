@@ -10,6 +10,7 @@
 		var _t = this ,
 		_operateFlag = "",
 		_bomid = "";
+		_showModel = "" ;
 		/**
 		 * 初始化函数
 		 */
@@ -20,11 +21,14 @@
 			//获取参数
 			var urlParam = new Object();
 			urlParam = $.GetRequest();
+			_showModel = urlParam.showModel ;
 			tableInit(urlParam.bomid);
 			_bomid = urlParam.bomid ;
 			loadBomGybpList(_bomid);
-			
+
+
 		},
+
 		/**
 		 * 注册事件
 		 */
@@ -42,10 +46,10 @@
 		 * 初始化表格函数
 		 */
 		tableInit = function(bomid){
-            var url = "bomInfo_getGygcData.action", successFun = function(data){
+            /*var url = "bomInfo_getGygcData.action", successFun = function(data){
             	console.log(data);
             }
-            $.asyncAjax(url, {"JSON": JSON}, successFun, true);	
+            $.asyncAjax(url, {"JSON": JSON}, successFun, true);	*/
 		},
 		/**
 		 * 删除信息
@@ -119,6 +123,7 @@
 			var id = "";
 			var domstr = '<tr id="'+uuid+'"> <td class="sorting_1">'+rowNum+'</td> '+
 								'<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>'+
+								'<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>'+
 								'<td>  '+
 								' <select  info= "sysb" type="text" linked＝"'+uuid+'" class="grid-form-input" style="width:100%" >'+
 //								'<option value="1001">备料</option>'+
@@ -128,6 +133,8 @@
 								'<td><input class="" info="gxnr" type="text" style="width:100%" class="form-gxnr"  name="form-gxnr" ></td>'+
 								'<td><input class="" info="edgs" type="text" style="width:100%" value=""></td>'+
 								'<td><input class="" info="stsj" type="text" style="width:100%" value=""></td>'+
+								'<td><input class="starttime" info="stsj" type="text" style="width:100%" value=""></td>'+
+								'<td><input class="endtime" info="stsj" type="text" style="width:100%" value=""></td>'+
 //								'<td><input class="" info="zddmc" type="text" value=""></td>'+
 								'</tr>' ;
 			$("#gygc tbody").append(domstr);
@@ -182,20 +189,29 @@
             		for(var i = 0 ; i < data.length ; i++){
             			domstr = '<tr id="'+$.decodeEmptyValue(data[i].id)+'"> <td class="sorting_1">'+i+'</td> '+
     					'<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>'+
+    					'<td class="text-center starttime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateStarttime(this)">开 始</a></div></td>'+
+    					'<td class="text-center endtime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateEndtime(this)">结 束</a></div></td>'+
     					'<td>  '+
     					' <select  info= "sysb" type="text" linked＝"'+$.decodeEmptyValue(data[i].id)+'" class="grid-form-input" style="width:100%" >'+
     					'</select></td>'+
     					'<td><input class="" info="gxnr" type="text" style="width:100%" class="form-gxnr"  name="form-gxnr" value="'+$.decodeEmptyValue(data[i].gynr)+'"></td>'+
     					'<td><input class="" info="edgs" type="text" style="width:100%" value="'+$.decodeEmptyValue(data[i].edgs)+'"></td>'+
     					'<td><input class="" info="stsj" type="text" style="width:100%" value="'+$.decodeEmptyValue(data[i].stsj)+'"></td>'+
+    					'<td class="starttime hide"> <input  info="stsj" type="text" style="width:100%" value="2015/07/01 12:00"></td>'+
+    					'<td class="endtime hide" > <input info="stsj" type="text" style="width:100%" value="2015/07/01 12:00"></td>'+
     					'</tr>' ;
             			$("#gygc tbody").append(domstr);
+
+
+
 //                        var selector = "#"+$.decodeEmptyValue(data[i].id)＋" select[info='sysb']";
                         var selector = "#"+$.decodeEmptyValue(data[i].id) ;
                         selector = selector.toString() +(" select[info='sysb']").toString() ;
                         loadGygcList(selector);
                         $(selector).find("option[value='"+$.decodeEmptyValue(data[i].gyid)+"']").attr("selected",true); 
             		}
+
+
             		//加载拖动程序
         			$("#gygc").tableDnD({
         				onDrop: function(table, row) {
@@ -207,7 +223,14 @@
         		            GygcManage.changeRowSerialNum("gygc");
         		        },
         			});
+
+					if(_showModel==1){
+						$('.starttime').removeClass("hide");
+						$('.endtime').removeClass("hide");
+					}
             	}
+
+
             }
             $.asyncAjax(url, {bomid:bomid}, successFun, true);	
 
