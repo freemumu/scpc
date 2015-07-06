@@ -64,6 +64,25 @@
                 //1、删除数据库
                 //2、删除表格
             },
+            updateStarttime = function (t) {
+                if (confirm("确定开始？")) {
+                var url = "bomInfo_updateStrattime.action";
+                    var   successFun = function (str) {
+                    alert("系统已经开始计时！");
+                        }
+                    $.asyncAjaxPost(url, { }, successFun, true);
+                }
+            },
+            updateEndtime = function (t) {
+                if (confirm("确定开始？")) {
+                    var url = "bomInfo_updateEndtime.action";
+                    var   successFun = function (str) {
+                        alert("系统已经结束计时，恭喜您完成了此项工作");
+                    }
+                    $.asyncAjaxPost(url, { }, successFun, true);
+                }
+            },
+
         /**
          * @description 点击编辑按钮时候跳转到编辑页面，通过url传参
          */
@@ -123,8 +142,8 @@
                 var id = "";
                 var domstr = '<tr id="' + uuid + '"> <td class="sorting_1">' + rowNum + '</td> ' +
                     '<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
-                    '<td class="text-center starttime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateStarttime(this)">开 始</a></div></td>' +
-                    '<td class="text-center endtime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateEndtime(this)">结 束</a></div></td>' +
+                    '<td class="text-center starttime hide"><div > <a class="btn btn-success btn-xs" href="#" title="" onclick="GygcManage.updateStarttime(this)">开 始</a></div></td>' +
+                    '<td class="text-center endtime hide"><div > <a class="btn btn-info btn-xs" href="#" title="" onclick="GygcManage.updateEndtime(this)">结 束</a></div></td>' +
                     '<td>  ' +
                     ' <select  info= "sysb" type="text" linked＝"' + uuid + '" class="grid-form-input" style="width:100%" >' +
 //								'<option value="1001">备料</option>'+
@@ -251,7 +270,9 @@
             editRow: editRow,
             addRow: addRow,
             changeRowSerialNum: changeRowSerialNum,
-            loadGygcList: loadGygcList
+            loadGygcList: loadGygcList,
+            updateStarttime:updateStarttime,
+            updateEndtime:updateEndtime
         }
     })();
 

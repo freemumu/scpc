@@ -195,6 +195,23 @@ public class BomInfoManagerAction {
 		} catch (Exception e) {
 		}
 	}
+	public void updateStrattime(){
+		String sql = "update scglxt_t_gygc set starttime = curtime()";
+		try {
+			this.selectDataService.execute(sql);
+			Response.write("success") ;
+		} catch (Exception e) {
+			Response.write("error") ;
+		}
+	}
+	public void updateEndtime(){
+		String sql = "update scglxt_t_gygc set endtime = curtime()";
+		try {
+			this.selectDataService.execute(sql);
+		} catch (Exception e) {
+		}
+
+	}
 	/**
 	 *  根据工序编排更新bom的工艺内容
 	 */
