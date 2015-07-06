@@ -49,7 +49,7 @@
 		            },
 		    "aLengthMenu":[2,3],
 			"ajax":"bomInfo_getTableData.action",
-			scrollY:        "disabled",
+			//scrollY:        "disabled",
 			scrollX:        true,
 			//scrollCollapse: false,
 			paging:         true,

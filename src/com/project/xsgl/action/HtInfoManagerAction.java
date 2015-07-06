@@ -35,7 +35,8 @@ public class HtInfoManagerAction {
 	 * @response  : json 
 	 */
 	public void getTableData(){
-		String sql ="select id ,mc,htbh , ywlx ,htje,date_format(qssj,'%Y-%m-%d') qssj,dqjd,fkzt,jkbfb,jkje,jscb,hkzh,hkkhh,remark from scglxt_t_ht ";
+		String sql ="select t1.id ,t1.mc,t1.htbh , t1.ywlx ,t1.htje,date_format(qssj,'%Y-%m-%d') qssj,t1.dqjd,t1.fkzt,t1.jkbfb,jkje,jscb,t1.hkzh,t1.hkkhh,t1.remark ,t2.id khid" +
+				" from scglxt_t_ht  t1 left join scglxt_t_kh t2 on t1.khid = t2.id  ";
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":"+json+"}";

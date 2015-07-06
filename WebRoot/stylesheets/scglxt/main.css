@@ -125,11 +125,15 @@ body{
 	width:100%;
 }
 #wrapper{
-	widht:800px;
-	height500px;
+	widht:90%px;
+	min-height:500px;
 	overflow:auto;
 }
 #gygc tboody td{
 	padding:2px 4px;
 }
 
+.modal-dialog{
+	width:90%;
+	height:90%;
+}
