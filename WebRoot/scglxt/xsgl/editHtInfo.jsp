@@ -111,7 +111,7 @@
 		                            <input class='form-control'  id='form_khxx_remark' info="fromInfo" name='form_khxx_remark' placeholder='备注' type='text'>
 		                          </div>
 		                        </div>			                        		                        
-					             <div class='modal-footer'>
+					             <div class='modal-footer col-md-7'>
 					                 <button class='btn btn-default' data-dismiss='modal' type='button'>
 					                   	关闭
 					                 </button>

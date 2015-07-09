@@ -124,7 +124,7 @@
 		
 		<h2>创建模态框（Modal）</h2>
 <!-- 按钮触发模态框 -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" 
+<button class="btn btn-primary " data-toggle="modal"
    data-target="#myModal">
    开始演示模态框
 </button>
