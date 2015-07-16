@@ -66,7 +66,7 @@
         ],
         columns: [
         	{"data":null,"sWidth":"60px"       	},
-        	{"data":'id',"sWidth":"100px"
+        	{"data":'id',"sWidth":"80px"
         	},
             { "data": "sblx","sWidth":"120px"},
             { "data": "sbmc" ,"sWidth":"120px"},
@@ -86,7 +86,7 @@
             cell.innerHTML = i+1;
         } );
    	  } ).draw();
-	  new $.fn.dataTable.FixedColumns( table );
+	  new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
 	}
 	
 	/***
@@ -128,7 +128,7 @@
 									<div class='box-content box-no-padding'>
 										<div class='responsive-table'>
 											<div class='scrollable-area'>
-												<table id="ryxx" class='display' style='margin-bottom: 0;'>
+												<table id="ryxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th>

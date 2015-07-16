@@ -34,7 +34,7 @@
 	
 		var table = $('#ryxx').DataTable( {
 		"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
-		"bLengthChange": false, 
+		"bLengthChange": true, 
       	"oLanguage": {
                     "sProcessing": "正在加载中......",
                     "sLengthMenu": "每页显示 _MENU_ 条记录",
@@ -50,12 +50,12 @@
                         "sLast": "末页"
                     }
                 },
-        "aLengthMenu":[10,15],
+        "aLengthMenu":[5,15],
 		"ajax":"scgl_getRyTableData.action",
 		scrollY:        "300px",
 		scrollX:        true,
-		scrollCollapse: false,
-		paging:         true,
+		scrollCollapse: true,
+		paging:         false,
 		columnDefs: [
 			{ width: '20%', targets: 0 }
 		]
@@ -125,7 +125,7 @@
 									<div class='box-content box-no-padding'>
 										<div class='responsive-table'>
 											<div class='scrollable-area'>
-												<table id="ryxx" class='display' style='margin-bottom: 0;'>
+												<table id="ryxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th>
