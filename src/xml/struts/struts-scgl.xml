@@ -14,7 +14,6 @@
 			<result name="rysucess" type="redirect">/scglxt/scgl/ryxxIndex.jsp</result>
 		</action>
 		<action name="pcgl_*" class="com.project.scgl.action.PcglAction" method="{1}">
-			<result name="addPcSuccess" type="redirect">/scglxt/scgl/zjpcgl.jsp</result>
 		</action>
 		<action name="kcgl_*" class="com.project.kcgl.action.KcglAction" method="{1}">
 		</action>
