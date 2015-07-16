@@ -6,7 +6,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<!--引入样式-->ceshi
+		<!--引入样式-->
 		<link rel="stylesheet" href="../../js/plugin/fancybox/fancybox.css" type="text/css"></link>
 		<link rel="stylesheet" href="../../js/plugin/fancybox/fullcalendar.css" type="text/css"></link>
 		<!-- 引入当前界面样式 -->
