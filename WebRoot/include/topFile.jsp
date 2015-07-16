@@ -4,8 +4,8 @@
     <link href="${pageContext.request.contextPath}/stylesheets/light-theme.css" media="all" id="color-settings-body-color" rel="stylesheet" type="text/css" />
     <link href="${pageContext.request.contextPath}/stylesheets/theme-colors.css" media="all" id="color-settings-body-color" rel="stylesheet" type="text/css" />
     <link href="${pageContext.request.contextPath}/js/plugin/bootstrap/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
-   	<!-- bootstrap 表格插件样式 -->
-  	<link rel="stylesheet" href="${pageContext.request.contextPath}/stylesheets/plugins/datatables/jquery.dataTables.css" type="text/css"></link>
+  <!-- bootstrap Datatables样式引入 -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/js/datatablesExtends/dataTables.bootstrap.css" type="text/css"></link>
   	 <!-- bootstrap 时间插件样式 -->
  	<link href="${pageContext.request.contextPath}/stylesheets/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.min.css" media="all" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/js/plugin/bootstrap-datepicker/css/datepicker.css" type="text/css"></link>
@@ -21,6 +21,8 @@
         <script src="${pageContext.request.contextPath}/js/theme.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/util/CommonUtils.js" type="text/javascript"></script>    
   	<script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/datatables/jquery.dataTables.js"></script>
+  	<!--集成bootstap的datablesJS-->
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/datatablesExtends/dataTables.bootstrap.js"></script>
 <!--   	<script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/datatables/dataTables.fixedColumns.js"></script> -->
 <!--   	<script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/datatables/dataTables.overrides.js"></script> -->
   	<script src="${pageContext.request.contextPath}/js/plugin/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
