@@ -78,4 +78,40 @@ public class PcglAction {
 		
 		return "addPcSuccess";
 	} 
+	
+	public void getPcSbTb(){
+		
+		log.info("请求班组图表");
+		String sql = "select round(((sum(edgs*jgsl))/(select gzsj from scglxt_t_gzsj where sfqy = 1)),2) v,bzid c,sb k,sbid id from v_scglxt_pc_tb group by sbid order by kssj,bzid";
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		Response.write(json);
+	}
+	
+	public void getPcRyTb(){
+		
+		log.info("请求人员图表");
+		String sql = "select round(((sum(edgs*jgsl))/(select gzsj from scglxt_t_gzsj where sfqy = 1)),2) v,bzid c,ry k,ryid id from v_scglxt_pc_tb group by ryid order by kssj,ryid";
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		Response.write(json);
+	}
+	
+	public void getSbTbInfo(){
+		
+		String sql = "select gygcid,zddmc,serial jgsx,jgsl,gymc,edgs,cast(jhkssj as char) jhkssj,cast(kssj as char) kssj,bzmc,sbmc from `v_scglxt_pc_tb_info` where sbid = '02'";
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		json = "{\"data\":" + json + "}";
+		Response.write(json);
+	}
+	
+	public void getRyTbInfo(){
+		
+		String sql = "select gygcid, zddmc,serial jgsx,jgsl,gymc,edgs,cast(jhkssj as char) jhkssj,cast(kssj as char) kssj,bzmc,sbmc from `v_scglxt_pc_tb_info` where ryid = '02'";
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		json = "{\"data\":" + json + "}";
+		Response.write(json);
+	}
 }
