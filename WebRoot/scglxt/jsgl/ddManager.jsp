@@ -40,7 +40,7 @@
 									<div class='box-content box-no-padding'>
 										<div class='responsive-table'>
 											<div class='scrollable-area'>
-												<table id="ddInfo" class='display cell-border tableGrid'  style='margin-bottom: 0;'>
+												<table id="ddInfo" class='table table-striped table-bordered cell-border tableGrid'  style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th style="width:60px;">
