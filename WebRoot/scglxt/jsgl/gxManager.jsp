@@ -49,7 +49,7 @@
 										</div>
 									</div>
 									<div class='box-content box-no-padding'>
-												<table id="gxInfo" class='display' style='margin-bottom: 0;'>
+												<table id="gxInfo" class='table table-striped table-bordered' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th>

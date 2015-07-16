@@ -36,7 +36,7 @@
 									<div class='box-content box-no-padding'>
 										<div class='responsive-table'>
 											<div class='scrollable-area'>
-												<table id="gyInfo" class='display tableGrid cell-border' style='margin-bottom: 0;'>
+												<table id="gyInfo" class='table table-striped table-bordered tableGrid cell-border' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th>
@@ -124,7 +124,7 @@
 		
 		<h2>创建模态框（Modal）</h2>
 <!-- 按钮触发模态框 -->
-<button class="btn btn-primary " data-toggle="modal"
+<button class="btn btn-primary btn-lg" data-toggle="modal" 
    data-target="#myModal">
    开始演示模态框
 </button>
