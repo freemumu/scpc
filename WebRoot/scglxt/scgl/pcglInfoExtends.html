@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>设备排产管理详细信息</title>
+</head>
+<body>
+		<table id="sbpcInfo" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+				<th>
+					序号
+				</th>
+				<th>
+					图号
+				</th>
+				<th>
+					加工数量
+				</th>
+				<th>
+					额定工时
+				</th>
+				<th>
+					加工工艺
+				</th>
+				<th>
+					计划开始时间
+				</th>
+				<th>
+					实际开始时间
+				</th>
+				<th>
+					班组名称
+				</th>
+				<th>
+					设备名称
+				</th>
+			</tr>
+        </thead>
+    </table>
+	<div id="editJhkssj" style="display:abslute">
+	
+	</div>
+	<!-- bootstrap css 引入 -->
+	<link href="../../js/plugin/bootstrap/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
+	<!-- bootstrap Datatables样式引入 -->
+	<link rel="stylesheet" href="../../js/datatablesExtends/dataTables.bootstrap.css" type="text/css"></link>
+	<!-- jquery ui css 引入 -->
+	<link rel="stylesheet" href="../../js/jquery_ui/jquery-ui.css" type="text/css"></link>
+	<!-- jQueryJS引入 -->
+	<script type="text/javascript" src="../../js/jquery/jquery.min.js"></script>
+	<!-- DataTables JS引入 -->
+	<script type="text/javascript" src="../../js/plugin/datatables/jquery.dataTables.js"></script>
+	<!--集成bootstap的datablesJS-->
+	<script type="text/javascript" src="../../js/datatablesExtends/dataTables.bootstrap.js"></script>
+
+	<!-- datatables固定列的JS-->
+	<script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
+	<!-- jquery-ui的JS -->
+	<script type="text/javascript" src="../../js/jquery_ui/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			 var table = $('#sbpcInfo').DataTable( {
+			"bLengthChange": true, 
+	      	"oLanguage": {
+	                    "sProcessing": "正在加载中......",
+	                    "sLengthMenu": "每页显示 _MENU_ 条记录",
+	                    "sZeroRecords": "对不起，查询不到相关数据！",
+	                    "sEmptyTable": "表中无数据存在！",
+	                    "sInfo": "当前显示 _START_ 到 _END_ 条，共 _TOTAL_ 条记录",
+	                    "sInfoFiltered": "数据表中共为 _MAX_ 条记录",
+	                    "sSearch": "搜索",
+	                    "oPaginate": {
+	                        "sFirst": "首页",
+	                        "sPrevious": "上一页",
+	                        "sNext": "下一页",
+	                        "sLast": "末页"
+	                    }
+	                },
+	        "aLengthMenu":[5,10,15],
+			"ajax":"pcgl_getSbTbInfo.action",
+			scrollY:        "300px",
+			scrollX:        false,
+			scrollCollapse: false,
+			paging:         true,
+			columnDefs: [
+				{ width: '20%', targets: 0 }
+			]
+			,
+			"columnDefs": [ 
+	            {
+	                "render": function ( data, type, row ) {
+	                    return '<a href = "#" onclick =editJhkssj('+row.gygcid+') >'+data+'</a>';
+	                },
+	                "targets": 5
+	            },
+	            { "visible": true,  "targets": [ 2 ] }
+	        ],
+	        "columns": [
+	        	{"data":null,"width":"30px"},
+	        	{"data":'zddmc',"width":"80px"},
+	            { "data": "jgsl" ,"width":"60px"},
+	            { "data": "edgs" ,"width":"60px"},
+	            { "data": "gymc" ,"width":"60px"},
+	            { "data": "jhkssj" },
+	            { "data": "kssj" },
+	            { "data": "bzmc" ,"width":"80px"},
+	            { "data": "sbmc" ,"width":"80px"}
+	        ]
+	       
+		} );
+		 /**加上序号**/
+		  table.on( 'order.dt search.dt', function () {
+	        table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+	            cell.innerHTML = i+1;
+	        } );
+	   	  } ).draw();
+		} );
+		
+		function editJhkssj(data){
+			
+			 $( "#editJhkssj" ).dialog({ 
+           		height: 100,
+           		width: 300,
+           		draggable: false
+      		});
+      		$( "#editJhkssj" ).html(data);
+		}
+    </script>
+</body>
