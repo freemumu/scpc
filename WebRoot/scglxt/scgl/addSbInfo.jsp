@@ -10,6 +10,13 @@
 					var id = getValueOfURLParamter("id");
 					initForm(id);
 				}
+				$("#cgsj").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+				$("#wbjz").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+//				$("#cgsj").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+//				$("#cgsj").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+
+
+
 			} );
 			
 			function initForm(id){
@@ -183,12 +190,18 @@
 								采购时间
 							</label>
 							<div class="col-md-4">
-								<div class="datepicker input-group">
-									<input name="cgsj" id="cgsj" class="form-control" data-format="yyyy-MM-dd"
-										placeholder="请选择采购时间" type="text">
-									<span class="input-group-addon"> <span
-										data-date-icon="icon-calendar" data-time-icon="icon-time"
-										class="icon-calendar"></span> </span>
+								<%--<div class="datepicker input-group">--%>
+									<%--<input name="cgsj" id="cgsj" class="form-control" data-format="yyyy-MM-dd"--%>
+										<%--placeholder="请选择采购时间" type="text">--%>
+									<%--<span class="input-group-addon"> <span--%>
+										<%--data-date-icon="icon-calendar" data-time-icon="icon-time"--%>
+										<%--class="icon-calendar"></span> </span>--%>
+								<%--</div>--%>
+								<div class="input-append date form_datetime">
+									<input name="cgsj" id="cgsj" readonly class="form-control"
+										   placeholder="请选择采购时间" type="text">
+									<%--<input size="16" type="text" value="" readonly>--%>
+									<%--<span class="add-on"><i class="icon-th"></i></span>--%>
 								</div>
 							</div>
 						</div>
@@ -197,13 +210,15 @@
 								维保截止
 							</label>
 							<div class="col-md-4">
-								<div class="datepicker input-group" id="">
-									<input class="form-control" name="wbjz" id="wbjz" data-format="yyyy-MM-dd"
-										placeholder="请选择维保截止时间" type="text">
-									<span class="input-group-addon"> <span
-										data-date-icon="icon-calendar" data-time-icon="icon-time"
-										class="icon-calendar"></span> </span>
-								</div>
+								<input class="form-control" name="wbjz" id="wbjz"
+									   placeholder="请选择维保截止时间" readonly type="text">
+								<%--<div class="datepicker input-group" id="">--%>
+									<%--<input class="form-control" name="wbjz" id="wbjz"--%>
+										<%--placeholder="请选择维保截止时间" type="text">--%>
+									<%--&lt;%&ndash;<span class="input-group-addon"> <span&ndash;%&gt;--%>
+										<%--&lt;%&ndash;data-date-icon="icon-calendar" data-time-icon="icon-time"&ndash;%&gt;--%>
+										<%--&lt;%&ndash;class="icon-calendar"></span> </span>&ndash;%&gt;--%>
+								<%--</div>--%>
 							</div>
 						</div>
 						<div class="form-group">

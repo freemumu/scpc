@@ -11,7 +11,9 @@
 				if(flag==='edit'){
 					var id = getValueOfURLParamter("id");
 					initForm(id);
-				}				
+				}
+				$("#rzsj").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+
 			} );
 			
 			function initForm(id){
@@ -171,12 +173,15 @@
                       <div class="form-group">
                       <label class="col-md-3 control-label" for="rzsj">入职时间</label>
                         <div class="col-md-4">
-                         <div class="datepicker input-group">
-                          <input class="form-control" name="rzsj" data-format="yyyy-MM-dd" placeholder="请选择入职时间" type="text" id="rzsj">
-                          <span class="input-group-addon">
-                            <span data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-calendar"></span>
-                          </span>
-                        </div>
+							<input class="form-control" readonly name="rzsj"   placeholder="请选择入职时间" type="text" id="rzsj">
+
+                         <%--<div class="datepicker input-group">--%>
+                         <%--<div class="  input-group">--%>
+                          <%--<input class="form-control" readonly name="rzsj"   placeholder="请选择入职时间" type="text" id="rzsj">--%>
+                          <%--&lt;%&ndash;<span class="input-group-addon">&ndash;%&gt;--%>
+                            <%--&lt;%&ndash;<span data-date-icon="icon-calendar" data-time-icon="icon-time" class="icon-calendar"></span>&ndash;%&gt;--%>
+                          <%--&lt;%&ndash;</span>&ndash;%&gt;--%>
+                        <%--</div>--%>
                         </div>
                       </div>
                       <div class="form-actions" style="margin-bottom: 0;">

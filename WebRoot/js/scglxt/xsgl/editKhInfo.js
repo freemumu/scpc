@@ -58,6 +58,7 @@
 					init:function(){
 						_this = this ; 
 						//初始化时间控件
+						//$('#form_khxx_starttime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 						$('#form_khxx_starttime').datepicker();
 						//注册表单返回按钮事件 。点击返回查询表格页面
 						$("#form_return").click(function(){
