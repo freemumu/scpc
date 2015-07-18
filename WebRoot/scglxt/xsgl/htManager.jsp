@@ -28,7 +28,7 @@
 										</div>
 									</div>
 									<div class='box-content box-no-padding'>
-												<table id="htInfo" class='display tableGrid' style='margin-bottom: 0;'>
+												<table id="htInfo" class='table table-striped table-bordered tableGri' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th style="width:60px;">
