@@ -1,0 +1,129 @@
+[2015-07-16 22:05:25,510]-INFO  (ContextLoader.java:189)|Root WebApplicationContext: initialization started
+[2015-07-16 22:05:25,536]-INFO  (AbstractApplicationContext.java:412)|Refreshing org.springframework.web.context.support.XmlWebApplicationContext@48a067c6: display name [Root WebApplicationContext]; startup date [Thu Jul 16 22:05:25 CST 2015]; root of context hierarchy
+[2015-07-16 22:05:25,600]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext.xml]
+[2015-07-16 22:05:25,892]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_base.xml]
+[2015-07-16 22:05:25,944]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_login.xml]
+[2015-07-16 22:05:25,981]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_xsgl.xml]
+[2015-07-16 22:05:26,025]-INFO  (AbstractApplicationContext.java:427)|Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@48a067c6]: org.springframework.beans.factory.support.DefaultListableBeanFactory@2419eee5
+[2015-07-16 22:05:26,147]-INFO  (PropertiesLoaderSupport.java:178)|Loading properties file from class path resource [ApplicationResources.properties]
+[2015-07-16 22:05:26,193]-INFO  (DefaultListableBeanFactory.java:414)|Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@2419eee5: defining beans [messageSource,propertyConfigurer,dataSourceA,dataSource,sessionFactory,transactionIntercetorTemplate,hibernateTransactionInterceptor,jdbcTransactionInterceptor,autoProxy,nativeJdbcExtractor,lobHandler,baseDao,baseService,selectDataDao,selectDataService,loginAction,xsglAction,khxxManagerAction,ddInfoManagerAction,bomInfoManagerAction,gxInfoManagerAction,gyInfoManagerAction]; root of factory hierarchy
+[2015-07-16 22:05:26,224]-INFO  (MLog.java:80)|MLog clients using log4j logging.
+[2015-07-16 22:05:26,287]-INFO  (C3P0Registry.java:204)|Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[2015-07-16 22:05:26,529]-INFO  (Environment.java:514)|Hibernate 3.2.5
+[2015-07-16 22:05:26,534]-INFO  (Environment.java:547)|hibernate.properties not found
+[2015-07-16 22:05:26,538]-INFO  (Environment.java:681)|Bytecode provider name : cglib
+[2015-07-16 22:05:26,541]-INFO  (Environment.java:598)|using JDK 1.4 java.sql.Timestamp handling
+[2015-07-16 22:05:26,597]-INFO  (LocalSessionFactoryBean.java:730)|Building new Hibernate SessionFactory
+[2015-07-16 22:05:26,603]-INFO  (ConnectionProviderFactory.java:72)|Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[2015-07-16 22:05:26,693]-INFO  (AbstractPoolBackedDataSource.java:462)|Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 3000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge13j9a15y4ww1l9sska|7bd9729f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge13j9a15y4ww1l9sska|7bd9729f, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/scpc?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+[2015-07-16 22:05:26,992]-INFO  (SettingsFactory.java:89)|RDBMS: MySQL, version: 5.1.40-community
+[2015-07-16 22:05:26,993]-INFO  (SettingsFactory.java:90)|JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.1.5 ( Revision: ${svn.Revision} )
+[2015-07-16 22:05:27,063]-INFO  (Dialect.java:152)|Using dialect: org.hibernate.dialect.MySQLDialect
+[2015-07-16 22:05:27,105]-INFO  (TransactionFactoryFactory.java:34)|Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[2015-07-16 22:05:27,106]-INFO  (TransactionManagerLookupFactory.java:33)|No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[2015-07-16 22:05:27,107]-INFO  (SettingsFactory.java:143)|Automatic flush during beforeCompletion(): disabled
+[2015-07-16 22:05:27,107]-INFO  (SettingsFactory.java:147)|Automatic session close at end of transaction: disabled
+[2015-07-16 22:05:27,107]-INFO  (SettingsFactory.java:154)|JDBC batch size: 15
+[2015-07-16 22:05:27,108]-INFO  (SettingsFactory.java:157)|JDBC batch updates for versioned data: disabled
+[2015-07-16 22:05:27,109]-INFO  (SettingsFactory.java:162)|Scrollable result sets: enabled
+[2015-07-16 22:05:27,109]-INFO  (SettingsFactory.java:170)|JDBC3 getGeneratedKeys(): enabled
+[2015-07-16 22:05:27,109]-INFO  (SettingsFactory.java:178)|Connection release mode: auto
+[2015-07-16 22:05:27,110]-INFO  (SettingsFactory.java:202)|Maximum outer join fetch depth: 2
+[2015-07-16 22:05:27,111]-INFO  (SettingsFactory.java:205)|Default batch fetch size: 1
+[2015-07-16 22:05:27,111]-INFO  (SettingsFactory.java:209)|Generate SQL with comments: disabled
+[2015-07-16 22:05:27,111]-INFO  (SettingsFactory.java:213)|Order SQL updates by primary key: disabled
+[2015-07-16 22:05:27,112]-INFO  (SettingsFactory.java:217)|Order SQL inserts for batching: disabled
+[2015-07-16 22:05:27,112]-INFO  (SettingsFactory.java:386)|Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[2015-07-16 22:05:27,115]-INFO  (ASTQueryTranslatorFactory.java:24)|Using ASTQueryTranslatorFactory
+[2015-07-16 22:05:27,116]-INFO  (SettingsFactory.java:225)|Query language substitutions: {}
+[2015-07-16 22:05:27,117]-INFO  (SettingsFactory.java:230)|JPA-QL strict compliance: disabled
+[2015-07-16 22:05:27,118]-INFO  (SettingsFactory.java:235)|Second-level cache: enabled
+[2015-07-16 22:05:27,118]-INFO  (SettingsFactory.java:239)|Query cache: disabled
+[2015-07-16 22:05:27,119]-INFO  (SettingsFactory.java:373)|Cache provider: org.hibernate.cache.NoCacheProvider
+[2015-07-16 22:05:27,119]-INFO  (SettingsFactory.java:254)|Optimize cache for minimal puts: disabled
+[2015-07-16 22:05:27,120]-INFO  (SettingsFactory.java:263)|Structured second-level cache entries: disabled
+[2015-07-16 22:05:27,127]-INFO  (SettingsFactory.java:290)|Statistics: disabled
+[2015-07-16 22:05:27,127]-INFO  (SettingsFactory.java:294)|Deleted entity synthetic identifier rollback: disabled
+[2015-07-16 22:05:27,128]-INFO  (SettingsFactory.java:309)|Default entity-mode: pojo
+[2015-07-16 22:05:27,128]-INFO  (SettingsFactory.java:313)|Named query checking : enabled
+[2015-07-16 22:05:27,183]-INFO  (SessionFactoryImpl.java:161)|building session factory
+[2015-07-16 22:05:27,192]-INFO  (SessionFactoryObjectFactory.java:82)|Not binding factory to JNDI, no JNDI name configured
+[2015-07-16 22:05:27,226]-INFO  (HibernateTransactionManager.java:390)|Using DataSource [com.project.base.DynamicDataSource@6e3abaab] of Hibernate SessionFactory for HibernateTransactionManager
+[2015-07-16 22:05:27,403]-INFO  (ContextLoader.java:209)|Root WebApplicationContext: initialization completed in 1890 ms
+[2015-07-16 22:05:27,404]-INFO  (DefaultContextLoaderListener.java:27)|load WebApplicationContext into ContextHolder
+[2015-07-16 22:05:27,638]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-default.xml]
+[2015-07-16 22:05:27,758]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-plugin.xml]
+[2015-07-16 22:05:27,859]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts.xml]
+[2015-07-16 22:05:27,984]-INFO  (CommonsLogger.java:42)|Initializing Struts-Spring integration...
+[2015-07-16 22:05:27,984]-INFO  (CommonsLogger.java:42)|Setting autowire strategy to name
+[2015-07-16 22:05:27,985]-INFO  (CommonsLogger.java:42)|... initialized Struts-Spring integration successfully
+[2015-07-16 22:05:28,834]-WARN  (JavaUtils.java:1308)|Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+[2015-07-16 22:10:12,188]-INFO  (ContextLoader.java:189)|Root WebApplicationContext: initialization started
+[2015-07-16 22:10:12,211]-INFO  (AbstractApplicationContext.java:412)|Refreshing org.springframework.web.context.support.XmlWebApplicationContext@4eb3bd0: display name [Root WebApplicationContext]; startup date [Thu Jul 16 22:10:12 CST 2015]; root of context hierarchy
+[2015-07-16 22:10:12,285]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext.xml]
+[2015-07-16 22:10:12,394]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_base.xml]
+[2015-07-16 22:10:12,418]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_login.xml]
+[2015-07-16 22:10:12,448]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_xsgl.xml]
+[2015-07-16 22:10:12,475]-INFO  (AbstractApplicationContext.java:427)|Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@4eb3bd0]: org.springframework.beans.factory.support.DefaultListableBeanFactory@39f9816c
+[2015-07-16 22:10:12,580]-INFO  (PropertiesLoaderSupport.java:178)|Loading properties file from class path resource [ApplicationResources.properties]
+[2015-07-16 22:10:12,640]-INFO  (DefaultListableBeanFactory.java:414)|Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@39f9816c: defining beans [messageSource,propertyConfigurer,dataSourceA,dataSource,sessionFactory,transactionIntercetorTemplate,hibernateTransactionInterceptor,jdbcTransactionInterceptor,autoProxy,nativeJdbcExtractor,lobHandler,baseDao,baseService,selectDataDao,selectDataService,loginAction,xsglAction,khxxManagerAction,ddInfoManagerAction,bomInfoManagerAction,gxInfoManagerAction,gyInfoManagerAction]; root of factory hierarchy
+[2015-07-16 22:10:12,655]-INFO  (MLog.java:80)|MLog clients using log4j logging.
+[2015-07-16 22:10:12,702]-INFO  (C3P0Registry.java:204)|Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[2015-07-16 22:10:12,884]-INFO  (Environment.java:514)|Hibernate 3.2.5
+[2015-07-16 22:10:12,888]-INFO  (Environment.java:547)|hibernate.properties not found
+[2015-07-16 22:10:12,890]-INFO  (Environment.java:681)|Bytecode provider name : cglib
+[2015-07-16 22:10:12,895]-INFO  (Environment.java:598)|using JDK 1.4 java.sql.Timestamp handling
+[2015-07-16 22:10:12,952]-INFO  (LocalSessionFactoryBean.java:730)|Building new Hibernate SessionFactory
+[2015-07-16 22:10:12,957]-INFO  (ConnectionProviderFactory.java:72)|Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[2015-07-16 22:10:13,034]-INFO  (AbstractPoolBackedDataSource.java:462)|Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 3000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge13j9a15yb1w01l7h1vf|4a8e35e1, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge13j9a15yb1w01l7h1vf|4a8e35e1, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/scpc?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+[2015-07-16 22:10:13,251]-INFO  (SettingsFactory.java:89)|RDBMS: MySQL, version: 5.1.40-community
+[2015-07-16 22:10:13,252]-INFO  (SettingsFactory.java:90)|JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.1.5 ( Revision: ${svn.Revision} )
+[2015-07-16 22:10:13,266]-INFO  (Dialect.java:152)|Using dialect: org.hibernate.dialect.MySQLDialect
+[2015-07-16 22:10:13,301]-INFO  (TransactionFactoryFactory.java:34)|Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[2015-07-16 22:10:13,302]-INFO  (TransactionManagerLookupFactory.java:33)|No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[2015-07-16 22:10:13,303]-INFO  (SettingsFactory.java:143)|Automatic flush during beforeCompletion(): disabled
+[2015-07-16 22:10:13,303]-INFO  (SettingsFactory.java:147)|Automatic session close at end of transaction: disabled
+[2015-07-16 22:10:13,303]-INFO  (SettingsFactory.java:154)|JDBC batch size: 15
+[2015-07-16 22:10:13,304]-INFO  (SettingsFactory.java:157)|JDBC batch updates for versioned data: disabled
+[2015-07-16 22:10:13,305]-INFO  (SettingsFactory.java:162)|Scrollable result sets: enabled
+[2015-07-16 22:10:13,305]-INFO  (SettingsFactory.java:170)|JDBC3 getGeneratedKeys(): enabled
+[2015-07-16 22:10:13,305]-INFO  (SettingsFactory.java:178)|Connection release mode: auto
+[2015-07-16 22:10:13,306]-INFO  (SettingsFactory.java:202)|Maximum outer join fetch depth: 2
+[2015-07-16 22:10:13,307]-INFO  (SettingsFactory.java:205)|Default batch fetch size: 1
+[2015-07-16 22:10:13,307]-INFO  (SettingsFactory.java:209)|Generate SQL with comments: disabled
+[2015-07-16 22:10:13,307]-INFO  (SettingsFactory.java:213)|Order SQL updates by primary key: disabled
+[2015-07-16 22:10:13,307]-INFO  (SettingsFactory.java:217)|Order SQL inserts for batching: disabled
+[2015-07-16 22:10:13,308]-INFO  (SettingsFactory.java:386)|Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[2015-07-16 22:10:13,310]-INFO  (ASTQueryTranslatorFactory.java:24)|Using ASTQueryTranslatorFactory
+[2015-07-16 22:10:13,310]-INFO  (SettingsFactory.java:225)|Query language substitutions: {}
+[2015-07-16 22:10:13,311]-INFO  (SettingsFactory.java:230)|JPA-QL strict compliance: disabled
+[2015-07-16 22:10:13,311]-INFO  (SettingsFactory.java:235)|Second-level cache: enabled
+[2015-07-16 22:10:13,312]-INFO  (SettingsFactory.java:239)|Query cache: disabled
+[2015-07-16 22:10:13,312]-INFO  (SettingsFactory.java:373)|Cache provider: org.hibernate.cache.NoCacheProvider
+[2015-07-16 22:10:13,312]-INFO  (SettingsFactory.java:254)|Optimize cache for minimal puts: disabled
+[2015-07-16 22:10:13,312]-INFO  (SettingsFactory.java:263)|Structured second-level cache entries: disabled
+[2015-07-16 22:10:13,318]-INFO  (SettingsFactory.java:290)|Statistics: disabled
+[2015-07-16 22:10:13,318]-INFO  (SettingsFactory.java:294)|Deleted entity synthetic identifier rollback: disabled
+[2015-07-16 22:10:13,319]-INFO  (SettingsFactory.java:309)|Default entity-mode: pojo
+[2015-07-16 22:10:13,320]-INFO  (SettingsFactory.java:313)|Named query checking : enabled
+[2015-07-16 22:10:13,350]-INFO  (SessionFactoryImpl.java:161)|building session factory
+[2015-07-16 22:10:13,354]-INFO  (SessionFactoryObjectFactory.java:82)|Not binding factory to JNDI, no JNDI name configured
+[2015-07-16 22:10:13,390]-INFO  (HibernateTransactionManager.java:390)|Using DataSource [com.project.base.DynamicDataSource@4902919] of Hibernate SessionFactory for HibernateTransactionManager
+[2015-07-16 22:10:13,519]-INFO  (ContextLoader.java:209)|Root WebApplicationContext: initialization completed in 1329 ms
+[2015-07-16 22:10:13,519]-INFO  (DefaultContextLoaderListener.java:27)|load WebApplicationContext into ContextHolder
+[2015-07-16 22:10:13,639]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-default.xml]
+[2015-07-16 22:10:13,746]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-plugin.xml]
+[2015-07-16 22:10:13,802]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts.xml]
+[2015-07-16 22:10:13,897]-INFO  (CommonsLogger.java:42)|Initializing Struts-Spring integration...
+[2015-07-16 22:10:13,897]-INFO  (CommonsLogger.java:42)|Setting autowire strategy to name
+[2015-07-16 22:10:13,898]-INFO  (CommonsLogger.java:42)|... initialized Struts-Spring integration successfully
+[2015-07-16 22:10:14,597]-WARN  (JavaUtils.java:1308)|Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+[2015-07-16 22:11:07,932]-INFO  (GhsglAction.java:31)|供货商列表sqlselect id,spmc,gsmc,gsdz,lxr,lxfs from cggl_ghs_info
+[2015-07-16 22:11:07,958]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+[2015-07-16 22:11:08,027]-INFO  (SQLErrorCodesFactory.java:128)|SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+[2015-07-16 22:11:15,239]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-16 22:11:16,827]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-16 22:11:19,658]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-16 22:11:19,659]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-16 22:11:20,917]-INFO  (PcglAction.java:70)|查询排产信息select 'A任务排产' title,cast(jhkssj as char)start,cast(jhwcsj as char) end,'red' color from scglxt_mk_scpc;
+[2015-07-16 22:11:22,329]-INFO  (PcglAction.java:70)|查询排产信息select 'A任务排产' title,cast(jhkssj as char)start,cast(jhwcsj as char) end,'red' color from scglxt_mk_scpc;
