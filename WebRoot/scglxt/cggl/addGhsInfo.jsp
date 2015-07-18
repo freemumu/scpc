@@ -92,42 +92,42 @@
                       </div>
                     </div>
                     <div class="box-content box-no-padding">
-                  <form class="form form-horizontal " style="margin-bottom: 0;" method="post" id="formAction" action="${pageContext.request.contextPath}/cggl_addGhsInfo.action" accept-charset="UTF-8"><input name="authenticity_token" type="hidden">
+                  <form class="form form-horizontal form-striped" style="margin-bottom: 0;" method="post" id="formAction" action="${pageContext.request.contextPath}/cggl_addGhsInfo.action" accept-charset="UTF-8"><input name="authenticity_token" type="hidden">
                   	
                       <div class="form-group">
                         <label class="col-md-3 control-label" for="inputPassword1">公司名称</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                          <input class="form-control" name="gsmc" id="gsmc" placeholder="请输入公司名称" type="text">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-md-3 control-label" for="inputTextArea2">公司地址</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                             <input class="form-control" name="gsdz" id="gsdz" placeholder="请输入公司地址" type="text">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-md-3 control-label" for="disabledInput2">联系人</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                           <input class='form-control' name="lxr" data-rule-number='true' data-rule-required='true' id='lxr' name='validation_numbers' placeholder='请输入联系人姓名、主要负责事项' type='text'>
                         </div>
                       </div>
                       <div class="form-group">
                       <label class="col-md-3 control-label" for="disabledInput2">联系方式</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                           <input class='form-control' data-rule-number='true' data-rule-required='true' name="lxfs" id='lxfs' name='validation_numbers' placeholder='请输入联系人联系方式' type='text'>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-md-3 control-label" for="inputText2">供应商品描述</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                           <input class="form-control" name="spms" id="spmc" placeholder="请对供应商品描述" type="text">
                         </div>
                       </div>
                       <div class="form-actions" style="margin-bottom: 0;">
                         <div class="row">
-                          <div class="col-md-4 col-md-offset-3">
-                            <div class="btn btn-primary " onclick = "saveGhsInfo()">
+                          <div class="col-md-9 col-md-offset-3">
+                            <div class="btn btn-primary btn-lg" onclick = "saveGhsInfo()">
                               <i class="icon-save"></i>
                               		保存
                             </div>

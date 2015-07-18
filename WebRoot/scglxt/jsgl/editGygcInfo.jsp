@@ -46,7 +46,7 @@
 <!-- 			                            <input class="form-control" id="form_khxx_gxsx" info="fromInfo" name="form_khxx_gxsx" type="text" placeholder='工序顺序' 	/> -->
 <!-- 		                          </div> -->
 <!-- 		                        </div> -->
-					             <div class='modal-footer col-md-7'>
+					             <div class='modal-footer'>
 					                 <button class='btn btn-default' data-dismiss='modal' type='button'>
 					                   	关闭
 					                 </button>

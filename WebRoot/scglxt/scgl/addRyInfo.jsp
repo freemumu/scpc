@@ -135,42 +135,42 @@
                       </div>
                     </div>
                     <div class="box-content box-no-padding">
-                              <form class="form form-horizontal " style="margin-bottom: 0;" method="post" id="formAction" action="scpc/scgl_addRyInfo.action" accept-charset="UTF-8">
+                              <form class="form form-horizontal form-striped" style="margin-bottom: 0;" method="post" id="formAction" action="scpc/scgl_addRyInfo.action" accept-charset="UTF-8">
                               <input name="authenticity_token" type="hidden"><div class="form-group">
                         <label class="col-md-3 control-label" for="inputText2">姓名</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                           <input class="form-control" name="rymc" id="rymc" placeholder="请输入姓名" type="text">
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-md-3 control-label" for="inputPassword1">班组</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                          <select class='form-control' name="ssbz" id='ssbz'>
                           </select>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-md-3 control-label" for="inputTextArea2">技术级别</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                            <select class='form-control' name="jsjb" id='jsjb'>
                           </select>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-md-3 control-label" for="dqgz">工资</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                           <input id="dqgz" name="dqgz" class='form-control' data-rule-number='true' data-rule-required='true' id='validation_numbers' name='validation_numbers' placeholder='请输入工资' type='text'>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-md-3 control-label" for="rynl">年龄</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                           <input id="rynl" name="rynl" class='form-control' data-rule-number='true' data-rule-required='true' id='validation_numbers' name='validation_numbers' placeholder='请输入年龄' type='text'>
                         </div>
                       </div>
                       <div class="form-group">
                       <label class="col-md-3 control-label" for="rzsj">入职时间</label>
-                        <div class="col-md-4">
+                        <div class="col-md-9">
                          <div class="datepicker input-group">
                           <input class="form-control" name="rzsj" data-format="yyyy-MM-dd" placeholder="请选择入职时间" type="text" id="rzsj">
                           <span class="input-group-addon">
@@ -181,8 +181,8 @@
                       </div>
                       <div class="form-actions" style="margin-bottom: 0;">
                         <div class="row">
-                          <div class="col-md-4 col-md-offset-3">
-                            <div class="btn btn-primary " onclick = "saveRyInfo()">
+                          <div class="col-md-9 col-md-offset-3">
+                            <div class="btn btn-primary btn-lg" onclick = "saveRyInfo()">
                               <i class="icon-save"></i>
                               	保存
                             </div>
