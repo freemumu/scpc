@@ -30,12 +30,13 @@
 //				HtEditManage.saveFormInfo("ADD");
 				saveFormInfo(_this._flag,urlParam.id);
 			});
-			$('#form_khxx_jhdate').datepicker();			
-			$('#form_khxx_planstarttime').datepicker();			
-			$('#form_khxx_planendtime').datepicker();			
-			$('#form_khxx_realstarttime').datepicker();			
-			$('#form_khxx_realendtime').datepicker();			
-			$('#form_khxx_ckdate').datepicker();			
+			$('#form_khxx_jhdate').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+			//$('#form_khxx_planstarttime').datetimepicker();
+			$('#form_khxx_planstarttime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+			$('#form_khxx_planendtime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+			$('#form_khxx_realstarttime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+			$('#form_khxx_realendtime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+			$('#form_khxx_ckdate').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 		},
 		initFormInfo = function(id){
 			var url = "ddInfo_getDetailInfo.action",successFun = function(data){
