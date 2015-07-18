@@ -70,8 +70,7 @@
 						this.loadKhlxList();
 						//判断当前表单是新增还是更新模式
 						var urlParam = new Object();
-						urlParam = $.GetRequest();
-						if(urlParam && urlParam.id){
+						urlParam = $.GetRequest();if(urlParam && urlParam.id){
 							_this._flag = "UPDATE" ; 
 							//如果是update模式 则加载初始化信息
 							_this.loadKhInfo(urlParam.id);

@@ -152,7 +152,8 @@
 					
 				</div>
 				<div class="box-content box-no-padding">
-					<form class="form form-horizontal form-striped"
+					<%--<form class="form form-horizontal form-striped"--%>
+					<form class="form form-horizontal "
 						style="margin-bottom: 0;" method="post" id="formAction" action="scpc/scglsb_addSbInfo.action"
 						accept-charset="UTF-8">
 						<input name="authenticity_token" type="hidden">
@@ -160,7 +161,7 @@
 							<label class="col-md-3 control-label" for="inputText2">
 								设备名称
 							</label>
-							<div class="col-md-9">
+							<div class="col-md-4">
 								<input class="form-control" name="sbmc" id="sbmc" placeholder="请输入设备名称"
 									type="text">
 							</div>
@@ -169,7 +170,7 @@
 							<label class="col-md-3 control-label" for="inputPassword1">
 								设备类型
 							</label>
-							<div class="col-md-9">
+							<div class="col-md-4">
 								<select class='form-control' name="sblx" id='sblx'>
 									
 								</select>
@@ -179,7 +180,7 @@
 							<label class="col-md-3 control-label" for="inputTextArea2">
 								设备状态
 							</label>
-							<div class="col-md-9">
+							<div class="col-md-4">
 								<select class='form-control' name="sbzt" id='sbzt'>
 									
 								</select>
@@ -189,15 +190,13 @@
 							<label class="col-md-3 control-label" for="disabledInput2">
 								采购时间
 							</label>
-<<<<<<< HEAD
-							<div class="col-md-9">
-								<div class="datepicker input-group">
-									<input name="cgsj" id="cgsj" class="form-control" data-format="yyyy-MM-dd"
-										placeholder="请选择采购时间" type="text">
-									<span class="input-group-addon"> <span
-										data-date-icon="icon-calendar" data-time-icon="icon-time"
-										class="icon-calendar"></span> </span>
-=======
+							<%--<div class="col-md-4">--%>
+								<%--<div class="datepicker input-group">--%>
+									<%--<input name="cgsj" id="cgsj" class="form-control" data-format="yyyy-MM-dd"--%>
+										<%--placeholder="请选择采购时间" type="text">--%>
+									<%--<span class="input-group-addon"> <span--%>
+										<%--data-date-icon="icon-calendar" data-time-icon="icon-time"--%>
+										<%--class="icon-calendar"></span> </span>--%>
 							<div class="col-md-4">
 								<%--<div class="datepicker input-group">--%>
 									<%--<input name="cgsj" id="cgsj" class="form-control" data-format="yyyy-MM-dd"--%>
@@ -211,7 +210,6 @@
 										   placeholder="请选择采购时间" type="text">
 									<%--<input size="16" type="text" value="" readonly>--%>
 									<%--<span class="add-on"><i class="icon-th"></i></span>--%>
->>>>>>> 1439fa425b2312bc7569ef2491d642b2ee463e04
 								</div>
 							</div>
 						</div>
@@ -219,16 +217,7 @@
 							<label class="col-md-3 control-label" for="disabledInput2">
 								维保截止
 							</label>
-<<<<<<< HEAD
-							<div class="col-md-9">
-								<div class="datepicker input-group" id="">
-									<input class="form-control" name="wbjz" id="wbjz" data-format="yyyy-MM-dd"
-										placeholder="请选择维保截止时间" type="text">
-									<span class="input-group-addon"> <span
-										data-date-icon="icon-calendar" data-time-icon="icon-time"
-										class="icon-calendar"></span> </span>
-								</div>
-=======
+
 							<div class="col-md-4">
 								<input class="form-control" name="wbjz" id="wbjz"
 									   placeholder="请选择维保截止时间" readonly type="text">
@@ -239,14 +228,13 @@
 										<%--&lt;%&ndash;data-date-icon="icon-calendar" data-time-icon="icon-time"&ndash;%&gt;--%>
 										<%--&lt;%&ndash;class="icon-calendar"></span> </span>&ndash;%&gt;--%>
 								<%--</div>--%>
->>>>>>> 1439fa425b2312bc7569ef2491d642b2ee463e04
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-md-3 control-label" for="inputTextArea2">
 								存放地点
 							</label>
-							<div class="col-md-9">
+							<div class="col-md-4">
 								<input class="form-control" name="cfdd" id="cfdd" placeholder="请输入存放地"
 									type="text">
 							</div>
@@ -255,7 +243,7 @@
 							<label class="col-md-3 control-label" for="inputTextArea2">
 								维修记录
 							</label>
-							<div class="col-md-9">
+							<div class="col-md-4">
 								<textarea class="form-control" name="wxjl" id="wxjl" placeholder="请输入维修记录"
 									rows="3"></textarea>
 							</div>
@@ -264,15 +252,15 @@
 							<label class="col-md-3 control-label" for="inputTextArea2">
 								备注
 							</label>
-							<div class="col-md-9">
+							<div class="col-md-4">
 								<textarea class="form-control" name="bz" id="bz" placeholder="请输入备注信息"
 									rows="3"></textarea>
 							</div>
 						</div>
 						<div class="form-actions" style="margin-bottom: 0;">
 							<div class="row">
-								<div class="col-md-9 col-md-offset-3">
-									<div class="btn btn-primary btn-lg" onclick = "saveSbInfo()">
+								<div class="col-md-4 col-md-offset-3">
+									<div class="btn btn-primary " onclick = "saveSbInfo()">
 										<i class="icon-save" ></i> 保存
 									</div>
 								</div>

@@ -1,21 +1,22 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="/include/topFile.jsp"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
+<%@ include file="/include/topFile.jsp" %>
 <%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
 <body class='contrast-sea-blue'>
-    <header id="header" class="header">
-      <nav class='navbar navbar-default'>
+<header id="header" class="header">
+    <nav class='navbar navbar-default'>
         <a class='navbar-brand' href='main.html'>
-        	北京朝阳兴隆模具生产管理系统
+            北京朝阳兴隆模具生产管理系统
         </a>
         <a class='toggle-nav btn pull-left' href='#'>
-          <i class='icon-reorder'></i>
+            <i class='icon-reorder'></i>
         </a>
-      </nav>
-    </header>
-    <div id='wrapper' style＝"max-height:100%;">
+    </nav>
+</header>
+<div id='wrapper' style＝
+"max-height:100%;">
 <!--     <div class="header"> -->
 <!--       <nav class='navbar navbar-default'> -->
 <!--         <a class='navbar-brand' href='main.html'> -->
@@ -26,202 +27,247 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!--         </a> -->
 <!--       </nav> -->
 <!--     </div> -->
-      <div id='main-nav-bg'></div>
-      <nav id='main-nav'>
-        <div class='navigation'>
-          <div class='search'>
+<div id='main-nav-bg'></div>
+<nav id='main-nav'>
+    <div class='navigation'>
+        <div class='search'>
             <form action='search_results.html' method='get'>
-              <div class='search-wrapper'>
-                <input value="" class="search-query form-control" placeholder="Search..." autocomplete="off" name="q" type="text" />
-                <button class='btn btn-link icon-search' name='button' type='submit'></button>
-              </div>
+                <div class='search-wrapper'>
+                    <input value="" class="search-query form-control" placeholder="Search..." autocomplete="off"
+                           name="q" type="text"/>
+                    <button class='btn btn-link icon-search' name='button' type='submit'></button>
+                </div>
             </form>
-          </div>
-          <ul class='nav nav-stacked'>
-            <li class=''>
-                      <a class="dropdown-collapse in" href="#"><i class='icon-edit'></i>
-              <span id='xsgl'>销售管理</span>
-              <i class='icon-angle-down angle-down'></i>
-              </a>
-              <ul class='nav nav-stacked in'>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id=khxxgl>客户信息管理</span>
-                  </a>
-                </li>
-                <li class='active'>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="htgl">合同管理</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class='dropdown-collapse ' href='#'>
-                <i class='icon-tint'></i>
-                <span>技术管理</span>
-                <i class='icon-angle-down angle-down'></i>
-              </a>
-              <ul class='nav nav-stacked'>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="ddgl">订单管理</span>
-                  </a>
-                </li>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="bomgl">BOM表管理</span>
-                  </a>
-                </li>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="gxgl">工序管理</span>
-                  </a>
-                </li>
-<!--                 <li class=''> -->
-<!--                   <a href='#'> -->
-<!--                     <i class='icon-caret-right'></i> -->
-<!--                     <span id="gygl">排产管理</span> -->
-<!--                   </a> -->
-<!--                 </li> -->
-              </ul>
-            </li>
-            <li>
-              <a class='dropdown-collapse ' href='#'>
-                <i class='icon-tint'></i>
-                <span>生产管理</span>
-                <i class='icon-angle-down angle-down'></i>
-              </a>
-              <ul class='nav nav-stacked'>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="sbgl">设备管理</span>
-                  </a>
-                </li>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="bzgl">班组管理</span>
-                  </a>
-                </li>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="rygl">人员管理</span>
-                  </a>
-                </li>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="pcrwgl">排产任务管理</span>
-                  </a>
-                </li>
-<!--                 <li class=''> -->
-<!--                   <a href='#'> -->
-<!--                     <i class='icon-caret-right'></i> -->
-<!--                     <span id="scjxgl">生产绩效管理</span> -->
-<!--                   </a> -->
-<!--                 </li> -->
-              </ul>
-            </li>
-            <li>
-              <a class='dropdown-collapse ' href='#'>
-                <i class='icon-tint'></i>
-                <span>采购管理</span>
-                <i class='icon-angle-down angle-down'></i>
-              </a>
-              <ul class='nav nav-stacked'>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="ddcggl">订单采购管理</span>
-                  </a>
-                </li>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="ghsgl">供货商管理</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class=''>
-              <a href='#'>
-                <i class='icon-star'></i>
-                <span id="wxgl">外协管理</span>
-              </a>
-            </li>
-            <li>
-              <a class='dropdown-collapse ' href='#'>
-                <i class='icon-tint'></i>
-                <span>质量管理</span>
-                <i class='icon-angle-down angle-down'></i>
-              </a>
-              <ul class='nav nav-stacked'>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="cpzlgl">产品质量管理</span>
-                  </a>
-                </li>
-                 
-              </ul>
-            </li>
-            <li>
-              <a class='dropdown-collapse ' href='#'>
-                <i class='icon-tint'></i>
-                <span>库存管理</span>
-                <i class='icon-angle-down angle-down'></i>
-              </a>
-              <ul class='nav nav-stacked'>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="jbljgl">基本零件管理</span>
-                  </a>
-                </li>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="scclgl">生产材料管理</span>
-                  </a>
-                </li>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="cpgl">产品管理</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a class='dropdown-collapse ' href='#'>
-                <i class='icon-tint'></i>
-                <span>基本信息综合管理</span>
-                <i class='icon-angle-down angle-down'></i>
-              </a>
-              <ul class='nav nav-stacked'>
-                <li class=''>
-                  <a href='#'>
-                    <i class='icon-caret-right'></i>
-                    <span id="ywlxgl">业务类型管理</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
         </div>
-      </nav>
-      <section id='content' >
-          <iframe id="mainIframe" style="border:0px; margin:0px;width:100%;height: 100%;" src=""></iframe>
-      </section>
+        <ul class='nav nav-stacked'>
+            <li class=''>
+                <a class="dropdown-collapse in" href="#"><i class='icon-edit'></i>
+                    <span id='xsgl'>销售管理</span>
+                    <i class='icon-angle-down angle-down'></i>
+                </a>
+                <ul class='nav nav-stacked in'>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id=khxxgl>客户信息管理</span>
+                        </a>
+                    </li>
+                    <li class='active'>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="htgl">合同管理</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class='dropdown-collapse ' href='#'>
+                    <i class='icon-tint'></i>
+                    <span>技术管理</span>
+                    <i class='icon-angle-down angle-down'></i>
+                </a>
+                <ul class='nav nav-stacked'>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="ddgl">订单管理</span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="bomgl">BOM表管理</span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="gxgl">工序管理</span>
+                        </a>
+                    </li>
+                    <!--                 <li class=''> -->
+                    <!--                   <a href='#'> -->
+                    <!--                     <i class='icon-caret-right'></i> -->
+                    <!--                     <span id="gygl">排产管理</span> -->
+                    <!--                   </a> -->
+                    <!--                 </li> -->
+                </ul>
+            </li>
+            <li>
+                <a class='dropdown-collapse ' href='#'>
+                    <i class='icon-tint'></i>
+                    <span>生产管理</span>
+                    <i class='icon-angle-down angle-down'></i>
+                </a>
+                <ul class='nav nav-stacked'>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="sbgl">设备管理</span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="bzgl">班组管理</span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="rygl">人员管理</span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <%--<a href='#'>--%>
+                        <%--<i class='icon-caret-right'></i>--%>
+                        <%--<span id="pcrwgl">排产任务管理</span>--%>
+                        <%--</a>--%>
+
+                        <a class='dropdown-collapse' href='#'>
+                            <i class='icon-folder-open-alt'></i>
+                            <span id="pcrwgl">排产任务管理</span>
+                            <i class='icon-angle-down angle-down'></i>
+                        </a>
+                        <ul class='nav nav-stacked'>
+                            <li>
+                                <a class='dropdown-collapse' href='#'>
+                                    <i class='icon-caret-right'></i>
+                                    <span id="glryteam">管理员组</span>
+                                </a>
+                                <ul class='nav nav-stacked'>
+                                    <li>
+                                        <a class='dropdown-collapse' href='#'>
+                                            <span id="scgl-glry-ry">人员</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class='dropdown-collapse' href='#'>
+                                            <span id="scgl-glry-sb">设备</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class='dropdown-collapse' href='#'>
+                                    <i class='icon-caret-right'></i>
+                                    <span id="scryteam">生产人员组</span>
+                                </a>
+                                <ul class='nav nav-stacked'>
+                                    <li>
+                                        <a class='dropdown-collapse' href='#'>
+                                            <span id="scgl-scry-ry">人员</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class='dropdown-collapse' href='#'>
+                                            <span id="scgl-scry-sb">设备</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--                 <li class=''> -->
+                    <!--                   <a href='#'> -->
+                    <!--                     <i class='icon-caret-right'></i> -->
+                    <!--                     <span id="scjxgl">生产绩效管理</span> -->
+                    <!--                   </a> -->
+                    <!--                 </li> -->
+                </ul>
+            </li>
+            <li>
+                <a class='dropdown-collapse ' href='#'>
+                    <i class='icon-tint'></i>
+                    <span>采购管理</span>
+                    <i class='icon-angle-down angle-down'></i>
+                </a>
+                <ul class='nav nav-stacked'>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="ddcggl">订单采购管理</span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="ghsgl">供货商管理</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class=''>
+                <a href='#'>
+                    <i class='icon-star'></i>
+                    <span id="wxgl">外协管理</span>
+                </a>
+            </li>
+            <li>
+                <a class='dropdown-collapse ' href='#'>
+                    <i class='icon-tint'></i>
+                    <span>质量管理</span>
+                    <i class='icon-angle-down angle-down'></i>
+                </a>
+                <ul class='nav nav-stacked'>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="cpzlgl">产品质量管理</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <a class='dropdown-collapse ' href='#'>
+                    <i class='icon-tint'></i>
+                    <span>库存管理</span>
+                    <i class='icon-angle-down angle-down'></i>
+                </a>
+                <ul class='nav nav-stacked'>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="jbljgl">基本零件管理</span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="scclgl">生产材料管理</span>
+                        </a>
+                    </li>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="cpgl">产品管理</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a class='dropdown-collapse ' href='#'>
+                    <i class='icon-tint'></i>
+                    <span>基本信息综合管理</span>
+                    <i class='icon-angle-down angle-down'></i>
+                </a>
+                <ul class='nav nav-stacked'>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="ywlxgl">业务类型管理</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
-    <!-- / END - page related files and scripts [optional] -->
-  </body>
+</nav>
+<section id='content'>
+    <iframe id="mainIframe" style="border:0px; margin:0px;width:100%;height: 100%;" src=""></iframe>
+</section>
+</div>
+<!-- / END - page related files and scripts [optional] -->
+</body>
 <script src="${pageContext.request.contextPath}/js/scglxt/index.js" type="text/javascript"></script>
