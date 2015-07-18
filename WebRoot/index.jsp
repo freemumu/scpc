@@ -135,12 +135,36 @@
                                     <i class='icon-caret-right'></i>
                                     <span id="glryteam">管理员组</span>
                                 </a>
+                                <ul class='nav nav-stacked'>
+                                    <li>
+                                        <a class='dropdown-collapse' href='#'>
+                                            <span id="scgl-glry-ry">人员</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class='dropdown-collapse' href='#'>
+                                            <span id="scgl-glry-sb">设备</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                             <li>
                                 <a class='dropdown-collapse' href='#'>
                                     <i class='icon-caret-right'></i>
                                     <span id="scryteam">生产人员组</span>
                                 </a>
+                                <ul class='nav nav-stacked'>
+                                    <li>
+                                        <a class='dropdown-collapse' href='#'>
+                                            <span id="scgl-scry-ry">人员</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class='dropdown-collapse' href='#'>
+                                            <span id="scgl-scry-sb">设备</span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
