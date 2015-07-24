@@ -27,7 +27,7 @@ public class GhsglAction {
 	 * 获得供货商列表
 	 */
 	public void getGhsTableData(){
-		String sql = "select id,spmc,gsmc,gsdz,lxr,lxfs from cggl_ghs_info";
+		String sql = "select id,spmc,gsmc,gsdz,lxr,lxfs from scglxt_t_ghs";
 		log.info("供货商列表sql"+sql);
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
@@ -49,7 +49,7 @@ public class GhsglAction {
 		String lxr = Request.getParameter("lxr");
 		String lxfs = Request.getParameter("lxfs");
 		
-		String sql = "insert into cggl_ghs_info (id,spmc,gsmc,gsdz,lxr,lxfs) values ('"+ghsid+"'" +
+		String sql = "insert into scglxt_t_ghs (id,spmc,gsmc,gsdz,lxr,lxfs) values ('"+ghsid+"'" +
 				",'"+spmc+"','"+gsmc+"','"+gsdz+"','"+lxr+"','"+lxfs+"')";
 		log.info("供货商信息添加sql"+sql);
 		int i = this.selectDataService.update(sql);
@@ -77,7 +77,7 @@ public class GhsglAction {
 		String lxfs = Request.getParameter("lxfs");
 		
 		
-		String sql = "update cggl_ghs_info set spmc='"+spmc+"',gsmc='"+gsmc+"',gsdz = '"+gsdz+"',lxr='"+lxr+"', " +
+		String sql = "update scglxt_t_ghs set spmc='"+spmc+"',gsmc='"+gsmc+"',gsdz = '"+gsdz+"',lxr='"+lxr+"', " +
 				"lxfs = '"+lxfs+"' where id = '"+id+"'";
 		
 		log.info("供货商更新sql"+sql);
@@ -99,7 +99,7 @@ public class GhsglAction {
 	public String deleteGhsInfo(){
 		
 		String id = Request.getParameter("id");
-		String sql = "delete from  cggl_ghs_info where id = '"+id+"'";
+		String sql = "delete from  scglxt_t_ghs where id = '"+id+"'";
 		
 		log.info("删除供货商信息sql"+sql);
 		int i = this.selectDataService.update(sql);
@@ -120,7 +120,7 @@ public class GhsglAction {
 		
 		String id = Request.getParameter("id");
 		String sbid = "";
-		String sql = "select id,spmc,gsmc,gsdz,lxr,lxfs from cggl_ghs_info where id = '"+id+"'";
+		String sql = "select id,spmc,gsmc,gsdz,lxr,lxfs from scglxt_t_ghs where id = '"+id+"'";
 		
 		log.info("获得供货商信息BYIDsql"+sql);
 		List list = this.selectDataService.queryForList(sql);

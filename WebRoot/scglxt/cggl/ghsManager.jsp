@@ -73,7 +73,6 @@
 	tableInit()
 	} );
 </script>
-
 	<body>
 			<div class='container'>
 				<div class='row' id='content-wrapper'>
@@ -96,7 +95,7 @@
 									<div class='box-content box-no-padding'>
 <!-- 										<div class='responsive-table'> -->
 <!-- 											<div class='scrollable-area'> -->
-												<table id="ryxx" class='display' style='margin-bottom: 0;'>
+												<table id="ryxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th>

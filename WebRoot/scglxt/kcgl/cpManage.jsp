@@ -33,7 +33,7 @@
 									<div class='box-content box-no-padding'>
 										<div class='responsive-table'>
 											<div class='scrollable-area'>
-												<table id="bomInfo" class='display tableGrid cell-border' style='margin-bottom: 0;'>
+												<table id="bomInfo" class='table table-striped table-bordered' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th>
