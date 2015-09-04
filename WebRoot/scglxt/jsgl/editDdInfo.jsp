@@ -38,11 +38,11 @@
                             </div>
                         </div>
                         <div class='form-group'>
-                            <label class='control-label col-sm-3 col-sm-3' for='form_khxx_xmname'>项目名称</label>
+                            <label class='control-label col-sm-3 col-sm-3' for='form_khxx_xmname'>项目编号</label>
 
                             <div class='col-sm-4 controls'>
                                 <input class='form-control' id='form_khxx_xmname' info="fromInfo"
-                                       name='form_khxx_xmname' placeholder='项目名称' type='text'>
+                                       name='form_khxx_xmname' placeholder='项目编号' type='text'>
                             </div>
                         </div>
                         <div class='form-group'>

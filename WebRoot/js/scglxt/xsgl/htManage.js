@@ -13,7 +13,9 @@
 		 */
 		
 		init = function(){
-			tableInit();
+			var urlParam = new Object();
+			urlParam = $.GetRequest();
+			tableInit(urlParam);
 			registerEvent();
 		},
 		/**
@@ -27,9 +29,11 @@
 		/**
 		 * 初始化表格函数
 		 */
-		tableInit = function(){
-			
-			
+		tableInit = function(urlParam){
+			var khid ="";
+			if(urlParam &&urlParam.khid){
+				khid = urlParam.khid ;
+			}
 			var table = $('#htInfo').DataTable( {
 			"bLengthChange": false, 
 		  	"oLanguage": {
@@ -48,7 +52,7 @@
 		                }
 		            },
 		    "aLengthMenu":[20,30],
-			"ajax":"htInfo_getTableData.action",
+			"ajax":"htInfo_getTableData.action?khid="+khid,
 			 "sScrollY" : 450, //DataTables的高  
             "sScrollX" : 600, //DataTables的宽 
 //            "bAutoWidth" : false, //是否自适应宽度 
@@ -86,9 +90,9 @@
 		        { "visible": true,  "targets": [ 2 ] }
 		    ],
 		    "columns": [
-		    	{"data":null,},
-		    	{"data":'id',},
-		    	{"data":'id',},
+		    	{"data":null},
+		    	{"data":'id'},
+		    	{"data":'id'},
 		    	{ "data": "id" },
 		        { "data": "mc" },
 		        { "data": "htbh" },
@@ -101,7 +105,7 @@
 		        { "data": "jkje" },
 		        { "data": "jscb" },
 		        { "data": "hkzh" },
-		        { "data": "hkkhh" },
+		        { "data": "hkkhh" }
 		    ]
 		   
 		} );

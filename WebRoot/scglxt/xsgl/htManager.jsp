@@ -104,14 +104,6 @@
 	         </div>
 	         <div class="modal-body" id="modal-body">
 	         </div>
-	<!--          <div class="modal-footer"> -->
-	<!--             <button type="button" class="btn btn-default"  -->
-	<!--                data-dismiss="modal">关闭 -->
-	<!--             </button> -->
-	<!--             <button type="button" class="btn btn-primary"> -->
-	<!--                提交更改 -->
-	<!--             </button> -->
-	<!--          </div> -->
 	      </div><!-- /.modal-content -->
 	</div><!-- /.modal -->
 </div>		

@@ -32,12 +32,17 @@ public class DdInfoManagerAction {
 	 * @response  : json 
 	 */
 	public void getTableData(){
+		String ssht =  "";
+		ssht = Request.getParameter("ssht") ;
 		String limitStart = "";
 		String limitEnd = "";
 //		String sql ="select id ,mc,htbh , ywlx ,htje,date_format(qssj,'%Y-%m-%d') qssj,dqjd,fkzt,jkbfb,jkje,jscb,hkzh,hkkhh,remark from xsgl_hetong_info ";
 		String sql = "select id ,ssht, xmname , ddlevel,date_format(jhdate,'%Y-%m-%d') jhdate ,date_format(planstarttime,'%Y-%m-%d') planstarttime," +
 				" date_format(planendtime,'%Y-%m-%d') planendtime,date_format(realstarttime,'%Y-%m-%d') realstarttime,date_format(realendtime,'%Y-%m-%d') realendtime, "+
-				" zgs,dqjd,tz,remark,xmlxr,xmfzr,ckzt,date_format(ckdate,'%Y-%m-%d') ckdate from scglxt_t_dd  ";
+				" zgs,dqjd,tz,remark,xmlxr,xmfzr,ckzt,date_format(ckdate,'%Y-%m-%d') ckdate from scglxt_t_dd  where 1=1 ";
+		if(ssht !=null &&!ssht.equals("")){
+			sql +=" and ssht = '"+ssht+"'";
+		}
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":"+json+"}";

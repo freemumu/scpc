@@ -83,8 +83,13 @@ function tableInit(){
         },
         {
             "render": function ( data, type, row ) {
+                //return '<div class="text-center">'+
+                //' <a class="btn btn-info btn-xs" title="删除" href="#">查看合同</a></div>';
                 return '<div class="text-center">'+
-                ' <a class="btn btn-info btn-xs" title="删除" href="#">查看合同</a></div>';
+                    ' <a class="" href="#" title＝"查看" onclick = "showModel(\''+data+'\')">查看</a> '+
+                    ' </div>';
+
+
             },
             "targets": 2
         },
@@ -101,7 +106,7 @@ function tableInit(){
         { "data": "lx" },
         { "data": "dw" },
         { "data": "dz" },
-        { "data": "gx" },
+        //{ "data": "gx" },
         { "data": "iscj" },
         { "data": "remark" }
     	 
@@ -128,5 +133,20 @@ function skipToFormPage(url,curPageNum,id,editModel){
 	var $iframe = $outFrame.find("#mainIframe");
 	var src = $iframe.attr("src");
 	$iframe.attr('src',url)
+}
+
+
+/**
+ * 显示modal框
+ */
+function showModel(data){
+    $('#myModal').modal({
+        backdrop:false,
+        show:true
+    });
+    //在modalbody 中家在iframe 内容为 工序编排的内容
+    $content = "<iframe src='../xsgl/htManager.jsp?khid="+data+"' class='modal_iframe'></iframe>" ;
+    $container = $('#modal-body');
+    $container.empty().append($content);
 }
  

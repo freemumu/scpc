@@ -33,13 +33,13 @@
 												<table id="ryxx" class='table table-striped table-bordered tableGrid' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
-															<th  class="serial" style="width:60px;">
+															<th  class="serial" style="width:40px;">
 																序号
 															</th>
-															<th class="operate" style="width:100px;">
+															<th class="operate" style="width:80px;">
 																操作
 															</th>
-															<th style="width:100px;">
+															<th style="width:80px;">
 																合同信息
 															</th>
 															<th style="width:100px;">
@@ -51,13 +51,10 @@
 															<th style="width:100px;">
 																单位
 															</th>
-															<th style="width:100px;">
+															<th style="width:160px;">
 																单位地址
 															</th>
-															<th>
-																客户关系
-															</th>
-															<th>
+															<th style="width:80px;">
 																是否成交
 															</th>
 															<th>
@@ -73,6 +70,22 @@
 								</div>
 						</div>
 				</div>
+				<!-- 模态框（Modal）-->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					 aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog" style="width:850px;height:550px;">
+						<div class="modal-content" style="height:90%;"  >
+							<div class="modal-header">
+								<button type="button" class="close"
+										data-dismiss="modal" aria-hidden="true" style="margin-top:-10px">
+									&times;
+								</button>
+							</div>
+							<div class="modal-body" id="modal-body">
+							</div>
+						</div><!-- /.modal-content -->
+					</div>
+				<!-- /.modal -->
 			</div>
 	</body>
 </html>

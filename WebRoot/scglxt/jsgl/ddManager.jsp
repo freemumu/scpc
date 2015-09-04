@@ -59,7 +59,7 @@
 																所属合同
 															</th>
 															<th style="wdith:100px;">
-																项目名称
+																项目编号
 															</th>
 															<th style="wdith:100px;">
 																订单级别

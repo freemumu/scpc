@@ -89,6 +89,7 @@
 							id=Param.id;
 						}
 						var url = "khInfo_getKhInfo.action",successFun = function(data){
+							console.log(data);
 							if(data && data.length >0 ){
 								var select =$('#form_khxx .controls >[type="text"]');
 								//循环给表单赋值
@@ -107,7 +108,8 @@
 									}
 								}
 								$('#form_khxx_lx').select2('val',data[0].lx);
-//								$('#form_khxx_starttime').datepicker("setDate", data[0].starttime);
+								$('#form_khxx_starttime').datepicker("setDate", data[0].starttime);
+								console.log(data[0].starttime);
 							}
 							
 		               }

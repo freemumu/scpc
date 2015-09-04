@@ -14,7 +14,9 @@
 		 */
 		
 		init = function(){
-			tableInit();
+			var urlParam = new Object();
+			urlParam = $.GetRequest();
+			tableInit(urlParam);
 			registerEvent();
 		},
 		/**
@@ -28,7 +30,11 @@
 		/**
 		 * 初始化表格函数
 		 */
-		tableInit = function(){
+		tableInit = function(urlParam){
+			var ssht = "";
+			if(urlParam !=null && urlParam.ssht !=""){
+				ssht = urlParam.ssht;
+			}
 			var table = $('#ddInfo').DataTable( {
 //			"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
 			"bLengthChange": false, 
@@ -48,7 +54,7 @@
 		                }
 		            },
 		    "aLengthMenu":[20,30],
-			"ajax":"ddInfo_getTableData.action",
+			"ajax":"ddInfo_getTableData.action?ssht="+ssht,
 			 "sScrollY" : 450, //DataTables的高  
             "sScrollX" :2000, //DataTables的宽 
             "bAutoWidth" : false, //是否自适应宽度 
