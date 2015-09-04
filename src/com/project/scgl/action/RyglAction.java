@@ -152,7 +152,7 @@ public class RyglAction {
 	 */
 	public void getRyBzInfo() {
 
-		String sql = "select id ,bzmc from scgl_gzbz_info";
+		String sql = "select id ,bzmc from scglxt_t_bz";
 		log.info("查询人员班组" + sql);
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
@@ -164,7 +164,7 @@ public class RyglAction {
 	public void getRyInfoById() {
 
 		String id = Request.getParameter("id");
-		String sql = "select ssbz,id,rymc,rynl,jsjb,dqgz,cast(rzsj as char)rzsj from scgl_renyuan_info a where id = '"+id+"'";
+		String sql = "select ssbz,id,rymc,rynl,jsjb,dqgz,cast(rzsj as char)rzsj from scglxt_t_ry a where id = '"+id+"'";
 
 		log.info("查询人员信息BYID" + sql);
 		List list = this.selectDataService.queryForList(sql);

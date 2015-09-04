@@ -63,19 +63,16 @@
 		"columnDefs": [ 
             {
                 "render": function ( data, type, row ) {
-                    return '<div class="text-center"><a class="btn btn-success btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/addRyInfo.jsp?flag=edit&id='+data+'"><i class="icon-ok"></i></a><a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scgl_deleteRyInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
+                    return '<div class="text-center"><a class="btn btn-success btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/addRyInfo.jsp?flag=edit&id='+data+'"><i class="icon-edit"></i></a>&nbsp; <a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scgl_deleteRyInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
                 },
                 "targets": 1
             },
             { "visible": true,  "targets": [ 2 ] }
         ],
         "columns": [
-        	{"data":null,
-        	},
-        	{"data":'id',
-        	},
+        	{"data":null,"sWidth":"40px"},
+        	{"data":'id',"sWidth":"60px"},
             { "data": "ssbz" },
-            { "data": "id" },
             { "data": "rymc" },
             { "data": "rynl" },
             { "data": "jsjb" },
@@ -90,7 +87,7 @@
             cell.innerHTML = i+1;
         } );
    	  } ).draw();
-	  new $.fn.dataTable.FixedColumns( table );
+	  new $.fn.dataTable.FixedColumns( table, {leftColumns:4});
 	}
 	$(document).ready(function() {
 	
@@ -135,22 +132,19 @@
 																操作
 															</th>
 															<th>
-																所属班组
+																班组
 															</th>
 															<th>
-																ID
+																名称
 															</th>
 															<th>
-																人员名称
-															</th>
-															<th>
-																人员年龄
+																年龄
 															</th>
 															<th>
 																技术级别
 															</th>
 															<th>
-																当前工资
+																工资
 															</th>
 														</tr>
 													</thead>

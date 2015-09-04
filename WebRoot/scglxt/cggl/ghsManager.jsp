@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 	function tableInit(){
 	
-		var table = $('#ryxx').DataTable( {
+		var table = $('#ghsxx').DataTable( {
 		"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
 		"bLengthChange": false, 
       	"oLanguage": {
@@ -40,17 +40,15 @@
 		"columnDefs": [ 
             {
                 "render": function ( data, type, row ) {
-                    return '<div class="text-center"><a class="btn btn-success btn-xs" href="${pageContext.request.contextPath}/scglxt/cggl/addGhsInfo.jsp?flag=edit&id='+data+'"><i class="icon-ok"></i></a><a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scglbz_deleteBzInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
+                    return '<div class="text-center"><a class="btn btn-success btn-xs" href="${pageContext.request.contextPath}/scglxt/cggl/addGhsInfo.jsp?flag=edit&id='+data+'"><i class="icon-ok"></i></a>&nbsp;<a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/cggl_deleteGhsInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
                 },
                 "targets": 1
             },
             { "visible": true,  "targets": [ 2 ] }
         ],
         "columns": [
-        	{"data":null,
-        	},
-        	{"data":'id',
-        	},
+        	{"data":null,"sWidth":"40px"},
+        	{"data":'id',"sWidth":"60px"},
             { "data": "spmc" },
             { "data": "gsmc" },
             { "data": "gsdz" },
@@ -66,7 +64,7 @@
             cell.innerHTML = i+1;
         } );
    	  } ).draw();
-	  new $.fn.dataTable.FixedColumns( table );
+	  new $.fn.dataTable.FixedColumns( table,{leftColumns:3} );
 	}
 	$(document).ready(function() {
 	
@@ -95,7 +93,7 @@
 									<div class='box-content box-no-padding'>
 <!-- 										<div class='responsive-table'> -->
 <!-- 											<div class='scrollable-area'> -->
-												<table id="ryxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
+												<table id="ghsxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th>
@@ -105,13 +103,13 @@
 																操作
 															</th>
 															<th>
-																商品名称
+																供应商品
 															</th>
 															<th>
-																公司名称
+																名称
 															</th>
 															<th>
-																公司地址
+																地址
 															</th>
 															<th>
 																联系人

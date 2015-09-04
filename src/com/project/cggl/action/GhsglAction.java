@@ -42,7 +42,7 @@ public class GhsglAction {
 	public String addGhsInfo(){
 		
 		String ghsid = RandomStringUtils.randomNumeric(20);
-		String spmc = Request.getParameter("spmc");
+		String spmc = Request.getParameter("spms");
 		String gsmc = Request.getParameter("gsmc");
 		
 		String gsdz = Request.getParameter("gsdz");
@@ -69,7 +69,7 @@ public class GhsglAction {
 	public String updateGhsInfo(){
 		
 		String id = Request.getParameter("id");
-		String spmc = Request.getParameter("spmc");
+		String spmc = Request.getParameter("spms");
 		String gsmc = Request.getParameter("gsmc");
 		
 		String gsdz = Request.getParameter("gsdz");

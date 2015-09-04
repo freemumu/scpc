@@ -12,10 +12,6 @@
 				}
 				$("#cgsj").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 				$("#wbjz").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-//				$("#cgsj").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-//				$("#cgsj").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-
-
 
 			} );
 			
@@ -43,7 +39,7 @@
 				}); 
 			}
 			
-			function saveSbInfo(flag){
+			function saveSbInfo(){
 			
 				if(flag==='edit'){
 					
@@ -52,47 +48,7 @@
 				}
 				
 				$("#formAction").submit();
-				/*if(flag==='add'){
-					//添加
-					$.ajax({
-					  type: "post",
-					  url: "scgl_addSbInfo.action",
-					  dataType: "json",
-					  data:{
-					  	"sbmc" : $('#sbmc').val(),
-						"sblx" : $('#sblx').val(),
-						"sbzt" : $('#sbzt').val(),
-						"cgsj" : $('#cgsj').val(),
-						"wxjz" : $('#wbjz').val(),
-						"cfdd" : $('#cfdd').val(),
-						"bz" : $('#bz').val(),
-						"wxjl" : $('#wxjl').val()
-					  }
-					  
-					}); 
-				}else{//修正
 				
-					var id = getValueOfURLParamter("id");
-					$.ajax({
-					  type: "post",
-					  url: "scgl_updateSbInfo.action",
-					  dataType: "json",
-					  data:{
-					  	"sbid" : id,
-					  	"sbmc" : $('#sbmc').val(),
-						"sblx" : $('#sblx').val(),
-						"sbzt" : $('#sbzt').val(),
-						"cgsj" : $('#cgsj').val(),
-						"wxjz" : $('#wbjz').val(),
-						"cfdd" : $('#cfdd').val(),
-						"bz" : $('#bz').val(),
-						"wxjl" : $('#wxjl').val()
-					  }
-					  
-					}); 
-				}
-				
-				*/
 			}
 			
 			function initSbZd(){
@@ -152,7 +108,6 @@
 					
 				</div>
 				<div class="box-content box-no-padding">
-					<%--<form class="form form-horizontal form-striped"--%>
 					<form class="form form-horizontal "
 						style="margin-bottom: 0;" method="post" id="formAction" action="scpc/scglsb_addSbInfo.action"
 						accept-charset="UTF-8">
@@ -190,26 +145,10 @@
 							<label class="col-md-3 control-label" for="disabledInput2">
 								采购时间
 							</label>
-							<%--<div class="col-md-4">--%>
-								<%--<div class="datepicker input-group">--%>
-									<%--<input name="cgsj" id="cgsj" class="form-control" data-format="yyyy-MM-dd"--%>
-										<%--placeholder="请选择采购时间" type="text">--%>
-									<%--<span class="input-group-addon"> <span--%>
-										<%--data-date-icon="icon-calendar" data-time-icon="icon-time"--%>
-										<%--class="icon-calendar"></span> </span>--%>
 							<div class="col-md-4">
-								<%--<div class="datepicker input-group">--%>
-									<%--<input name="cgsj" id="cgsj" class="form-control" data-format="yyyy-MM-dd"--%>
-										<%--placeholder="请选择采购时间" type="text">--%>
-									<%--<span class="input-group-addon"> <span--%>
-										<%--data-date-icon="icon-calendar" data-time-icon="icon-time"--%>
-										<%--class="icon-calendar"></span> </span>--%>
-								<%--</div>--%>
 								<div class="input-append date form_datetime">
 									<input name="cgsj" id="cgsj" readonly class="form-control"
 										   placeholder="请选择采购时间" type="text">
-									<%--<input size="16" type="text" value="" readonly>--%>
-									<%--<span class="add-on"><i class="icon-th"></i></span>--%>
 								</div>
 							</div>
 						</div>
@@ -221,13 +160,6 @@
 							<div class="col-md-4">
 								<input class="form-control" name="wbjz" id="wbjz"
 									   placeholder="请选择维保截止时间" readonly type="text">
-								<%--<div class="datepicker input-group" id="">--%>
-									<%--<input class="form-control" name="wbjz" id="wbjz"--%>
-										<%--placeholder="请选择维保截止时间" type="text">--%>
-									<%--&lt;%&ndash;<span class="input-group-addon"> <span&ndash;%&gt;--%>
-										<%--&lt;%&ndash;data-date-icon="icon-calendar" data-time-icon="icon-time"&ndash;%&gt;--%>
-										<%--&lt;%&ndash;class="icon-calendar"></span> </span>&ndash;%&gt;--%>
-								<%--</div>--%>
 							</div>
 						</div>
 						<div class="form-group">
