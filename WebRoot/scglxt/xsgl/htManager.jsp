@@ -76,7 +76,7 @@
 															<th  style="width:100px;">
 																汇款账号
 															</th>
-															<th  style="width:100px;">
+															<th  style="width:180px;">
 																汇款开户行
 															</th>
 <!-- 															<th  style="width:100px;"> -->

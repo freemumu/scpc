@@ -75,13 +75,13 @@
 		                            <input class='form-control'  id='form_khxx_fkzt' info="fromInfo" name='form_khxx_fkzt' placeholder='付款状态' type='text'>
 		                          </div>
 		                        </div>	
- 		                        <div class='form-group'>
+ 		                       <%-- <div class='form-group'>
 		                          <label class='control-label col-sm-3' for='form_khxx_jkbfb'>结款百分比</label>
 		                          <div class='col-sm-4 controls'>
 		                            <input class='form-control'  id='form_khxx_jkbfb'  readonly info="fromInfo" name='form_khxx_jkbfb' placeholder='结款百分比' type='text'>
 		                          </div>
 		                          <label>%</label>
-		                        </div>		
+		                        </div>		--%>
             		            <div class='form-group'>
 		                          <label class='control-label col-sm-3' for='form_khxx_jkje'>结款金额</label>
 		                          <div class='col-sm-4 controls'>

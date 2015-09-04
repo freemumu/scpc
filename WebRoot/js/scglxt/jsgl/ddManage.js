@@ -32,7 +32,7 @@
 		 */
 		tableInit = function(urlParam){
 			var ssht = "";
-			if(urlParam !=null && urlParam.ssht !=""){
+			if(urlParam !=null && urlParam.ssht !="" && urlParam.ssht !=undefined){
 				ssht = urlParam.ssht;
 			}
 			var table = $('#ddInfo').DataTable( {
@@ -123,8 +123,8 @@
 		        cell.innerHTML = i+1;
 		    } );
 			  } ).draw();
-		  new $.fn.dataTable.FixedColumns( table );
-			
+			new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
+
 		},
 		/**
 		 * 删除信息

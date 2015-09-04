@@ -105,8 +105,8 @@
 		        cell.innerHTML = i+1;
 		    } );
 			  } ).draw();
-		  new $.fn.dataTable.FixedColumns( table );
-			
+			new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
+
 		},
 		/**
 		 * 删除信息

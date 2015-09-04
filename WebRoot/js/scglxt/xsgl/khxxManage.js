@@ -96,12 +96,9 @@ function tableInit(){
         { "visible": true,  "targets": [ 2 ] }
     ],
     "columns": [
-    	{"data":null,
-    	},
-    	{"data":'id',
-    	},
-    	{ "data": "id" }
-    	,
+    	{"data":null},
+    	{"data":'id'},
+    	{ "data": "id" },
         { "data": "mc" },
         { "data": "lx" },
         { "data": "dw" },
@@ -120,7 +117,8 @@ function tableInit(){
         cell.innerHTML = i+1;
     } );
 	  } ).draw();
-  new $.fn.dataTable.FixedColumns( table );
+    new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
+
 }
 /**
  * 
