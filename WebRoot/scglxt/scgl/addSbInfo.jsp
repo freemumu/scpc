@@ -32,6 +32,7 @@
 				  	$('#wbjz').val((dt[0].bxjssj));
 				  	$('#cfdd').val((dt[0].sbszd));
 				  	$('#sbzt').val((dt[0].sbzt));
+				  	$('#sbbz').val((dt[0].sbbz));
 				  	$('#wxjl').val((dt[0].wxjl));
 				  	$('#bz').val((dt[0].bz));
 				  	
@@ -69,6 +70,21 @@
 				  	
 				  }
 				}); 
+				$.ajax({
+				  type: "post",
+				  url: "scglsb_getSBzInfo.action",
+				  dataType: "json",
+				  data:{
+				  },
+				  success:function(dt){
+				  	
+				  	for(var i = 0;i<dt.length;i++){
+				  		var html = "<option value="+dt[i].id+">"+dt[i].mc+"</option>";
+				  		$("#sbbz").append(html);
+				  	}
+				  	
+				  }
+				});
 				$.ajax({
 				  type: "post",
 				  url: "scglsb_getSbZdInfo.action",
@@ -127,6 +143,16 @@
 							</label>
 							<div class="col-md-4">
 								<select class='form-control' name="sblx" id='sblx'>
+									
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="inputTextArea2">
+								设备班组
+							</label>
+							<div class="col-md-4">
+								<select class='form-control' name="sbbz" id='sbbz'>
 									
 								</select>
 							</div>
