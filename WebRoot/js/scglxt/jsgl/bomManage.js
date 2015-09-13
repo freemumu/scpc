@@ -47,7 +47,7 @@
 		                    "sLast": "末页"
 		                }
 		            },
-		    "aLengthMenu":[2,3],
+		    "aLengthMenu":[20,30],
 			"ajax":"bomInfo_getTableData.action",
 			scrollY:        "disabled",
 			scrollX:        true,
@@ -61,7 +61,7 @@
 		        {
 		            "render": function ( data, type, row ) {
 		                return '<div class="text-center">'+
-		                ' <a class="btn btn-primary btn-xs" href="#" title="工序编排" onclick = "BomManage.showModel(\''+data+'\')"><i class="icon-ok" ></i>工序编排</a>'+     
+		                ' <a class="btn btn-primary btn-xs" href="#" title="工序编排" onclick = "BomManage.showModel(\''+data+'\')"><i class="icon-ok" ></i>工艺编排</a>'+
 		                ' <a class="btn btn-info btn-xs" href="#" title＝"修改" onclick = "BomManage.editRow(\''+data+'\')"><i class="icon-edit" ></i></a>'+
 		                ' <a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "BomManage.deleteRow(\''+data+'\')"></i></a></div>';
 		            },

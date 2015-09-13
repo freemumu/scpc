@@ -79,6 +79,9 @@
 															<th  style="width:180px;">
 																汇款开户行
 															</th>
+															<th  style="width:200px;">
+																合同明细
+															</th>
 <!-- 															<th  style="width:100px;"> -->
 <!-- 																备注 -->
 <!-- 															</th> -->

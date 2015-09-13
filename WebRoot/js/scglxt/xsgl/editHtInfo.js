@@ -109,7 +109,8 @@
 				hkzh : $('#form_khxx_hkzh').attr("value"),
 				hkkhh : $('#form_khxx_hkkhh').attr("value"),
 				remark : $('#form_khxx_remark').attr("value"),
-				flag : flag , 
+				htmx : $('#form_khxx_htmx').attr("value"),
+				flag : flag ,
 				id : id 
 			}
 			var JSON = $.toJsonString(formInfo);

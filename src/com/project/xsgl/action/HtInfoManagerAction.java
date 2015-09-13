@@ -40,7 +40,7 @@ public class HtInfoManagerAction {
      */
     public void getTableData() {
         String khid = Request.getParameter("khid");
-        String sql = "select t1.id ,t1.mc,t1.htbh , t1.ywlx ,t1.htje,date_format(qssj,'%Y-%m-%d') qssj,t1.dqjd,t1.fkzt,t1.jkbfb,jkje,jscb,t1.hkzh,t1.hkkhh,t1.remark ,t2.id khid" +
+        String sql = "select t1.id ,t1.mc,t1.htbh , t1.ywlx ,t1.htje,date_format(qssj,'%Y-%m-%d') qssj,t1.dqjd,t1.fkzt,t1.jkbfb,jkje,jscb,t1.hkzh,t1.hkkhh,t1.remark ,t1.htmx, t2.id khid" +
                 " from scglxt_t_ht  t1 left join scglxt_t_kh t2 on t1.khid = t2.id  where 1=1 ";
         if (khid != null && !khid.equals("")) {
             sql += " and  t1.khid = '" + khid + "'";
@@ -162,16 +162,17 @@ public class HtInfoManagerAction {
         String hkzh = JSON.getString("hkzh");
         String hkkhh = JSON.getString("hkkhh");
         String remark = JSON.getString("remark");
+        String htmx = JSON.getString("htmx") ;
         String flag = JSON.getString("flag");
         String sql = null;
         String id = null;
         if (flag != null && flag.equals("ADD")) {
             id = WebUtils.getRandomId();
-            sql = " insert into scglxt_t_ht (`id`, `mc`, `htbh`, `ywlx`, `htje`, `qssj`, `dqjd`, `fkzt`, `jkbfb`, `jkje`, `jscb`, `hkzh`, `hkkhh`,`remark`) VALUES ('" + id + "', '" + mc + "', '" + htbh + "', '" + ywlx + "', '" + htje + "',  DATE_FORMAT( '2012-02-02', '%Y-%m-%d') , '" + dqjd + "', '" + fkzt + "', '" + jkbfb + "',  '" + jkje + "', '" + jscb + "','" + hkzh + "','" + hkkhh + "','" + remark + "' );";
+            sql = " insert into scglxt_t_ht (`id`, `mc`, `htbh`, `ywlx`, `htje`, `qssj`, `dqjd`, `fkzt`, `jkbfb`, `jkje`, `jscb`, `hkzh`, `hkkhh`,`remark`,`htmx`) VALUES ('" + id + "', '" + mc + "', '" + htbh + "', '" + ywlx + "', '" + htje + "',  DATE_FORMAT( '2012-02-02', '%Y-%m-%d') , '" + dqjd + "', '" + fkzt + "', '" + jkbfb + "',  '" + jkje + "', '" + jscb + "','" + hkzh + "','" + hkkhh + "','" + remark + "' ,'"+htmx+"' );";
         } else if (flag.equals("UPDATE")) {
             id = JSON.getString("id");
             sql = " update scglxt_t_ht set mc = '" + mc + "' , htbh = '" + htbh + "', ywlx = '" + ywlx + "' , htje = '" + htje + "',qssj = DATE_FORMAT('" + qssj + "','%Y-%m-%d'),dqjd='" + dqjd + "', " +
-                    "fkzt = '" + fkzt + "' , jkbfb='" + jkbfb + "' ,jkje='" + jkje + "', jscb='" + jscb + "' ,hkzh='" + hkzh + "' , hkkhh='" + hkkhh + "', remark='" + remark + "'   " +
+                    "fkzt = '" + fkzt + "' , jkbfb='" + jkbfb + "' ,jkje='" + jkje + "', jscb='" + jscb + "' ,hkzh='" + hkzh + "' , hkkhh='" + hkkhh + "', remark='" + remark + "' ,htmx = '"+htmx+"' " +
                     "WHERE id = '" + id + "'";
         }
         try {

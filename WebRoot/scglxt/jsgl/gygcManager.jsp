@@ -8,7 +8,7 @@
 	width: 100px;
 }
 </style>
-<title>工序编排</title>
+<title>工艺编排</title>
 <script type="text/javascript"
 	src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
 <script type="text/javascript"

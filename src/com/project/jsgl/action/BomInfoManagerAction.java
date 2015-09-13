@@ -179,6 +179,7 @@ public class BomInfoManagerAction {
 			updateBomGynrByGxbp(bomid) ; 
 			Response.write(ActionEnum.SUCCESS.toString());
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	/**

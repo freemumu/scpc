@@ -43,6 +43,7 @@ $.extend($, {
 			ajaxErrorHandler = $.ajaxErrorHandler;
 		}
 			$.ajax({
+                async:true,
 				type:"POST",
 				url : url,
 				data:data,

@@ -35,8 +35,8 @@
 			$('#form_khxx_planstarttime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 			$('#form_khxx_planendtime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 			$('#form_khxx_realstarttime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-			$('#form_khxx_realendtime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-			$('#form_khxx_ckdate').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+			//$('#form_khxx_realendtime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+			//$('#form_khxx_ckdate').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
 		},
 		initFormInfo = function(id){
 			var url = "ddInfo_getDetailInfo.action",successFun = function(data){
@@ -78,8 +78,8 @@
 				jhdate : $('#form_khxx_jhdate').attr("value"),
 				planstarttime : $('#form_khxx_planstarttime').attr("value"),
 				planendtime : $('#form_khxx_planendtime').attr("value"),
-				realstarttime : $('#form_khxx_realstarttime').attr("value"),
-				realendtime : $('#form_khxx_realendtime').attr("value"),
+				//realstarttime : $('#form_khxx_realstarttime').attr("value"),
+				//realendtime : $('#form_khxx_realendtime').attr("value"),
 				zgs : $('#form_khxx_zgs').attr("value"),
 				dqjd : $('#form_khxx_dqjd').attr("value"),
 				tz : $('#form_khxx_tz').attr("value"),

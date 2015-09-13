@@ -67,7 +67,7 @@
                             <div class='col-sm-4 controls'>
                                 <%--<input class='form-control'  id='form_khxx_planstarttime'   style="cursor:pointer;" info="fromInfo" name='form_khxx_planstarttime' placeholder='计划开始时间' type='text'>--%>
                                 <input class='form-control' id='form_khxx_planstarttime' placeholder='计划开始时间'
-                                       type="text" value="" readonly
+                                       type="text" value="" readonly  style="cursor:pointer;"
                                        class="form_datetime">
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                        info="fromInfo" name='form_khxx_planendtime' placeholder='计划结束时间' type='text'>
                             </div>
                         </div>
-                        <div class='form-group'>
+                        <%--<div class='form-group' >
                             <label class='control-label col-sm-3' for='form_khxx_realstarttime'>实际开始时间</label>
 
                             <div class='col-sm-4 controls'>
@@ -95,7 +95,7 @@
                                 <input class='form-control' readonly id='form_khxx_realendtime' style="cursor:pointer;"
                                        info="fromInfo" name='form_khxx_realendtime' placeholder='实际结束时间' type='text'>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class='form-group'>
                             <label class='control-label col-sm-3' for='form_khxx_zgs'>总工时</label>
 

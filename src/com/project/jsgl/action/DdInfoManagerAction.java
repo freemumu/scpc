@@ -96,8 +96,8 @@ public class DdInfoManagerAction {
 		String jhdate = StringUtil.returnNotEmpty(JSON.getString("jhdate"));
 		String planstarttime =  StringUtil.returnNotEmpty(JSON.getString("planstarttime")) ;
 		String planendtime = StringUtil.returnNotEmpty(JSON.getString("planendtime"));
-		String realstarttime = StringUtil.returnNotEmpty(JSON.getString("realstarttime"));
-		String realendtime = StringUtil.returnNotEmpty(JSON.getString("realendtime"));
+//		String realstarttime = StringUtil.returnNotEmpty(JSON.getString("realstarttime"));
+//		String realendtime = StringUtil.returnNotEmpty(JSON.getString("realendtime"));
 		String zgs = JSON.getString("zgs");
 		String dqjd = JSON.getString("dqjd");
 		String tz = JSON.getString("tz");
@@ -112,15 +112,14 @@ public class DdInfoManagerAction {
 		 
 		if(flag !=null && flag.equals("ADD")){
 			id = WebUtils.getRandomId(); 
-			sql = "INSERT INTO `scglxt_t_dd` (`id`, `ssht`, `xmname`, `ddlevel`, `jhdate`, `planstarttime`, `planendtime`, `realstarttime`, `realendtime`, `zgs`, `dqjd`, `tz`, `remark`, `xmlxr`, `xmfzr`, `ckzt`, `ckdate`)" +
+			sql = "INSERT INTO `scglxt_t_dd` (`id`, `ssht`, `xmname`, `ddlevel`, `jhdate`, `planstarttime`, `planendtime`,`zgs`, `dqjd`, `tz`, `remark`, `xmlxr`, `xmfzr`, `ckzt`, `ckdate`)" +
 					" VALUES ('"+id+"', '"+ssht+"', '"+xmname+"', '"+ddlevel+"', date_format('"+jhdate+"','%Y-%m-%d'), date_format('"+planstarttime+"','%Y-%m-%d'), " +
-					" date_format('"+planendtime+"','%Y-%m-%d') , date_format('"+realstarttime+"','%Y-%m-%d'), date_format('"+realendtime+"','%Y-%m-%d'), " +
+					" date_format('"+planendtime+"','%Y-%m-%d') ,    " +
 					" '"+zgs+"', '"+dqjd+"', '"+tz+"', '"+remark+"', '"+xmlxr+"', '"+xmfzr+"', '"+ckzt+"',date_format('"+ckdate+"','%Y-%m-%d')); ";
 		}else if(flag.equals("UPDATE")){
 			id = JSON.getString("id") ; 
 			sql = " update  scglxt_t_dd set ssht='"+ssht+"',xmname = '"+xmname+"' ,ddlevel='"+ddlevel+"',jhdate=  "+jhdate+"  , " +
 					" planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') , planendtime=  date_format('"+planstarttime+"','%Y-%m-%d') ," +
-					" realstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') , realendtime=  date_format('"+planstarttime+"','%Y-%m-%d') ," +
 					" zgs = '"+zgs+"',dqjd='"+dqjd+"',tz='"+remark+"',remark='"+remark+"',xmlxr='"+xmlxr+"',xmfzr='"+xmfzr+"' ,ckzt='"+ckzt+"' , " +
 					" ckdate=  date_format("+ckdate+",'%Y-%m-%d') " +
 					"where id = '"+id+"' ";

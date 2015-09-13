@@ -83,11 +83,24 @@
 		            },
 		            "targets": 2
 		        },
+
 		        {
 	                "targets": [ 3 ],
 	                "visible": false
 	            },
-		        { "visible": true,  "targets": [ 2 ] }
+		        { "visible": true,  "targets": [ 2 ] },
+
+				{
+					"render": function ( data, type, row ) {
+						if(data !=null  && data !="" ){
+							return data + "%" ;
+						}else{
+							return data ;
+						}
+					},
+					"targets": 11
+				},
+
 		    ],
 		    "columns": [
 		    	{"data":null},
@@ -105,7 +118,8 @@
 		        { "data": "jkje" },
 		        { "data": "jscb" },
 		        { "data": "hkzh" },
-		        { "data": "hkkhh" }
+		        { "data": "hkkhh" },
+		        { "data": "htmx" }
 		    ]
 		   
 		} );
