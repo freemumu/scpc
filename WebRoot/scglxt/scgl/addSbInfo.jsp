@@ -34,6 +34,8 @@
 				  	$('#sbzt').val((dt[0].sbzt));
 				  	$('#sbbz').val((dt[0].sbbz));
 				  	$('#wxjl').val((dt[0].wxjl));
+				  	$('#sccj').val((dt[0].sccj));
+				  	$('#sccjdetail').val((dt[0].sccjdetail));
 				  	$('#bz').val((dt[0].bz));
 				  	
 				  }
@@ -129,7 +131,7 @@
 						accept-charset="UTF-8">
 						<input name="authenticity_token" type="hidden">
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="inputText2">
+							<label class="col-md-3 control-label" for="">
 								设备名称
 							</label>
 							<div class="col-md-4">
@@ -138,7 +140,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="inputPassword1">
+							<label class="col-md-3 control-label" for="">
 								设备类型
 							</label>
 							<div class="col-md-4">
@@ -148,7 +150,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="inputTextArea2">
+							<label class="col-md-3 control-label" for="">
 								设备班组
 							</label>
 							<div class="col-md-4">
@@ -158,7 +160,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="inputTextArea2">
+							<label class="col-md-3 control-label" for="">
 								设备状态
 							</label>
 							<div class="col-md-4">
@@ -168,7 +170,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="disabledInput2">
+							<label class="col-md-3 control-label" for="">
 								采购时间
 							</label>
 							<div class="col-md-4">
@@ -179,7 +181,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="disabledInput2">
+							<label class="col-md-3 control-label" for="">
 								维保截止
 							</label>
 
@@ -189,7 +191,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="inputTextArea2">
+							<label class="col-md-3 control-label" for="">
 								存放地点
 							</label>
 							<div class="col-md-4">
@@ -198,7 +200,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="inputTextArea2">
+							<label class="col-md-3 control-label" for="">
 								维修记录
 							</label>
 							<div class="col-md-4">
@@ -207,7 +209,25 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="col-md-3 control-label" for="inputTextArea2">
+							<label class="col-md-3 control-label" >
+								生产厂家
+							</label>
+							<div class="col-md-4">
+								<input class="form-control" name="sccj" id="sccj" placeholder="生产厂家"
+									   type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label" >
+								厂家详情
+							</label>
+							<div class="col-md-4">
+								<input class="form-control" name="sccjdetail" id="sccjdetail" placeholder="生产厂家详情"
+									   type="text">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label" for="">
 								备注
 							</label>
 							<div class="col-md-4">

@@ -26,7 +26,10 @@ public class SbglAction {
 	 * 获取设备列表
 	 */
 	public void getSbTableData(){
-		String sql = "select sbbz.bzmc sbbz,sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt,scglxt_t_bz sbbz where sbzt.id = dqzt and sblx.id = sblx and bzid = sbbz.id";
+		String sql = "select sbbz.bzmc sbbz,sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, " +
+				" cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,sb.sccj,sb.sccjdetail ,remark from " +
+				" scglxt_t_sb sb, scglxt_tyzd sblx,scglxt_tyzd sbzt,scglxt_t_bz sbbz " +
+				" where sbzt.id = dqzt and sblx.id = sblx and bzid = sbbz.id";
 		log.info("设备信息查询sql"+sql);
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
@@ -39,7 +42,6 @@ public class SbglAction {
 	 * 添加设备
 	 */
 	public String addSbInfo(){
-		
 		String sbid = RandomStringUtils.randomNumeric(20);
 		String sblx = Request.getParameter("sblx");
 		String sbmc = Request.getParameter("sbmc");
@@ -50,10 +52,11 @@ public class SbglAction {
 		String sbwxjl = Request.getParameter("wxjl");
 		String sbremark = Request.getParameter("bz");
 		String sbbz = Request.getParameter("sbbz");
-		String sql = "insert into scglxt_t_sb (id,sblx,sbmc,cgsj,bxjssj,sbszd,dqzt,wxjl,remark,bzid) values ('"+sbid+"'" +
-				",'"+sblx+"','"+sbmc+"','"+sbcgsj+"','"+sbbxjssj+"','"+sbszd+"','"+sbzt+"','"+sbwxjl+"','"+sbremark+"','"+sbbz+"')";
+		String sccj = Request.getParameter("sccj");
+		String sccjdetail = Request.getParameter("sccjdetail");
+		String sql = "insert into scglxt_t_sb (id,sblx,sbmc,cgsj,bxjssj,sbszd,dqzt,wxjl,remark,bzid,sccj,sccjdetail) values ('"+sbid+"'" +
+				",'"+sblx+"','"+sbmc+"','"+sbcgsj+"','"+sbbxjssj+"','"+sbszd+"','"+sbzt+"','"+sbwxjl+"','"+sbremark+"','"+sbbz+"','"+sccj+"','"+sccjdetail+"')";
 		log.info("设备信息添加sql"+sql);
-		
 		int i = this.selectDataService.update(sql);
 		
 		if(i>0){

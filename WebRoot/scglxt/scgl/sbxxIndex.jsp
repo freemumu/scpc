@@ -78,6 +78,8 @@
             { "data": "cgsj" ,"sWidth":"120px"},
             { "data": "bxjssj" ,"sWidth":"120px"},
             { "data": "wxjl" ,"sWidth":"120px"},
+            { "data": "sccj" ,"sWidth":"120px"},
+            { "data": "sccjdetail" ,"sWidth":"120px"},
             { "data": "remark" ,"sWidth":"120px"}
         ]
        
@@ -164,6 +166,13 @@
 															<th>
 																维修记录
 															</th>
+															<th>
+																生产厂家
+															</th>
+															<th>
+																生产厂家详情
+															</th>
+
 															<th>
 																备注
 															</th>
