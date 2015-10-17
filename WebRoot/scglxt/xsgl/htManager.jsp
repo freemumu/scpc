@@ -9,7 +9,7 @@
 	<script type="text/javascript" src="../../js/scglxt/xsgl/htManage.js"></script>
 	</head>
 	<body>
-			<div class='container'>
+			<div class='container container-wrapper'>
 				<div class='row' id='content-wrapper'>
 						<div class='row rowTop'>
 								<div class='box bordered-box'
@@ -28,7 +28,7 @@
 										</div>
 									</div>
 									<div class='box-content box-no-padding'>
-												<table id="htInfo" class='table table-striped table-bordered tableGri' style='margin-bottom: 0;'>
+												<table id="htInfo" class='table table-striped table-bordered tableGrid' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th style="width:60px;">

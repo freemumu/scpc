@@ -23,7 +23,7 @@
 	</div>
 </div>
 
-	<div id='container' class="container">
+	<div id='container' class="container container-wrapper">
 
 		<div class='container'>
 			<div class='row' id='content-wrapper'>

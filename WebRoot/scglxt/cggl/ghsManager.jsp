@@ -72,7 +72,7 @@
 	} );
 </script>
 	<body>
-			<div class='container'>
+			<div class='container container-wrapper'>
 				<div class='row' id='content-wrapper'>
 						<div class='row rowTop'>
 								<div class='box bordered-box ' style='margin-bottom: 0;'>

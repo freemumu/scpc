@@ -9,8 +9,7 @@
 	<script type="text/javascript" src="../../js/scglxt/jsgl/gyManage.js"></script>
 	</head>
 	<body>
-		<div id='wrapper'>
-			<div class='container'>
+			<div class='container container-wrapper'>
 				<div class='row' id='content-wrapper'>
 					<div class='col-xs-12'>
 						<div class='row rowTop'>
@@ -119,8 +118,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		
+
 		
 		<h2>创建模态框（Modal）</h2>
 <!-- 按钮触发模态框 -->

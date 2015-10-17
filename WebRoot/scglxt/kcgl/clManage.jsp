@@ -9,8 +9,7 @@
 	<script type="text/javascript" src="../../js/scglxt/kcgl/clManage.js"></script>
 	</head>
 	<body>
-		<div id='wrapper'>
-			<div class='container'>
+			<div class='container container-wrapper'>
 				<div class='row' id='content-wrapper'>
 						<div class='row rowTop'>
 								<div class='box bordered-box '
@@ -92,8 +91,7 @@
 							</div>
 					</div>
 			</div>
-		</div>
-		
+
 		<!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
    aria-labelledby="myModalLabel" aria-hidden="true">

@@ -65,8 +65,7 @@
 </script>
 
 	<body>
-		<div id='wrapper'>
-			<div class='container'>
+			<div class='container container-wrapper'>
 				<div class='row' id='content-wrapper'>
 					<div class='col-xs-12'>
 						<div class='row rowTop'>
@@ -119,6 +118,5 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</body>
 </html>
