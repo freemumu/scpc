@@ -85,40 +85,47 @@ public class BomInfoManagerAction {
 	 *  保存操作  ，提供新增或者更新update操作
 	 */
 	public void updateInfo(){
-		String json = Request.getParameter("JSON");
-		JSONObject JSON = JSONObject.fromObject(json);
-		String ssht = JSON.getString("ssht");
-		String xmname = JSON.getString("xmname");
-		String ddlevel = JSON.getString("ddlevel");
-		String jhdate = JSON.getString("jhdate");
-		String planstarttime = JSON.getString("planstarttime");
-		String planendtime = JSON.getString("planendtime");
-		String realstarttime = JSON.getString("realstarttime");
-		String realendtime = JSON.getString("realendtime");
-		String zgs = JSON.getString("zgs");
-		String dqjd = JSON.getString("dqjd");
-		String tz = JSON.getString("tz");
-		String remark = JSON.getString("remark");
-		String xmlxr = JSON.getString("xmlxr");
-		String xmfzr = JSON.getString("xmfzr");
-		String ckzt = JSON.getString("ckzt");
-		String ckdate = JSON.getString("ckdate");
-		String flag = JSON.getString("flag") ;
+//		String json = Request.getParameter("JSON");
+//		JSONObject JSON = JSONObject.fromObject(json);
+		String flag =Request.getParameter("flag");
 		String sql = null;
-		String id = WebUtils.getRandomId();
+		String randomId = WebUtils.getRandomId();
+		String zddmc= Request.getParameter("zddmc") ;
+		String zddcz = Request.getParameter("zddcz") ;
+		String clxz = Request.getParameter("clxz") ;
+		String cldx = Request.getParameter("cldx") ;
+		String cltj = Request.getParameter("cltj") ;
+		String clje = Request.getParameter("clje") ;
+		String jgsl = Request.getParameter("jgsl") ;
+		String bmcl = Request.getParameter("bmcl") ;
+		String starttime = Request.getParameter("starttime") ;
+		String endtime = Request.getParameter("endtime") ;
+		String gs = Request.getParameter("gs") ;
+		String ssdd = Request.getParameter("ssdd") ;
+		String id = Request.getParameter("id") ;
+
 		if(flag !=null && flag.equals("ADD")){
-			sql = "INSERT INTO `scglxt_t_bom` (`id`, `ssht`, `xmname`, `ddlevel`, `jhdate`, `planstarttime`, `planendtime`, `realstarttime`, `realendtime`, `zgs`, `dqjd`, `tz`, `remark`, `xmlxr`, `xmfzr`, `ckzt`, `ckdate`)" +
+			sql = "INSERT INTO `scpc`.`scglxt_t_bom`" +
+					" (`zddmc`, `zddcz`, `clxz`, `cldx`, `cltj`, `clje`, `jgsl`, `bmcl`, `starttime`, `endtime`," +
+					" `gs`, `blqk`, `blkssj`, `ssdd`)" +
+					" VALUES ('"+zddmc+"', '"+zddcz+"', '"+clxz+"', '"+cldx+"', '"+cltj+"', '"+clje+"', '"+jgsl+"', '"+bmcl+"', ' date_format('"+starttime+"','%Y-%m-%d')', ' date_format('"+endtime+"','%Y-%m-%d')', '"+gs+"', '', '', '"+ssdd+"');" ;
+			/*sql = "INSERT INTO `scglxt_t_bom` (`id`, `ssht`, `xmname`, `ddlevel`, `jhdate`, `planstarttime`, `planendtime`, `realstarttime`, `realendtime`, `zgs`, `dqjd`, `tz`, `remark`, `xmlxr`, `xmfzr`, `ckzt`, `ckdate`)" +
 					" VALUES ('"+id+"', '"+ssht+"', '"+xmname+"', '"+ddlevel+"', date_format('"+jhdate+"','%Y-%m-%d'), date_format('"+planstarttime+"','%Y-%m-%d'), " +
 					" date_format('"+planendtime+"','%Y-%m-%d') , date_format('"+realstarttime+"','%Y-%m-%d'), date_format('"+realendtime+"','%Y-%m-%d'), " +
-					" '"+zgs+"', '"+dqjd+"', '"+tz+"', '"+remark+"', '"+xmlxr+"', '"+xmfzr+"', '"+ckzt+"',date_format('"+ckdate+"','%Y-%m-%d')); ";
+					" '"+zgs+"', '"+dqjd+"', '"+tz+"', '"+remark+"', '"+xmlxr+"', '"+xmfzr+"', '"+ckzt+"',date_format('"+ckdate+"','%Y-%m-%d')); ";*/
 		}else if(flag.equals("UPDATE")){
-			id = "1";
-			sql = " update  scglxt_t_bom set ssht='"+ssht+"' , xmname＝'"+xmname+"' ,ddlevel='"+ddlevel+"',jhdate=  date_format('"+jhdate+"','%Y-%m-%d') , " +
+			sql = "update scglxt_t_bom  " +
+					"set zddmc = '"+zddmc+"', zddcz = '"+zddcz+"' , clxz = '"+clxz+"' , cldx = '"+cldx+"' ,cltj ='"+cltj+"' , clje ='"+clje+"' ,bmcl='"+bmcl+"'," +
+					"starttime = date_format('"+starttime+"','%Y-%m-%d'),endtime = date_format('"+endtime+"','%Y-%m-%d')  ," +
+					"gs='"+gs+"'  " +
+					"where  id = '"+id+"'" ;
+
+/*			sql = " update  scglxt_t_bom set ssht='"+ssht+"' , xmname＝'"+xmname+"' ,ddlevel='"+ddlevel+"',jhdate=  date_format('"+jhdate+"','%Y-%m-%d') , " +
 					" planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') , planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') ," +
 					" planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') , planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') ," +
 					" zgs = '"+zgs+",dqjd='"+dqjd+"',tz='"+remark+"',remark='"+remark+"',xmlxr='"+xmlxr+"',xmfzr='"+xmfzr+"' ,ckzt='"+ckzt+"'" +
 					" ckrq=  date_format("+ckdate+",'%Y-%m-%d') " +
-					"where id = '"+id+"' ";
+					"where id = '"+id+"' ";*/
 		}
 		try {
 			selectDataService.execute(sql);

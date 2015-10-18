@@ -11,7 +11,7 @@
 		 * 初始化表单信息
 		 */
 		init = function(){
-			var _this = this ;			
+			var _this = this ;
 			//返回按钮
 			$("#form_return").click(function(){
 				var $outFrame =  $(window.parent.document.body) ; 
@@ -31,7 +31,14 @@
 				_this.initFormInfo(urlParam.id);
 			}else{
 				_this._flag = "ADD" ;
-			}			
+			}
+			//初始化日期控件
+			$('#form_bomInfo_starttime').datetimepicker({
+				format: 'yyyy-mm-dd hh:ii'
+			});
+			$('#form_bomInfo_endtime').datetimepicker({
+				format: 'yyyy-mm-dd hh:ii'
+			});
 		},
 		/**
 		 * 注册事件
@@ -75,32 +82,17 @@
 		 */
 		saveFormInfo = function(flag){
 			var formInfo = {
-				ssht : $('#form_khxx_ssht').attr("value"),
-				xmname : $('#form_khxx_xmname').attr("value"),
-				ddlevel : $('#form_khxx_ddlevel').attr("value"),
-				jhdate : $('#form_khxx_jhdate').attr("value"),
-				planstarttime : $('#form_khxx_planstarttime').attr("value"),
-				planendtime : $('#form_khxx_planendtime').attr("value"),
-				realstarttime : $('#form_khxx_realstarttime').attr("value"),
-				realendtime : $('#form_khxx_realendtime').attr("value"),
-				zgs : $('#form_khxx_zgs').attr("value"),
-				dqjd : $('#form_khxx_dqjd').attr("value"),
-				tz : $('#form_khxx_tz').attr("value"),
-				xmlxr : $('#form_khxx_xmlxr').attr("value"),
-				xmfzr : $('#form_khxx_xmfzr').attr("value"),
-				ckzt : $('#form_khxx_ckzt').attr("value"),
-				ckdate : $('#form_khxx_ckdate').attr("value"),
-				remark : $('#form_khxx_remark').attr("value"),
 				flag : flag
 			}
 			var JSON = $.toJsonString(formInfo);
 			var $save = $('#btn_save'), $saving = $('#btn_save');
-            var url = "ddInfo_updateInfo.action", successFun = function(resStr){
+            var url = "bomInfo_updateInfo.action?flag="+flag, successFun = function(resStr){
                 if (resStr == "SUCCESS") {
                 	alert('保存成功！');
                 }
             }
-            $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);		
+            //$.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);
+            $.asyncAjaxPost(url,$('#form_bomInfo').serialize(), successFun, true);
 
 		},
 		/**
@@ -113,12 +105,28 @@
                 }
             }
             $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);		
+		},
+			/**
+			 * 加载自订单材质列表
+			 */
+			loadZddczList = function(){
+			var url = "common_loadSjzdList.action",successFun = function(data){
+				if(data && data.length > 0 ){
+					console.log(data) ;
+					$("#form_bomInfo_zddcz").empty();
+					for(var i = 0 ; i < data.length ; i++){
+						$.AddSelectItem(data[i].mc, data[i].id,"form_bomInfo_zddcz");
+					}
+				}
+			} ;
+			$.asyncAjax(url, {"pid": "04"}, successFun, true);
 		}
 		;
 		return {
 			init:init,
 			initFormInfo : initFormInfo,
-			saveFormInfo:saveFormInfo
+			saveFormInfo:saveFormInfo,
+			loadZddczList:loadZddczList
 		}
 		
 	})();
@@ -126,4 +134,5 @@
 $(document).ready(function(){
 //	});
 	BomEditManage.init();
+	BomEditManage.loadZddczList();
 });
