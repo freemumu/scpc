@@ -71,6 +71,22 @@ body{
 	min-width:70px !important ;
 	/*width:100px  ;*/
 }
+
+.tableGrid >thead >tr .tableGrid-md ,.tableGrid >thead >tr>th .tableGrid-default  {
+	width:100px !important;
+}
+.tableGrid >thead >tr .tableGrid-xs ,.tableGrid >thead >tr>th .tableGrid-xs  {
+	width:120px !important;
+}
+
+.tableGrid >thead >tr .tableGrid-md   {
+width:180px !important;
+}
+.tableGrid >thead >tr .tableGrid-lg   {
+	width:250px !important;
+}
+
+
 .tableGrid .serial{
 	min-width:60px;
 }
