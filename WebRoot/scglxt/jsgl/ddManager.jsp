@@ -4,11 +4,7 @@
 
 <html>
 	<head>
-	<style type="text/css">
-	.tableGrid  tr th{
-		width:100px;
-	}
-</style>
+
 	<title>订单管理</title>
 		<script type="text/javascript"
 			src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
@@ -42,64 +38,64 @@
 												<table id="ddInfo" class='table table-striped table-bordered cell-border tableGrid'  style='margin-bottom: 0;'>
 													<thead>
 														<tr>
-															<th style="width:60px;">
+															<th class="">
 																序号
 															</th>
-															<th style="width:120px;">
+															<th style="width: 150px;">
 																操作
 															</th>
-															<th style="width:120px;">
+															<th class="tableGrid-md">
 																查看BOM表
 															</th>
-															<th style="width:100px;">
+															<th >
 																ID
 															</th>
-															<th style="width:100px;">
+															<th class="tableGrid-md">
 																所属合同
 															</th>
-															<th style="wdith:100px;">
+															<th >
 																项目编号
 															</th>
-															<th style="wdith:100px;">
+															<th >
 																订单级别
 															</th>
-															<th style="wdith:200px;">
+															<th style="width:150px;">
 																交货日期
 															</th>
-															<th style="wdith:200px;">
+															<th class="tableGrid-md">
 																计划开始时间
 															</th>
-															<th style="wdith:150px;">
+															<th class="tableGrid-md">
 																计划结束时间
 															</th>
-															<th style="wdith:150px;">
+															<th class="tableGrid-md">
 																实际开始时间
 															</th>
-															<th style="wdith:150px;">
+															<th class="tableGrid-md">
 																实际结束时间
 															</th>
-															<th style="wdith:150px;">
+															<th class="tableGrid-md">
 																所用总工时
 															</th>
-															<th style="wdith:100px;">
+															<th class="tableGrid-md">
 																当前总进度
 															</th>
-															<th style="wdith:100px;">
+															<th style="">
 																图纸
 															</th>
-															<th style="wdith:100px;">
+															<th style="">
 																备注
 															</th>
-															<th style="wdith:100px;">
+															<th class="tableGrid-md">
 																项目联系人
 															</th>
-															<th style="wdith:100px;">
+															<th class="tableGrid-md">
 																项目负责人
 															</th>
 															<th>
 																出库状态
 															</th>
-															<th style="wdith:100px;">
+															<th style="">
 																出库时间
 															</th>
 															
