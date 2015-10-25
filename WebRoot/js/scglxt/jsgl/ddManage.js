@@ -55,9 +55,9 @@
 		            },
 		    "aLengthMenu":[20,30],
 			"ajax":"ddInfo_getTableData.action?ssht="+ssht,
-			 "sScrollY" : 450, //DataTables的高  
-            "sScrollX" :2000, //DataTables的宽 
-            "bAutoWidth" : false, //是否自适应宽度 
+			 "sScrollY" : 450, //DataTables的高
+            "sScrollX" :4000, //DataTables的宽
+            "bAutoWidth" : true, //是否自适应宽度
 			scrollY:        true,
 			scrollX:        true,
 			scrollCollapse: true,
