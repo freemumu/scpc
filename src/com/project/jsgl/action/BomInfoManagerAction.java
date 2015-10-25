@@ -36,10 +36,15 @@ public class BomInfoManagerAction {
 	public void getTableData(){
 		String limitStart = "";
 		String limitEnd = "";
+		String ssdd = Request.getParameter("ssdd") ;
+
 		String sql = "select id ,zddmc, zddcz,clxz,cldx,cltj,clje,jgsl,bmcl,date_format(starttime,'%Y-%m-%d') starttime, " +
 				"date_format(endtime,'%Y-%m-%d') endtime,gs,blqk,date_format(blkssj,'%Y-%m-%d') blkssj," +
 				"date_format(bljssj,'%Y-%m-%d') bljssj, clzt,cgry,cgsj,ddtz, date_format(rksj,'%Y-%m-%d') rksj,bfjs,bhgjs ,gxnr " +
-				" from scglxt_t_bom ";
+				" from scglxt_t_bom  where 1=1 ";
+		if(ssdd != null && !ssdd.equals("")){
+			sql = sql + "and ssdd = '"+ssdd+"'" ;
+		}
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":"+json+"}";

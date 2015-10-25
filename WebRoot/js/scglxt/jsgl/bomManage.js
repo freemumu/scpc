@@ -1,15 +1,29 @@
 /** 订单信息 @author apple @constructor @date 20141024 */ (function () {
     var operateFlag = "";
     window.BomManage = (function () {
-        var _t = this, _operateFlag = "", /** 初始化函数 */ init = function () {
-                tableInit();
+        var _t = this, _operateFlag = "",
+
+            /** 初始化函数 */
+            init = function () {
+                var request = $.GetRequest() ;
+                var ssdd = null ;
+                if(request.ssdd){
+                    ssdd=request.ssdd ;
+                }
+                tableInit(ssdd);
                 registerEvent();
-            }, /** 注册事件 */ registerEvent = function () {
+            },
+
+            /** 注册事件 */
+            registerEvent = function () {
                 $("#form_add").on('click', function () {
                     Main.swapIframUrl('scglxt/jsgl/editBomInfo.jsp');
                     /*跳转iframe页面*/
                 })
-            }, /** 初始化表格函数 */ tableInit = function () {
+            },
+            /** 初始化表格函数 */
+            tableInit = function (ssdd) {
+
                 var table = $('#bomInfo').DataTable({
                     /*			"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",*/
                     "bLengthChange": false,
@@ -24,7 +38,7 @@
                         "oPaginate": {"sFirst": "首页", "sPrevious": "上一页", "sNext": "下一页", "sLast": "末页"}
                     },
                     "aLengthMenu": [20, 30],
-                    "ajax": "bomInfo_getTableData.action",
+                    "ajax": "bomInfo_getTableData.action?ssdd="+ssdd,
                     scrollY: "disabled",
                     scrollX: true, /*scrollCollapse: false,*/
                     paging: true,
