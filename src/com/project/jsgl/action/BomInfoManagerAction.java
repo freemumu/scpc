@@ -42,7 +42,7 @@ public class BomInfoManagerAction {
 				"date_format(endtime,'%Y-%m-%d') endtime,gs,blqk,date_format(blkssj,'%Y-%m-%d') blkssj," +
 				"date_format(bljssj,'%Y-%m-%d') bljssj, clzt,cgry,cgsj,ddtz, date_format(rksj,'%Y-%m-%d') rksj,bfjs,bhgjs ,gxnr " +
 				" from scglxt_t_bom  where 1=1 ";
-		if(ssdd != null && !ssdd.equals("")){
+		if(ssdd != null && !ssdd.equals("") && !ssdd.equals("null")){
 			sql = sql + "and ssdd = '"+ssdd+"'" ;
 		}
 		List list = this.selectDataService.queryForList(sql);

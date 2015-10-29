@@ -12,6 +12,7 @@
                 }
                 tableInit(ssdd);
                 registerEvent();
+                $("#")
             },
 
             /** 注册事件 */
