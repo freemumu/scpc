@@ -37,9 +37,10 @@
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_ssdd'>所属订单</label>
+
                             <div class='col-sm-4 controls'>
                                 <!-- data-rule-minlength='1' -->
-                                <select class='form-control select2' id='form_bomInfo_ssdd' info="bomInfo" name='ssdd' >
+                                <select class='form-control select2' id='form_bomInfo_ssdd' info="bomInfo" name='ssdd'>
                                     <option value="">
                                         -请选择-
                                     </option>
@@ -54,6 +55,7 @@
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_zddcz'>材质</label>
+
                             <div class='col-sm-4 controls'>
                                 <select class='form-control select2 ' id='form_bomInfo_zddcz' info="fromInfo"
                                         name='zddcz'>
@@ -62,6 +64,7 @@
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_clxz'>材料形状</label>
+
                             <div class='col-sm-4 controls'>
                                 <%--<input class='form-control' id='form_bomInfo_clxz' info="fromInfo"
                                        name='clxz' placeholder=' ' type='text'>--%>
@@ -70,48 +73,38 @@
                                         -请选择-
                                     </option>
                                     <option value="1">
-                                        圆柱体
+                                        长方体
                                     </option>
                                     <option value="2">
-                                        长方体
+                                        圆柱体
                                     </option>
                                     <option value="3">
                                         其他
                                     </option>
                                 </select>
+
                             </div>
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_cldx'>材料大小</label>
-                           <%-- <div class='col-sm-4 controls' style="  ">
-                                <input class='form-control' id='form_bomInfo_cldx' info="fromInfo"
-                                       name='cldx' placeholder=' ' type='text' >
-                            </div>--%>
+                            <%-- <div class='col-sm-4 controls' style="  ">
+                                 <input class='form-control' id='form_bomInfo_cldx' info="fromInfo"
+                                        name='cldx' placeholder=' ' type='text' >
+                             </div>--%>
                             <div class="row " id="form_bomInfo_cldx_jx" >
-                                    <label>长度(cm)</label>
-                                        <input  class="width:80px" type="text" name="length" class=" " placeholder="">
-                                <label>宽度(cm)</label><input   class="width:80px" type="text"  name="width" class="form-control" placeholder="">
-                                <label>高度(cm)</label><input   class="width:80px" type="text" name="height" class="form-control " placeholder="">
-
-                            <%--<div class="col-sm-1">
-                                    <label>宽度</label><input type="text"  name="width" class="form-control" placeholder="">
-                                </div>
-                                <div class="col-sm-1">
-                                    <label>高度</label><input type="text" name="height" class="form-control " placeholder="">
-                                </div>
-
-                                <div class="col-sm-1">
-                                    <button class="btn btn-info btn-default">计算</button>
-                                </div>--%>
+                                <label>长度(cm)</label>
+                                <input class="width:80px" type="text" name="length" class=" " placeholder="">
+                                <label>宽度(cm)</label><input class="width:80px" type="text" name="width"
+                                                            class="form-control" placeholder="">
+                                <label>高度(cm)</label><input class="width:80px" type="text" name="height"
+                                                            class="form-control " placeholder="">
                             </div>
-                           <%-- <div class="row" id="form_bomInfo_cldx_yx">
-                                <div class="col-sm-1">
-                                    <label>直径</label><input type="text" class="form-control" placeholder="">
-                                </div>
-                                <div class="col-sm-1">
-                                    <label>高度</label><input type="text" class="form-control" placeholder="">
-                                </div>
-                            </div>--%>
+                            <div class="row " id="form_bomInfo_cldx_yx"  hidden>
+                                <label>直径(cm)</label>
+                                <input class="width:80px" type="text" name="length" class=" " placeholder="">
+                                <label>高度(cm)</label><input class="width:80px" type="text" name="height"
+                                                            class="form-control " placeholder="">
+                            </div>
                         </div>
 
 
@@ -133,9 +126,12 @@
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3'>材料体积</label>
 
-                            <div class='col-sm-4 controls'>
+                            <div class='col-sm-3 controls '>
                                 <input class='form-control' id='form_bomInfo_cltj' info="fromInfo"
                                        name='cltj' placeholder=' ' type='text'>
+                            </div>
+                            <div class='col-sm-1 controls '>
+                                <div id="btn-calculateValume" class="btn btn-primary">计算</div>
                             </div>
                         </div>
                         <div class='form-group'>
@@ -190,9 +186,6 @@
                                 </select>
                             </div>
                         </div>
-
-
-
 
 
                         <div class='modal-footer'>
