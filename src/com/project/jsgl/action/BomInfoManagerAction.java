@@ -37,14 +37,19 @@ public class BomInfoManagerAction {
 		String limitStart = "";
 		String limitEnd = "";
 		String ssdd = Request.getParameter("ssdd") ;
+		String cggl = Request.getParameter("cggl") ;
 
 		String sql = "select id ,zddmc, zddcz,clxz,cldx,cltj,clje,jgsl,bmcl,date_format(starttime,'%Y-%m-%d') starttime, " +
 				"date_format(endtime,'%Y-%m-%d') endtime,gs,blqk,date_format(blkssj,'%Y-%m-%d') blkssj," +
-				"date_format(bljssj,'%Y-%m-%d') bljssj, clzt,cgry,cgsj,ddtz, date_format(rksj,'%Y-%m-%d') rksj,bfjs,bhgjs ,gxnr " +
+				"date_format(bljssj,'%Y-%m-%d') bljssj, clzt, if(clzt='0','未采购','已采购')  clztformat ,cgry,cgsj,ddtz, date_format(rksj,'%Y-%m-%d') rksj,bfjs,bhgjs ,gxnr " +
 				" from scglxt_t_bom  where 1=1 ";
 		if(ssdd != null && !ssdd.equals("") && !ssdd.equals("null")){
 			sql = sql + "and ssdd = '"+ssdd+"'" ;
 		}
+		if(cggl != null &&  cggl.equals("true")){
+				sql += " " ;
+		}
+		sql +=" order by id desc " ;
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":"+json+"}";
@@ -66,6 +71,21 @@ public class BomInfoManagerAction {
 			Response.write("ERROR");
 		}
 		
+	}
+	/**
+	 * 更改备料状态
+	 */
+	public void changeStatusClzt(){
+		String id = Request.getParameter("id");
+		String sql = "update scglxt_t_bom set clzt ='1' where id = '"+id+"'" ;
+		try {
+			selectDataService.execute(sql);
+			Response.write("SUCCESS") ;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Response.write("ERROR");
+		}
 	}
 	/**
 	 * 获取客户信息

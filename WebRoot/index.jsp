@@ -137,12 +137,14 @@
                                 </a>
                                 <ul class='nav nav-stacked'>
                                     <li>
-                                        <a class='dropdown-collapse' href='http://localhost:8080/scpc/scglxt/scgl/pcGlRy.html'>
+                                        <a class='dropdown-collapse'
+                                           href='http://localhost:8080/scpc/scglxt/scgl/pcGlRy.html'>
                                             <span id="scgl-glry-ry">人员</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class='dropdown-collapse' href='http://localhost:8080/scpc/scglxt/scgl/pcGlSb.html'>
+                                        <a class='dropdown-collapse'
+                                           href='http://localhost:8080/scpc/scglxt/scgl/pcGlSb.html'>
                                             <span id="scgl-glry-sb">设备</span>
                                         </a>
                                     </li>
@@ -155,12 +157,14 @@
                                 </a>
                                 <ul class='nav nav-stacked'>
                                     <li>
-                                        <a class='dropdown-collapse' href='http://localhost:8080/scpc/scglxt/scgl/pcGlRy.html'>
+                                        <a class='dropdown-collapse'
+                                           href='http://localhost:8080/scpc/scglxt/scgl/pcGlRy.html'>
                                             <span id="scgl-scry-ry">人员</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class='dropdown-collapse' href='http://localhost:8080/scpc/scglxt/scgl/pcGlSb.html'>
+                                        <a class='dropdown-collapse'
+                                           href='http://localhost:8080/scpc/scglxt/scgl/pcGlSb.html'>
                                             <span id="scgl-scry-sb">设备</span>
                                         </a>
                                     </li>
@@ -244,6 +248,13 @@
                             <span id="cpgl">产品管理</span>
                         </a>
                     </li>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="kcgl">库存管理</span>
+                        </a>
+                    </li>
+
                 </ul>
             </li>
             <li>
