@@ -13,7 +13,7 @@
             <div class='box bordered-box ' style='margin-bottom: 0;'>
                 <div class='box-header'>
                     <button id="form_add" class="btn btn-success btn-sm"><i class="icon-add"></i> 增加</button>
-                    <div class='title'> BOM表</div>
+                    <div class='title'> 订单采购管理</div>
                     <div class='actions'><a class="btn box-remove btn-xs btn-link" href="#"><i class='icon-remove'></i>
                     </a> <a class="btn box-collapse btn-xs btn-link" href="#"><i></i> </a></div>
                 </div>
@@ -139,10 +139,10 @@
                                 "render": function (data, type, row) {
                                     if (row.clzt == "0") {
                                         return '<div class="text-center operate_bl">' +
-                                                '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  备料</button>   </div>';
+                                                '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  采购</button>   </div>';
                                     } else if (row.clzt == "1") {
                                         return '<div class="text-center operate_bl">' +
-                                                '<button class="btn  btn-default btn-block "  disabled="disabled"  href="#" title="备料" onclick = "CgglManager.stock(\'' + row + '\')">  备料完成</button>   </div>';
+                                                '<button class="btn  btn-default btn-block "  disabled="disabled"  href="#" title="备料" onclick = "CgglManager.stock(\'' + row + '\')">  采购完成</button>   </div>';
                                     }
 
                                 }, "targets": 1
@@ -213,12 +213,12 @@
 
                         var url = "../jsgl/bomInfo_changeStatusClzt.action", successFun = function (resStr) {
                             if (resStr == "SUCCESS") {
-                                alert("备料成功！");
+                                alert("采购完成！");
                                 window.location.reload();
 
                             }
                         };
-                        if (confirm("确定备料完成？")) {
+                        if (confirm("确定更新采购状态？")) {
                             $.asyncAjaxPost(url, {"id": id}, successFun, true);
                         }
 
