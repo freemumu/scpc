@@ -73,7 +73,7 @@ public class BomInfoManagerAction {
 		
 	}
 	/**
-	 * 更改备料状态
+	 * 更改采购状态
 	 */
 	public void changeStatusClzt(){
 		String id = Request.getParameter("id");
@@ -87,6 +87,23 @@ public class BomInfoManagerAction {
 			Response.write("ERROR");
 		}
 	}
+
+	/**
+	 * 更新备料情况
+	 */
+	public void updateBlzk(){
+		String id = Request.getParameter("id");
+		String sql = "update scglxt_t_bom set blqk ='1' where id = '"+id+"'" ;
+		try {
+			selectDataService.execute(sql);
+			Response.write("SUCCESS") ;
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Response.write("ERROR");
+		}
+	}
+
 	/**
 	 * 获取客户信息
 	 */

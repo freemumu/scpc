@@ -2,9 +2,9 @@
 <%@ include file="/include/topFile.jsp" %>
 <!DOCTYPE html>
 <html>
-<head><title>bom表管理</title>
+<head><title>备料库存管理</title>
     <script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
-    <%--<script type="text/javascript" src="../../js/scglxt/jsgl/bomManage.js"></script>--%>
+    <%--<script type="text/javascript" src="../../js/scglxt/jsgl/CgglManager.js"></script>--%>
 </head>
 <body>
 <div class='container container-wrapper'>
@@ -13,7 +13,7 @@
             <div class='box bordered-box ' style='margin-bottom: 0;'>
                 <div class='box-header'>
                     <button id="form_add" class="btn btn-success btn-sm"><i class="icon-add"></i> 增加</button>
-                    <div class='title'> BOM表</div>
+                    <div class='title'> 备料库存管理</div>
                     <div class='actions'><a class="btn box-remove btn-xs btn-link" href="#"><i class='icon-remove'></i>
                     </a> <a class="btn box-collapse btn-xs btn-link" href="#"><i></i> </a></div>
                 </div>
@@ -26,7 +26,9 @@
                                 <tr>
                                     <th> 序号</th>
                                     <th> 操作</th>
-
+                                    <!-- 															<th> -->
+                                    <!-- 																工序编排 -->
+                                    <!-- 															</th> -->
                                     <th> ID</th>
                                     <th> 子订单名称</th>
                                     <th> 子订单材质</th>
@@ -44,11 +46,16 @@
                                     <th> 备料开始时间</th>
                                     <th> 备料结束时间</th>
                                     <th> 料的状态</th>
-
-
-
-
-
+                                    <th> 采购人员</th>
+                                    <th> 采购商家</th>
+                                    <th> 子订单图纸</th>
+                                    <th> 入库时间</th>
+                                    <th>
+                                        报废件数
+                                    </th>
+                                    <th>
+                                        不合格件数
+                                    </th>
                                 </tr>
                                 </thead>
                             </table>
@@ -81,24 +88,22 @@
 </div>
 
 </body>
-
 <script>
-
     /** 订单信息 @author apple @constructor @date 20141024 */ (function () {
         var operateFlag = "";
-        window.BomManage = (function () {
+        window.CgglManager = (function () {
             var _t = this, _operateFlag = "",
 
                     /** 初始化函数 */
                     init = function () {
-                        var request = $.GetRequest() ;
-                        var ssdd = null ;
-                        if(request.ssdd){
-                            ssdd=request.ssdd ;
+                        var request = $.GetRequest();
+                        var ssdd = null;
+                        if (request.ssdd) {
+                            ssdd = request.ssdd;
                         }
                         tableInit(ssdd);
                         registerEvent();
-                        $("#")
+
                     },
 
                     /** 注册事件 */
@@ -125,26 +130,42 @@
                                 "oPaginate": {"sFirst": "首页", "sPrevious": "上一页", "sNext": "下一页", "sLast": "末页"}
                             },
                             "aLengthMenu": [20, 30],
-                            "ajax": "bomInfo_getTableData.action?ssdd="+ssdd,
+                            "ajax": "bomInfo_getTableData.action?ssdd=" + ssdd + "&cggl=true",
                             scrollY: "disabled",
                             scrollX: true, /*scrollCollapse: false,*/
                             paging: true,
-                            columnDefs: [/*{ width: '20%', targets: 0 }*/],
+
                             "columnDefs": [{
                                 "render": function (data, type, row) {
-                                    return '<div class="text-center">' + ' <a class="btn btn-primary btn-xs" href="#" title="工序编排" onclick = "BomManage.showModel(\'' + data + '\')"><i class="icon-ok" ></i>工艺编排</a>' + ' <a class="btn btn-info btn-xs" href="#" title＝"修改" onclick = "BomManage.editRow(\'' + data + '\')"><i class="icon-edit" ></i></a>' + ' <a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "BomManage.deleteRow(\'' + data + '\')"></i></a></div>';
+                                    console.log(row.blqk);
+                                    if (row.blqk == null || row.blqk == "0"  ) {
+                                        return '<div class="text-center operate_bl">' +
+                                                '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  备料</button>   </div>';
+                                    } else if (row.blqk == "1") {
+                                        return '<div class="text-center operate_bl">' +
+                                                '<button class="btn  btn-default btn-block "  disabled="disabled"  href="#" title="备料" onclick = "CgglManager.stock(\'' + row + '\')">  备料完成</button>   </div>';
+                                    }
+
                                 }, "targets": 1
-                            }, {"visible": false, "targets": [2]} /*是否显示列*/],
-                            "columns": [{"data": null, "sWidth": "60px"}, {
-                                "data": 'id',
-                                "sWidth": "200px"
-                            }, {"data": "id"}, {"data": "zddmc", "sWidth": "120px"}, {
-                                "data": "zddcz",
-                                "sWidth": "120px"
-                            }, {
-                                "data": "gxnr",
-                                "sWidth": "300px"
-                            }, {"data": "clxz"},
+                            },
+                                {"visible": false, "targets": [2]},
+                                {"visible": false, "targets": [4]},
+                                /*是否显示列*/
+                                /*                                {
+                                 "render": function (data, type, row) {
+                                 console.log(data);
+                                 }, "targets": 18
+                                 }*/
+                            ],
+                            "columns": [
+                                {"data": null, "sWidth": "60px"},
+                                {"data": 'id', "sWidth": "100px"},
+                                {"data": "id"},
+                                {"data": "zddmc", "sWidth": "120px"},
+
+                                {"data": "zddcz", "sWidth": "120px"},
+                                {"data": "gxnr", "sWidth": "300px"},
+                                {"data": "clxz"},
                                 {"data": "cldx"},
                                 {"data": "cltj"},
                                 {"data": "clje"},
@@ -158,7 +179,18 @@
                                 {"data": "blqk", "sWidth": "120px"},
                                 {"data": "blkssj", "sWidth": "120px"},
                                 {"data": "bljssj", "sWidth": "120px"},
-                                {"data": "clzt", "sWidth": "120px"},
+                                {"data": "clzt", "sWidth": "120px",
+                                    "mRender":function(data,type,row){
+                                        if(data !=null){
+                                            console.log(row);
+                                            if(row.clzt!= null){
+                                                return row.clzt ;
+                                            }
+
+                                        }
+                                    }
+                                },
+
                                 {"data": "cgry"},
                                 {"data": "cgsj"},
                                 {"data": "rksj", "sWidth": "120px"},
@@ -178,66 +210,38 @@
                         new $.fn.dataTable.FixedColumns(table, {leftColumns: 3});
 
                     },
-                    /**
-                     * 删除信息
-                     */
-                    deleteRow = function (id) {
-                        var url = "bomInfo_deleteRow.action", successFun = function (resStr) {
+                    stock = function (id) {
+
+                        var url = "../jsgl/bomInfo_updateBlzk.action", successFun = function (resStr) {
                             if (resStr == "SUCCESS") {
+                                alert("更新库存成功！");
                                 window.location.reload();
-                                $("#sorting-advanced").dataTable().fnPageChange('previous', true);
-                                alert("SUCCESS！");
+
                             }
                         };
-                        if (confirm("确定删除？")) {
+                        if (confirm("确定更行库存？")) {
                             $.asyncAjaxPost(url, {"id": id}, successFun, true);
                         }
-                        //判断是否要删除
-                        //删除数据库成功后删除表格
-                        //1、删除数据库
-                        //2、删除表格
-                    },
-            //跳转页面
-                    editRow = function (id) {
-                        alert();
-                        Main.swapIframUrl('scglxt/jsgl/editBomInfo.jsp?id=' + id);//跳转iframe页面
-                    },
-                    /**
-                     * 更新合同信息
-                     */
-                    saveHtInfo = function (flag) {
 
-                    },
-                    initHtInfo = function (flag) {
-
-                    },
-                    /**
-                     * 显示modal框
-                     */
-                    showModel = function (data) {
-                        $('#myModal').modal({
-                            backdrop: false,
-                            show: true
-                        });
-                        //在modalbody 中家在iframe 内容为 工序编排的内容
-                        $content = "<iframe src='gygcManager.jsp?bomid=" + data + "' class='modal_iframe'></iframe>";
-                        $container = $('#modal-body');
-                        $container.empty().append($content);
                     }
 
                     ;
 
             return {
                 init: init,
-                deleteRow: deleteRow,
-                editRow: editRow,
-                showModel: showModel
+                stock: stock
+
             }
         })();
+
+
     })();
+
+
     $(document).ready(function () {
-        BomManage.init();
+        CgglManager.init();
     });
+
 
 </script>
 </html>

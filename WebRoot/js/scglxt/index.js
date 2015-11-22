@@ -179,7 +179,7 @@
                         break;
                     //库存管理
                     case "kcgl":
-                        url = "scglxt/kcgl/kcglManage.jsp";
+                        url = "scglxt/kcgl/kcglManager.jsp";
                         break;
                     case "ddcggl":
                         url = "scglxt/cggl/cgglManager.jsp";
