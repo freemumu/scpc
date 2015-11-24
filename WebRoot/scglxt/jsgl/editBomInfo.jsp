@@ -41,15 +41,8 @@
                             <div class='col-sm-4 controls'>
                                 <!-- data-rule-minlength='1' -->
                                 <select class='form-control select2' id='form_bomInfo_ssdd' info="bomInfo" name='ssdd'>
-                                    <option value="">
-                                        -请选择-
-                                    </option>
-                                    <option value="1">
-                                        项目8888
-                                    </option>
-                                    <option value="20150208214351018">
-                                        项目3
-                                    </option>
+
+
                                 </select>
                             </div>
                         </div>
@@ -69,24 +62,20 @@
                                 <%--<input class='form-control' id='form_bomInfo_clxz' info="fromInfo"
                                        name='clxz' placeholder=' ' type='text'>--%>
                                 <select class='form-control select2' id='form_bomInfo_clxz' name='clxz'>
-                                    <option>
-                                        -请选择-
-                                    </option>
+
                                     <option value="1">
                                         长方体
                                     </option>
                                     <option value="2">
                                         圆柱体
                                     </option>
-                                    <option value="3">
-                                        其他
-                                    </option>
+
                                 </select>
 
                             </div>
                         </div>
                         <div class='form-group'>
-                            <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_cldx'>材料大小</label>
+                            <label class='control-label col-sm-3 col-sm-3'   >材料大小</label>
                             <%-- <div class='col-sm-4 controls' style="  ">
                                  <input class='form-control' id='form_bomInfo_cldx' info="fromInfo"
                                         name='cldx' placeholder=' ' type='text' >
@@ -108,20 +97,6 @@
                         </div>
 
 
-                        <%--<div class="form-inline">
-                              <div class="form-group">
-                                  <label for="form_bomInfo_cldx_cd">长</label>
-                                  <input type="text" class="form-control" id="form_bomInfo_cldx_cd" placeholder="长度">
-                              </div>
-                              <div class="form-group">
-                                  <label for="form_bomInfo_cldx_cd">宽</label>
-                                  <input type="text" class="form-control" id="form_bomInfo_cldx_kd" placeholder="长度">
-                              </div>
-                              <div class="form-group">
-                                  <label for="form_bomInfo_cldx_cd">高</label>
-                                  <input type="text" class="form-control" id="form_bomInfo_cldx_gd" placeholder="长度">
-                              </div>
-                          </div>--%>
 
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3'>材料体积</label>
@@ -159,7 +134,7 @@
                             </div>
                         </div>
                         <div class='form-group'>
-                            <label class='control-label col-sm-3 col-sm-3'>自订单开始时间</label>
+                            <label class='control-label col-sm-3 col-sm-3'>子订单开始时间</label>
 
                             <div class='col-sm-4 controls'>
                                 <input class="form-control" id="form_bomInfo_starttime" info="fromInfo"
@@ -167,14 +142,14 @@
                             </div>
                         </div>
                         <div class='form-group'>
-                            <label class='control-label col-sm-3 col-sm-3'>自订单结束时间</label>
+                            <label class='control-label col-sm-3 col-sm-3'>子订单结束时间</label>
 
                             <div class='col-sm-4 controls'>
                                 <input class="form-control" id="form_bomInfo_endtime" info="fromInfo"
                                        name="endtime" type="text" placeholder='自订单结束时间'/>
                             </div>
                         </div>
-                        <div class='form-group'>
+<%--                        <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3'>当前备料情况</label>
 
                             <div class='col-sm-4 controls'>
@@ -185,7 +160,7 @@
                                     <option value="0">否</option>
                                 </select>
                             </div>
-                        </div>
+                        </div>--%>
 
 
                         <div class='modal-footer'>

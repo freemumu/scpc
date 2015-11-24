@@ -132,6 +132,16 @@ public class DdInfoManagerAction {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * 加载订单列表
+	 */
+	public void loadDdList(){
+		String pid =  Request.getParameter("pid") ;
+		String sql = "SELECT  id  ,xmname mc   FROM scpc.scglxt_t_dd order by   xmname " ;
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		Response.write(json);
+	}
 	
 }

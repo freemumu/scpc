@@ -107,7 +107,7 @@
             $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);		
 		},
 			/**
-			 * 加载自订单材质列表
+			 * 加载子订单材质列表
 			 */
 			loadZddczList = function(){
 			var url = "common_loadSjzdList.action",successFun = function(data){
@@ -120,7 +120,19 @@
 				}
 			} ;
 			$.asyncAjax(url, {"pid": "04"}, successFun, true);
-		}
+			},
+			loadDdList = function(){
+				var url = "common_loadSjzdList.action",successFun = function(data){
+					if(data && data.length > 0 ){
+						console.log(data) ;
+						$("#form_bomInfo_zddcz").empty();
+						for(var i = 0 ; i < data.length ; i++){
+							$.AddSelectItem(data[i].mc, data[i].id,"form_bomInfo_zddcz");
+						}
+					}
+				} ;
+				$.asyncAjax(url, {"pid": "04"}, successFun, true);
+			}
 		;
 		return {
 			init:init,
