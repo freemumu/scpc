@@ -89,11 +89,11 @@ public class BomInfoManagerAction {
 	}
 
 	/**
-	 * 更新备料情况
+	 * 更新备料情况 更新备料结束时间
 	 */
 	public void updateBlzk(){
 		String id = Request.getParameter("id");
-		String sql = "update scglxt_t_bom set blqk ='1' where id = '"+id+"'" ;
+		String sql = "update scglxt_t_bom set blqk ='1' ,bljssj =  date_format(now(),'%Y-%m-%d %H:%i:%s') , starttime =date_format(now(),'%Y-%m-%d %H:%i:%s')     where id = '"+id+"'" ;
 		try {
 			selectDataService.execute(sql);
 			Response.write("SUCCESS") ;
@@ -151,10 +151,6 @@ public class BomInfoManagerAction {
 					" (`zddmc`, `zddcz`, `clxz`, `cldx`, `cltj`, `clje`, `jgsl`, `bmcl`, `starttime`, `endtime`," +
 					" `gs`, `blqk`, `blkssj`, `ssdd`)" +
 					" VALUES ('"+zddmc+"', '"+zddcz+"', '"+clxz+"', '"+cldx+"', '"+cltj+"', '"+clje+"', '"+jgsl+"', '"+bmcl+"', ' date_format('"+starttime+"','%Y-%m-%d')', ' date_format('"+endtime+"','%Y-%m-%d')', '"+gs+"', '', '', '"+ssdd+"');" ;
-			/*sql = "INSERT INTO `scglxt_t_bom` (`id`, `ssht`, `xmname`, `ddlevel`, `jhdate`, `planstarttime`, `planendtime`, `realstarttime`, `realendtime`, `zgs`, `dqjd`, `tz`, `remark`, `xmlxr`, `xmfzr`, `ckzt`, `ckdate`)" +
-					" VALUES ('"+id+"', '"+ssht+"', '"+xmname+"', '"+ddlevel+"', date_format('"+jhdate+"','%Y-%m-%d'), date_format('"+planstarttime+"','%Y-%m-%d'), " +
-					" date_format('"+planendtime+"','%Y-%m-%d') , date_format('"+realstarttime+"','%Y-%m-%d'), date_format('"+realendtime+"','%Y-%m-%d'), " +
-					" '"+zgs+"', '"+dqjd+"', '"+tz+"', '"+remark+"', '"+xmlxr+"', '"+xmfzr+"', '"+ckzt+"',date_format('"+ckdate+"','%Y-%m-%d')); ";*/
 		}else if(flag.equals("UPDATE")){
 			sql = "update scglxt_t_bom  " +
 					"set zddmc = '"+zddmc+"', zddcz = '"+zddcz+"' , clxz = '"+clxz+"' , cldx = '"+cldx+"' ,cltj ='"+cltj+"' , clje ='"+clje+"' ,bmcl='"+bmcl+"'," +
@@ -162,12 +158,6 @@ public class BomInfoManagerAction {
 					"gs='"+gs+"'  " +
 					"where  id = '"+id+"'" ;
 
-/*			sql = " update  scglxt_t_bom set ssht='"+ssht+"' , xmname＝'"+xmname+"' ,ddlevel='"+ddlevel+"',jhdate=  date_format('"+jhdate+"','%Y-%m-%d') , " +
-					" planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') , planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') ," +
-					" planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') , planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') ," +
-					" zgs = '"+zgs+",dqjd='"+dqjd+"',tz='"+remark+"',remark='"+remark+"',xmlxr='"+xmlxr+"',xmfzr='"+xmfzr+"' ,ckzt='"+ckzt+"'" +
-					" ckrq=  date_format("+ckdate+",'%Y-%m-%d') " +
-					"where id = '"+id+"' ";*/
 		}
 		try {
 			selectDataService.execute(sql);
