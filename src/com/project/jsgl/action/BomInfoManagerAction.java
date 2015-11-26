@@ -93,7 +93,7 @@ public class BomInfoManagerAction {
 	 */
 	public void updateBlzk(){
 		String id = Request.getParameter("id");
-		String sql = "update scglxt_t_bom set blqk ='1' ,bljssj =  date_format(now(),'%Y-%m-%d %H:%i:%s') , starttime =date_format(now(),'%Y-%m-%d %H:%i:%s')     where id = '"+id+"'" ;
+		String sql = "update scglxt_t_bom set blqk ='1' , bfjs = 0 , bhgjs = 0 ,bljssj =  date_format(now(),'%Y-%m-%d %H:%i:%s') , starttime =date_format(now(),'%Y-%m-%d %H:%i:%s')     where id = '"+id+"'" ;
 		try {
 			selectDataService.execute(sql);
 			Response.write("SUCCESS") ;
@@ -262,7 +262,9 @@ public class BomInfoManagerAction {
 		List list = null  ; 
 		String gygcSql = "select gynr ,edgs from scglxt_t_gygc where bomid = '"+bomid+"' order by serial " ;
 		String gynr = "" ; 
-		 String sql = "" ; 
+		 String sql = "" ;
+//		int ojb = getBomInfoByBomid(bomid) ;
+
 		try {
 			list = this.selectDataService.queryForList(gygcSql) ; 
 			 if(list.size() > 0 ){
@@ -277,6 +279,19 @@ public class BomInfoManagerAction {
 		} catch (Exception e) {
 			e.printStackTrace() ;
 		}
+	}
+	public int getBomInfoByBomid(String bomid ){
+		List list = null ;
+		 int jgsl = 0 ;
+		String sql = "select jgsl from scglxt_t_bom where id = '"+bomid+"'";
+		try {
+			list = this.selectDataService.queryForList(sql) ;
+			jgsl = Integer.valueOf(list.get(0).toString());
+
+		}catch (Exception e ){
+			e.printStackTrace() ;
+		}
+		return jgsl ;
 	}
 	/**
 	 * 加在加工工艺json数据列表

@@ -31,6 +31,7 @@
                                     <!-- 															</th> -->
                                     <th> ID</th>
                                     <th> 子订单名称</th>
+                                    <th> 材料状态</th>
                                     <th> 子订单材质</th>
                                     <th> 工序内容</th>
                                     <th> 料的形状</th>
@@ -42,10 +43,10 @@
                                     <th> 子订单开始时间</th>
                                     <th> 子订单结束时间</th>
                                     <th> 子订单工时</th>
-                                    <th> 当前备料情况</th>
+
                                     <th> 备料开始时间</th>
                                     <th> 备料结束时间</th>
-                                    <th> 料的状态</th>
+
                                     <th> 采购人员</th>
                                     <th> 采购商家</th>
                                     <th> 子订单图纸</th>
@@ -148,8 +149,20 @@
 
                                 }, "targets": 1
                             },
+                                {
+
+                                    "render": function ( data, type, row ) {
+                                        console.log(data);
+                                        if(data == 1 ){
+                                            return '<span class="label label-default">采购完成</span>' ;
+                                        }else{
+                                            return '<span class="label label-danger">未采购</span>' ;
+                                        }
+                                    },
+                                    "targets": 4
+                                },
                                 {"visible": false, "targets": [2]},
-                                {"visible": false, "targets": [4]},
+//                                {"visible": false, "targets": [4]},
                                 /*是否显示列*/
                                 /*                                {
                                  "render": function (data, type, row) {
@@ -160,9 +173,10 @@
                             "columns": [
                                 {"data": null, "sWidth": "60px"},
                                 {"data": 'id', "sWidth": "100px"},
-                                {"data": "id"},
-                                {"data": "zddmc", "sWidth": "120px"},
+                                {"data": "blqk"},
 
+                                {"data": "zddmc", "sWidth": "120px"},
+                                {"data": "clzt", "sWidth": "120px"},
                                 {"data": "zddcz", "sWidth": "120px"},
                                 {"data": "gxnr", "sWidth": "300px"},
                                 {"data": "clxz"},
@@ -171,25 +185,22 @@
                                 {"data": "clje"},
                                 {"data": "jgsl"},
                                 {"data": "bmcl"},
-                                {
-                                    "data": "starttime",
-                                    "sWidth": "120px"
-                                }, {"data": "endtime", "sWidth": "120px"},
+                                { "data": "starttime",  "sWidth": "120px" },
+                                {"data": "endtime", "sWidth": "120px"},
                                 {"data": "gs", "sWidth": "120px"},
-                                {"data": "blqk", "sWidth": "120px"},
                                 {"data": "blkssj", "sWidth": "120px"},
                                 {"data": "bljssj", "sWidth": "120px"},
-                                {"data": "clzt", "sWidth": "120px",
-                                    "mRender":function(data,type,row){
-                                        if(data !=null){
-                                            console.log(row);
-                                            if(row.clzt!= null){
-                                                return row.clzt ;
-                                            }
-
-                                        }
-                                    }
-                                },
+//                                {"data": "clzt", "sWidth": "120px",
+//                                    "mRender":function(data,type,row){
+//                                        if(data !=null){
+//                                            console.log(row);
+//                                            if(row.clzt!= null){
+//                                                return row.clzt ;
+//                                            }
+//
+//                                        }
+//                                    }
+//                                },
 
                                 {"data": "cgry"},
                                 {"data": "cgsj"},
