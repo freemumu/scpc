@@ -23,10 +23,10 @@
                 })
             },
             /** 初始化表格函数 */
-            tableInit = function (ssdd) {
+            tableInit = function () {
 
-                var table = $('#bomInfo').DataTable({
-                    /*			"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",*/
+                var table = $('#pcglBomStatus').DataTable({
+                	
                     "bLengthChange": false,
                     "oLanguage": {
                         "sProcessing": "正在加载中......",
@@ -38,47 +38,32 @@
                         "sSearch": "搜索",
                         "oPaginate": {"sFirst": "首页", "sPrevious": "上一页", "sNext": "下一页", "sLast": "末页"}
                     },
+                    
                     "aLengthMenu": [20, 30],
-                    "ajax": "bomInfo_getTableData.action?ssdd="+ssdd,
+                    "ajax": "pcgl_getBomStatusList.action",
                     scrollY: "disabled",
-                    scrollX: true, /*scrollCollapse: false,*/
+                    scrollX: true,
                     paging: true,
-                    columnDefs: [/*{ width: '20%', targets: 0 }*/],
+                    columnDefs: [],
                     "columnDefs": [{
-                        "render": function (data, type, row) {
-                            return '<div class="text-center">' + ' <a class="btn btn-primary btn-xs" href="#" title="工序编排" onclick = "BomManage.showModel(\'' + data + '\')"><i class="icon-ok" ></i>工艺编排</a>' + ' <a class="btn btn-info btn-xs" href="#" title＝"修改" onclick = "BomManage.editRow(\'' + data + '\')"><i class="icon-edit" ></i></a>' + ' <a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "BomManage.deleteRow(\'' + data + '\')"></i></a></div>';
-                        }, "targets": 1
-                    }, {"visible": false, "targets": [2]} /*是否显示列*/],
-                    "columns": [{"data": null, "sWidth": "60px"}, {
-                        "data": 'id',
-                        "sWidth": "200px"
-                    }, {"data": "id"}, {"data": "zddmc", "sWidth": "120px"}, {
-                        "data": "zddcz",
-                        "sWidth": "120px"
-                    }, {
-                        "data": "gxnr",
-                        "sWidth": "300px"
-                    }, {"data": "clxz"},
-                        {"data": "cldx"},
-                        {"data": "cltj"},
-                        {"data": "clje"},
-                        {"data": "jgsl"},
+	                        
+                    	"render": function (data, type, row) {
+	                            return '<div class="text-center">' + ' <a class="btn btn-primary btn-xs" href="#" title="时间安排" onclick = "BomManage.showModel(\'' + data + '\')"><i class="icon-ok" ></i>工艺编排</a>' + ' <a class="btn btn-info btn-xs" href="#" title＝"修改" onclick = "BomManage.editRow(\'' + data + '\')"><i class="icon-edit" ></i></a>' + ' <a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "BomManage.deleteRow(\'' + data + '\')"></i></a></div>';
+	                        }, "targets": 1
+                    	}, 
+                    	{"visible": false, "targets": [2]} /*是否显示列*/
+                    ],
+                    "columns": [
+                                
+                        {"data": null,"sWidth": "60px"}, 
+                        {"data": 'id',"sWidth": "200px"}, 
+                        {"data": "zddmc", "sWidth": "120px"}, 
+                        {"data": "ddtz","sWidth": "300px"},
                         {"data": "bmcl"},
-                        {
-                        "data": "starttime",
-                        "sWidth": "120px"
-                    }, {"data": "endtime", "sWidth": "120px"},
+                        {"data": "jhkssj","sWidth": "120px"}, 
+                        {"data": "jhjssj", "sWidth": "120px"},
                         {"data": "gs", "sWidth": "120px"},
-                        {"data": "blqk", "sWidth": "120px"},
-                        {"data": "blkssj", "sWidth": "120px"},
-                        {"data": "bljssj", "sWidth": "120px"},
-                        {"data": "clzt", "sWidth": "120px"},
-                        {"data": "cgry"},
-                        {"data": "cgsj"},
-                        {"data": "rksj", "sWidth": "120px"},
-                        {"data": "ddtz", "sWidth": "120px"},
-                        {"data": "bfjs"},
-                        {"data": "bhgjs", "sWidth": "120px"},
+                        
                     ]
 
                 });

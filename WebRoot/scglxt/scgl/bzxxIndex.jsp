@@ -60,7 +60,7 @@
 	}
 	$(document).ready(function() {
 	
-	tableInit()
+		tableInit()
 	} );
 </script>
 
