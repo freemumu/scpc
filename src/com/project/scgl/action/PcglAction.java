@@ -2,6 +2,7 @@ package com.project.scgl.action;
 
 import java.util.List;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.logging.Log;
 import com.project.base.service.SelectDataService;
 import com.project.commonModel.util.Request;
@@ -123,6 +124,106 @@ public class PcglAction {
 		try{
 			
 			this.selectDataService.execute(sql);
+		}catch(Exception e){
+			Response.write("error");
+			e.printStackTrace();
+		}
+		Response.write("success");
+		
+	}
+	
+	/**
+	 * 获取子订单当前状态供排产管理人员调整
+	 */
+	public void getBomStatusList(){
+		String sql = "select id ,zddmc,clxz,bmcl,date_format(starttime,'%Y-%m-%d') jhkssj,date_format(endtime,'%Y-%m-%d') jhjssj,gs,fun_dqgygc(id) ddtz from scglxt_t_bom  where 1=1";
+		log.info("获取子订单当前状态供排产管理人员调整sql"+sql);
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		json = "{\"data\":"+json+"}";
+		Response.write(json);
+	}
+	
+	/**
+	 * 获取当前待加工的所有工序
+	 */
+	public void getBomGygcJg(){
+		String sql = "SELECT gygc.id, bom.zddmc,bom.bmcl,date_format(bom.starttime,'%Y-%m-%d') jhkssj,date_format(bom.endtime,'%Y-%m-%d') jhjssj,bom.gs,jggy.gymc,gygc.kjgjs,gygc.yjgjs,gygc.bfjs,gygc.kjgjs-gygc.yjgjs-gygc.bfjs-gygc.sjjs djgjs,gygc.sjjs FROM scpc.scglxt_t_gygc gygc,scpc.scglxt_t_bom bom,scglxt_t_jggy jggy where  gygc.bomid = bom.id and jggy.id = gygc.gyid and (gygc.bfjs+gygc.yjgjs+gygc.sjjs<gygc.kjgjs)";
+		log.info("获取当前待加工的所有工序sql"+sql);
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		json = "{\"data\":"+json+"}";
+		Response.write(json);
+	}
+	
+	/**
+	 * 获取当前待检验的所有工序
+	 */
+	public void getBomGygcJy(){
+		String sql = "SELECT jggl.id, bom.zddmc,bom.bmcl,jggy.gymc,ry.rymc,sb.sbmc,jggl.jgjs	FROM scglxt_t_gygc gygc,scglxt_t_bom bom,scglxt_t_jggy jggy,scglxt_t_jggl jggl, scglxt_t_ry ry, scglxt_t_sb sb 	where  gygc.bomid = bom.id and jggy.id = gygc.gyid  and jggl.gygcid = gygc.id and ry.id = jggl.jgryid and sb.id = jggl.sbid and gygc.sjjs>0";
+		log.info("获取当前待检验的所有工作sql"+sql);
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		json = "{\"data\":"+json+"}";
+		Response.write(json);
+	}
+	
+	public void editJgglJy(){
+		
+		String jgglId = Request.getParameter("id");
+		String bfjs = Request.getParameter("v");
+		String jyryid = "02";
+		String sql = "update scglxt_t_jggl set bfjs = "+bfjs+",sfjy = '1',jyryid= '"+jyryid+"' where id = '"+jgglId+"'";
+		
+		String sql2 = "update scglxt_t_gygc a set yjgjs = yjgjs-"+bfjs+"+(select c.jgjs from scglxt_t_jggl c where c.id = '"+jgglId+"') ,bfjs = bfjs+"+bfjs+" where id = (select gygcid from scglxt_t_jggl b where b.id = '"+jgglId+"' and a.id = b.gygcid)";
+		
+		try{
+			
+			this.selectDataService.execute(sql);
+			this.selectDataService.execute(sql2);
+			
+		}catch(Exception e){
+			Response.write("error");
+			e.printStackTrace();
+		}
+		Response.write("success");
+		
+	}
+	
+	public void jgryKs(){
+		
+		String gygcid = "";
+		String ryid = "01";
+		String id = RandomStringUtils.randomNumeric(40);
+		String sql = "insert into scglxt_t_jggl (id,jgryid,jgkssj,gygcid) values ('"+id+"','"+ryid+"',now(),'"+gygcid+"')";
+		
+		
+		try{
+			
+			this.selectDataService.execute(sql);
+			
+		}catch(Exception e){
+			Response.write("error");
+			e.printStackTrace();
+		}
+		Response.write("success");
+		
+	}
+	
+	public void jgryJs(){
+		
+		String ryid = "";
+		String sbid = "";
+		String wcjs = "";
+		String gygcid = "";
+		
+		String sql = "update scglxt_t_jggl set jgjssj = now(),jgjs = "+wcjs+" ,sbid = '"+sbid+"' where jgryid = '"+ryid+"' and gygcid = '"+gygcid+"'";
+		
+		
+		try{
+			
+			this.selectDataService.execute(sql);
+			
 		}catch(Exception e){
 			Response.write("error");
 			e.printStackTrace();
