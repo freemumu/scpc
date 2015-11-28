@@ -113,7 +113,6 @@
             },
         //跳转页面
             editRow = function (id) {
-                alert();
                 Main.swapIframUrl('scglxt/jsgl/editBomInfo.jsp?id=' + id);//跳转iframe页面
             },
             /**
