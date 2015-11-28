@@ -71,12 +71,12 @@
 		            },
 		            "targets": 1
 		        },
-		        { "visible": true,  "targets": [ 2 ] }
+		        { "visible": false,  "targets": [ 2 ] }
 		    ],
 		    "columns": [
 		    	    	{"data":null,"sWidth":"60px"},
-				    	{"data":'id', "sWidth":"200px"},
-				    	{ "data": "id" },
+				    	{"data":'id', "sWidth":"100px"},
+				    	//{ "data": "id" },
 				        { "data": "mc" } ,
 				        { "data": "lx" },
 				        { "data": "cc" },

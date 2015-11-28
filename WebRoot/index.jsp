@@ -242,12 +242,12 @@
                             <span id="scclgl">生产材料管理</span>
                         </a>
                     </li>
-                    <li class=''>
+<%--                    <li class=''>
                         <a href='#'>
                             <i class='icon-caret-right'></i>
                             <span id="cpgl">产品管理</span>
                         </a>
-                    </li>
+                    </li>--%>
                     <li class=''>
                         <a href='#'>
                             <i class='icon-caret-right'></i>
@@ -264,12 +264,12 @@
                     <i class='icon-angle-down angle-down'></i>
                 </a>
                 <ul class='nav nav-stacked'>
-                    <li class=''>
+<%--                    <li class=''>
                         <a href='#'>
                             <i class='icon-caret-right'></i>
                             <span id="ywlxgl">业务类型管理</span>
                         </a>
-                    </li>
+                    </li>--%>
                 </ul>
             </li>
         </ul>

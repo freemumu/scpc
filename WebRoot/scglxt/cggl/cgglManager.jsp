@@ -7,7 +7,7 @@
     <%--<script type="text/javascript" src="../../js/scglxt/jsgl/CgglManager.js"></script>--%>
 </head>
 <body>
-<div class='container container-wrapper'>
+<div class='container-fluid container-wrapper '>
     <div class='row' id='content-wrapper'>
         <div class='row rowTop'>
             <div class='box bordered-box ' style='margin-bottom: 0;'>
@@ -135,26 +135,20 @@
                             scrollX: true, /*scrollCollapse: false,*/
                             paging: true,
 
-                            "columnDefs": [{
+                            "columnDefs": [
+                                {
                                 "render": function (data, type, row) {
-                                    if (row.clzt == "0") {
-                                        return '<div class="text-center operate_bl">' +
-                                                '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  采购</button>   </div>';
-                                    } else if (row.clzt == "1") {
+                                    if (row.clzt == "1" ) {
                                         return '<div class="text-center operate_bl">' +
                                                 '<button class="btn  btn-default btn-block "  disabled="disabled"  href="#" title="备料" onclick = "CgglManager.stock(\'' + row + '\')">  采购完成</button>   </div>';
+                                    } else   {
+                                        return '<div class="text-center operate_bl">' +
+                                                '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  采购</button>   </div>';
                                     }
 
                                 }, "targets": 1
                             },
-                                {"visible": false, "targets": [2]},
-                                {"visible": false, "targets": [4]},
-                                /*是否显示列*/
-/*                                {
-                                    "render": function (data, type, row) {
-                                            console.log(data);
-                                    }, "targets": 18
-                                }*/
+                                {"visible": false, "targets": [2]}
                             ],
                             "columns": [
                                 {"data": null, "sWidth": "60px"},
@@ -178,16 +172,7 @@
                                 {"data": "blqk", "sWidth": "120px"},
                                 {"data": "blkssj", "sWidth": "120px"},
                                 {"data": "bljssj", "sWidth": "120px"},
-                                {"data": "clzt", "sWidth": "120px",
-                                    "mRender":function(data,type,row){
-                                        if(data !=null){
-                                            console.log(row);
-                                            if(row.clzt!= null){
-                                                    return row.clzt ;
-                                            }
-
-                                        }
-                                    }
+                                {"data": "clzt", "sWidth": "120px"
                                 },
 
                                 {"data": "cgry"},
@@ -210,7 +195,6 @@
 
                     },
                     stock = function (id) {
-
                         var url = "../jsgl/bomInfo_changeStatusClzt.action", successFun = function (resStr) {
                             if (resStr == "SUCCESS") {
                                 alert("采购完成！");
