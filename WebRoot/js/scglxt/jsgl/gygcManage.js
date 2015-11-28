@@ -163,6 +163,7 @@
             loadGygcList = function (selector) {
                 var url = "bomInfo_getJggyData.action", successFun = function (data) {
                     if (data && data.length > 0) {
+                        $.AddSelectItemBySelector("空", '', selector);
                         for (var i = 0; i < data.length; i++) {
                             $.AddSelectItemBySelector(data[i].name, data[i].id, selector);
                         }

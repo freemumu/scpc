@@ -297,7 +297,8 @@ public class BomInfoManagerAction {
 	 * 加在加工工艺json数据列表
 	 */
 	public void getJggyData(){
-		String sql = "select id ,gymc name from scglxt_t_jggy ";
+//		String sql = "select id ,gymc name from scglxt_t_jggy ";
+		String sql = "select id  , sbmc name   from scglxt_t_sb  order by sbmc  ";
 		String json = null ;
 		List list = this.selectDataService.queryForList(sql);
 		if(list.size() >= 0 ){
