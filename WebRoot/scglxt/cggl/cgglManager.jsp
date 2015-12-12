@@ -141,7 +141,8 @@
                                     if (row.clzt == "1" ) {
                                         return '<div class="text-center operate_bl">' +
                                                 '<button class="btn  btn-default btn-block "  disabled="disabled"  href="#" title="备料" onclick = "CgglManager.stock(\'' + row + '\')">  采购完成</button>   </div>';
-                                    } else   {
+                                    } else {
+                                    } else {
                                         return '<div class="text-center operate_bl">' +
                                                 '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  采购</button>   </div>';
                                     }

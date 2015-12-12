@@ -56,10 +56,16 @@
                 $.addEvent('rygl', 'click', function () {
                     Main.changeNavUrl('rygl');
                 });
-                //排产任务管理
-                $.addEvent('pcrwgl', 'click', function () {
-                    p
-                    Main.changeNavUrl('pcrwgl');
+
+                //排产管理 管理人员组
+                $.addEvent('scgl-glry-ry', 'click', function () {
+
+                    Main.changeNavUrl('scgl-glry-ry');
+                });
+                //排产管理 生产人员组
+                $.addEvent('scgl-glry-sb', 'click', function () {
+
+                    Main.changeNavUrl('scgl-glry-sb');
                 });
                 //生产绩效管理
                 $.addEvent('scjxgl', 'click', function () {
@@ -118,6 +124,18 @@
                 $.addEvent('cpzlgl', 'click', function () {
                     Main.changeNavUrl('cpzlgl');
                 });
+                //检验人员检验
+                $.addEvent('jyryjy', 'click', function () {
+                    Main.changeNavUrl('jyryjy');
+                });
+                //检验人员检验
+                $.addEvent('jgryjg', 'click', function () {
+                    Main.changeNavUrl('jgryjg');
+                });
+                //加工人员加工
+                $.addEvent('jgryjg', 'click', function () {
+                    Main.changeNavUrl('jgryjg');
+                });
 
             },
             /**
@@ -164,6 +182,14 @@
                     case "pcrwgl":
                         url = "scglxt/scgl/pcglIndex.jsp";
                         break;
+                        //排产任务管理 生产人员组
+                    case "scgl-glry-sb":
+                        url = "scglxt/scgl/pcGlRy.html";
+                        break;
+                    //排产任务管理 生产人员组
+                    case "scgl-glry-ry":
+                        url = "scglxt/scgl/pcGlSb.html";
+                        break;
                     //排产任务管理
                     case "ghsgl":
                         url = "scglxt/cggl/ghsManager.jsp";
@@ -191,6 +217,14 @@
                     //产品质量管理
                     case "cpzlgl":
                         url = "scglxt/zlgl/zlManager.jsp";
+                        break;
+                        //检验人员检验
+                    case "jgryjg":
+                        url = "scglxt/scgl/pcglJgryJg.jsp";
+                        break;
+                        //加工人员加工
+                    case "jgryjg":
+                        url = "scglxt/scgl/pcglJgryJg.jsp";
                         break;
                     default:
                         break;
