@@ -4,9 +4,18 @@
 <html>
 <head><title>子订单排产管理</title>
     <script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
-
+	<!-- bootstrap css 引入 -->
+	<link href="../../js/plugin/bootstrap/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
+	<!-- bootstrap Datatables样式引入 -->
+	<link rel="stylesheet" href="../../js/datatablesExtends/dataTables.bootstrap.css" type="text/css"></link>
+	<!-- jquery ui css 引入 -->
+	<link rel="stylesheet" href="../../js/plugin/jquery-easyui-1.4.3/themes/bootstrap/easyui.css" type="text/css"></link>
+	<!-- jquery-ui的JS -->
+	<script type="text/javascript" src="../../js/plugin/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../js/plugin/jquery-easyui-1.4.3/locale/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript">
 	
+	var varbomid = "";
 	function tableInit(){
 		
 		var table = $('#pcglBomStatus').DataTable( {
@@ -36,7 +45,7 @@
 		"columnDefs": [ 
             {
                 "render": function ( data, type, row ) {
-                    return '<div class="text-center"><a class="btn btn-success btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/addBzInfo.jsp?flag=edit&id='+data+'"><i class="icon-edit"></i></a>&nbsp&nbsp;<a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scglbz_deleteBzInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
+                    return '<div class="text-center"><a href="#" onclick="tzkssj('+"\'"+data+"\'"+')"><span>调整时间</span></a></div>';
                 },
                 "targets": 1
             },
@@ -44,7 +53,7 @@
         ],
         "columns": [
              {"data": null,"sWidth": "60px"}, 
-             {"data": 'id',"sWidth": "200px"}, 
+             {"data": "id","sWidth": "200px"}, 
              {"data": "zddmc", "sWidth": "120px"}, 
              {"data": "ddtz","sWidth": "600px"},
              {"data": "bmcl"},
@@ -64,9 +73,43 @@
 	}
 	$(document).ready(function() {
 	
-		tableInit()
+		tableInit();
+		
+		
+		
 	} );
 	
+	function tzkssj(bomid){
+		
+
+		$('#dlg').dialog('open');
+		varbomid = bomid;
+		$('#jhkssj').datetimepicker({
+			format: 'yyyy-mm-dd hh:ii'
+		});
+		alert(varbomid);
+	}
+	
+	function saveSj(){
+		
+		var jhkssj = $('#jhkssj').val();
+		$.ajax({
+            type: "post",
+            url: "pcgl_updateJhkssj.action",
+            dataType: "text",
+            data: {
+            	
+                "bomid": varbomid,
+                "v":jhkssj
+                
+            },
+            success: function (dt) {
+	              	
+            	$('#dlg').dialog('close');
+            	$('#pcglBomStatus').DataTable().ajax.reload(function(){},true);
+            }
+        });
+	}
 	</script>
 </head>
 <body>
@@ -104,26 +147,21 @@
         </div>
     </div>
 </div>
-
-<!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width:750px;height:500px;">
-        <div class="modal-content" style="height:90%;">
-            <div class="modal-header">
-                <button type="button" class="close"
-                        data-dismiss="modal" aria-hidden="true" style="margin-top:-10px">
-                    &times;
-                </button>
-            </div>
-            <div class="modal-body" id="modal-body">
-            </div>
-
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal -->
+<div id="dlg" class="easyui-dialog" title="调整时间" style="width:400px;height:200px;padding:10px"
+			data-options="toolbar: '#dlg-toolbar',buttons: '#dlg-buttons',closed:true">
+		
+	</div>
+	<div id="dlg-toolbar" style="padding:10px">
+		
+		<span style="margin-left:40px;margin-top:40px;">调整时间：</span><input id="jhkssj" width="120px"></input>
+	</div>
+	<div id="dlg-buttons">
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveSj()">确认</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#dlg').dialog('close')">取消</a>
+	</div>
 </div>
+<script>
 
+</script>
 </body>
 </html>
