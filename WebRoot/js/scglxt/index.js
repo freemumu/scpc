@@ -56,6 +56,10 @@
                 $.addEvent('rygl', 'click', function () {
                     Main.changeNavUrl('rygl');
                 });
+                //排产管理
+                $.addEvent('scgl-pcgl', 'click', function () {
+                    Main.changeNavUrl('scgl-pcgl');
+                });
 
                 //排产管理 管理人员组
                 $.addEvent('scgl-glry-ry', 'click', function () {
@@ -178,6 +182,10 @@
                     case "bzgl":
                         url = "scglxt/scgl/bzxxIndex.jsp";
                         break;
+                        //排产管理
+                    case "scgl-pcgl":
+                        url = "scglxt/scgl/pcglglry.jsp";
+                        break;
                     //排产任务管理
                     case "pcrwgl":
                         url = "scglxt/scgl/pcglIndex.jsp";
@@ -219,8 +227,8 @@
                         url = "scglxt/zlgl/zlManager.jsp";
                         break;
                         //检验人员检验
-                    case "jgryjg":
-                        url = "scglxt/scgl/pcglJgryJg.jsp";
+                    case "jyryjy":
+                        url = "scglxt/scgl/pcglJyRyJy.jsp";
                         break;
                         //加工人员加工
                     case "jgryjg":

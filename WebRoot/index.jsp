@@ -156,6 +156,12 @@
                                     </li>
                                 </ul>
                             </li>
+
+                            <li>
+                                <a class='dropdown-collapse'
+                                   href=''>
+                                    <span id="scgl-pcgl">排产管理</span>
+                                </a>
                             <%--<li>
                                 <a class='dropdown-collapse' href=''>
                                     <i class='icon-caret-right'></i>
