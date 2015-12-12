@@ -92,8 +92,23 @@
 	
 	function saveSj(){
 		
-		alert($('#jhkssj').val());
-		alert(varbomid);
+		var jhkssj = $('#jhkssj').val();
+		$.ajax({
+            type: "post",
+            url: "pcgl_updateJhkssj.action",
+            dataType: "text",
+            data: {
+            	
+                "bomid": varbomid,
+                "v":jhkssj
+                
+            },
+            success: function (dt) {
+	              	
+            	$('#dlg').dialog('close');
+            	$('#pcglBomStatus').DataTable().ajax.reload(function(){},true);
+            }
+        });
 	}
 	</script>
 </head>
