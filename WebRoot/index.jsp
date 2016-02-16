@@ -119,6 +119,12 @@
                         </a>
                     </li>
                     <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="jgryjg">加工人员加工</span>
+                        </a>
+                    </li>
+                    <li class=''>
                         <%--<a href='#'>--%>
                         <%--<i class='icon-caret-right'></i>--%>
                         <%--<span id="pcrwgl">排产任务管理</span>--%>
@@ -150,7 +156,13 @@
                                     </li>
                                 </ul>
                             </li>
+
                             <li>
+                                <a class='dropdown-collapse'
+                                   href=''>
+                                    <span id="scgl-pcgl">排产管理</span>
+                                </a>
+                            <%--<li>
                                 <a class='dropdown-collapse' href=''>
                                     <i class='icon-caret-right'></i>
                                     <span id="scryteam">生产人员组</span>
@@ -169,7 +181,7 @@
                                         </a>
                                     </li>
                                 </ul>
-                            </li>
+                            </li>--%>
                         </ul>
                     </li>
                     <!--                 <li class=''> -->
@@ -214,10 +226,16 @@
                     <i class='icon-angle-down angle-down'></i>
                 </a>
                 <ul class='nav nav-stacked'>
-                    <li class=''>
+                    <%--<li class=''>
                         <a href='#'>
                             <i class='icon-caret-right'></i>
                             <span id="cpzlgl">产品质量管理</span>
+                        </a>
+                    </li>--%>
+                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="jyryjy">检验人员检验</span>
                         </a>
                     </li>
 

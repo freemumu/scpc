@@ -91,7 +91,7 @@
 		var bfjs = $('#bfjs').val();
 		$.ajax({
                 type: "post",
-                url: "pcgl_editGygcJhkssjById.action",
+                url: "pcgl_editJgglJy.action",
                 dataType: "text",
                 data: {
                     "id": varjgglid,
@@ -104,7 +104,7 @@
 					if(dt=='success'){
 					
 						$('#dlg').dialog('close');
-						tableInit();
+						$('#pcglJyryJy').DataTable().ajax.reload(function(){},true);
 						
 					}else{
 					
@@ -156,7 +156,7 @@
 			data-options="toolbar: '#dlg-toolbar',buttons: '#dlg-buttons',closed:true">
 		
 	</div>
-	<div id="dlg-toolbar" style="padding:2px">
+	<div id="dlg-toolbar" style="padding:15px">
 		
 		<span style="margin-left:40px;margin-top:40px;">请输入报废件数：</span><input id="bfjs" width="120px;"></input>
 	</div>
