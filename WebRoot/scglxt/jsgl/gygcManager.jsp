@@ -23,10 +23,9 @@
 	</div>
 </div>
 
-	<div id='container' class="container container-wrapper">
+	<div id='container' class="container-fluid ">
 
-		<div class='container'>
-			<div class='row' id='content-wrapper'>
+			<div class=' ' id='content-wrapper'>
 				<div class='row rowTop'>
 					<div class='box bordered-box ' style='margin-bottom: 0;'>
 						<div class='box-content box-no-padding'>
@@ -46,7 +45,6 @@
 												<th class="starttime hide ">开始时间</th>
 												<th class="endtime  hide">结束时间</th>
 
-<!-- 												<th>子订单名称</th> -->
 											</tr>
 										</thead>
 										<tbody>
@@ -58,7 +56,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
 </body>
 </html>
