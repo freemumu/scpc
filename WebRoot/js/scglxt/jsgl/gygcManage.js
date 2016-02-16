@@ -40,7 +40,9 @@
                 $('#btn-save').on("click", function () {
                     GygcManage.saveFormInfo();
                 });
-
+                $("#gygc tbody tr").on("click",function(e){
+                    alert();
+                })
             },
         /**
          * 初始化表格函数
@@ -90,14 +92,14 @@
                     formInfo.serial = i;
                     var JSON = $.toJsonString(formInfo),
                         successFun = function (str) {
-                            console.log(i == (rowNum - 1));
                             console.log(i);
-                            console.log((rowNum - 1));
-                            if (i == (rowNum ) && str == "1") {
+                            console.log((rowNum ));
+                            console.log(i == (rowNum ) && str == "1");
+                            if (i == (rowNum -1 ) && str == "1") {
                                 alert("保存成功！");
                             }
                         }
-                    $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);
+                    $.syncAjaxPost(url, {"JSON": JSON}, successFun, true);
                 }
             },
         /**
@@ -251,6 +253,7 @@
 
 $(document).ready(function () {
     GygcManage.init();
+
 });
  
  

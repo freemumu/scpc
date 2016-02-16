@@ -16,7 +16,7 @@
 <script type="text/javascript" src="../../js/scglxt/jsgl/gygcManage.js"></script>
 </head>
 <body>
-<div class="container" style="margin-top: 10px;">
+<div class="container-fluid">
 	<div class="  col-md-12">
 		<button id="btn-add" type="button" class="btn btn-sm btn-primary">增加</button>
 		<button id="btn-save" type="btn-save" class="btn btn-sm btn-success">保存</button>

@@ -90,7 +90,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="module-library">
       <library name="axis-ant.jar">
         <CLASSES>
@@ -766,6 +766,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 6.0.43" level="application_server_libraries" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.32" level="application_server_libraries" />
   </component>
 </module>
