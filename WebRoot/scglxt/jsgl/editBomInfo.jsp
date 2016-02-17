@@ -101,11 +101,13 @@
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3'>材料体积</label>
 
-                            <div class='col-sm-3 controls '>
+                            <div class='col-sm-4 controls '>
                                 <input class='form-control' id='form_bomInfo_cltj' info="fromInfo"
                                        name='cltj' placeholder=' ' type='text'>
+
                             </div>
-                            <div class='col-sm-1 controls '>
+                            <div class='col-sm-2 controls '>
+                                <span>cm<sup>2</sup></span>
                                 <div id="btn-calculateValume" class="btn btn-primary">计算</div>
                             </div>
                         </div>

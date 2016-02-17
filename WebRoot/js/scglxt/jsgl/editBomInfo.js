@@ -22,6 +22,15 @@
 			$('#btn_save').live('click',function(){
 				saveFormInfo(_this._flag);
 			});
+			$("#form_bomInfo_clxz").on("change",function(e){
+				if($(this).val()==1){
+					$("#form_bomInfo_cldx_jx").removeAttr("hidden");
+					$("#form_bomInfo_cldx_yx").attr("hidden",true);
+				}else{
+					$("#form_bomInfo_cldx_jx").attr("hidden",true);
+					$("#form_bomInfo_cldx_yx").removeAttr("hidden");
+				}
+			});
 			registerEvent();
 			var urlParam = new Object();
 			urlParam = $.GetRequest();
@@ -44,9 +53,13 @@
 		 * 注册事件
 		 */
 		registerEvent = function(){
+			var that = this ;
 			$("#form_return").on('click',function(){
 				Main.swapIframUrl('scglxt/jsgl/bomManager.jsp');//跳转iframe页面
-			})		
+			})
+			$("#btn-calculateValume").on("click",function(e){
+				calculateVolume();
+			});
 		},		
 		initFormInfo = function(id){
 			var url = "ddInfo_getDetailInfo.action",successFun = function(data){
@@ -132,7 +145,22 @@
 					}
 				} ;
 				$.asyncAjax(url, {"pid": "04"}, successFun, true);
-			}
+			},
+			calculateVolume = function(){
+				var clxz = $("#form_bomInfo_clxz").val(), volume = 0 ;
+				if(clxz == 1 ){
+					var l = $("#form_bomInfo_cldx_jx input[name=length]").val();
+					var w = $("#form_bomInfo_cldx_jx input[name=width]").val();
+					var h = $("#form_bomInfo_cldx_jx input[name=height]").val();
+					volume = l*w*h ;
+
+				}else if(clxz == 2 ){
+ 					var d = $("#form_bomInfo_cldx_yx input[name=length]").val();
+ 					var h = $("#form_bomInfo_cldx_yx input[name=height]").val();
+					volume = 3.14*(d/2)*h ;
+				}
+				$("#form_bomInfo_cltj").val(volume);
+		}
 		;
 		return {
 			init:init,

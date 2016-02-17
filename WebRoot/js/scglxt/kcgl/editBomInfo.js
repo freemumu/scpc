@@ -22,6 +22,10 @@
 			$('#btn_save').live('click',function(){
 				saveFormInfo(_this._flag);
 			});
+			$("#btn-calculateValume").on("click",function(e){
+				alert("") ;
+				console.log(that) ;
+			});
 			registerEvent();
 			var urlParam = new Object();
 			urlParam = $.GetRequest();
@@ -37,9 +41,11 @@
 		 * 注册事件
 		 */
 		registerEvent = function(){
+			var that = this ;
 			$("#form_return").on('click',function(){
 				Main.swapIframUrl('scglxt/jsgl/bomManager.jsp');//跳转iframe页面
-			})		
+			})
+
 		},		
 		initFormInfo = function(id){
 			var url = "ddInfo_getDetailInfo.action",successFun = function(data){
