@@ -108,7 +108,7 @@ public class BomInfoManagerAction {
 	 * 获取客户信息
 	 */
 	public void getDetailInfo(){
-		String id = "1" ;
+		String id = Request.getParameter("id") ;
 		String sql = " select id ,zddmc, zddcz,clxz,cldx,cltj,clje,jgsl,bmcl,date_format(starttime,'%Y-%m-%d') starttime, " +
 				"date_format(endtime,'%Y-%m-%d') endtime,gs,blqk,date_format(blkssj,'%Y-%m-%d') blkssj," +
 				"date_format(bljssj,'%Y-%m-%d') bljssj, clzt,cgry,cgsj,ddtz,rksj,bfjs,bhgjs from scglxt_t_bom where id = '"+id+"' ";
@@ -318,6 +318,18 @@ public class BomInfoManagerAction {
 		String sql = " select bomid ,gyid ,id ,gynr  ,edgs,serial    from   scglxt_t_gygc where bomid = '"+bomid+"'  order by serial asc ";
 		String json = null ; 
 		List list = this.selectDataService.queryForList(sql);
+		if(list.size()>=0){
+			json = JsonObjectUtil.list2Json(list);
+			Response.write(json);
+		}else {
+			Response.write("error");
+		}
+	}
+
+	public  void loadSsddList(){
+		String sql = "select id , xmname mc  from  scglxt_t_dd ";
+		List list = this.selectDataService.queryForList(sql);
+		String json = null ;
 		if(list.size()>=0){
 			json = JsonObjectUtil.list2Json(list);
 			Response.write(json);

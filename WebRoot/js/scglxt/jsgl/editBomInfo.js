@@ -13,6 +13,7 @@
 		init = function(){
 			var _this = this ;
 			//返回按钮
+			$("#form_bomInfo_ssdd").select2();
 			$("#form_return").click(function(){
 				var $outFrame =  $(window.parent.document.body) ; 
 				var $iframe = $outFrame.find("#mainIframe");
@@ -48,6 +49,7 @@
 			$('#form_bomInfo_endtime').datetimepicker({
 				format: 'yyyy-mm-dd hh:ii'
 			});
+			loadSsddList();
 		},
 		/**
 		 * 注册事件
@@ -62,10 +64,9 @@
 			});
 		},		
 		initFormInfo = function(id){
-			var url = "ddInfo_getDetailInfo.action",successFun = function(data){
-				console.log(data);
+			var url = "bomInfo_getDetailInfo.action",successFun = function(data){
 				if(data && data.length >0 ){
-					var select = $('#form_ddInfo input[info="fromInfo"]');
+					var select = $('#form_bomInfo input[info="fromInfo"]');
 					//循环给表单赋值
 					for (var i = 0; i < select.length; i++) {
 						var s = select[i];
@@ -80,7 +81,8 @@
 							if (id.toLowerCase() == j) {
 								console.log(id);
 								console.log(value);
-								$(s).attr("value", value);
+								//$(s).attr("value", value);
+								$(s).val(value);
 								$(s).attr("title", value);
 							}
 						}
@@ -134,6 +136,20 @@
 			} ;
 			$.asyncAjax(url, {"pid": "04"}, successFun, true);
 			},
+			loadSsddList = function(){
+				var url = "bomInfo_loadSsddList.action",successFun = function(data){
+					if(data && data.length > 0 ){
+						console.log(data) ;
+						$("#form_bomInfo_ssdd").empty();
+						for(var i = 0 ; i < data.length ; i++){
+							$.AddSelectItem(data[i].mc, data[i].id,"form_bomInfo_ssdd");
+						}
+					}
+				} ;
+				$.asyncAjax(url, {"pid": "04"}, successFun, true);
+			},
+
+
 			loadDdList = function(){
 				var url = "common_loadSjzdList.action",successFun = function(data){
 					if(data && data.length > 0 ){

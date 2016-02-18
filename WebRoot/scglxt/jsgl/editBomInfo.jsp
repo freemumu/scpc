@@ -27,11 +27,11 @@
                     <form id="form_bomInfo" class='form form-horizontal ' method="post" style='margin-bottom: 0;'>
 
                         <div class='form-group'>
-                            <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_zzdmc'>bom(子订单名称)</label>
+                            <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_zddmc'>bom(子订单名称)</label>
 
                             <div class='col-sm-4 controls'>
                                 <!-- data-rule-minlength='1' -->
-                                <input class='form-control' id='form_bomInfo_zzdmc' info="bomInfo" name='zddmc'
+                                <input class='form-control' id='form_bomInfo_zddmc' info="fromInfo" name='zddmc'
                                        placeholder='子订单名称' type='text'>
                             </div>
                         </div>
@@ -40,9 +40,7 @@
 
                             <div class='col-sm-4 controls'>
                                 <!-- data-rule-minlength='1' -->
-                                <select class='form-control select2' id='form_bomInfo_ssdd' info="bomInfo" name='ssdd'>
-
-
+                                <select class='form-control  ' id='form_bomInfo_ssdd' info="fromInfo" name='ssdd'>
                                 </select>
                             </div>
                         </div>
