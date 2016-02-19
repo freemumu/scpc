@@ -21,7 +21,7 @@ public class CommonAction {
     }
 
     /**
-     * ²éÑ¯Êý¾Ý×ÖµäÁÐ±í
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ð±ï¿½
      */
     public void loadSjzdList(){
         String pid =  Request.getParameter("pid") ;

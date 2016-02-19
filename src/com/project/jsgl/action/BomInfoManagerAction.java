@@ -337,5 +337,18 @@ public class BomInfoManagerAction {
 			Response.write("error");
 		}
 	}
+
+
+	public void loadClInfoJson(){
+		String sql = "select  id ,clmc ,clsl ,clcz ,cldj,cllx , mi, clxz,kd,gd,cd,clly  from  scglxt_t_cl " ;
+		List list = this.selectDataService.queryForList(sql);
+		String json = null ;
+		if(list.size()>=0){
+			json = JsonObjectUtil.list2Json(list);
+			Response.write(json);
+		}else {
+			Response.write("error");
+		}
+	}
 	
 }
