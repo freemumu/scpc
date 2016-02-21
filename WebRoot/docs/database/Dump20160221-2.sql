@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.1.40, for Win32 (ia32)
+CREATE DATABASE  IF NOT EXISTS `scpc` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `scpc`;
+-- MySQL dump 10.13  Distrib 5.6.19, for osx10.7 (i386)
 --
--- Host: localhost    Database: scpc
+-- Host: 127.0.0.1    Database: scpc
 -- ------------------------------------------------------
--- Server version	5.1.40-community
+-- Server version	5.6.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -113,6 +115,7 @@ CREATE TABLE `scglxt_t_bom` (
   `bfjs` int(11) DEFAULT NULL COMMENT '报废件数',
   `bhgjs` int(11) DEFAULT NULL COMMENT '不合格件数',
   `gxnr` varchar(50) DEFAULT NULL COMMENT '工序内容',
+  `SSDD` varchar(50) DEFAULT NULL COMMENT '所属订单',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='子订单管理';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -123,7 +126,7 @@ CREATE TABLE `scglxt_t_bom` (
 
 LOCK TABLES `scglxt_t_bom` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_bom` DISABLE KEYS */;
-INSERT INTO `scglxt_t_bom` VALUES ('001','BM009002.0_0','PEI','PEI',NULL,NULL,NULL,2,'酸洗',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'规格(40)-磨(20)-规格(30)-规格(40)-规格(50)'),('002','BM009002.0_1','红电木','2','2',2,2,2,'水洗',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('003','BM009002.0_2','POM-H',NULL,NULL,NULL,NULL,4,'电镀',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('004','BM009002.0_3','6061',NULL,NULL,NULL,NULL,5,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('005','BM009002.0_4','304',NULL,NULL,NULL,NULL,3,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('006','BM009002.0_5','POM-C',NULL,NULL,NULL,NULL,2,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('007','BM009002.0_8','红电木',NULL,NULL,NULL,NULL,2,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('008','BM009002.0_6','6061',NULL,NULL,NULL,NULL,2,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('009','BM009002.0_7','黄铜-H59',NULL,NULL,NULL,NULL,4,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `scglxt_t_bom` VALUES ('001','BM009002.0_0','PEI','PEI',NULL,NULL,NULL,2,'酸洗',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'磨(20)-规格(30)-规格(40)-规格(50)',NULL),('002','BM009002.0_1','红电木','2','2',2,2,2,'水洗',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('003','BM009002.0_2','POM-H',NULL,NULL,NULL,NULL,4,'电镀',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('004','BM009002.0_3','6061',NULL,NULL,NULL,NULL,5,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('005','BM009002.0_4','304',NULL,NULL,NULL,NULL,3,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('006','BM009002.0_5','POM-C',NULL,NULL,NULL,NULL,2,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('007','BM009002.0_8','红电木',NULL,NULL,NULL,NULL,2,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('008','BM009002.0_6','6061',NULL,NULL,NULL,NULL,2,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('009','BM009002.0_7','黄铜-H59',NULL,NULL,NULL,NULL,4,'抛光',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2(2)',NULL);
 /*!40000 ALTER TABLE `scglxt_t_bom` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,7 +151,7 @@ CREATE TABLE `scglxt_t_bz` (
 
 LOCK TABLES `scglxt_t_bz` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_bz` DISABLE KEYS */;
-INSERT INTO `scglxt_t_bz` VALUES ('01','生产备料部','李大明'),('02','铣工组','李明'),('03','加工中心','蕾蕾'),('04','钳组','素丽'),('05','电镀组','李晨');
+INSERT INTO `scglxt_t_bz` VALUES ('01','生产备料部-B','开发测试人员'),('02','铣工组','李明'),('03','加工中心','蕾蕾'),('04','钳组','素丽'),('05','电镀组','李晨');
 /*!40000 ALTER TABLE `scglxt_t_bz` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -183,7 +186,7 @@ CREATE TABLE `scglxt_t_cl` (
 
 LOCK TABLES `scglxt_t_cl` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_cl` DISABLE KEYS */;
-INSERT INTO `scglxt_t_cl` VALUES ('1','材料名称','不锈钢',0,'100','材料类型','供货商','密度','材料形状',0,0,0,NULL);
+INSERT INTO `scglxt_t_cl` VALUES ('1','材料名称','不锈钢',0,'100','材料类型','供货商','2','1',0,0,0,NULL),('2','asdf','asdf',1,'200','1','china','320','2',0,0,0,NULL);
 /*!40000 ALTER TABLE `scglxt_t_cl` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +253,7 @@ CREATE TABLE `scglxt_t_ghs` (
 
 LOCK TABLES `scglxt_t_ghs` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_ghs` DISABLE KEYS */;
-INSERT INTO `scglxt_t_ghs` VALUES ('大兴','北京市大兴区','null','0009090','孙武','990898'),('乡村爱情','永泉山庄','null','03484424990487635955','赵四','888888'),(NULL,NULL,'电子测绘计算机','9089887','陆伟','990089');
+INSERT INTO `scglxt_t_ghs` VALUES ('大兴','北京市大兴区','商品是永辉超市买的','0009090','孙武','990898'),('乡村爱情','永泉山庄','修正后的商品描述','03484424990487635955','赵四','888888'),('开发人员测试数据','开发人员测试数据','该商品暂时不用','30990255780365113237','卖彩票的','133999443323'),(NULL,NULL,'电子测绘计算机','9089887','陆伟','990089');
 /*!40000 ALTER TABLE `scglxt_t_ghs` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -269,7 +272,7 @@ CREATE TABLE `scglxt_t_gygc` (
   `edgs` int(11) DEFAULT NULL COMMENT '额定工时',
   `stsj` date DEFAULT NULL COMMENT '受图时间',
   `jhwcsj` datetime DEFAULT NULL COMMENT '计划完成时间',
-  `sjwcsj` datetime DEFAULT NULL COMMENT '时间完成时间',
+  `sjwcsj` datetime DEFAULT NULL COMMENT '实际完成时间',
   `jyryid` varchar(40) DEFAULT NULL COMMENT '检验人员',
   `czryid` varchar(40) DEFAULT NULL COMMENT '操作人员',
   `jlsj` date DEFAULT NULL COMMENT '记录时间',
@@ -278,6 +281,13 @@ CREATE TABLE `scglxt_t_gygc` (
   `KSSJ` datetime DEFAULT NULL COMMENT '该工艺过程实际开始时间',
   `JSSJ` datetime DEFAULT NULL COMMENT '该工艺过程实际结束时间',
   `JHKSSJ` datetime DEFAULT NULL COMMENT '计划开始时间',
+  `SFJY` int(11) DEFAULT NULL COMMENT '是否检验',
+  `JYSJ` datetime DEFAULT NULL COMMENT '检验时间',
+  `kjgjs` int(11) DEFAULT NULL COMMENT '待/需要加工件数',
+  `yjgjs` int(11) DEFAULT NULL COMMENT '已检验合格件数',
+  `bfjs` int(11) DEFAULT NULL COMMENT '报废件数',
+  `SJJS` int(11) DEFAULT NULL COMMENT '送检件数',
+  `zysx` varchar(100) DEFAULT NULL COMMENT '注意事项',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='工艺过程';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -288,7 +298,7 @@ CREATE TABLE `scglxt_t_gygc` (
 
 LOCK TABLES `scglxt_t_gygc` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_gygc` DISABLE KEYS */;
-INSERT INTO `scglxt_t_gygc` VALUES ('002','1001','20150401215309975','按照要求规格备料注意尺寸',23,NULL,NULL,NULL,NULL,'01',NULL,NULL,'01',NULL,NULL,'2015-07-14 11:01:00'),('002','1001','20150701215309974','规格',25,NULL,NULL,NULL,NULL,'01',NULL,NULL,'01',NULL,NULL,'2015-07-14 11:01:00'),('002','1003','20150701515309975','规格',34,NULL,NULL,NULL,NULL,'03',NULL,NULL,'03',NULL,NULL,'2015-07-14 11:01:00'),('002','1004','20150703215309975','规格',56,NULL,NULL,NULL,NULL,'04',NULL,NULL,'04',NULL,NULL,'2015-07-14 11:01:00'),('001',NULL,'20150714190411213','磨',20,NULL,NULL,NULL,NULL,NULL,NULL,'1','1002',NULL,NULL,NULL),('001',NULL,'20150714190411284','规格',40,NULL,NULL,NULL,NULL,NULL,NULL,'0','1005',NULL,NULL,NULL),('001',NULL,'20150714190411470','规格',40,NULL,NULL,NULL,NULL,NULL,NULL,'3','1004',NULL,NULL,NULL),('001',NULL,'20150714190411528','规格',30,NULL,NULL,NULL,NULL,NULL,NULL,'2','1002',NULL,NULL,NULL),('001',NULL,'20150714190411545','规格',50,NULL,NULL,NULL,NULL,NULL,NULL,'4','1003',NULL,NULL,NULL),('002','1005','20153701215309975','规格',45,NULL,NULL,NULL,NULL,'05',NULL,NULL,'05',NULL,NULL,'2015-08-23 11:09:00');
+INSERT INTO `scglxt_t_gygc` VALUES ('002','1001','20150401215309975','按照要求规格备料注意尺寸',23,NULL,NULL,NULL,NULL,'01',NULL,1,'01',NULL,NULL,'2015-07-14 11:01:02',NULL,NULL,30,24,5,9,NULL),('002','1001','20150701215309974','规格',25,NULL,NULL,NULL,NULL,'01',NULL,2,'01',NULL,NULL,'2015-07-14 11:01:00',NULL,NULL,20,10,1,10,NULL),('002','1003','20150701515309975','规格',34,NULL,NULL,NULL,NULL,'03',NULL,3,'03',NULL,NULL,'2015-07-10 12:01:00',NULL,NULL,10,5,1,6,NULL),('002','1004','20150703215309975','规格',56,NULL,NULL,NULL,NULL,'04',NULL,4,'04',NULL,NULL,'2015-07-14 11:01:00',NULL,NULL,5,2,1,5,NULL),('002','1005','20153701215309975','规格',45,NULL,NULL,NULL,NULL,'05',NULL,4,'05',NULL,NULL,'2015-08-23 11:09:00',NULL,NULL,2,2,0,0,NULL),('001',NULL,'20160216220916048','磨',20,NULL,NULL,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('001',NULL,'20160216220916580','规格',30,NULL,NULL,NULL,NULL,NULL,NULL,1,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('001',NULL,'20160216220916662','规格',50,NULL,NULL,NULL,NULL,NULL,NULL,3,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('001',NULL,'20160216220916712','规格',40,NULL,NULL,NULL,NULL,NULL,NULL,2,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('009',NULL,'20160220114929694','2',2,NULL,NULL,NULL,NULL,NULL,NULL,1,'41353996961077987502',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1');
 /*!40000 ALTER TABLE `scglxt_t_gygc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -369,6 +379,8 @@ CREATE TABLE `scglxt_t_ht` (
   `hkzh` varchar(50) DEFAULT NULL COMMENT '汇款账号',
   `hkkhh` varchar(50) DEFAULT NULL COMMENT '汇款开户行',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
+  `htmx` varchar(500) DEFAULT NULL COMMENT '合同明细',
+  `khid` varchar(45) DEFAULT NULL COMMENT '客户id',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='合同信息表';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -379,8 +391,42 @@ CREATE TABLE `scglxt_t_ht` (
 
 LOCK TABLES `scglxt_t_ht` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_ht` DISABLE KEYS */;
-INSERT INTO `scglxt_t_ht` VALUES ('1','测试合同','ht10012','',100000,'2015-02-02',0,'',0,10000,0,'','',''),('20140928','测试合同2',NULL,'未知',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('20140929','销售合同',NULL,'未知',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `scglxt_t_ht` VALUES ('1','测试合同','ht10012','',100000,'2015-02-02',0,'',0,10000,0,'','','',NULL,'20141126184435235'),('20140928','测试合同2',NULL,'未知',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'20141126184435235'),('20140929','销售合同',NULL,'未知',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'20141126184435235');
 /*!40000 ALTER TABLE `scglxt_t_ht` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `scglxt_t_jggl`
+--
+
+DROP TABLE IF EXISTS `scglxt_t_jggl`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `scglxt_t_jggl` (
+  `id` varchar(60) NOT NULL COMMENT 'id字段',
+  `jgryid` varchar(45) DEFAULT NULL COMMENT '加工人员id',
+  `jgjs` int(11) DEFAULT NULL COMMENT '加工件数',
+  `jyryid` varchar(45) DEFAULT NULL COMMENT '检验人员ID',
+  `bfjs` int(11) DEFAULT NULL COMMENT '报废件数',
+  `jgkssj` datetime DEFAULT NULL COMMENT '加工开始时间',
+  `jgjssj` datetime DEFAULT NULL COMMENT '加工结束时间',
+  `jysj` datetime DEFAULT NULL COMMENT '检验时间',
+  `bz` varchar(45) DEFAULT NULL COMMENT '备注',
+  `sbid` varchar(45) DEFAULT NULL COMMENT '生产设备ID',
+  `gygcid` varchar(45) DEFAULT NULL COMMENT '工艺过程ID',
+  `SFJY` varchar(2) DEFAULT '0' COMMENT '是否检验',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='加工管理表';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `scglxt_t_jggl`
+--
+
+LOCK TABLES `scglxt_t_jggl` WRITE;
+/*!40000 ALTER TABLE `scglxt_t_jggl` DISABLE KEYS */;
+INSERT INTO `scglxt_t_jggl` VALUES ('','',0,NULL,NULL,'2015-11-26 20:11:43','2015-11-26 20:15:02',NULL,NULL,NULL,'','0'),('009087','01',4,'03',0,'2013-09-08 23:09:07','2013-09-08 23:09:07','2013-09-08 23:09:07','无','01','20150401215309975','0'),('0090876','02',5,'03',0,'2013-09-08 23:09:07','2013-09-08 23:09:07','2013-09-08 23:09:07','无','02','20150401215309975','0'),('78877654','03',5,'02',0,'2013-09-08 23:09:07','2013-09-08 23:09:07','2013-09-08 23:09:07','无','03','20150401215309975','0'),('889977','04',5,'01',0,'2013-09-08 23:09:07','2013-09-08 23:09:07','2013-09-08 23:09:07','无','04','20150401215309975','0'),('F118841387096480652655826394430625975225','01',3,NULL,NULL,'2016-02-20 14:32:13','2016-02-20 15:07:21',NULL,NULL,'01','20150701215309974','0'),('F390695505003254567455141884629776709413','01',NULL,NULL,NULL,'2016-02-20 15:08:32',NULL,NULL,NULL,NULL,'20150701515309975','0'),('F479811069953886496132916415916049338774','01',3,NULL,NULL,'2016-02-20 14:32:19','2016-02-20 15:07:21',NULL,NULL,'01','20150701215309974','0'),('F500304705238697665392228239455190416584','01',3,NULL,NULL,'2016-02-20 14:34:09','2016-02-20 15:07:21',NULL,NULL,'01','20150701215309974','0'),('F628112654342820203114295963657500496539','01',3,NULL,NULL,'2016-02-20 15:07:12','2016-02-20 15:07:21',NULL,NULL,'01','20150701215309974','0'),('F870607767501141467305284799935748694246','01',3,NULL,NULL,'2016-02-20 15:07:26','2016-02-20 15:07:35',NULL,NULL,'01','20150701515309975','0'),('F973129755253203695360674708111183135660','01',3,NULL,NULL,'2016-02-20 15:02:07','2016-02-20 15:07:21',NULL,NULL,'01','20150701215309974','0');
+/*!40000 ALTER TABLE `scglxt_t_jggl` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -396,6 +442,7 @@ CREATE TABLE `scglxt_t_jggy` (
   `gydh` varchar(10) DEFAULT NULL COMMENT '工艺代号',
   `fzbz` varchar(10) DEFAULT NULL COMMENT '工艺班组',
   `gxsx` varchar(45) DEFAULT NULL,
+  `sfwx` varchar(1) DEFAULT '0' COMMENT '是否外协',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='工序表';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -406,7 +453,7 @@ CREATE TABLE `scglxt_t_jggy` (
 
 LOCK TABLES `scglxt_t_jggy` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_jggy` DISABLE KEYS */;
-INSERT INTO `scglxt_t_jggy` VALUES ('1001','备','1001',NULL,NULL),('1002','铣','1002',NULL,NULL),('1003','加工中心 ','1003',NULL,NULL),('1004','钳','1004',NULL,NULL),('1005','镀','1005',NULL,NULL);
+INSERT INTO `scglxt_t_jggy` VALUES ('1001','备','1001',NULL,NULL,'0'),('1002','铣','1002',NULL,NULL,'1'),('1003','加工中心 ','1003',NULL,NULL,'0'),('1004','钳','1004',NULL,NULL,'0'),('1005','镀','1005',NULL,NULL,'0');
 /*!40000 ALTER TABLE `scglxt_t_jggy` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -437,7 +484,7 @@ CREATE TABLE `scglxt_t_kh` (
 
 LOCK TABLES `scglxt_t_kh` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_kh` DISABLE KEYS */;
-INSERT INTO `scglxt_t_kh` VALUES ('20141126184253409','小明','3003','北京','北京','','1',NULL,''),('20141126184435235','老王','3002','上海','上海','老客户','0',NULL,'');
+INSERT INTO `scglxt_t_kh` VALUES ('20141126184253409','小明','3003','北京','北京','','1',NULL,''),('20141126184435235','老王','3002','上海','上海','老客户','0',NULL,''),('20160220102625647','测试客户1','3001','北京创新','海淀区复兴路14号','长期合作','1','2016-02-02','dd'),('20160220110025701','测试','3001','a','a','a','1','2016-02-01','d');
 /*!40000 ALTER TABLE `scglxt_t_kh` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -527,7 +574,7 @@ CREATE TABLE `scglxt_t_ry` (
 
 LOCK TABLES `scglxt_t_ry` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_ry` DISABLE KEYS */;
-INSERT INTO `scglxt_t_ry` VALUES ('01','王清','24','020101','2014-10-24','01',3456),('02','霍晓琳','22','020101','2014-10-19','01',4453),('03','孙武','22','020101','2014-10-24','01',33),('04','素丽','22','020101','2014-10-24','02',122222),('05','戴明','23','020102','2014-10-24','03',23),('06','王伟','23','020102','2014-10-24','03',23),('07','文涛','23','020102','2014-10-24','04',23),('09','艳丽','23','020102','2014-10-24','04',23);
+INSERT INTO `scglxt_t_ry` VALUES ('01','王元','240','020102','2014-10-24','01',34),('02','霍晓琳','22','020101','2014-10-19','01',4453),('03','孙武','22','020101','2014-10-24','01',33),('04','素丽','22','020101','2014-10-24','02',122222),('05','戴明','23','020102','2014-10-24','03',23),('06','王伟','23','020102','2014-10-24','03',23),('07','文涛','23','020102','2014-10-24','04',23),('09','艳丽','23','020102','2014-10-24','04',23);
 /*!40000 ALTER TABLE `scglxt_t_ry` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -546,9 +593,11 @@ CREATE TABLE `scglxt_t_sb` (
   `bxjssj` date DEFAULT NULL COMMENT '设备保修结束时间',
   `sbszd` varchar(10) DEFAULT NULL COMMENT '设备所在地',
   `dqzt` varchar(10) DEFAULT NULL COMMENT '设备当前状态',
-  `wxjl` varchar(10) DEFAULT NULL COMMENT '设备维修记录',
-  `remark` varchar(50) DEFAULT NULL COMMENT '备注',
-  `BZID` varchar(40) DEFAULT NULL COMMENT '设备所属班组',
+  `wxjl` varchar(200) DEFAULT NULL COMMENT '设备维修记录',
+  `remark` varchar(200) DEFAULT NULL COMMENT '备注',
+  `BZID` varchar(60) DEFAULT NULL COMMENT '设备所属班组',
+  `SCCJ` varchar(60) DEFAULT NULL,
+  `SCCJDETAIL` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='设备表';
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -559,7 +608,7 @@ CREATE TABLE `scglxt_t_sb` (
 
 LOCK TABLES `scglxt_t_sb` WRITE;
 /*!40000 ALTER TABLE `scglxt_t_sb` DISABLE KEYS */;
-INSERT INTO `scglxt_t_sb` VALUES ('01','010103','备料设备A','2014-10-07','2014-10-20','孙XX家','010201','维修过上百次','采购的','01'),('02','010103','备料设备B','2014-10-07','2014-10-30','机器存放','010201','维修过三次','没事没事','01'),('03','010101','铣设备A','2014-10-06','2014-10-08','无','010201','无','良好是被','02'),('04','010101','铣设备B','2014-10-07','2014-10-03','南库机房','010201','维修过2次','没有备注信息','02'),('05','010103','加工中心设备A','2014-10-07','2014-10-20','可以使中文','010201','中文','采购的','03'),('06','010101','加工中心设备B','0000-00-00','0000-00-00','','010201','','','03'),('07','010101','加工中心设备C','2012-00-00','0000-00-00','','010201','','','04'),('08','010101','加工中心设备D','0000-00-00','0000-00-00','','010201','','','01'),('09','010101','钳设A','2014-10-07','2014-10-03','南库机房','010201','维修过2次','没有备注信息','04'),('10','010101','钳设B','2014-10-20','2014-10-20','二车间','010202','没有维修过',NULL,'04'),('11','010102','镀设A','2014-10-20','2014-10-20','一车间','010201','没有维修过','备注','05');
+INSERT INTO `scglxt_t_sb` VALUES ('01','010101','备料设备A','2014-10-07','2014-10-20','孙XX家','010202','3月份维修过一次\r\n4月份维修过一次\r\n5月份维修过一次','开发人员测试数据，\r\n开发人员测试数据','03',NULL,NULL),('02','010103','备料设备B','2014-10-07','2014-10-30','机器存放','010201','维修过三次','没事没事','01',NULL,NULL),('03','010101','铣设备A','2014-10-06','2014-10-08','无','010201','无','良好是被','02',NULL,NULL),('03498297362005925005','010103','备料设备A','2014-10-07','2014-10-20','孙','010201','维修过上百次','采购的',NULL,NULL,NULL),('04','010101','铣设备B','2014-10-07','2014-10-03','南库机房','010201','维修过2次','没有备注信息','02',NULL,NULL),('05','010103','加工中心设备A','2014-10-07','2014-10-20','可以使中文','010201','中文','采购的','03',NULL,NULL),('06','010101','加工中心设备B','0000-00-00','0000-00-00','','010201','','','03',NULL,NULL),('07','010101','加工中心设备C','2012-00-00','0000-00-00','','010201','','','04',NULL,NULL),('08','010101','加工中心设备D','0000-00-00','0000-00-00','','010201','','','01',NULL,NULL),('09','010101','钳设A','2014-10-07','2014-10-03','南库机房','010201','维修过2次','没有备注信息','04',NULL,NULL),('10','010101','钳设B','2014-10-20','2014-10-20','二车间','010202','没有维修过',NULL,'04',NULL,NULL),('10093403427839111804','010101','9月5日测试设备','2014-08-13','2014-08-14','3郝仓库','010201','没有维修过','维修过一次','04',NULL,NULL),('11','010102','镀设A','2014-10-20','2014-10-20','一车间','010201','没有维修过','备注','05',NULL,NULL),('19503876015886209304','010103','备料设备A','2014-10-07','2014-10-20','','010201','维修过上百次','采购的',NULL,NULL,NULL),('31807013118867144805','010103','备料设备A','2014-10-07','2014-10-20','孙XX家','010201','维修过上百次','采购的deded',NULL,NULL,NULL),('41353996961077987502','010103','备料设备A','2014-10-07','2014-10-20','孙XX家','010201','维修过上百次','采购的',NULL,NULL,NULL),('58964558298908159384','010103','备料设备A','2014-10-07','2014-10-20','孙XX家','010201','维修过上百次','采购的',NULL,NULL,NULL),('64425997594440958365','010101','9月4日测试设备','2014-08-20','2014-08-27','2号仓库','010201','维修过3次','没有维修过',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `scglxt_t_sb` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -591,61 +640,58 @@ INSERT INTO `scglxt_tyzd` VALUES ('01','01','设备字典','设备型号','2014-
 UNLOCK TABLES;
 
 --
--- Temporary table structure for view `v_scglxt_pc_tb`
+-- Temporary view structure for view `v_scglxt_pc_tb`
 --
 
 DROP TABLE IF EXISTS `v_scglxt_pc_tb`;
 /*!50001 DROP VIEW IF EXISTS `v_scglxt_pc_tb`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `v_scglxt_pc_tb` (
-  `gyid` varchar(40),
-  `bomid` varchar(50),
-  `ryid` varchar(50),
-  `bzid` varchar(50),
-  `sbid` varchar(50),
-  `bzmc` varchar(50),
-  `sbmc` varchar(10),
-  `rymc` varchar(50),
-  `jgsl` int(11),
-  `edgs` int(11),
-  `kssj` datetime,
-  `jssj` datetime,
-  `sb` varchar(62),
-  `ry` varchar(102)
-) ENGINE=MyISAM */;
+/*!50001 CREATE VIEW `v_scglxt_pc_tb` AS SELECT 
+ 1 AS `gyid`,
+ 1 AS `bomid`,
+ 1 AS `ryid`,
+ 1 AS `bzid`,
+ 1 AS `sbid`,
+ 1 AS `bzmc`,
+ 1 AS `sbmc`,
+ 1 AS `rymc`,
+ 1 AS `jgsl`,
+ 1 AS `edgs`,
+ 1 AS `kssj`,
+ 1 AS `jssj`,
+ 1 AS `sb`,
+ 1 AS `ry`*/;
 SET character_set_client = @saved_cs_client;
 
 --
--- Temporary table structure for view `v_scglxt_pc_tb_info`
+-- Temporary view structure for view `v_scglxt_pc_tb_info`
 --
 
 DROP TABLE IF EXISTS `v_scglxt_pc_tb_info`;
 /*!50001 DROP VIEW IF EXISTS `v_scglxt_pc_tb_info`*/;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
-/*!50001 CREATE TABLE `v_scglxt_pc_tb_info` (
-  `zddmc` varchar(50),
-  `jgsl` int(11),
-  `serial` decimal(10,0),
-  `gygcid` varchar(40),
-  `gymc` varchar(50),
-  `jhkssj` datetime,
-  `edgs` int(11),
-  `kssj` datetime,
-  `bzmc` varchar(50),
-  `rymc` varchar(50),
-  `sbmc` varchar(10),
-  `ryid` varchar(50),
-  `sbid` varchar(50)
-) ENGINE=MyISAM */;
+/*!50001 CREATE VIEW `v_scglxt_pc_tb_info` AS SELECT 
+ 1 AS `zddmc`,
+ 1 AS `jgsl`,
+ 1 AS `serial`,
+ 1 AS `gygcid`,
+ 1 AS `gymc`,
+ 1 AS `jhkssj`,
+ 1 AS `edgs`,
+ 1 AS `kssj`,
+ 1 AS `bzmc`,
+ 1 AS `rymc`,
+ 1 AS `sbmc`,
+ 1 AS `ryid`,
+ 1 AS `sbid`*/;
 SET character_set_client = @saved_cs_client;
 
 --
 -- Final view structure for view `v_scglxt_pc_tb`
 --
 
-/*!50001 DROP TABLE IF EXISTS `v_scglxt_pc_tb`*/;
 /*!50001 DROP VIEW IF EXISTS `v_scglxt_pc_tb`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
@@ -664,7 +710,6 @@ SET character_set_client = @saved_cs_client;
 -- Final view structure for view `v_scglxt_pc_tb_info`
 --
 
-/*!50001 DROP TABLE IF EXISTS `v_scglxt_pc_tb_info`*/;
 /*!50001 DROP VIEW IF EXISTS `v_scglxt_pc_tb_info`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
@@ -688,4 +733,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-07-18 18:40:11
+-- Dump completed on 2016-02-21 23:44:01
