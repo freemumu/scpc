@@ -1,0 +1,102 @@
+CREATE DATABASE  IF NOT EXISTS `scpc` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `scpc`;
+-- MySQL dump 10.13  Distrib 5.6.19, for osx10.7 (i386)
+--
+-- Host: 127.0.0.1    Database: scpc
+-- ------------------------------------------------------
+-- Server version	5.6.21
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `scglxt_t_gygc`
+--
+
+DROP TABLE IF EXISTS `scglxt_t_gygc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `scglxt_t_gygc` (
+  `bomid` varchar(40) DEFAULT NULL COMMENT 'BOM(子订单)ID',
+  `gyid` varchar(40) DEFAULT NULL COMMENT '工艺ID',
+  `id` varchar(40) NOT NULL DEFAULT '' COMMENT '工艺过程表ID',
+  `gynr` varchar(100) DEFAULT NULL COMMENT '工艺内容',
+  `edgs` int(11) DEFAULT NULL COMMENT '额定工时',
+  `stsj` date DEFAULT NULL COMMENT '受图时间',
+  `jhwcsj` datetime DEFAULT NULL COMMENT '计划完成时间',
+  `sjwcsj` datetime DEFAULT NULL COMMENT '实际完成时间',
+  `jyryid` varchar(40) DEFAULT NULL COMMENT '检验人员',
+  `czryid` varchar(40) DEFAULT NULL COMMENT '操作人员',
+  `jlsj` date DEFAULT NULL COMMENT '记录时间',
+  `serial` decimal(10,0) DEFAULT NULL COMMENT '工艺过程排序',
+  `sbid` varchar(50) DEFAULT NULL COMMENT '所用设备id',
+  `KSSJ` datetime DEFAULT NULL COMMENT '该工艺过程实际开始时间',
+  `JSSJ` datetime DEFAULT NULL COMMENT '该工艺过程实际结束时间',
+  `JHKSSJ` datetime DEFAULT NULL COMMENT '计划开始时间',
+  `SFJY` int(11) DEFAULT NULL COMMENT '是否检验',
+  `JYSJ` datetime DEFAULT NULL COMMENT '检验时间',
+  `kjgjs` int(11) DEFAULT NULL COMMENT '待/需要加工件数',
+  `yjgjs` int(11) DEFAULT NULL COMMENT '已检验合格件数',
+  `bfjs` int(11) DEFAULT NULL COMMENT '报废件数',
+  `SJJS` int(11) DEFAULT NULL COMMENT '送检件数',
+  `zysx` varchar(100) DEFAULT NULL COMMENT '注意事项',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='工艺过程';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `scglxt_t_gygc`
+--
+
+LOCK TABLES `scglxt_t_gygc` WRITE;
+/*!40000 ALTER TABLE `scglxt_t_gygc` DISABLE KEYS */;
+INSERT INTO `scglxt_t_gygc` VALUES ('002','1001','20150401215309975','按照要求规格备料注意尺寸',23,NULL,NULL,NULL,NULL,'01',NULL,1,'01',NULL,NULL,'2015-07-14 11:01:02',NULL,NULL,30,24,5,9,NULL),('002','1001','20150701215309974','规格',25,NULL,NULL,NULL,NULL,'01',NULL,2,'01',NULL,NULL,'2015-07-14 11:01:00',NULL,NULL,20,10,1,10,NULL),('002','1003','20150701515309975','规格',34,NULL,NULL,NULL,NULL,'03',NULL,3,'03',NULL,NULL,'2015-07-10 12:01:00',NULL,NULL,10,5,1,6,NULL),('002','1004','20150703215309975','规格',56,NULL,NULL,NULL,NULL,'04',NULL,4,'04',NULL,NULL,'2015-07-14 11:01:00',NULL,NULL,5,2,1,5,NULL),('002','1005','20153701215309975','规格',45,NULL,NULL,NULL,NULL,'05',NULL,4,'05',NULL,NULL,'2015-08-23 11:09:00',NULL,NULL,2,2,0,0,NULL),('001',NULL,'20160216220916048','磨',20,NULL,NULL,NULL,NULL,NULL,NULL,0,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('001',NULL,'20160216220916580','规格',30,NULL,NULL,NULL,NULL,NULL,NULL,1,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('001',NULL,'20160216220916662','规格',50,NULL,NULL,NULL,NULL,NULL,NULL,3,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('001',NULL,'20160216220916712','规格',40,NULL,NULL,NULL,NULL,NULL,NULL,2,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('009',NULL,'20160220114929694','2',2,NULL,NULL,NULL,NULL,NULL,NULL,1,'41353996961077987502',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1');
+/*!40000 ALTER TABLE `scglxt_t_gygc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `scglxt_t_jggy`
+--
+
+DROP TABLE IF EXISTS `scglxt_t_jggy`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `scglxt_t_jggy` (
+  `id` varchar(50) NOT NULL COMMENT '工艺ID',
+  `gymc` varchar(50) DEFAULT NULL COMMENT '工艺名称',
+  `gydh` varchar(10) DEFAULT NULL COMMENT '工艺代号',
+  `fzbz` varchar(10) DEFAULT NULL COMMENT '工艺班组',
+  `gxsx` varchar(45) DEFAULT NULL,
+  `sfwx` varchar(1) DEFAULT '0' COMMENT '是否外协',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='工序表';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `scglxt_t_jggy`
+--
+
+LOCK TABLES `scglxt_t_jggy` WRITE;
+/*!40000 ALTER TABLE `scglxt_t_jggy` DISABLE KEYS */;
+INSERT INTO `scglxt_t_jggy` VALUES ('1001','备','1001',NULL,NULL,'0'),('1002','铣','1002',NULL,NULL,'1'),('1003','加工中心 ','1003',NULL,NULL,'0'),('1004','钳','1004',NULL,NULL,'0'),('1005','镀','1005',NULL,NULL,'0');
+/*!40000 ALTER TABLE `scglxt_t_jggy` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-02-21 23:41:19
