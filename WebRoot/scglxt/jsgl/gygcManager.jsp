@@ -41,9 +41,11 @@
 												<th>所用设备</th>
 												<th>工序内容</th>
 												<th>额定工时</th>
-												<th style="width:20px;">受图</th>
+												<th style="width:20px;" class=" hide">受图</th>
 												<th class="starttime hide ">开始时间</th>
 												<th class="endtime  hide">结束时间</th>
+												<th>注意事项</th>
+
 
 											</tr>
 										</thead>

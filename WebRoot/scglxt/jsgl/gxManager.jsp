@@ -47,6 +47,9 @@
                             <th>
                                 负责班组
                             </th>
+                            <th>
+                                是否外协
+                            </th>
                         </tr>
                         </thead>
                     </table>

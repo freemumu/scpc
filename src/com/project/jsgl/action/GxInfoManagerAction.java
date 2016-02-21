@@ -33,7 +33,7 @@ public class GxInfoManagerAction {
 	public void getTableData(){
 		String limitStart = "";
 		String limitEnd = "";
-		String sql = " select  id , gymc,gydh,fzbz  from  scglxt_t_jggy   ";
+		String sql = " select  id , gymc,gydh,fzbz ,sfwx from  scglxt_t_jggy ";
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":"+json+"}";

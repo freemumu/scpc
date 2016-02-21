@@ -86,9 +86,10 @@
                 for (var i = 0; i < rowNum; i++) {
                     formInfo.bomid = _bomid;
                     formInfo.sysb = $($("#gygc tbody>tr")[i]).find('select[info="sysb"]').attr('value');
-                    formInfo.gxnr = $($("#gygc tbody>tr")[i]).find('input[info="gxnr"]').attr('value');
+                    formInfo.gxnr = $($("#gygc tbody>tr")[i]).find('select[info="gxnr"]').attr('value');
                     formInfo.edgs = $($("#gygc tbody>tr")[i]).find('input[info="edgs"]').attr('value');
                     formInfo.stsj = $($("#gygc tbody>tr")[i]).find('input[info="stsj"]').attr('value');
+                    formInfo.zysx = $($("#gygc tbody>tr")[i]).find('input[info="zysx"]').attr('value');
                     formInfo.serial = i;
                     var JSON = $.toJsonString(formInfo),
                         successFun = function (str) {
@@ -125,14 +126,18 @@
                 var domstr = '<tr id="' + uuid + '"> <td class="sorting_1">' + rowNum + '</td> ' +
                     '<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
                     '<td>  ' +
-                    ' <select  info= "sysb" type="text" linked＝"' + uuid + '" class="grid-form-input" style="width:100%" >' +
+                    ' <select  info= "sysb"   linked＝"' + uuid + '" class="grid-form-input" style="width:100%" >' +
                     '</select></td>' +
-                    '<td><input class="" info="gxnr" type="text" style="width:100%" class="form-gxnr"  name="form-gxnr" ></td>' +
+                    //'<td><input class="" info="gxnr" type="text" style="width:100%" class="form-gxnr"  name="form-gxnr" ></td>' +
+                    '<td> <select  info= "gxnr"   linked＝"' + uuid + '" class="grid-form-input" style="width:100%" ></select> </td>' +
                     '<td><input class="" info="edgs" type="text" style="width:100%" value=""></td>' +
-                    '<td><input class="" info="stsj" type="text" style="width:100%" value=""></td>' +
+                    //'<td><input class="" info="stsj" type="text" style="width:100%" value=""></td>' +
+                    '<td><input class="" info="zysx" type="text" style="width:100%" value=""></td>' +
                     '</tr>';
+                console.log(domstr);
                 $("#gygc tbody").append(domstr);
                 var selector = "#" + uuid + " select[info='sysb']";
+                var gxnrSelector = "#" + uuid + " select[info='gxnr']";
                 //  添加后重新对表格进行拖动初始化
                 $("#gygc").tableDnD({
                     onDrop: function (table, row) {
@@ -145,7 +150,8 @@
                         GygcManage.changeRowSerialNum("gygc");
                     },
                 });
-                loadGygcList(selector);
+                loadGygcList(selector,"bomInfo_getJggyData.action");
+                loadGygcList(gxnrSelector,"bomInfo_getGxnrData.action");
             },
         /**
          *  的那个拖动表格时候重新更改表格序号
@@ -162,8 +168,8 @@
         /**
          *  加载加工工艺下啦列表
          */
-            loadGygcList = function (selector) {
-                var url = "bomInfo_getJggyData.action", successFun = function (data) {
+            loadGygcList = function (selector,url) {
+                var  successFun = function (data) {
                     if (data && data.length > 0) {
                         $.AddSelectItemBySelector("空", '', selector);
                         for (var i = 0; i < data.length; i++) {
@@ -173,15 +179,20 @@
                 }
                 $.syncAjax(url, {}, successFun, true);
             },
+
         /**
          * 加载工艺编排列表
          */
             loadBomGybpList = function (bomid) {
                 var url = "bomInfo_loadBomGybpList.action", successFun = function (data) {
+                    console.log(data);
                     if (data && data.length > 0) {
                         var domstr = "";
                         $("#gygc tbody").empty();
                         for (var i = 0; i < data.length; i++) {
+                            $("#gygc tbody").append(domstr);
+//                        var selector = "#"+$.decodeEmptyValue(data[i].id)＋" select[info='sysb']";
+                            var selector = "#" + $.decodeEmptyValue(data[i].id);
                             domstr = '<tr id="' + $.decodeEmptyValue(data[i].id) + '"> <td class="sorting_1">' + i + '</td> ' +
                             '<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
                             '<td class="text-center starttime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateStarttime(this)">开 始</a></div></td>' +
@@ -189,20 +200,25 @@
                             '<td>  ' +
                             ' <select  info= "sysb" type="text" linked＝"' + $.decodeEmptyValue(data[i].id) + '" class="grid-form-input" style="width:100%" >' +
                             '</select></td>' +
-                            '<td><input class="" info="gxnr" type="text" style="width:100%" class="form-gxnr"  name="form-gxnr" value="' + $.decodeEmptyValue(data[i].gynr) + '"></td>' +
+                                //'<td><input class="" info="gxnr" type="text" style="width:100%" class="form-gxnr"  name="form-gxnr" value="' + $.decodeEmptyValue(data[i].gynr) + '"></td>' +
+                            '<td><select  info= "gxnr" type="text" linked＝"' + $.decodeEmptyValue(data[i].id) + '" class="grid-form-input" style="width:100%" ></select></td>' +
                             '<td><input class="" info="edgs" type="text" style="width:100%" value="' + $.decodeEmptyValue(data[i].edgs) + '"></td>' +
-                            '<td><input class="" info="stsj" type="text" style="width:100%" value="' + $.decodeEmptyValue(data[i].stsj) + '"></td>' +
+                            '<td class="hide"><input  info="stsj" type="text" style="width:100%" value="' + $.decodeEmptyValue(data[i].stsj) + '"></td>' +
                             '<td class="starttime hide"> <input  info="stsj" type="text" style="width:100%" value="2015/07/01 12:00"></td>' +
                             '<td class="endtime hide" > <input info="stsj" type="text" style="width:100%" value="2015/07/01 12:00"></td>' +
+                            '<td><input class="" info="zysx" type="text" style="width:100%" value="' + $.decodeEmptyValue(data[i].zysx) + '"></td>' +
                             '</tr>';
+
                             $("#gygc tbody").append(domstr);
 
-
-//                        var selector = "#"+$.decodeEmptyValue(data[i].id)＋" select[info='sysb']";
-                            var selector = "#" + $.decodeEmptyValue(data[i].id);
                             selector = selector.toString() + (" select[info='sysb']").toString();
-                            loadGygcList(selector);
+                            loadGygcList(selector,"bomInfo_getJggyData.action");
                             $(selector).find("option[value='" + $.decodeEmptyValue(data[i].gyid) + "']").attr("selected", true);
+
+                            var gxnrSelector = "#" + $.decodeEmptyValue(data[i].id);
+                            gxnrSelector = gxnrSelector.toString() + (" select[info='gxnr']").toString();
+                            loadGygcList(gxnrSelector,"bomInfo_getGxnrData.action");
+                            $(gxnrSelector).find("option[value='" + $.decodeEmptyValue(data[i].gxnr) + "']").attr("selected", true);
                         }
 
 

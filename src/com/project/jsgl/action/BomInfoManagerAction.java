@@ -310,12 +310,29 @@ public class BomInfoManagerAction {
 		}
 		
 	}
+
+
+	public void getGxnrData(){
+		String sql = " select  id , gymc name ,gydh,fzbz ,sfwx from  scglxt_t_jggy ";
+		String json = null ;
+		List list = this.selectDataService.queryForList(sql);
+		if(list.size() >= 0 ){
+			json = JsonObjectUtil.list2Json(list);
+			Response.write(json);
+		}else{
+			Response.write("error") ;
+		}
+
+	}
+
+
+
 	/**
 	 * 查询相应bomid 的工艺过程排序
 	 */
 	public void loadBomGybpList(){
 		String bomid = Request.getParameter("bomid");
-		String sql = " select bomid ,gyid ,id ,gynr  ,edgs,serial    from   scglxt_t_gygc where bomid = '"+bomid+"'  order by serial asc ";
+		String sql = " select bomid ,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where bomid = '"+bomid+"'  order by serial asc ";
 		String json = null ; 
 		List list = this.selectDataService.queryForList(sql);
 		if(list.size()>=0){
