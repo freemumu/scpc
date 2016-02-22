@@ -59,6 +59,9 @@
 																签署时间
 															</th>
 															<th  style="width:100px;">
+																结束时间
+															</th>
+															<th  style="width:100px;">
 																当前进度
 															</th>
 															<th  style="width:100px;">

@@ -123,10 +123,7 @@
 			</div>
 			<div class="modal-body" id="modal-body">
 
-				<dl class="dl-horizontal">
-					<dt>111</dt>
-					<dd>..2222.</dd>
-				</dl>
+
 
 
 

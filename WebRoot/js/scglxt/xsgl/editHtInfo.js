@@ -34,6 +34,7 @@
 				_this._flag = "ADD" ;
 			}
 			$('#form_khxx_qssj').datepicker();
+			$('#form_khxx_jssj').datepicker();
 			loadYwlxList();//加载业务类型列表
 		},
 		/**
@@ -100,6 +101,7 @@
 				ywlx : $('#form_khxx_ywlx').attr("value"),
 				htje : $('#form_khxx_htje').attr("value"),
 				qssj : $('#form_khxx_qssj').attr("value"),
+				jssj : $('#form_khxx_jssj').attr("value"),
 				dqjd : $('#form_khxx_dqjd').attr("value"),
 				fkzt : $('#form_khxx_fkzt').attr("value"),
 				//jkbfb : $('#form_khxx_jkbfb').attr("value"),

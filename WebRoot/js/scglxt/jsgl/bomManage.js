@@ -5,10 +5,13 @@
 
             /** 初始化函数 */
             init = function () {
-                var request = $.GetRequest() ;
-                var ssdd = null ;
-                if(request.ssdd){
-                    ssdd=request.ssdd ;
+                var request = $.GetRequest();
+                var ssdd = null;
+                if (request.ssdd) {
+                    ssdd = request.ssdd;
+                }
+                if (request.model == "linked") {
+                    $("#form_add").remove();
                 }
                 tableInit(ssdd);
                 registerEvent();
@@ -39,7 +42,7 @@
                         "oPaginate": {"sFirst": "首页", "sPrevious": "上一页", "sNext": "下一页", "sLast": "末页"}
                     },
                     "aLengthMenu": [20, 30],
-                    "ajax": "bomInfo_getTableData.action?ssdd="+ssdd,
+                    "ajax": "bomInfo_getTableData.action?ssdd=" + ssdd,
                     scrollY: "disabled",
                     scrollX: true, /*scrollCollapse: false,*/
                     paging: true,
@@ -65,9 +68,9 @@
                         {"data": "jgsl"},
                         {"data": "bmcl"},
                         {
-                        "data": "starttime",
-                        "sWidth": "120px"
-                    }, {"data": "endtime", "sWidth": "120px"},
+                            "data": "starttime",
+                            "sWidth": "120px"
+                        }, {"data": "endtime", "sWidth": "120px"},
                         {"data": "gs", "sWidth": "120px"},
                         {"data": "blqk", "sWidth": "120px"},
                         {"data": "blkssj", "sWidth": "120px"},

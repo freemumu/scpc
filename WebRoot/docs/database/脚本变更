@@ -1,0 +1,4 @@
+ALTER TABLE `scpc`.`scglxt_t_ht`
+ADD COLUMN `jssj` DATE NULL COMMENT '预计结束时间' AFTER `khid`;
+
+

@@ -68,6 +68,14 @@
                             </div>
                         </div>
                         <div class='form-group'>
+                            <label class='control-label col-sm-3' for='form_khxx_qssj'>预计结束时间</label>
+
+                            <div class='col-sm-4 controls'>
+                                <input class='form-control' id='form_khxx_jssj' style="cursor:pointer;" info="fromInfo"
+                                       name='form_khxx_jssj' placeholder='结束时间' readonly type='text'>
+                            </div>
+                        </div>
+                        <div class='form-group'>
                             <label class='control-label col-sm-3' for='form_khxx_dqjd'>当前进度</label>
 
                             <div class='col-sm-4 controls'>

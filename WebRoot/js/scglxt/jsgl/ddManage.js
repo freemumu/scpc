@@ -87,7 +87,6 @@
                         },
                         {
                             "render": function (data, type, row) {
-                                console.log(data) ;
                                 return '<div class="text-center">' +
                                     ' <a class="" href="#"  onclick = "DdManage.showHtInfo(\'' + data + '\')" >所属合同</a> ' +
                                     ' </div>';
@@ -178,11 +177,41 @@
                     show: true
                 });
                 //在modalbody 中家在iframe 内容为 工序编排的内容
-                $content = "<iframe src='bomManager.jsp?ssdd=" + data + "' class='modal_iframe'></iframe>";
+                $content = "<iframe src='bomManager.jsp?model=linked&ssdd=" + data + "' class='modal_iframe'></iframe>";
                 $container = $('#modal-body');
                 $container.empty().append($content);
             },
-            showHtInfo = function (data) {
+            showHtInfo = function (id) {
+                console.log(id);
+                var url = "htInfo_getTableData.action?id=" + id, successFun = function (data) {
+                    console.log(data);
+                    if (data) {
+                        var obj = data.data[0];
+                        var str = '<dl class="dl-horizontal"> ' +
+                            '<dt>名称</dt>' +
+                            '<dd>' + $.decodeEmptyValue(obj.mc)  + '</dd>' +
+                            '<dt>合同编号</dt>' +
+                            '<dd>' + $.decodeEmptyValue(obj.htbh) + '</dd>' +
+                            '<dt>合同金额</dt>' +
+                            '<dd>' + $.decodeEmptyValue(obj.htje) + '</dd>' +
+                            '<dt>签署时间</dt>' +
+                            '<dd>' + $.decodeEmptyValue(obj.qssj) + '</dd>' +
+                            '<dt>付款状态</dt>' +
+                            '<dd>' + $.decodeEmptyValue(obj.fkzt) + '</dd>' +
+                            '<dt>汇款账号</dt>' +
+                            '<dd>' + $.decodeEmptyValue(obj.hkzh) + '</dd>' +
+                            '<dt>汇款开户行</dt>' +
+                            '<dd>' + $.decodeEmptyValue(obj.hkkhh) + '</dd>' +
+                            '<dt>合同明细</dt>' +
+                            '<dd>' + $.decodeEmptyValue(obj.htmx) + '</dd>' +
+                            '<dt>预计完成时间</dt>' +
+                            '<dd>' + $.decodeEmptyValue(obj.htmx) + '</dd>' +
+                            '</dl>';
+
+                        $("#myModal .modal-body").html(str);
+                    }
+                };
+                $.asyncAjax(url, {"id": id}, successFun, true);
                 $('#myModal').modal({
                     backdrop: false,
                     show: true
@@ -194,7 +223,7 @@
             deleteRow: deleteRow,
             editRow: editRow,
             showModel: showModel,
-            showHtInfo:showHtInfo
+            showHtInfo: showHtInfo
         }
     })();
 
