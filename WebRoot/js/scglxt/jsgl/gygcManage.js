@@ -88,7 +88,8 @@
                     formInfo.sysb = $($("#gygc tbody>tr")[i]).find('select[info="sysb"]').attr('value');
                     formInfo.gxnr = $($("#gygc tbody>tr")[i]).find('select[info="gxnr"]').attr('value');
                     formInfo.edgs = $($("#gygc tbody>tr")[i]).find('input[info="edgs"]').attr('value');
-                    formInfo.stsj = $($("#gygc tbody>tr")[i]).find('input[info="stsj"]').attr('value');
+                    //formInfo.stsj = $($("#gygc tbody>tr")[i]).find('input[info="stsj"]').attr('value');
+                    formInfo.stsj = "";
                     formInfo.zysx = $($("#gygc tbody>tr")[i]).find('input[info="zysx"]').attr('value');
                     formInfo.serial = i;
                     var JSON = $.toJsonString(formInfo),

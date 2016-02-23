@@ -14,8 +14,6 @@
                 <div class='box-header'>
                     <button id="form_add" class="btn btn-success btn-sm"><i class="icon-add"></i> 增加</button>
                     <div class='title'> BOM表</div>
-                    <div class='actions'><a class="btn box-remove btn-xs btn-link" href="#"><i class='icon-remove'></i>
-                    </a> <a class="btn box-collapse btn-xs btn-link" href="#"><i></i> </a></div>
                 </div>
                 <div class='box-content box-no-padding'>
                     <div class='responsive-table'>

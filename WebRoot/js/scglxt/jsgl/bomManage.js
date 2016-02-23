@@ -10,12 +10,11 @@
                 if (request.ssdd) {
                     ssdd = request.ssdd;
                 }
-                if (request.model == "linked") {
-                    $("#form_add").remove();
-                }
                 tableInit(ssdd);
                 registerEvent();
-                $("#")
+                if (request.model == "linked") {
+                    linkedPattern();
+                }
             },
 
             /** 注册事件 */
@@ -93,7 +92,6 @@
                     });
                 }).draw();
                 new $.fn.dataTable.FixedColumns(table, {leftColumns: 3});
-
             },
             /**
              * 删除信息
@@ -139,7 +137,16 @@
                 $content = "<iframe src='gygcManager.jsp?bomid=" + data + "' class='modal_iframe'></iframe>";
                 $container = $('#modal-body');
                 $container.empty().append($content);
+            },
+
+            linkedPattern = function () {
+                $("#form_add").remove();
+                $(".dataTables_filter").closest(".row").remove();
+            },
+            calculateTimeLength = function(){
+
             }
+
 
             ;
 
