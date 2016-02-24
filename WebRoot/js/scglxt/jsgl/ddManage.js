@@ -187,7 +187,7 @@
                     console.log(data);
                     if (data) {
                         var obj = data.data[0];
-                        var str = '<dl class="dl-horizontal"> ' +
+                        var str = '<dl class="dl-horizontal" style="font-size:14px"> ' +
                             '<dt>名称</dt>' +
                             '<dd>' + $.decodeEmptyValue(obj.mc)  + '</dd>' +
                             '<dt>合同编号</dt>' +

@@ -14,8 +14,8 @@
                 registerEvent();
                 if (request.model == "linked") {
                     linkedPattern();
+                    calculateTimeLength();
                 }
-                calculateTimeLength();
             },
 
             /** 注册事件 */

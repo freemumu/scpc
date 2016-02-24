@@ -213,12 +213,12 @@
                     </li>
                 </ul>
             </li>
-            <li class=''>
-                <a href='#'>
-                    <i class='icon-star'></i>
-                    <span id="wxgl">外协管理</span>
-                </a>
-            </li>
+            <%--<li class=''>--%>
+                <%--<a href='#'>--%>
+                    <%--<i class='icon-star'></i>--%>
+                    <%--<span id="wxgl">外协管理</span>--%>
+                <%--</a>--%>
+            <%--</li>--%>
             <li>
                 <a class='dropdown-collapse ' href='#'>
                     <i class='icon-tint'></i>
