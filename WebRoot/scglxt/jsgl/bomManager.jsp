@@ -13,7 +13,8 @@
             <div class='box bordered-box ' style='margin-bottom: 0;'>
                 <div class='box-header'>
                     <button id="form_add" class="btn btn-success btn-sm"><i class="icon-add"></i> 增加</button>
-                    <div class='title'> BOM表</div>
+                    <div class='title '> BOM表  </div>
+
                 </div>
                 <div class='box-content box-no-padding'>
                     <div class='responsive-table'>

@@ -15,6 +15,7 @@
                 if (request.model == "linked") {
                     linkedPattern();
                 }
+                calculateTimeLength();
             },
 
             /** 注册事件 */
@@ -143,8 +144,20 @@
                 $("#form_add").remove();
                 $(".dataTables_filter").closest(".row").remove();
             },
-            calculateTimeLength = function(){
-
+            calculateTimeLength = function () {
+                var ssdd = 1;
+                var url = "bomInfo_calculateTimeLength.action", successFun = function (data) {
+                    console.log(data);
+                    var str = "(工时统计："  ;
+                    if (data && data.length > 0) {
+                        for (var i = 0; i < data.length; i++) {
+                          str +=  data[i].gynr + "("+ data[i].timelength +")&nbsp;&nbsp;"
+                        }
+                        str +=")单位/分钟"
+                        $(".box-header .title").append("<small>"+str+"</small>")
+                    }
+                };
+                $.asyncAjax(url, {"ssdd": ssdd}, successFun, true);
             }
 
 

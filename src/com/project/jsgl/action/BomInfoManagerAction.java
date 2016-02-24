@@ -342,8 +342,8 @@ public class BomInfoManagerAction {
 
     public void calculateTimeLength() {
         String ssdd = Request.getParameter("ssdd");
-        String sql = "select t2.bomid, sum(t1.jgsl*t2.edgs),t2.gynr from scglxt_t_bom t1 ,scglxt_t_gygc t2 where t2.bomid = t1.id and  t1.ssdd  =   " + ssdd +
-                "group by t2.gynr";
+        String sql = "select t2.bomid, sum(t1.jgsl*t2.edgs) timelength,t2.gynr from scglxt_t_bom t1 ,scglxt_t_gygc t2 where t2.bomid = t1.id and  t1.ssdd  =   " + ssdd +
+                " group by t2.gynr";
         String json = null;
         List list = this.selectDataService.queryForList(sql);
         if (list.size() >= 0) {
