@@ -7,6 +7,7 @@ package com.project.jsgl.action;
 
 import java.util.List;
 
+import com.project.util.Constants;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.collections.map.ListOrderedMap;
@@ -98,14 +99,16 @@ public class BomInfoManagerAction {
      */
     public void updateBlzk() {
         String id = Request.getParameter("id");
-        String sql = "update scglxt_t_bom set blqk ='1' , bfjs = 0 , bhgjs = 0 ,bljssj =  date_format(now(),'%Y-%m-%d %H:%i:%s') , starttime =date_format(now(),'%Y-%m-%d %H:%i:%s')     where id = '" + id + "'";
+        String blqk = Request.getParameter("blqk");
+        String sql = " update scglxt_t_bom set blqk ='" + blqk + "' ,  " +
+                " bljssj =  date_format(now(),'%Y-%m-%d %H:%i:%s') ," +
+                " starttime =date_format(now(),'%Y-%m-%d %H:%i:%s')     where id = '" + id + "'";
         try {
             selectDataService.execute(sql);
-            Response.write("SUCCESS");
-
+            Response.write(Constants.UPDATE_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
-            Response.write("ERROR");
+            Response.write(Constants.UPDATE_ERROR);
         }
     }
 
