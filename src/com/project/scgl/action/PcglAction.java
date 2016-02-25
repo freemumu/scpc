@@ -211,7 +211,7 @@ public class PcglAction {
 		String id = "F"+RandomStringUtils.randomNumeric(39);
 		String sql = "insert into scglxt_t_jggl (id,jgryid,jgkssj,gygcid) values ('"+id+"','"+ryid+"',now(),'"+gygcid+"')";
 		
-		
+		log.info("加工人员开始加工："+sql);
 		try{
 			
 			this.selectDataService.execute(sql);

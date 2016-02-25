@@ -24,6 +24,10 @@
 		$('#ksjg').dialog('open');
 		
 		gygcid = data;
+		
+		initBzRy();
+
+		disableButtonByJgr(data);
 	}
 	function initSbzd(){
 		
@@ -53,21 +57,22 @@
             	
             	ssbz:'01'
             },
+            async:false,
             success: function (dt) {
 
             	$("#ksjg").html('');
                 for (var i = 0; i < dt.length; i++) {
-                    var html = "<a href='#' onclick='ryKsJg(event)' class='btn' id="+dt[i].id+">"+dt[i].mc+"</a>";
+                    var html = "<a href='#' onclick='ryKsJg(event)' class='btn' id=ks"+dt[i].id+">"+dt[i].mc+"</a>";
                     $("#ksjg").append(html);
                 }
                 
-                disableButtonByJgr();
+                
 
             }
         });
 	}
 	
-	function disableButtonByJgr(){
+	function disableButtonByJgr(data){
 		
 		
 		$.ajax({
@@ -76,23 +81,26 @@
             dataType: "json",
             data:{
             	
-            	gygcid:'20151115210005626'
+            	gygcid:data
             },
             success: function (dt) {
 
-            	 for (var i = 0; i < dt.length; i++) {
-            		 
-            	 	$("#"+dt[i].id).removeClass("btn");
-            	 	$("#"+dt[i].id).addClass("btn disabled");
-                 }
-            	
+            	if(dt!=null){
+            		
+            		for (var i = 0; i < dt.length; i++) {
+               		 
+                	 	$("#ks"+dt[i].id).removeClass("btn");
+                	 	$("#ks"+dt[i].id).addClass("btn disabled");
+                     }	
+            	}
             }
         });
 	}
 	
 	function ryKsJg(event){
 		
-		var ksjgry = $(event.target).attr("id");
+		var ksjgry = $(event.target).attr("id")
+		ksjgry=ksjgry.substr(2,ksjgry.length);
 		
 		jgryJgks(ksjgry,gygcid);
 	}
@@ -165,8 +173,7 @@
 		yksjgryjs(data);	
 		$('#dlg').dialog('open');
 		gygcid = data;
-		
-		
+		$('#jgsb').val('')
 		
 	}
 	
@@ -187,7 +194,7 @@
             	 $('#jgsb').val('')
             	 for (var i = 0; i < dt.length; i++) {
             		 
-            		  var html = "<a href='#' onclick='saveSj(event)' class='btn' id="+dt[i].id+">"+dt[i].mc+"</a>";
+            		  var html = "<a href='#' onclick='saveSj(event)' class='btn' id=js"+dt[i].id+">"+dt[i].mc+"</a>";
                       $("#dlg-buttons").append(html);
                  }
             	
@@ -198,6 +205,8 @@
 	function saveSj(event){
 		
 		var jsjgry = $(event.target).attr("id");
+		
+		jsjgry = jsjgry.substr(2,jsjgry.length);
 		var jgsb = $('#jgsb').val();
 		
 		
@@ -246,7 +255,7 @@
 				if(dt=='success'){
 				
 					alert('加工开始成功,已开始计时');
-					disableButtonByJgr();
+					disableButtonByJgr(gygcid);
 					
 				}else{
 				
@@ -306,14 +315,12 @@
     </div>
 </div>
 <div id="dlg" class="easyui-dialog" title="加工完成" style="width:400px;height:200px;padding:10px"
-			data-options="toolbar: '#dlg-toolbar',buttons: '#dlg-buttons',closed:true">
-		
-	<div id="dlg-toolbar" style="padding:10px">
+			data-options="closed:true">
 		
 		<span style="margin-left:40px;margin-top:40px;">完成件数：</span><input id="jgjs" width="120px"></input>
 		<p style="margin-top:15px;">
 		<span style="margin-left:40px;margin-top:40px;">所用设备：</span><select style="height:28px;width:175px;" id='jgsb'></select>
-	</div>
+
 	<div id="dlg-buttons">
 		
 	</div>
