@@ -83,14 +83,15 @@ public class BomInfoManagerAction {
      */
     public void changeStatusClzt() {
         String id = Request.getParameter("id");
-        String sql = "update scglxt_t_bom set clzt ='1' where id = '" + id + "'";
+        String clzt = Request.getParameter("clzt") ;
+        String sql = "update scglxt_t_bom set clzt ='"+clzt+"' where id = '" + id + "'";
         try {
             selectDataService.execute(sql);
-            Response.write("SUCCESS");
+            Response.write(Constants.UPDATE_SUCCESS);
 
         } catch (Exception e) {
             e.printStackTrace();
-            Response.write("ERROR");
+            Response.write(Constants.UPDATE_ERROR);
         }
     }
 
