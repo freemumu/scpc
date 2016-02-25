@@ -83,7 +83,7 @@ public class PcglAction {
 	public void getPcSbTb(){
 		
 		log.info("请求班组图表");
-		String sql = "select round(((sum(edgs*jgsl))/(select gzsj from scglxt_t_gzsj where sfqy = 1)),2) v,bzid c,sb k,sbid id from v_scglxt_pc_tb group by sbid order by kssj,bzid";
+		String sql = "SELECT  CONCAT(k,'\n','已排产至：',DATE_FORMAT(TIMESTAMPADD(DAY,v,NOW()),'%Y-%m-%d'),' 日')k,v,c,id   FROM v_scglxt_pc_sb_tb";
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		Response.write(json);
@@ -156,6 +156,19 @@ public class PcglAction {
 		Response.write(json);
 	}
 	
+	/**根据班组获取所有人员*/
+	
+	public void getRyByBz(){
+		
+		
+		String ssbz = Request.getParameter("ssbz");
+		String sql = "SELECT id,rymc mc,ssbz bz FROM scglxt_t_ry WHERE ssbz = '"+ssbz+"'";
+		log.info("根据班组获取该班组所有人员"+sql);
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		Response.write(json);
+	}
+	
 	/**
 	 * 获取当前待检验的所有工序
 	 */
@@ -194,7 +207,7 @@ public class PcglAction {
 	public void jgryKs(){
 		
 		String gygcid = Request.getParameter("gygcid");
-		String ryid = "01";
+		String ryid = Request.getParameter("jgryid");
 		String id = "F"+RandomStringUtils.randomNumeric(39);
 		String sql = "insert into scglxt_t_jggl (id,jgryid,jgkssj,gygcid) values ('"+id+"','"+ryid+"',now(),'"+gygcid+"')";
 		
@@ -211,9 +224,20 @@ public class PcglAction {
 		
 	}
 	
+	public void getYksGyJgry(){
+		
+		
+		String gygcid = Request.getParameter("gygcid");
+		String sql = "SELECT jgryid id,ry.rymc mc FROM scglxt_t_jggl,scglxt_t_ry ry WHERE gygcid = '"+gygcid+"'  AND jgjssj IS NULL and jgryid = ry.id ";
+		
+		log.info("查询某工艺过程已经开始加工的人员:"+sql);
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		Response.write(json);
+	}
 	public void jgryJs(){
 		
-		String ryid = "01";
+		String ryid = Request.getParameter("jsjgry");
 		String sbid = Request.getParameter("sbid");
 		String wcjs = Request.getParameter("wcjs");
 		String gygcid = Request.getParameter("gygcid");
