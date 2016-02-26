@@ -36,6 +36,8 @@
 			$('#form_khxx_qssj').datepicker();
 			$('#form_khxx_jssj').datepicker();
 			loadYwlxList();//加载业务类型列表
+
+			$("#form_htInfo").validate();
 		},
 		/**
 		 * 注册事件

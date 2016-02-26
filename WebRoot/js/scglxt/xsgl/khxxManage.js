@@ -13,6 +13,7 @@ function init(){
 	$("#form_add").on('click',function(){
 		skipToFormPage('scglxt/xsgl/editKhInfo.jsp');//跳转iframe页面
 	})
+
 }
 function loadKhlxList(){
 	 var url = "khInfo_loadKhlxList.action",successFun = function(json){
