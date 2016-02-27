@@ -85,12 +85,6 @@
                             <span id="gxgl">工序管理</span>
                         </a>
                     </li>
-                    <!--                 <li class=''> -->
-                    <!--                   <a href='#'> -->
-                    <!--                     <i class='icon-caret-right'></i> -->
-                    <!--                     <span id="gygl">排产管理</span> -->
-                    <!--                   </a> -->
-                    <!--                 </li> -->
                 </ul>
             </li>
             <li>
@@ -125,13 +119,14 @@
                         </a>
                     </li>
                     <li class=''>
-                        <%--<a href='#'>--%>
-                        <%--<i class='icon-caret-right'></i>--%>
-                        <%--<span id="pcrwgl">排产任务管理</span>--%>
-                        <%--</a>--%>
-
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="jgqkhz">生产情况跟踪</span>
+                        </a>
+                    </li>
+                    <li class=''>
                         <a class='dropdown-collapse' href='#'>
-                            <i class='icon-folder-open-alt'></i>
+                             <i class='icon-caret-right'></i>
                             <span id="pcrwgl">排产任务管理</span>
                             <i class='icon-angle-down angle-down'></i>
                         </a>
@@ -139,57 +134,18 @@
                             <li>
                                 <a class='dropdown-collapse' href='#'>
                                     <i class='icon-caret-right'></i>
-                                    <span id="glryteam">管理员组</span>
+                                    <span id="scgl-glry-sb">生产设备调配</span>
                                 </a>
-                                <ul class='nav nav-stacked'>
-                                    <li>
-                                        <a class='dropdown-collapse'
-                                           href='http://localhost:8080/scpc/scglxt/scgl/pcGlRy.html'>
-                                            <span id="scgl-glry-ry">人员</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class='dropdown-collapse'
-                                           href='http://localhost:8080/scpc/scglxt/scgl/pcGlSb.html'>
-                                            <span id="scgl-glry-sb">设备</span>
-                                        </a>
-                                    </li>
-                                </ul>
                             </li>
 
                             <li>
-                                <a class='dropdown-collapse'
+                            	 <a class='dropdown-collapse'
                                    href=''>
-                                    <span id="scgl-pcgl">排产管理</span>
-                                </a>
-                            <%--<li>
-                                <a class='dropdown-collapse' href=''>
                                     <i class='icon-caret-right'></i>
-                                    <span id="scryteam">生产人员组</span>
+                                    <span id="scgl-pcgl">总体时间调配</span>
                                 </a>
-                                <ul class='nav nav-stacked'>
-                                    <li>
-                                        <a class='dropdown-collapse'
-                                           href='http://localhost:8080/scpc/scglxt/scgl/pcGlRy.html'>
-                                            <span id="scgl-scry-ry">人员</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class='dropdown-collapse'
-                                           href='http://localhost:8080/scpc/scglxt/scgl/pcGlSb.html'>
-                                            <span id="scgl-scry-sb">设备</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>--%>
+                            </li>
                         </ul>
-                    </li>
-                    <!--                 <li class=''> -->
-                    <!--                   <a href='#'> -->
-                    <!--                     <i class='icon-caret-right'></i> -->
-                    <!--                     <span id="scjxgl">生产绩效管理</span> -->
-                    <!--                   </a> -->
-                    <!--                 </li> -->
                 </ul>
             </li>
             <li>

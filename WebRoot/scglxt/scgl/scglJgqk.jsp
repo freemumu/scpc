@@ -61,6 +61,7 @@
         	{ "data": "gynr","sWidth":"120px"},
             { "data": "jgry","sWidth":"80px"},
             { "data": "jgjs" ,"sWidth":"80px"},
+            { "data": "bfjs" ,"sWidth":"80px"},
             { "data": "sbmc" ,"sWidth":"80px"},
             { "data": "jgkssj" ,"sWidth":"120px"},
             { "data": "jgjssj" ,"sWidth":"120px"},
@@ -129,6 +130,9 @@
 															</th>
 															<th>
 																加工件数
+															</th>
+															<th>
+																报废件数
 															</th>
 															<th>
 																所用设备

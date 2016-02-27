@@ -140,6 +140,10 @@
                 $.addEvent('jgryjg', 'click', function () {
                     Main.changeNavUrl('jgryjg');
                 });
+                //生产情况跟踪
+                $.addEvent('jgqkhz', 'click', function () {
+                    Main.changeNavUrl('jgqkhz');
+                });
 
             },
             /**
@@ -192,13 +196,18 @@
                         break;
                         //排产任务管理 生产人员组
                     case "scgl-glry-sb":
-                        url = "scglxt/scgl/pcGlRy.html";
+                        url = "scglxt/scgl/pcGlSb.html";
                         break;
                     //排产任务管理 生产人员组
                     case "scgl-glry-ry":
-                        url = "scglxt/scgl/pcGlSb.html";
+                        url = "scglxt/scgl/pcGlRy.html";
                         break;
+                    case "jgqkhz":
+                    	
+                    	url = "scglxt/scgl/scglJgqk.jsp";
+                    	break;
                     //排产任务管理
+                       
                     case "ghsgl":
                         url = "scglxt/cggl/ghsManager.jsp";
                         break;

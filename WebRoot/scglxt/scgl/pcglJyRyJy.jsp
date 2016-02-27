@@ -41,7 +41,7 @@
         "aLengthMenu":[15,30],
 		"ajax":"pcgl_getBomGygcJy.action",
 		scrollY:        "300px",
-		scrollX:        false,
+		scrollX:        true,
 		scrollCollapse: false,
 		paging:         true,
 		"columnDefs": [ 
@@ -55,7 +55,7 @@
         ],
         "columns": [
              {"data": null,"sWidth": "60px"}, 
-             {"data": 'id',"sWidth": "100px"}, 
+             {"data": 'id',"sWidth": "150px"}, 
              {"data": "zddmc", "sWidth":"120px"}, 
              {"data": "bmcl","sWidth": "120px"},
              {"data": "gymc","sWidth": "120px"},
@@ -72,6 +72,7 @@
             cell.innerHTML = i+1;
         } );
    	  } ).draw();
+	  new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
 	}
 	$(document).ready(function() {
 	
