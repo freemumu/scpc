@@ -91,7 +91,6 @@ public class GxInfoManagerAction {
 		if(flag !=null && flag.equals("ADD")){
 			sql = "insert into scglxt_t_jggy (gymc,fzbz,sfwx) values('"+id+"','"+gxmc+"',"+fzbz+"','"+sfwx+"')";
 		}else if(flag.equals("UPDATE")){
-			id = "1";
 			sql = "update scglxt_t_jggy  set gymc='"+gxmc+"' ,  fzbz = '"+fzbz+"'  , sfwx = '"+sfwx+"'  where id = '"+id+"' ";
 		}
 		try {

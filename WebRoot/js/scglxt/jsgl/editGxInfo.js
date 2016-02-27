@@ -12,8 +12,12 @@
                 var that = this;
                 var urlParam = new Object();
                 urlParam = $.GetRequest();
+                $.addRequiredLabel();
                 $('#btn_save').live('click', function () {
-                    saveFormInfo(that._flag, urlParam.id);
+                    var tips = validata() ;
+                    if(tips == ""){
+                        saveFormInfo(that._flag, urlParam.id);
+                    }
                 });
                 loadFzbzList();
 

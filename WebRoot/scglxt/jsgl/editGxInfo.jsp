@@ -27,6 +27,7 @@
 		                          <div class='col-sm-4 controls'>
 		                          <!-- data-rule-minlength='1' -->
 		                            <input class='form-control required' id='form_khxx_gymc' info="fromInfo" name='form_khxx_gxmc'  placeholder='工序名称' type='text'>
+									  <label class="textInfo"></label>
 		                          </div>
 		                        </div>
 		                        <%--<div class='form-group'>--%>
