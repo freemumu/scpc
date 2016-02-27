@@ -2,7 +2,7 @@
 <%@ include file="/include/topFile.jsp" %>
 <!DOCTYPE html>
 <html>
-<head><title>加工人员</title>
+<head><title>检验人员检验</title>
     <script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
     <!-- bootstrap css 引入 -->
 	<link href="../../js/plugin/bootstrap/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
@@ -47,7 +47,7 @@
 		"columnDefs": [ 
             {
                 "render": function ( data, type, row ) {
-                    return '<div class="text-center"><a href="#" onclick="jyryJy('+data+')">检验</a></div>';
+                    return '<div class="text-center"><a href="#" onclick="jyryqbtg('+"\'"+data+"\'"+')">全部通过</a>&nbsp;&nbsp;&nbsp;&nbsp<a href="#" onclick="jyryJy('+"\'"+data+"\'"+')">部分通过</a></div>';
                 },
                 "targets": 1
             },
@@ -82,13 +82,25 @@
 	
 		varjgglid = jgglid;
 		$('#dlg').dialog('open');
+		
 	
 	}
 	
-	function saveJggl(){
 	
+	function jyryqbtg(data){
 		
-		var bfjs = $('#bfjs').val();
+		varjgglid = data;
+		saveJggl(1);
+	}
+	function saveJggl(flag){
+	
+		var bfjs = 0;
+		
+		if(flag==0){
+			
+			bfjs = $('#bfjs').val();
+		}
+	
 		$.ajax({
                 type: "post",
                 url: "pcgl_editJgglJy.action",
@@ -161,7 +173,7 @@
 		<span style="margin-left:40px;margin-top:40px;">请输入报废件数：</span><input id="bfjs" width="120px;"></input>
 	</div>
 	<div id="dlg-buttons">
-		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveJggl()">确认</a>
+		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="saveJggl(0)">确认</a>
 		<a href="javascript:void(0)" class="easyui-linkbutton" onclick="javascript:$('#dlg').dialog('close')">取消</a>
 	</div>
 </div>

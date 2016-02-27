@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.logging.Log;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
+
 import com.project.base.service.SelectDataService;
 import com.project.commonModel.util.Request;
 import com.project.commonModel.util.Response;
@@ -173,7 +175,7 @@ public class PcglAction {
 	 * 获取当前待检验的所有工序
 	 */
 	public void getBomGygcJy(){
-		String sql = "SELECT jggl.id, bom.zddmc,bom.bmcl,jggy.gymc,ry.rymc,sb.sbmc,jggl.jgjs	FROM scglxt_t_gygc gygc,scglxt_t_bom bom,scglxt_t_jggy jggy,scglxt_t_jggl jggl, scglxt_t_ry ry, scglxt_t_sb sb 	where  gygc.bomid = bom.id and jggy.id = gygc.gyid  and jggl.gygcid = gygc.id and ry.id = jggl.jgryid and sb.id = jggl.sbid and jggl.sfjy='0' order by jgkssj";
+		String sql = "SELECT jggl.id, bom.zddmc,bom.bmcl,jggy.gymc,ry.rymc,sb.sbmc,jggl.jgjs,gygc.bomid,  gygc.serial 	FROM scglxt_t_gygc gygc,scglxt_t_bom bom,scglxt_t_jggy jggy,scglxt_t_jggl jggl, scglxt_t_ry ry, scglxt_t_sb sb 	where  gygc.bomid = bom.id and jggy.id = gygc.gyid  and jggl.gygcid = gygc.id and ry.id = jggl.jgryid and sb.id = jggl.sbid and jggl.sfjy='0' order by jgkssj";
 		log.info("获取当前待检验的所有工作sql"+sql);
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
@@ -196,6 +198,21 @@ public class PcglAction {
 			log.info("检验人员更新工艺过程表"+sql2);
 			this.selectDataService.execute(sql2);
 			
+			SqlRowSet rs = getBomidAndSerial(jgglId);
+			
+			while(rs.next()){
+				
+				String bomId = rs.getString(1);
+				int serial = rs.getInt(2);
+				serial = serial+1;
+				int kjgjs = rs.getInt(3);
+				
+				String sql3 = "UPDATE scglxt_t_gygc  SET kjgjs = kjgjs+"+kjgjs+" WHERE `bomid` = '"+bomId+"' and serial = '"+serial+"'";
+				this.selectDataService.execute(sql3);
+				
+				log.info("更新下一步可加工件数："+sql3);
+			}
+			
 		}catch(Exception e){
 			Response.write("error");
 			e.printStackTrace();
@@ -204,6 +221,12 @@ public class PcglAction {
 		
 	}
 	
+	public SqlRowSet getBomidAndSerial(String jgglId){
+		
+		String sql = "SELECT a.bomid,a.serial,a.yjgjs FROM  scglxt_t_gygc a WHERE id = (SELECT gygcid FROM  scglxt_t_jggl b  WHERE b.id = '"+jgglId+"'  AND a.id = b.gygcid)";
+		
+		return selectDataService.getSqlRowSet(sql);
+	}
 	public void jgryKs(){
 		
 		String gygcid = Request.getParameter("gygcid");
@@ -286,5 +309,21 @@ public class PcglAction {
 		this.selectDataService.execute(sql);
 
 		Response.write("sucess");
+	}
+	
+	/**
+	 * 排产管理查询总体加工情况
+	 * 
+	 */
+	
+	public void getZtJgQk(){
+		
+		String sql  = "SELECT bom.`zddmc`,gygc.`gynr`,jg.`rymc` jgry,jggl.`jgjs`,sb.`sbmc` ,jggl.`jgkssj`,jggl.`jgjssj`,jy.`rymc`jyry,jggl.`jysj` FROM scglxt_t_jggl jggl,scglxt_t_bom bom,scglxt_t_sb sb,scglxt_t_ry jg,scglxt_t_ry jy,scglxt_t_gygc gygc WHERE jg.`id` = jggl.`jgryid` AND jy.`id` = jggl.`jyryid` AND jggl.`sbid` = sb.`id` AND jggl.`gygcid` = gygc.`id` AND gygc.`bomid` = bom.`id`  ORDER BY gygc.`serial`";
+		log.info("排产管理查询总体加工情况: "+sql);
+		
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		json = "{\"data\":"+json+"}";
+		Response.write(json);
 	}
 }

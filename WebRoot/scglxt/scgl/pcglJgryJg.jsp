@@ -2,7 +2,7 @@
 <%@ include file="/include/topFile.jsp" %>
 <!DOCTYPE html>
 <html>
-<head><title>加工人员</title>
+<head><title>加工人员加工</title>
     <script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
     <link rel="stylesheet" href="../../js/plugin/bootstrap/css/bootstrap.css" type="text/css"></link>
     <!-- bootstrap css 引入 -->
