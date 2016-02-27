@@ -6,11 +6,7 @@ function validata() {
     $(".required").each(function () {
         if ($(this).val() == "" || $(this).val() == null) {
             tips = " 必填项不能为空！";
-            if ($(this).next().length == 0) {
-                $(this).after('<label class="error">必填项不能为空！</label>') ;
-            } else {
                 $(this).next().html("必填项不能为空！");
-            }
         }
     });
 

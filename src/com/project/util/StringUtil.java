@@ -382,6 +382,9 @@ public class StringUtil {
 		}
 		 
 	}
+	public static String nullStrToEmpty(String str) {
+		return (str == null ? "" : str);
+	}
 
 	
 }

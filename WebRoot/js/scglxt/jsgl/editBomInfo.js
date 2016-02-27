@@ -22,7 +22,10 @@
                 });
                 $.addRequiredLabel();
                 $('#btn_save').live('click', function () {
-                    saveFormInfo(_this._flag);
+                    var tips = validata();
+                    if(tips == ""){
+                        saveFormInfo(_this._flag);
+                    }
                 });
                 $("#form_bomInfo_clxz").on("change", function (e) {
                     if ($(this).val() == 1) {

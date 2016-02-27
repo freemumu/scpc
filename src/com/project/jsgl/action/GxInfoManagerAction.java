@@ -5,6 +5,7 @@ package com.project.jsgl.action;
 
 import java.util.List;
 
+import com.project.util.StringUtil;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.logging.Log;
@@ -60,8 +61,8 @@ public class GxInfoManagerAction {
 	 * 获取客户信息
 	 */
 	public void getDetailInfo(){
-		String id = "1" ;
-		String sql = " select  id , gymc,gydh,fzbz, gxsx from  scglxt_t_jggy   where id = '"+id+"' ";
+		String id = Request.getParameter("id");
+		String sql = " select  id , gymc,gydh,fzbz ,sfwx from  scglxt_t_jggy   where id = '"+id+"' ";
 		List list = null ; 
 		String json = null ;
 		try {
@@ -79,18 +80,19 @@ public class GxInfoManagerAction {
 	public void updateInfo(){
 		String json = Request.getParameter("JSON");
 		JSONObject JSON = JSONObject.fromObject(json);
-		String gxmc = JSON.getString("gymc");
-		String gxdh = JSON.getString("gydh");
+		String gxmc = JSON.getString("gxmc");
 		String fzbz = JSON.getString("fzbz");
-		String gxsx = JSON.getString("gxsx");
+		String sfwx = JSON.getString("sfwx");
 		String flag = JSON.getString("flag") ;
 		String sql = null;
-		String id = WebUtils.getRandomId();
+//		String id = WebUtils.getRandomId();
+		String id = StringUtil.returnNotEmpty(JSON.getString("id"));
+
 		if(flag !=null && flag.equals("ADD")){
-			sql = "insert into scglxt_t_jggy (id,gymc,gydh,fzbz,gxsx) values('"+id+"','"+gxmc+"','"+gxdh+"','"+fzbz+"','"+gxsx+"')";
+			sql = "insert into scglxt_t_jggy (gymc,fzbz,sfwx) values('"+id+"','"+gxmc+"',"+fzbz+"','"+sfwx+"')";
 		}else if(flag.equals("UPDATE")){
 			id = "1";
-			sql = "update scglxt_t_jggy  set gymc='"+gxmc+"' , gydh = '"+gxdh+"','"+fzbz+"',gxsx = '"+gxsx+"' where id = '"+id+"' ";
+			sql = "update scglxt_t_jggy  set gymc='"+gxmc+"' ,  fzbz = '"+fzbz+"'  , sfwx = '"+sfwx+"'  where id = '"+id+"' ";
 		}
 		try {
 			selectDataService.execute(sql);

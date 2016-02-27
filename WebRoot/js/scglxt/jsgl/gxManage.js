@@ -15,6 +15,9 @@
 
             init = function () {
                 tableInit();
+                $("#form_add").on('click',function(){
+                    skipToFormPage('scglxt/jsgl/editGxInfo.jsp');//跳转iframe页面
+                })
             },
             /**
              * 初始化表格函数
@@ -55,14 +58,13 @@
                         {
                             "render": function (data, type, row) {
                                 return '<div class="text-center">' +
-                                    ' <a class="btn btn-info btn-xs" href="#" title="删除"><i class="icon-edit" onclick = "HtManage.deleteRow(\'' + data + '\')"></i></a>' +
-                                    ' <a class="btn btn-danger btn-xs" href="#" title＝"修改"><i class="icon-remove" onclick = "HtManage.editRow(\'' + data + '\')"></i></a></div>';
+                                    ' <a class="btn btn-info btn-xs" href="#" title="删除"><i class="icon-edit" onclick = "GyManage.editRow(\'' + data + '\')"></i></a>' +
+                                    ' <a class="btn btn-danger btn-xs" href="#" title＝"修改"><i class="icon-remove" onclick = "GyManage.editRow(\'' + data + '\')"></i></a></div>';
                             },
                             "targets": 1
                         },
                         {
                             "render": function (data, type, row) {
-                                console.log(data) ;
                                 if(data=="1"){
                                     return "外协";
                                 }else{
@@ -71,14 +73,14 @@
                             },
                             "targets": 6
                         },
-                        {"visible": true, "targets": [2]}
+                        {"visible": false, "targets": [2]}
                     ],
                     "columns": [
                         {"data": null,},
-                        {"data": 'id',},
+                        {"data": 'id'},
                         {"data": "id"},
                         {"data": "gymc"},
-                        {"data": "gydh"},
+                        {"data": "id"},
                         {"data": "fzbz"},
                         {"data": "sfwx"}
                     ]
@@ -91,7 +93,8 @@
                         cell.innerHTML = i + 1;
                     });
                 }).draw();
-                new $.fn.dataTable.FixedColumns(table);
+
+                //new $.fn.dataTable.FixedColumns(table);
 
             },
             /**
@@ -116,17 +119,29 @@
             /**
              * 更新合同信息
              */
+                //跳转页面
+            editRow = function(id){
+                Main.swapIframUrl('scglxt/jsgl/editGxInfo.jsp?id='+id);//跳转iframe页面
+            },
             saveHtInfo = function (flag) {
 
             },
             initHtInfo = function (flag) {
 
-            }
-            ;
+            },
+            skipToFormPage = function(url,curPageNum,id,editModel){
+            var $outFrame =  $(window.parent.document.body)  ;
+            var $iframe = $outFrame.find("#mainIframe");
+            var src = $iframe.attr("src");
+            $iframe.attr('src',url)
+        }
+
+        ;
 
 
         return {
             init: init,
+            editRow:editRow,
             deleteRow: deleteRow
         }
     })();

@@ -15,6 +15,7 @@
 		
 		init = function(){
 			tableInit();
+
 		},
 		/**
 		 * 初始化表格函数

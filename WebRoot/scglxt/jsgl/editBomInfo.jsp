@@ -3,7 +3,7 @@
 <link href="${pageContext.request.contextPath}/stylesheets/plugins/select2/select2.css" media="all" rel="stylesheet"
       type="text/css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/select2/select2.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/js/scglxt/util/validata.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/util/validata.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/scglxt/jsgl/editBomInfo.js"></script>
 <div id='wrapper'>
     <div class="row">

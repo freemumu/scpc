@@ -379,7 +379,7 @@ $.extend($, {
         }
     },
     addRequiredLabel:function(){
-        $(".required").closest("div").siblings("label").append("<label style=\"color:red\">*</label>");
+        $(".required").closest("div").siblings("label.control-label").append("<label style=\"color:red\">*</label>");
     }
 });
 
