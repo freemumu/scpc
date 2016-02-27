@@ -25,7 +25,7 @@
                                 <thead>
                                 <tr>
                                     <th> 序号</th>
-                                    <th> 操作</th>
+                                    <th style="width:120px;"> 备料情况</th>
                                     <!-- 															<th> -->
                                     <!-- 																工序编排 -->
                                     <!-- 															</th> -->
@@ -113,6 +113,12 @@
                             Main.swapIframUrl('scglxt/jsgl/editBomInfo.jsp');
                             /*跳转iframe页面*/
                         })
+                        $(".blqk input[type='radio']").live("change",function(e){
+                            e.stopPropagation();
+                            var rowid = $(this).attr("name") ;
+                            var blqk = $(this).attr("value") ;
+                            changeBlqk(rowid,blqk) ;
+                        })
                     },
                     /** 初始化表格函数 */
                     tableInit = function (ssdd) {
@@ -139,24 +145,37 @@
                             "columnDefs": [{
                                 "render": function (data, type, row) {
                                     console.log(row.blqk);
-                                    if (row.blqk == null || row.blqk == "0"  ) {
-                                        return '<div class="text-center operate_bl">' +
-                                                '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  备料</button>   </div>';
+                                    /*                                    if (row.blqk == null || row.blqk == "0"  ) {
+                                     return '<div class="text-center operate_bl">' +
+                                     '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  备料</button>   </div>';
+                                     } else if (row.blqk == "1") {
+                                     return '<div class="text-center operate_bl">' +
+                                     '<button class="btn  btn-default btn-block "  disabled="disabled"  href="#" title="备料" onclick = "CgglManager.stock(\'' + row + '\')">  备料完成</button>   </div>';
+                                     }*/
+                                    if (row.blqk == null || row.blqk == "0") {
+                                        return ' <div class="blqk text-center"><input type="radio" value=1    name="'+row.id+'"/> 完成' +
+                                                '<input type="radio" value=0 checked  name="'+row.id+'"/>未完成  '  +
+                                                '<input type="radio" value=2   name="'+row.id+'"/>自备料 </div>';
                                     } else if (row.blqk == "1") {
-                                        return '<div class="text-center operate_bl">' +
-                                                '<button class="btn  btn-default btn-block "  disabled="disabled"  href="#" title="备料" onclick = "CgglManager.stock(\'' + row + '\')">  备料完成</button>   </div>';
+                                        return ' <div class="blqk text-center"><input type="radio" checked="true" value=1 name="'+row.id+'"/>完成' +
+                                                '<input type="radio" value=0   name="'+row.id+'"/>未完成 ' +
+                                                '<input type="radio" value=2   name="'+row.id+'"/>自备料 </div>' ;
+                                    }else if(row.blqk == "2"){
+                                        return ' <div class="blqk text-center"><input type="radio"  value=1 name="'+row.id+'"/>完成' +
+                                                '<input type="radio" value=0  name="'+row.id+'"/>未完成 ' +
+                                                '<input type="radio" value=2 checked="true" name="'+row.id+'"/>自备料 </div>' ;
                                     }
 
                                 }, "targets": 1
                             },
                                 {
 
-                                    "render": function ( data, type, row ) {
+                                    "render": function (data, type, row) {
                                         console.log(data);
-                                        if(data == 1 ){
-                                            return '<span class="label label-default">采购完成</span>' ;
-                                        }else{
-                                            return '<span class="label label-danger">未采购</span>' ;
+                                        if (data == 1) {
+                                            return '<span class="label label-default">采购完成</span>';
+                                        } else {
+                                            return '<span class="label label-danger">未采购</span>';
                                         }
                                     },
                                     "targets": 4
@@ -173,7 +192,7 @@
                             "columns": [
                                 {"data": null, "sWidth": "60px"},
                                 {"data": 'id', "sWidth": "100px"},
-                                {"data": "blqk"},
+                                {"data": "blqk" ,"sWidth": "160px"},
 
                                 {"data": "zddmc", "sWidth": "120px"},
                                 {"data": "clzt", "sWidth": "120px"},
@@ -185,22 +204,11 @@
                                 {"data": "clje"},
                                 {"data": "jgsl"},
                                 {"data": "bmcl"},
-                                { "data": "starttime",  "sWidth": "120px" },
+                                {"data": "starttime", "sWidth": "120px"},
                                 {"data": "endtime", "sWidth": "120px"},
                                 {"data": "gs", "sWidth": "120px"},
                                 {"data": "blkssj", "sWidth": "120px"},
                                 {"data": "bljssj", "sWidth": "120px"},
-//                                {"data": "clzt", "sWidth": "120px",
-//                                    "mRender":function(data,type,row){
-//                                        if(data !=null){
-//                                            console.log(row);
-//                                            if(row.clzt!= null){
-//                                                return row.clzt ;
-//                                            }
-//
-//                                        }
-//                                    }
-//                                },
 
                                 {"data": "cgry"},
                                 {"data": "cgsj"},
@@ -222,8 +230,7 @@
 
                     },
                     stock = function (id) {
-
-                        var url = "../jsgl/bomInfo_updateBlzk.action", successFun = function (resStr) {
+/*                        var url = "../jsgl/bomInfo_updateBlzk.action", successFun = function (resStr) {
                             if (resStr == "SUCCESS") {
                                 alert("更新库存成功！");
                                 window.location.reload();
@@ -232,8 +239,18 @@
                         };
                         if (confirm("确定更行库存？")) {
                             $.asyncAjaxPost(url, {"id": id}, successFun, true);
-                        }
+                        }*/
 
+                    },
+                    changeBlqk = function(rowid ,blqk ){
+                        alert(blqk);
+                        var url = "../jsgl/bomInfo_updateBlzk.action", successFun = function (resStr) {
+                            if (resStr == "SUCCESS") {
+                                alert("更新库存成功！");
+//                                window.location.reload();
+                            }
+                        };
+                            $.asyncAjaxPost(url, {"id": rowid ,"blqk" :blqk}, successFun, true);
                     }
 
                     ;

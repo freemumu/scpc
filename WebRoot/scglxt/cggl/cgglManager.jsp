@@ -2,12 +2,12 @@
 <%@ include file="/include/topFile.jsp" %>
 <!DOCTYPE html>
 <html>
-<head><title>订单采购管理</title>
+<head><title>采购管理</title>
     <script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
     <%--<script type="text/javascript" src="../../js/scglxt/jsgl/CgglManager.js"></script>--%>
 </head>
 <body>
-<div class='container-fluid container-wrapper '>
+<div class='container container-wrapper'>
     <div class='row' id='content-wrapper'>
         <div class='row rowTop'>
             <div class='box bordered-box ' style='margin-bottom: 0;'>
@@ -25,12 +25,13 @@
                                 <thead>
                                 <tr>
                                     <th> 序号</th>
-                                    <th> 操作</th>
+                                    <th style="width:120px;"> 材料状态</th>
                                     <!-- 															<th> -->
                                     <!-- 																工序编排 -->
                                     <!-- 															</th> -->
                                     <th> ID</th>
                                     <th> 子订单名称</th>
+                                    <th> 备料情况</th>
                                     <th> 子订单材质</th>
                                     <th> 工序内容</th>
                                     <th> 料的形状</th>
@@ -42,10 +43,10 @@
                                     <th> 子订单开始时间</th>
                                     <th> 子订单结束时间</th>
                                     <th> 子订单工时</th>
-                                    <th> 当前备料情况</th>
+
                                     <th> 备料开始时间</th>
                                     <th> 备料结束时间</th>
-                                    <th> 料的状态</th>
+
                                     <th> 采购人员</th>
                                     <th> 采购商家</th>
                                     <th> 子订单图纸</th>
@@ -112,6 +113,12 @@
                             Main.swapIframUrl('scglxt/jsgl/editBomInfo.jsp');
                             /*跳转iframe页面*/
                         })
+                        $(".clzt input[type='radio']").live("change", function (e) {
+                            e.stopPropagation();
+                            var rowid = $(this).attr("name");
+                            var blqk = $(this).attr("value");
+                            changeClzt(rowid, blqk);
+                        })
                     },
                     /** 初始化表格函数 */
                     tableInit = function (ssdd) {
@@ -135,28 +142,49 @@
                             scrollX: true, /*scrollCollapse: false,*/
                             paging: true,
 
-                            "columnDefs": [
-                                {
+                            "columnDefs": [{
                                 "render": function (data, type, row) {
-                                    if (row.clzt == "1" ) {
-                                        return '<div class="text-center operate_bl">' +
-                                                '<button class="btn  btn-default btn-block "  disabled="disabled"  href="#" title="备料" onclick = "CgglManager.stock(\'' + row + '\')">  采购完成</button>   </div>';
-                                    } else {
-                                    } else {
-                                        return '<div class="text-center operate_bl">' +
-                                                '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  采购</button>   </div>';
+
+                                    if (row.blqk == null || row.blqk == "0") {
+                                        return ' <div class="clzt text-center"><input type="radio" value=1    name="' + row.id + '"/> 完成' +
+                                                '<input type="radio" value=0 checked  name="' + row.id + '"/>未完成  ' +
+                                                ' </div>';
+                                    } else if (row.blqk == "1") {
+                                        return ' <div class="clzt text-center"><input type="radio" checked="true" value=1 name="' + row.id + '"/>完成' +
+                                                '<input type="radio" value=0   name="' + row.id + '"/>未完成 ' +
+                                                '  </div>';
                                     }
 
                                 }, "targets": 1
                             },
-                                {"visible": false, "targets": [2]}
+                                {
+
+                                    "render": function (data, type, row) {
+                                        console.log(data);
+                                        if (data == 1 || data == 2) {
+                                            return '<span class="label label-default">备料完成</span>';
+                                        } else   {
+                                            return '<span class="label label-danger">备料未完成</span>';
+                                        }
+                                    },
+                                    "targets": 4
+                                },
+                                {"visible": false, "targets": [2]},
+//                                {"visible": false, "targets": [4]},
+                                /*是否显示列*/
+                                /*                                {
+                                 "render": function (data, type, row) {
+                                 console.log(data);
+                                 }, "targets": 18
+                                 }*/
                             ],
                             "columns": [
                                 {"data": null, "sWidth": "60px"},
                                 {"data": 'id', "sWidth": "100px"},
-                                {"data": "id"},
-                                {"data": "zddmc", "sWidth": "120px"},
+                                {"data": "clzt", "sWidth": "160px"},
 
+                                {"data": "zddmc", "sWidth": "120px"},
+                                {"data": "blqk", "sWidth": "120px"},
                                 {"data": "zddcz", "sWidth": "120px"},
                                 {"data": "gxnr", "sWidth": "300px"},
                                 {"data": "clxz"},
@@ -165,16 +193,11 @@
                                 {"data": "clje"},
                                 {"data": "jgsl"},
                                 {"data": "bmcl"},
-                                {
-                                    "data": "starttime",
-                                    "sWidth": "120px"
-                                }, {"data": "endtime", "sWidth": "120px"},
+                                {"data": "starttime", "sWidth": "120px"},
+                                {"data": "endtime", "sWidth": "120px"},
                                 {"data": "gs", "sWidth": "120px"},
-                                {"data": "blqk", "sWidth": "120px"},
                                 {"data": "blkssj", "sWidth": "120px"},
                                 {"data": "bljssj", "sWidth": "120px"},
-                                {"data": "clzt", "sWidth": "120px"
-                                },
 
                                 {"data": "cgry"},
                                 {"data": "cgsj"},
@@ -196,17 +219,14 @@
 
                     },
                     stock = function (id) {
+                    },
+                    changeClzt = function (rowid, clzt) {
                         var url = "../jsgl/bomInfo_changeStatusClzt.action", successFun = function (resStr) {
                             if (resStr == "SUCCESS") {
-                                alert("采购完成！");
-                                window.location.reload();
-
+                                alert("更新采购状态成功！");
                             }
                         };
-                        if (confirm("确定更新采购状态？")) {
-                            $.asyncAjaxPost(url, {"id": id}, successFun, true);
-                        }
-
+                        $.asyncAjaxPost(url, {"id": rowid, "clzt": clzt}, successFun, true);
                     }
 
                     ;

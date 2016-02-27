@@ -144,7 +144,7 @@
                  if (resStr == "SUCCESS") {
 	     			  	window.location.reload(); 
 	    			  	$("#sorting-advanced").dataTable().fnPageChange( 'previous', true );
-						alert("SUCCESS！");
+						alert("删除成功！");
                  }
          } ;
          if(confirm("是否删除？")){

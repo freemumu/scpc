@@ -36,6 +36,8 @@
 			$('#form_khxx_qssj').datepicker();
 			$('#form_khxx_jssj').datepicker();
 			loadYwlxList();//加载业务类型列表
+
+			$("#form_htInfo").validate();
 		},
 		/**
 		 * 注册事件
@@ -113,7 +115,7 @@
 				remark : $('#form_khxx_remark').attr("value"),
 				htmx : $('#form_khxx_htmx').attr("value"),
 				flag : flag ,
-				id : id 
+				id : $.decodeEmptyValue(id)
 			}
 			var JSON = $.toJsonString(formInfo);
 			var $save = $('#btn_save'), $saving = $('#btn_save');

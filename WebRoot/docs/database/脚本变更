@@ -2,3 +2,28 @@ ALTER TABLE `scpc`.`scglxt_t_ht`
 ADD COLUMN `jssj` DATE NULL COMMENT '预计结束时间' AFTER `khid`;
 
 
+ALTER TABLE `scpc`.`scglxt_t_bom`
+CHANGE COLUMN `blkssj` `blkssj` DATETIME NULL DEFAULT NULL COMMENT '备料开始时间' ,
+CHANGE COLUMN `bljssj` `bljssj` DATETIME NULL DEFAULT NULL COMMENT '备料结束时间' ;
+
+ALTER TABLE `scpc`.`scglxt_t_bom`
+CHANGE COLUMN `starttime` `starttime` DATETIME NULL DEFAULT NULL COMMENT '子订单开始时间' ,
+CHANGE COLUMN `endtime` `endtime` DATETIME NULL DEFAULT NULL COMMENT '子订单结束时间' ;
+
+ALTER TABLE `scpc`.`scglxt_t_ht`
+CHANGE COLUMN `dqjd` `dqjd` VARCHAR(5) NULL DEFAULT NULL COMMENT '当前进度' ;
+
+ALTER TABLE `scpc`.`scglxt_t_ht`
+CHANGE COLUMN `dqjd` `dqjd` VARCHAR(5) NULL DEFAULT NULL COMMENT '当前进度' ;
+、ALTER TABLE `scpc`.`scglxt_t_ht`
+ CHANGE COLUMN `htje` `htje` VARCHAR(5) NULL DEFAULT NULL COMMENT '当前进度' ;
+ ALTER TABLE `scpc`.`scglxt_t_ht`
+ CHANGE COLUMN `jkje` `jkje` VARCHAR(5) NULL DEFAULT NULL COMMENT '当前进度' ;
+ ALTER TABLE `scpc`.`scglxt_t_ht`
+ CHANGE COLUMN `jkbdb` `jkbdb` VARCHAR(5) NULL DEFAULT NULL COMMENT '当前进度' ;
+
+
+ ALTER TABLE `scpc`.`scglxt_t_dd`
+ CHANGE COLUMN `ddlevel` `ddlevel` VARCHAR(20) NULL DEFAULT NULL COMMENT '订单级别' ,
+ CHANGE COLUMN `ddjd` `ddjd` VARCHAR(20) NULL DEFAULT NULL COMMENT '订单级别' ,
+ CHANGE COLUMN `zgs` `zgs` VARCHAR(20) NULL DEFAULT NULL COMMENT '所用总工时' ;

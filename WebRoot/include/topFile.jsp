@@ -15,28 +15,20 @@
     <script src="${pageContext.request.contextPath}/js/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/jquery/jquery-migrate.min.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/jquery/jquery-ui.min.js" type="text/javascript"></script>
-
     <script src="${pageContext.request.contextPath}/js/plugin/bootstrap/js/bootstrap.js"
             type="text/javascript"></script>
-    <!--  引入的js common函数库  mukun 20141021-->
         <script src="${pageContext.request.contextPath}/js/theme.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/util/CommonUtils.js" type="text/javascript"></script>    
   	<script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/datatables/jquery.dataTables.js"></script>
   	<!--集成bootstap的datablesJS-->
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/datatablesExtends/dataTables.bootstrap.js"></script>
-<!--   	<script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/datatables/dataTables.fixedColumns.js"></script> -->
-<!--   	<script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/datatables/dataTables.overrides.js"></script> -->
   	<script src="${pageContext.request.contextPath}/js/plugin/bootstrap-datepicker/js/bootstrap-datepicker.js" type="text/javascript"></script>
   	<script src="${pageContext.request.contextPath}/js/plugin/bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
   	<script src="${pageContext.request.contextPath}/js/plugin/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js" type="text/javascript"></script>
-	<script src="${pageContext.request.contextPath}/js/plugin/validate/jquery.validate.min.js" type="text/javascript"></script>
-    <script src="${pageContext.request.contextPath}/js/plugin/validate/additional-methods.js" type="text/javascript"></script>
-
     <!-- 控制主页面左侧及头部导航、控制收缩空间 -->
-
     <script src="${pageContext.request.contextPath}/js/scglxt/index.js" type="text/javascript"></script>
-    <script src="${pageContext.request.contextPath}/js/plugin/fullcalendar/fullcalendar.min.js"
-            type="text/javascript"></script>
+    <%--<script src="${pageContext.request.contextPath}/js/plugin/fullcalendar/fullcalendar.min.js"--%>
+            <%--type="text/javascript"></script>--%>
     <style>
         #content {
             /* margin-left: 251px; */
