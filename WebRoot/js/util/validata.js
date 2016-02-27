@@ -74,6 +74,27 @@ function validata() {
             $(this).next().html("数字不能为空！");
         }
     });
+    //数字验证(必填)
+    $(".mustrequiredDecimal").each(function () {
+        reg = /([1-9]+[0-9]*|0)(\\.[\\d]+)?/;
+        if (!reg.test($(this).val()) && $(this).val() != "") {
+            tips = $(this).val() + " 数字格式不正确！";
+            $(this).next().html("数字格式不正确！");
+        }
+        if ($(this).val() == "") {
+            tips = $(this).val() + " 数字不能为空！";
+            $(this).next().html("数字不能为空！");
+        }
+    });
+    //数字验证
+    $(".requiredDecimal").each(function () {
+        reg = /([1-9]+[0-9]*|0)(\\.[\\d]+)?/;
+        if (!reg.test($(this).val()) && $(this).val() != "") {
+            tips = $(this).val() + " 数字格式不正确！";
+            $(this).next().html("数字格式不正确！");
+        }
+
+    });
     //小数点后一位验证
     $(".requiredDouble").each(function () {
         if ($(this).val().split(".").length - 1 == 1 || $(this).val().split(".").length - 1 == 0) {

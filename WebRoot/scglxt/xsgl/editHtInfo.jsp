@@ -3,6 +3,7 @@
 <link href="${pageContext.request.contextPath}/stylesheets/plugins/select2/select2.css" media="all" rel="stylesheet"
       type="text/css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/select2/select2.js"></script>
+<script src="${pageContext.request.contextPath}/js/util/validata.js" type="text/javascript"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/scglxt/xsgl/editHtInfo.js"></script>
 <div id='wrapper'>
     <div class="row">
@@ -30,16 +31,18 @@
 
                             <div class='col-sm-4 controls'>
                                 <!-- data-rule-minlength='1' -->
-                                <input class='form-control' id='form_khxx_mc' info="fromInfo" name='form_khxx_mc'
+                                <input class='form-control required' id='form_khxx_mc' info="fromInfo" name='form_khxx_mc'
                                        placeholder='合同名称' type='text'>
+                                <label class="error"></label>
                             </div>
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3' for='form_khxx_htbh'>合同编号</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' id='form_khxx_htbh' info="fromInfo" name='form_khxx_htbh'
+                                <input class='form-control required' id='form_khxx_htbh' info="fromInfo" name='form_khxx_htbh'
                                        placeholder='合同编号' type='text'>
+                                <label class="error"></label>
                             </div>
                         </div>
                         <div class='form-group'>
@@ -55,7 +58,7 @@
                             <label class='control-label col-sm-3' for='form_khxx_htje'>合同金额</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' id='form_khxx_htje' info="fromInfo" name='form_khxx_htje'
+                                <input class='form-control required mustrequiredDecimal' id='form_khxx_htje' info="fromInfo" name='form_khxx_htje'
                                        placeholder='合同金额' type='text'>
                             </div>
                         </div>
@@ -63,16 +66,18 @@
                             <label class='control-label col-sm-3' for='form_khxx_qssj'>签署时间</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' id='form_khxx_qssj' style="cursor:pointer;" info="fromInfo"
+                                <input class='form-control required' id='form_khxx_qssj' style="cursor:pointer;" info="fromInfo"
                                        name='form_khxx_qssj' placeholder='签署时间' readonly type='text'>
+                                <label class="error"></label>
                             </div>
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3' for='form_khxx_qssj'>预计结束时间</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' id='form_khxx_jssj' style="cursor:pointer;" info="fromInfo"
+                                <input class='form-control required' id='form_khxx_jssj' style="cursor:pointer;" info="fromInfo"
                                        name='form_khxx_jssj' placeholder='结束时间' readonly type='text'>
+                                <label class="error"></label>
                             </div>
                         </div>
                         <div class='form-group'>
@@ -107,8 +112,9 @@
                             <label class='control-label col-sm-3' for='form_khxx_jkje'>结款金额</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' id='form_khxx_jkje' info="fromInfo" name='form_khxx_jkje'
+                                <input class='form-control requiredDecimal' id='form_khxx_jkje' info="fromInfo" name='form_khxx_jkje'
                                        placeholder='结款金额' type='text'>
+                                <label class="error"></label>
                             </div>
                         </div>
                         <div class='form-group'>

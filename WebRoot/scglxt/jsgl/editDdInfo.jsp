@@ -3,6 +3,7 @@
 <link href="${pageContext.request.contextPath}/stylesheets/plugins/select2/select2.css" media="all" rel="stylesheet"
       type="text/css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/select2/select2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/util/validata.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/scglxt/jsgl/editDdInfo.js"></script>
 <div id='wrapper'>
     <div class="row">
@@ -21,8 +22,6 @@
                         </a>
                         <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
                         </a>
-
-
                     </div>
                 </div>
                 <div class="box-content box-no-padding">
@@ -41,8 +40,9 @@
                             <label class='control-label col-sm-3 col-sm-3' for='form_khxx_xmname'>项目编号</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' id='form_khxx_xmname' info="fromInfo"
+                                <input class='form-control required' id='form_khxx_xmname' info="fromInfo"
                                        name='form_khxx_xmname' placeholder='项目编号' type='text'>
+                                <label class="error"></label>
                             </div>
                         </div>
                         <div class='form-group'>
@@ -57,8 +57,9 @@
                             <label class='control-label col-sm-3' for='form_khxx_jhdate'>交货日期</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class="form-control" id="form_khxx_jhdate" style="cursor:pointer;"
+                                <input class="form-control required" id="form_khxx_jhdate" style="cursor:pointer;"
                                        info="fromInfo" name="form_khxx_jhdate" type="text" readonly placeholder='交货日期'/>
+                                <label class="textInfo"></label>
                             </div>
                         </div>
                         <div class='form-group'>
@@ -66,17 +67,19 @@
 
                             <div class='col-sm-4 controls'>
                                 <%--<input class='form-control'  id='form_khxx_planstarttime'   style="cursor:pointer;" info="fromInfo" name='form_khxx_planstarttime' placeholder='计划开始时间' type='text'>--%>
-                                <input class='form-control' id='form_khxx_planstarttime' placeholder='计划开始时间'
+                                <input class='form-control required' id='form_khxx_planstarttime' placeholder='计划开始时间'
                                        type="text" value="" readonly  style="cursor:pointer;"
                                        class="form_datetime">
+                                    <label class="textInfo"></label>
                             </div>
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3' for='form_khxx_planendtime'>计划结束时间</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' readonly id='form_khxx_planendtime' style="cursor:pointer;"
+                                <input class='form-control required' readonly id='form_khxx_planendtime' style="cursor:pointer;"
                                        info="fromInfo" name='form_khxx_planendtime' placeholder='计划结束时间' type='text'>
+                                <label class="textInfo"></label>
                             </div>
                         </div>
                         <%--<div class='form-group' >
@@ -124,16 +127,18 @@
                             <label class='control-label col-sm-3' for='form_khxx_xmlxr'>项目联系人</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' id='form_khxx_xmlxr' info="fromInfo" name='form_khxx_xmlxr'
+                                <input class='form-control required' id='form_khxx_xmlxr' info="fromInfo" name='form_khxx_xmlxr'
                                        placeholder='项目联系人' type='text'>
+                                <label class="textInfo"></label>
                             </div>
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3' for='form_khxx_xmfzr'>项目负责人</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' id='form_khxx_xmfzr' info="fromInfo" name='form_khxx_xmfzr'
+                                <input class='form-control required' id='form_khxx_xmfzr' info="fromInfo" name='form_khxx_xmfzr'
                                        placeholder='项目负责人' type='text'>
+                                <label class="textInfo"></label>
                             </div>
                         </div>
                         <div class='form-group'>

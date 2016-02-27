@@ -3,6 +3,7 @@
 <link href="${pageContext.request.contextPath}/stylesheets/plugins/select2/select2.css" media="all" rel="stylesheet"
       type="text/css"/>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/select2/select2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/scglxt/util/validata.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/scglxt/jsgl/editBomInfo.js"></script>
 <div id='wrapper'>
     <div class="row">
@@ -31,8 +32,9 @@
 
                             <div class='col-sm-4 controls'>
                                 <!-- data-rule-minlength='1' -->
-                                <input class='form-control' id='form_bomInfo_zddmc' info="fromInfo" name='zddmc'
+                                <input class='form-control required' id='form_bomInfo_zddmc' info="fromInfo" name='zddmc'
                                        placeholder='子订单名称' type='text'>
+                                <label class="textInfo"></label>
                             </div>
                         </div>
                         <div class='form-group'>
@@ -48,9 +50,10 @@
                             <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_zddcz'>材质</label>
 
                             <div class='col-sm-4 controls'>
-                                <select class='form-control select2 ' id='form_bomInfo_zddcz' info="fromInfo"
+                                <select class='form-control select2 required ' id='form_bomInfo_zddcz' info="fromInfo"
                                         name='zddcz'>
                                 </select>
+                                <label class="textInfo"></label>
                             </div>
                         </div>
                         <div class='form-group'>
@@ -59,7 +62,7 @@
                             <div class='col-sm-4 controls'>
                                 <%--<input class='form-control' id='form_bomInfo_clxz' info="fromInfo"
                                        name='clxz' placeholder=' ' type='text'>--%>
-                                <select class='form-control select2' id='form_bomInfo_clxz' name='clxz'>
+                                <select class='form-control required select2' id='form_bomInfo_clxz' name='clxz'>
 
                                     <option value="1">
                                         长方体
@@ -69,6 +72,7 @@
                                     </option>
 
                                 </select>
+                                    <label class="textInfo"></label>
 
                             </div>
                         </div>
@@ -137,16 +141,18 @@
                             <label class='control-label col-sm-3 col-sm-3'>子订单开始时间</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class="form-control" id="form_bomInfo_starttime" info="fromInfo"
-                                       name="starttime" type="text" placeholder='自订单开始时间'/>
+                                <input class="form-control required" id="form_bomInfo_starttime" info="fromInfo"
+                                       name="starttime" type="text" placeholder='子订单开始时间'/>
+                                <label class="textInfo"></label>
                             </div>
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3'>子订单结束时间</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class="form-control" id="form_bomInfo_endtime" info="fromInfo"
-                                       name="endtime" type="text" placeholder='自订单结束时间'/>
+                                <input class="form-control required" id="form_bomInfo_endtime" info="fromInfo"
+                                       name="endtime" type="text" placeholder='子订单结束时间'/>
+                                <label class="textInfo"></label>
                             </div>
                         </div>
 <%--                        <div class='form-group'>

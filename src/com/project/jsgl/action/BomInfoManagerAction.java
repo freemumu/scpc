@@ -160,11 +160,11 @@ public class BomInfoManagerAction {
             sql = "INSERT INTO `scpc`.`scglxt_t_bom`" +
                     " (`zddmc`, `zddcz`, `clxz`, `cldx`, `cltj`, `clje`, `jgsl`, `bmcl`, `starttime`, `endtime`," +
                     " `gs`, `blqk`, `blkssj`, `ssdd`)" +
-                    " VALUES ('" + zddmc + "', '" + zddcz + "', '" + clxz + "', '" + cldx + "', '" + cltj + "', '" + clje + "', '" + jgsl + "', '" + bmcl + "', ' date_format('" + starttime + "','%Y-%m-%d')', ' date_format('" + endtime + "','%Y-%m-%d')', '" + gs + "', '', '', '" + ssdd + "');";
+                    " VALUES ('" + zddmc + "', '" + zddcz + "', '" + clxz + "', '" + cldx + "', '" + cltj + "', '" + clje + "', '" + jgsl + "', '" + bmcl + "', ' date_format('" + starttime + "','%Y-%m-%d %H:%i:%s')', ' date_format('" + endtime + "','%Y-%m-%d %H:%i:%s')', '" + gs + "', '', '', '" + ssdd + "');";
         } else if (flag.equals("UPDATE")) {
             sql = "update scglxt_t_bom  " +
                     "set zddmc = '" + zddmc + "', zddcz = '" + zddcz + "' , clxz = '" + clxz + "' , cldx = '" + cldx + "' ,cltj ='" + cltj + "' , clje ='" + clje + "' ,bmcl='" + bmcl + "'," +
-                    "starttime = date_format('" + starttime + "','%Y-%m-%d'),endtime = date_format('" + endtime + "','%Y-%m-%d')  ," +
+                    "starttime = date_format('" + starttime + "','%Y-%m-%d %H:%i:%s'),endtime = date_format('" + endtime + "','%Y-%m-%d %H:%i:%s')  ," +
                     "gs='" + gs + "'  " +
                     "where  id = '" + id + "'";
 

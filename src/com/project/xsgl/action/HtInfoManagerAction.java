@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.project.util.StringUtil;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.logging.Log;
@@ -78,7 +79,6 @@ public class HtInfoManagerAction {
         String lx = json.getString("lx");
         String dw = json.getString("dw");
         String gx = json.getString("gx");
-        ;
         String iscj = json.getString("iscj");
         String remark = json.getString("remark");
         String msg = null;
@@ -157,8 +157,10 @@ public class HtInfoManagerAction {
         String dqjd = JSON.getString("dqjd");
         String fkzt = JSON.getString("fkzt");
         String jkbfb = JSON.getString("jkbfb");
-        String jkje = JSON.getString("jkje");
-        jkbfb = String.valueOf((double)Long.parseLong(jkje)/Long.parseLong(htje)*100);
+        String jkje = StringUtil.returnNotEmpty(JSON.getString("jkje"));
+        if(jkje != null  && htje != null ){
+            jkbfb = String.valueOf((double)Long.parseLong(jkje)/Long.parseLong(htje)*100);
+        }
         String jscb = JSON.getString("jscb");
         String hkzh = JSON.getString("hkzh");
         String hkkhh = JSON.getString("hkkhh");

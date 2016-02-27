@@ -26,17 +26,18 @@
 			}else{
 				_this._flag = "ADD" ;
 			}
-			$('#btn_save').live('click',function(){
+			$('#btn_save').live('click',function(e){
 //				HtEditManage.saveFormInfo("ADD");
-				saveFormInfo(_this._flag,urlParam.id);
+				e.stopPropagation();
+				var tips = validata() ;
+				if(tips == "" ){
+					saveFormInfo(_this._flag,urlParam.id);
+				}
 			});
-			$('#form_khxx_jhdate').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-			//$('#form_khxx_planstarttime').datetimepicker();
-			$('#form_khxx_planstarttime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-			$('#form_khxx_planendtime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-			$('#form_khxx_realstarttime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-			//$('#form_khxx_realendtime').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-			//$('#form_khxx_ckdate').datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+			$('#form_khxx_jhdate').datepicker({format: 'yyyy-mm-dd'});
+			$('#form_khxx_planstarttime').datepicker({format: 'yyyy-mm-dd'});
+			$('#form_khxx_planendtime').datepicker({format: 'yyyy-mm-dd'});
+			$('#form_khxx_realstarttime').datepicker({format: 'yyyy-mm-dd'});
 		},
 		initFormInfo = function(id){
 			var url = "ddInfo_getDetailInfo.action",successFun = function(data){
@@ -94,8 +95,8 @@
 			var JSON = $.toJsonString(formInfo);
 			var $save = $('#btn_save'), $saving = $('#btn_save');
             var url = "ddInfo_updateInfo.action", successFun = function(resStr){
-                if (resStr == "SUCCESS") {
-                	alert('success');
+				if (resStr == "SUCCESS") {
+                	alert('保存成功!');
                 }
             }
             $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);		

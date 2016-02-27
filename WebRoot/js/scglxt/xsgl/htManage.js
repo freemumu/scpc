@@ -22,6 +22,7 @@
 		 * 注册事件
 		 */
 		registerEvent = function(){
+
 			$("#form_add").on('click',function(){
 				Main.swapIframUrl('scglxt/xsgl/editHtInfo.jsp');//跳转iframe页面
 			})			
