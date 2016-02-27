@@ -21,6 +21,9 @@
             //获取参数
             var urlParam = new Object();
             urlParam = $.GetRequest();
+            if(urlParam.sbid){
+                $("#btn-add").remove();
+            }
             _showModel = urlParam.showModel;
             tableInit(urlParam.bomid);
             _bomid = urlParam.bomid;
@@ -149,7 +152,7 @@
                         }
 //		            $(#debugArea).html(debugStr);
                         GygcManage.changeRowSerialNum("gygc");
-                    },
+                    }
                 });
                 loadGygcList(selector,"bomInfo_getJggyData.action");
                 loadGygcList(gxnrSelector,"bomInfo_getGxnrData.action");
@@ -240,10 +243,14 @@
                             $('.endtime').removeClass("hide");
                         }
                     }
-
-
                 }
-                $.asyncAjax(url, {bomid: bomid}, successFun, true);
+                var urlParam = new Object();
+                urlParam = $.GetRequest();
+                if(urlParam.sbid){
+                    $.asyncAjax(url, {sbid: urlParam.sbid}, successFun, true);
+                }else{
+                    $.asyncAjax(url, {bomid: bomid}, successFun, true);
+                }
 
 
             }

@@ -8,6 +8,7 @@ package com.project.jsgl.action;
 import java.util.List;
 
 import com.project.util.Constants;
+import com.project.util.StringUtil;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.collections.map.ListOrderedMap;
@@ -363,7 +364,14 @@ public class BomInfoManagerAction {
      */
     public void loadBomGybpList() {
         String bomid = Request.getParameter("bomid");
-        String sql = " select bomid ,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where bomid = '" + bomid + "'  order by serial asc ";
+        String sql = "";
+        String sbid = Request.getParameter("sbid") ;
+        if(StringUtil.returnNotEmpty(sbid) != null){
+            sql = "select bomid ,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where sbid = '" + sbid + "'  order by serial asc ";
+        }else{
+            sql = "select bomid ,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where bomid = '" + bomid + "'  order by serial asc ";
+        }
+
         String json = null;
         List list = this.selectDataService.queryForList(sql);
         if (list.size() >= 0) {

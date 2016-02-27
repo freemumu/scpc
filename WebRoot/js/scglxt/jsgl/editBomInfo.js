@@ -20,6 +20,7 @@
                     var src = $iframe.attr("src");
                     $iframe.attr('src', "scglxt/jsgl/BomManager.jsp");
                 });
+                $.addRequiredLabel();
                 $('#btn_save').live('click', function () {
                     saveFormInfo(_this._flag);
                 });

@@ -173,7 +173,3 @@ width:180px !important;
 label.error,label.textInfo{
 	color:#FF0000;
 }
-.required:after{
-	content: "*";
-	color: #FF0000;
-}
