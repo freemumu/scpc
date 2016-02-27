@@ -39,7 +39,7 @@
         "aLengthMenu":[15,30],
 		"ajax":"pcgl_getBomStatusList.action",
 		scrollY:        "300px",
-		scrollX:        false,
+		scrollX:        true,
 		scrollCollapse: false,
 		paging:         true,
 		"columnDefs": [ 
@@ -52,14 +52,14 @@
             { "visible": true,  "targets": [ 2 ] }
         ],
         "columns": [
-             {"data": null,"sWidth": "60px"}, 
-             {"data": "id","sWidth": "200px"}, 
+             {"data": null,"sWidth": "40px"}, 
+             {"data": "id","sWidth": "80px"}, 
              {"data": "zddmc", "sWidth": "120px"}, 
-             {"data": "ddtz","sWidth": "600px"},
-             {"data": "bmcl"},
-             {"data": "jhkssj","sWidth": "120px"}, 
-             {"data": "jhjssj", "sWidth": "120px"},
-             {"data": "gs", "sWidth": "120px"}
+             {"data": "ddtz","sWidth": "180px"},
+             {"data": "bmcl","sWidth": "120px"},
+             {"data": "jhkssj","sWidth": "150px"}, 
+             {"data": "jhjssj", "sWidth": "150px"},
+             {"data": "gs", "sWidth": "150px"}
         ]
        
 	} );
@@ -70,6 +70,7 @@
             cell.innerHTML = i+1;
         } );
    	  } ).draw();
+	  new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
 	}
 	$(document).ready(function() {
 	
@@ -81,13 +82,11 @@
 	
 	function tzkssj(bomid){
 		
-
 		$('#dlg').dialog('open');
 		varbomid = bomid;
 		$('#jhkssj').datetimepicker({
 			format: 'yyyy-mm-dd hh:ii'
 		});
-		alert(varbomid);
 	}
 	
 	function saveSj(){
@@ -125,8 +124,7 @@
                 <div class='box-content box-no-padding'>
                     <div class='responsive-table'>
                         <div class='scrollable-area'>
-                            <table id="pcglBomStatus" class='table table-striped table-bordered tableGrid cell-border'
-                                   style='margin-bottom: 0;'>
+                            <table id="pcglBomStatus" class='table table-striped table-bordered' style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
                                     <th> 序号</th>

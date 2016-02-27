@@ -314,10 +314,10 @@
         </div>
     </div>
 </div>
-<div id="dlg" class="easyui-dialog" title="加工完成" style="width:400px;height:200px;padding:10px"
+<div id="dlg" class="easyui-dialog" title="加工完成" style="width:400px;height:200px;padding:15px"
 			data-options="closed:true">
 		
-		<span style="margin-left:40px;margin-top:40px;">完成件数：</span><input id="jgjs" width="120px"></input>
+		<span style="margin-left:40px;margin-top:40px;">完成件数：</span><input id="jgjs"  style="width:175px; height:28px"></input>
 		<p style="margin-top:15px;">
 		<span style="margin-left:40px;margin-top:40px;">所用设备：</span><select style="height:28px;width:175px;" id='jgsb'></select>
 
