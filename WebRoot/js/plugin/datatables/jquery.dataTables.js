@@ -3237,7 +3237,10 @@
 			if ( dataSrc == 'ajax' ) {
 				_fnBuildAjax( settings, [], function(json) {
 					var aData = _fnAjaxDataSrc( settings, json );
-	
+					if(aData==null){
+						
+						aData=[];
+					}
 					// Got the data - add it to the table
 					for ( i=0 ; i<aData.length ; i++ ) {
 						_fnAddData( settings, aData[i] );
@@ -7300,6 +7303,9 @@
 				_fnClearTable( settings );
 	
 				var data = _fnAjaxDataSrc( settings, json );
+				if(data==null){
+					data = [];
+				}
 				for ( var i=0, ien=data.length ; i<ien ; i++ ) {
 					_fnAddData( settings, data[i] );
 				}

@@ -180,6 +180,8 @@ public class PcglAction {
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":"+json+"}";
+		
+		log.info("json===================================="+json);
 		Response.write(json);
 	}
 	
@@ -318,12 +320,13 @@ public class PcglAction {
 	
 	public void getZtJgQk(){
 		
-		String sql  = "SELECT bom.`zddmc`,gygc.`gynr`,jg.`rymc` jgry,jggl.`jgjs`,sb.`sbmc` ,jggl.`jgkssj`,jggl.`jgjssj`,jy.`rymc`jyry,jggl.`jysj` FROM scglxt_t_jggl jggl,scglxt_t_bom bom,scglxt_t_sb sb,scglxt_t_ry jg,scglxt_t_ry jy,scglxt_t_gygc gygc WHERE jg.`id` = jggl.`jgryid` AND jy.`id` = jggl.`jyryid` AND jggl.`sbid` = sb.`id` AND jggl.`gygcid` = gygc.`id` AND gygc.`bomid` = bom.`id`  ORDER BY gygc.`serial`";
+		String sql  = "SELECT bom.`zddmc`,gygc.`gynr`,jg.`rymc` jgry,jggl.`jgjs`,sb.`sbmc` ,cast(jggl.`jgkssj` as char) jgkssj,cast(jggl.`jgjssj` as char) jgjssj ,jy.`rymc`jyry,cast(jggl.`jysj` as char)jysj FROM scglxt_t_jggl jggl,scglxt_t_bom bom,scglxt_t_sb sb,scglxt_t_ry jg,scglxt_t_ry jy,scglxt_t_gygc gygc WHERE jg.`id` = jggl.`jgryid` AND jy.`id` = jggl.`jyryid` AND jggl.`sbid` = sb.`id` AND jggl.`gygcid` = gygc.`id` AND gygc.`bomid` = bom.`id`  ORDER BY gygc.`serial`";
 		log.info("排产管理查询总体加工情况: "+sql);
 		
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":"+json+"}";
+		
 		Response.write(json);
 	}
 }

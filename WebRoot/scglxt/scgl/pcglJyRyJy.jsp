@@ -57,8 +57,8 @@
              {"data": null,"sWidth": "60px"}, 
              {"data": 'id',"sWidth": "100px"}, 
              {"data": "zddmc", "sWidth":"120px"}, 
-             {"data": "bmcl","sWidth": "200px"},
-             {"data": "gymc"},
+             {"data": "bmcl","sWidth": "120px"},
+             {"data": "gymc","sWidth": "120px"},
              {"data": "rymc","sWidth": "120px"}, 
              {"data": "sbmc", "sWidth": "120px"},
              {"data": "jgjs", "sWidth": "120px"}
@@ -142,8 +142,7 @@
                 <div class='box-content box-no-padding'>
                     <div class='responsive-table'>
                         <div class='scrollable-area'>
-                            <table id="pcglJyryJy" class='table table-striped table-bordered tableGrid cell-border'
-                                   style='margin-bottom: 0;'>
+                            <table id="pcglJyryJy" class='table table-striped table-bordered' style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
                                     <th> 序号</th>

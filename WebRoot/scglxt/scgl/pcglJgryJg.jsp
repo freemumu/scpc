@@ -127,8 +127,8 @@
                 },
         "aLengthMenu":[15,30],
 		"ajax":"pcgl_getBomGygcJg.action",
-		scrollY:        "300px",
-		scrollX:        false,
+		scrollY:        "380px",
+		scrollX:        true,
 		scrollCollapse: false,
 		paging:         true,
 		"columnDefs": [ 
@@ -141,19 +141,19 @@
             { "visible": true,  "targets": [ 2 ] }
         ],
         "columns": [
-             {"data": null,"sWidth": "60px"}, 
-             {"data": 'id',"sWidth": "200px"}, 
+             {"data": null,"sWidth": "40px"}, 
+             {"data": 'id',"sWidth": "80px"}, 
              {"data": "zddmc", "sWidth": "120px"}, 
-             {"data": "bmcl","sWidth": "600px"},
-             {"data": "jhkssj"},
+             {"data": "bmcl","sWidth": "80px"},
+             {"data": "jhkssj","sWidth": "120px"},
              {"data": "jhjssj","sWidth": "120px"}, 
              {"data": "gs", "sWidth": "120px"},
-             {"data": "gymc", "sWidth": "120px"},
-             {"data": "kjgjs", "sWidth": "120px"},
-             {"data": "yjgjs", "sWidth": "120px"},
-             {"data": "bfjs", "sWidth": "120px"},
-             {"data": "djgjs", "sWidth": "120px"},
-             {"data": "sjjs", "sWidth": "120px"}
+             {"data": "gymc", "sWidth": "100px"},
+             {"data": "kjgjs", "sWidth": "100px"},
+             {"data": "yjgjs", "sWidth": "100px"},
+             {"data": "bfjs", "sWidth": "100px"},
+             {"data": "djgjs", "sWidth": "100px"},
+             {"data": "sjjs", "sWidth": "100px"}
         ]
        
 	} );
@@ -164,6 +164,7 @@
             cell.innerHTML = i+1;
         } );
    	  } ).draw();
+	  new $.fn.dataTable.FixedColumns( table, {leftColumns:4});
 	}
 	
 	
@@ -287,8 +288,7 @@
                 <div class='box-content box-no-padding'>
                     <div class='responsive-table'>
                         <div class='scrollable-area'>
-                            <table id="pcglJgryJg" class='table table-striped table-bordered tableGrid cell-border'
-                                   style='margin-bottom: 0;'>
+                            <table id="pcglJgryJg" class='table table-striped table-bordered' style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
                                     <th> 序号</th>
