@@ -9,8 +9,8 @@
 	<script type="text/javascript" src="../../js/scglxt/xsgl/khxxManage.js"></script>
 	</head>
 	<body>
-			<div class='container container-wrapper' >
-				<div class='row' id='content-wrapper'>
+			<div class='container-fluid' >
+				<div class='' id='content-wrapper'>
 						<div class='row rowTop' >
 								<div class='box bordered-box'
 									style='margin-bottom: 0;'>

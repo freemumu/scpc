@@ -15,6 +15,9 @@
 		init = function(){
 			var urlParam = new Object();
 			urlParam = $.GetRequest();
+			if(urlParam.showModal){
+				$("#form_add").remove();
+			}
 			tableInit(urlParam);
 			registerEvent();
 		},
@@ -22,8 +25,8 @@
 		 * 注册事件
 		 */
 		registerEvent = function(){
-
 			$("#form_add").on('click',function(){
+				alert("")
 				Main.swapIframUrl('scglxt/xsgl/editHtInfo.jsp');//跳转iframe页面
 			})			
 		},
@@ -174,7 +177,7 @@
 				show:true
 			});
 			//在modalbody 中家在iframe 内容为 工序编排的内容
-			$content = "<iframe src='../jsgl/ddManager.jsp?bomid="+data+"' class='modal_iframe'></iframe>" ; 
+			$content = "<iframe src='../jsgl/ddManager.jsp?showModal=true&bomid="+data+"' class='modal_iframe'></iframe>" ;
 			$container = $('#modal-body');
 			$container.empty().append($content);
 		}

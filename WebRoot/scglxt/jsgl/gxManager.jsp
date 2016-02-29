@@ -7,7 +7,7 @@
     <script type="text/javascript" src="../../js/scglxt/jsgl/gxManage.js"></script>
 </head>
 <body>
-<div class='container container-wrapper'>
+<div class='container-fluid'>
     <div class='row' id='content-wrapper'>
         <div class='row rowTop'>
             <div class='box bordered-box orange-border'

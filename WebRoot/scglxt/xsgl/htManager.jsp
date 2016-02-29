@@ -9,22 +9,20 @@
 	<script type="text/javascript" src="../../js/scglxt/xsgl/htManage.js"></script>
 	</head>
 	<body>
-			<div class='container container-wrapper'>
-				<div class='row' id='content-wrapper'>
+			<div class='container-fluid'>
+				<div  id='content-wrapper'>
 						<div class='row rowTop'>
 								<div class='box bordered-box'
 									style='margin-bottom: 0;'>
 									<div class='box-header'>
-											<button id="form_add" class="btn btn-success btn-sm">
-                        						<i class="icon-add"></i>
-                        						增加
-                      						</button>
-										<div class='title'>
+
+										<div class='title col-md-6'>
 											合同信息
 										</div>
-										<div class='actions'>
-											<a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-											</a>
+										<div class="col-md-1 col-md-offset-5"></div>
+										<div id="form_add" class="btn btn-success btn-sm ">
+											<i class="icon-add"></i>
+											增加
 										</div>
 									</div>
 									<div class='box-content box-no-padding'>
@@ -98,7 +96,7 @@
 				</div>
 			</div>
 	<!-- 模态框（Modal）-->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+	<div class=" modal fade tableModal" id="myModal" tabindex="-1" role="dialog"
 	   aria-labelledby="myModalLabel" aria-hidden="true">
 	   <div class="modal-dialog" style="width:850px;height:550px;">
 	      <div class="modal-content" style="height:90%;"  >

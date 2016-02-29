@@ -65,7 +65,7 @@
 </script>
 
 	<body>
-			<div class='container container-wrapper'>
+			<div class='container-fluid'>
 				<div class='row' id='content-wrapper'>
 					<div class='col-xs-12'>
 						<div class='row rowTop'>

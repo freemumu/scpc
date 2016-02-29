@@ -41,12 +41,18 @@ body{
 }
  
 .rowTop{
-	margin-top:5px;
+	/*margin-top:5px;*/
+}
+.box-header{
+position: absolute;
+width: 100%;
+top: 2px;
 }
 #form_add{
 	margin-top:-5px;
-	right:40px;
+	right:20%;
 	position:absolute;
+	z-index:1001;
 }
 #form_add a{
 	 color:white;
@@ -172,4 +178,12 @@ width:180px !important;
 }
 label.error,label.textInfo{
 	color:#FF0000;
+}
+
+.tableModal .modal-body{padding:0px;
+height:80%;
+}
+
+.box-content>form{
+	margin-top:50px;
 }
