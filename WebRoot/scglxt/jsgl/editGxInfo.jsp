@@ -4,7 +4,7 @@
   <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugin/select2/select2.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/js/util/validata.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/js/scglxt/jsgl/editGxInfo.js"></script>
-	 <div id='wrapper'>
+	 <div class="container-fluid">
 		<div class="row">
                 <div class="col-sm-12">
                   <div class="box">

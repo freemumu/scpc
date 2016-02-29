@@ -76,7 +76,7 @@
                         {"visible": false, "targets": [2]}
                     ],
                     "columns": [
-                        {"data": null,},
+                        {"data": null},
                         {"data": 'id'},
                         {"data": "id"},
                         {"data": "gymc"},

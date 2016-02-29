@@ -12,8 +12,7 @@
 </head>
 <body>
 <div class='container-fluid'>
-	<div class='row' id='content-wrapper'>
-		<div class='row rowTop'>
+	<div  id='content-wrapper'>
 			<div class='box bordered-box orange-border'
 				 style='margin-bottom: 0;'>
 				<div class='box-header'>
@@ -107,7 +106,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
 </div>
 <!-- 模态框（Modal）-->
