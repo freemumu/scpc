@@ -84,8 +84,8 @@ public class BomInfoManagerAction {
      */
     public void changeStatusClzt() {
         String id = Request.getParameter("id");
-        String clzt = Request.getParameter("clzt") ;
-        String sql = "update scglxt_t_bom set clzt ='"+clzt+"' where id = '" + id + "'";
+        String clzt = Request.getParameter("clzt");
+        String sql = "update scglxt_t_bom set clzt ='" + clzt + "' where id = '" + id + "'";
         try {
             selectDataService.execute(sql);
             Response.write(Constants.UPDATE_SUCCESS);
@@ -219,7 +219,9 @@ public class BomInfoManagerAction {
         JSONObject JSON = JSONObject.fromObject(json);
         String bomid = JSON.getString("bomid");
         String sysb = JSON.getString("sysb");
+        String sysbText = JSON.getString("sysbText");
         String gxnr = JSON.getString("gxnr");
+        String gxnrText = JSON.getString("gxnrText");
         String edgs = JSON.getString("edgs");
         String stsj = JSON.getString("stsj");
         String serial = JSON.getString("serial");
@@ -278,7 +280,8 @@ public class BomInfoManagerAction {
             return;
         }
         List list = null;
-        String gygcSql = "select gynr ,edgs from scglxt_t_gygc where bomid = '" + bomid + "' order by serial ";
+        String gygcSql = "select t.id ,t2.gymc gynr ,t.edgs from scglxt_t_gygc  t ,scglxt_t_jggy t2 " +
+                " where  t.gynr = t2.id  and bomid = '" + bomid + "'  order by serial ";
         String gynr = "";
         String sql = "";
 //		int ojb = getBomInfoByBomid(bomid) ;
@@ -365,10 +368,10 @@ public class BomInfoManagerAction {
     public void loadBomGybpList() {
         String bomid = Request.getParameter("bomid");
         String sql = "";
-        String sbid = Request.getParameter("sbid") ;
-        if(StringUtil.returnNotEmpty(sbid) != null){
+        String sbid = Request.getParameter("sbid");
+        if (StringUtil.returnNotEmpty(sbid) != null) {
             sql = "select bomid ,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where sbid = '" + sbid + "'  order by serial asc ";
-        }else{
+        } else {
             sql = "select bomid ,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where bomid = '" + bomid + "'  order by serial asc ";
         }
 

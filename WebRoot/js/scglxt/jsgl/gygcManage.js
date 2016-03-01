@@ -41,7 +41,17 @@
                     GygcManage.addRow();
                 });
                 $('#btn-save').on("click", function () {
-                    GygcManage.saveFormInfo();
+                    var flag = true;
+                    $('#gygc td>input[info="edgs"]').each(function(e){
+                        if($(this).val()==""||$(this).val()==null ){
+                            flag = false  ;
+                        }
+                    });
+                    if(flag){
+                        GygcManage.saveFormInfo();
+                    }else{
+                        alert("额定工时不能为空！");
+                    }
                 });
                 $("#gygc tbody tr").on("click",function(e){
                     alert();
@@ -88,8 +98,10 @@
                 deleteFormInfo(_bomid);
                 for (var i = 0; i < rowNum; i++) {
                     formInfo.bomid = _bomid;
-                    formInfo.sysb = $($("#gygc tbody>tr")[i]).find('select[info="sysb"]').attr('value');
+                    formInfo.sysb = $($("#gygc tbody>tr")[i]).find('select[info="sysb"]').val();
+                    formInfo.sysbText = $($("#gygc tbody>tr")[i]).find('select[info="sysb"]').find("option:selected").text();
                     formInfo.gxnr = $($("#gygc tbody>tr")[i]).find('select[info="gxnr"]').attr('value');
+                    formInfo.gxnrText = $($("#gygc tbody>tr")[i]).find('select[info="gxnr"]').find("option:selected").text();
                     formInfo.edgs = $($("#gygc tbody>tr")[i]).find('input[info="edgs"]').attr('value');
                     //formInfo.stsj = $($("#gygc tbody>tr")[i]).find('input[info="stsj"]').attr('value');
                     formInfo.stsj = "";
