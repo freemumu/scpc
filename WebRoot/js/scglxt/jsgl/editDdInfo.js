@@ -26,6 +26,7 @@
 			}else{
 				_this._flag = "ADD" ;
 			}
+			$.addRequiredLabel();
 			$('#btn_save').live('click',function(e){
 //				HtEditManage.saveFormInfo("ADD");
 				e.stopPropagation();

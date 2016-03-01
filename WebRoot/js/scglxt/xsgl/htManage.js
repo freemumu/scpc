@@ -26,7 +26,6 @@
 		 */
 		registerEvent = function(){
 			$("#form_add").on('click',function(){
-				alert("")
 				Main.swapIframUrl('scglxt/xsgl/editHtInfo.jsp');//跳转iframe页面
 			})			
 		},

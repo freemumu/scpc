@@ -90,10 +90,8 @@
 </script>
 
 	<body>
-			<div class='container container-wrapper'>
-				<div class='row' id='content-wrapper'>
-					<div class='col-xs-12'>
-						<div class='row rowTop'>
+			<div class='container-fluid'>
+				<div   id='content-wrapper'>
 							<div class='col-sm-12'>
 								<div class='box bordered-box orange-border'
 									style='margin-bottom: 0;'>
@@ -158,8 +156,6 @@
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 	</body>
