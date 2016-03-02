@@ -2013,7 +2013,7 @@ header .navbar {
           color: #6e6e6e; }
         #main-nav .navigation > .nav > li > a.in.collapsed span {
           color: #3c3c3c; }
-        #main-nav .navigation > .nav > li > a [class^="icon-"], #main-nav .navigation > .nav > li > a [class*=" icon-"] {
+        #main-nav .navigation > .nav > li > a [class^="icon-"], #main-nav .navigation > .nav > li > a [class*=" icon-"],        #main-nav .navigation > .nav > li > a [class^="icon-"], #main-nav .navigation > .nav > li > a [class*=" glyphicon-"] {
           color: #6e6e6e;
           font-size: 20px;
           margin-right: 10px;
@@ -2067,7 +2067,7 @@ header .navbar {
             float: right;
             margin-top: 1px;
             margin-right: 7px; }
-          #main-nav .navigation > .nav > li .nav > li > a [class^="icon-"], #main-nav .navigation > .nav > li .nav > li > a [class*=" icon-"] {
+          #main-nav .navigation > .nav > li .nav > li > a [class^="icon-"], #main-nav .navigation > .nav > li .nav > li > a [class*=" icon-"],  #main-nav .navigation > .nav > li .nav > li > a [class^="glyphicon-"], #main-nav .navigation > .nav > li .nav > li > a [class*=" glyphicon-"] {
             display: inline-block;
             text-align: center;
             width: 25px; }

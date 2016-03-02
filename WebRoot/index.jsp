@@ -48,7 +48,7 @@
                 <ul class='nav nav-stacked in'>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-envelope'></i>
                             <span id=khxxgl>客户信息管理</span>
                         </a>
                     </li>
@@ -62,26 +62,26 @@
             </li>
             <li>
                 <a class='dropdown-collapse ' href='#'>
-                    <i class='icon-tint'></i>
+                    <i class='glyphicon glyphicon-wrench'></i>
                     <span>技术管理</span>
                     <i class='icon-angle-down angle-down'></i>
                 </a>
                 <ul class='nav nav-stacked'>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-align-justify'></i>
                             <span id="ddgl">订单管理</span>
                         </a>
                     </li>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-th-list'></i>
                             <span id="bomgl">BOM表管理</span>
                         </a>
                     </li>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-tower'></i>
                             <span id="gxgl">工序管理</span>
                         </a>
                     </li>
@@ -89,7 +89,7 @@
             </li>
             <li>
                 <a class='dropdown-collapse ' href='#'>
-                    <i class='icon-tint'></i>
+                    <i class='glyphicon glyphicon-calendar'></i>
                     <span>生产管理</span>
                     <i class='icon-angle-down angle-down'></i>
                 </a>
@@ -102,31 +102,31 @@
                     </li>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-bookmark'></i>
                             <span id="bzgl">班组管理</span>
                         </a>
                     </li>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-user'></i>
                             <span id="rygl">人员管理</span>
                         </a>
                     </li>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-indent-left'></i>
                             <span id="jgryjg">加工人员加工</span>
                         </a>
                     </li>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-facetime-video'></i>
                             <span id="jgqkhz">生产情况跟踪</span>
                         </a>
                     </li>
                     <li class=''>
                         <a class='dropdown-collapse' href='#'>
-                             <i class='icon-caret-right'></i>
+                             <i class='glyphicon glyphicon-tasks'></i>
                             <span id="pcrwgl">排产任务管理</span>
                             <i class='icon-angle-down angle-down'></i>
                         </a>
@@ -150,7 +150,7 @@
             </li>
             <li>
                 <a class='dropdown-collapse ' href='#'>
-                    <i class='icon-tint'></i>
+                    <i class='glyphicon glyphicon-shopping-cart'></i>
                     <span>采购管理</span>
                     <i class='icon-angle-down angle-down'></i>
                 </a>
@@ -190,7 +190,7 @@
                     </li>--%>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-object-align-vertical'></i>
                             <span id="jyryjy">检验人员检验</span>
                         </a>
                     </li>
@@ -233,7 +233,7 @@
             </li>
             <li>
                 <a class='dropdown-collapse ' href='#'>
-                    <i class='icon-tint'></i>
+                    <i class='glyphicon glyphicon-cog'></i>
                     <span>基本信息综合管理</span>
                     <i class='icon-angle-down angle-down'></i>
                 </a>
