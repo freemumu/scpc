@@ -224,9 +224,39 @@ public class BomInfoManagerAction {
         String edgs = JSON.getString("edgs");
         String stsj = JSON.getString("stsj");
         String serial = JSON.getString("serial");
+        String zysx = JSON.getString("zysx");
         String id = WebUtils.getRandomId();
-//		String sql = "insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,stsj,serial) values ('"+bomid+"','"+id+"','"+sysb+"','"+gxnr+"','"+edgs+"','"+stsj+"','"+serial+"') ";
-        String sql = "insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('" + bomid + "','" + id + "','" + sysb + "','" + gxnr + "','" + edgs + "','" + serial + "') ";
+        String sql = "insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial,zysx) values " +
+                "('" + bomid + "','" + id + "','" + sysb + "','" + gxnr + "','" + edgs + "','" + serial + "','"+zysx+"') ";
+        try {
+            log.info(sql);
+            this.selectDataService.execute(sql);
+            updateBomGynrByGxbp(bomid);
+            Response.write(ActionEnum.SUCCESS.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+   public void updateGxbpData() {
+        String sbid =  Request.getParameter("sbid") ;
+        String json = Request.getParameter("JSON");
+        JSONObject JSON = JSONObject.fromObject(json);
+
+        String id = JSON.getString("id");
+        String bomid = JSON.getString("bomid");
+        String sysb = JSON.getString("sysb");
+        String sysbText = JSON.getString("sysbText");
+        String gxnr = JSON.getString("gxnr");
+        String gxnrText = JSON.getString("gxnrText");
+        String edgs = JSON.getString("edgs");
+        String stsj = JSON.getString("stsj");
+        String serial = JSON.getString("serial");
+        String zysx = JSON.getString("zysx");
+
+//        String sql = "insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('" + bomid + "','" + id + "','" + sysb + "','" + gxnr + "','" + edgs + "','" + serial + "') ";
+       String sql = "update scglxt_t_gygc  set sbid = '"+sbid+"' ,gynr = '"+gxnr+"' ,edgs = '"+edgs+"' ," +
+               " serial = '"+serial+"' , zysx = '"+zysx+"'" +
+               " where id = '"+id+"'" ;
         try {
             log.info(sql);
             this.selectDataService.execute(sql);
@@ -251,6 +281,11 @@ public class BomInfoManagerAction {
         } catch (Exception e) {
         }
     }
+
+    public void deleteGygcById(){
+        String id = Request.getParameter("bomid");
+    }
+
 
     public void updateStrattime() {
         String sql = "update scglxt_t_gygc set starttime = curtime()";

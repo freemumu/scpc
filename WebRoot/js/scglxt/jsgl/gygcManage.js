@@ -21,7 +21,7 @@
             //获取参数
 
             that.urlParam = $.GetRequest();
-            if(urlParam.sbid){
+            if (urlParam.sbid) {
                 $("#btn-add").remove();
             }
             _showModel = urlParam.showModel;
@@ -42,19 +42,23 @@
                 });
                 $('#btn-save').on("click", function () {
                     var flag = true;
-                    $('#gygc td>input[info="edgs"]').each(function(e){
-                        if($(this).val()==""||$(this).val()==null ){
-                            flag = false  ;
+                    $('#gygc td>input[info="edgs"]').each(function (e) {
+                        if ($(this).val() == "" || $(this).val() == null) {
+                            flag = false;
                         }
                     });
-                    if(flag){
-                        GygcManage.saveFormInfo();
-                    }else{
+                    if (flag) {
+                        if (that.urlParam.bomid) {
+                            GygcManage.saveFormInfo();
+                        } else if (that.urlParam.sbid) {
+                            GygcManage.updateFormInfoBySbid();
+
+                        }
+                    } else {
                         alert("额定工时不能为空！");
                     }
                 });
-                $("#gygc tbody tr").on("click",function(e){
-                    alert();
+                $("#gygc tbody tr").on("click", function (e) {
                 })
             },
         /**
@@ -94,10 +98,11 @@
                 var url = "bomInfo_saveGxbpData.action", successFun = function (data) {
                     console.log(data);
                 }
-                if(that.urlParam.sbid){
-                    url="bomInfo_saveGxbpData.action?"+that.urlParam.sbid ;
+                if (that.urlParam.sbid) {
+                    url = "bomInfo_saveGxbpData.action?sbid=" + that.urlParam.sbid;
                 }
                 var formInfo = {};
+                //var bomid = $("#gygc tbody>tr").attr("bomid") ;
                 deleteFormInfo(_bomid);
                 for (var i = 0; i < rowNum; i++) {
                     formInfo.bomid = _bomid;
@@ -115,7 +120,41 @@
                             console.log(i);
                             console.log((rowNum ));
                             console.log(i == (rowNum ) && str == "1");
-                            if (i == (rowNum -1 ) && str == "1") {
+                            if (i == (rowNum - 1 ) && str == "1") {
+                                alert("保存成功！");
+                            }
+                        }
+                    $.syncAjaxPost(url, {"JSON": JSON}, successFun, true);
+                }
+            },
+
+
+            updateFormInfoBySbid = function () {
+                var rowNum = $("#gygc tbody tr").size();
+                var url, successFun = function (data) {
+                    console.log(data);
+                }
+                url = "bomInfo_updateGxbpData.action?sbid=" + that.urlParam.sbid;
+                var formInfo = {};
+                //var bomid = $("#gygc tbody>tr").attr("bomid") ;
+                for (var i = 0; i < rowNum; i++) {
+                    formInfo.id = $($("#gygc tbody>tr")[i]).attr("id");
+                    formInfo.bomid = $($("#gygc tbody>tr")[i]).attr("bomid");
+                    formInfo.sysb = $($("#gygc tbody>tr")[i]).find('select[info="sysb"]').val();
+                    formInfo.sysbText = $($("#gygc tbody>tr")[i]).find('select[info="sysb"]').find("option:selected").text();
+                    formInfo.gxnr = $($("#gygc tbody>tr")[i]).find('select[info="gxnr"]').attr('value');
+                    formInfo.gxnrText = $($("#gygc tbody>tr")[i]).find('select[info="gxnr"]').find("option:selected").text();
+                    formInfo.edgs = $($("#gygc tbody>tr")[i]).find('input[info="edgs"]').attr('value');
+                    //formInfo.stsj = $($("#gygc tbody>tr")[i]).find('input[info="stsj"]').attr('value');
+                    formInfo.stsj = "";
+                    formInfo.zysx = $($("#gygc tbody>tr")[i]).find('input[info="zysx"]').attr('value');
+                    formInfo.serial = i;
+                    var JSON = $.toJsonString(formInfo),
+                        successFun = function (str) {
+                            console.log(i);
+                            console.log((rowNum ));
+                            console.log(i == (rowNum ) && str == "1");
+                            if (i == (rowNum - 1 ) && str == "1") {
                                 alert("保存成功！");
                             }
                         }
@@ -133,6 +172,8 @@
             initHtInfo = function (flag) {
 
             },
+
+
         /**
          * 增加行
          */
@@ -142,15 +183,15 @@
                 var tab = document.getElementById("gygc");
                 var num = tab.rows.length;
                 var id = "";
-                var domstr = '<tr id="' + uuid + '"> <td class="sorting_1">' + rowNum + '</td> ' +
+                var domstr = '<tr id="' + uuid + '"  bomid="' + that.urlParam.bomid + '" > <td class="sorting_1">' + rowNum + '</td> ' +
                     '<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
                     '<td>  ' +
                     ' <select  info= "sysb"   linked＝"' + uuid + '" class="grid-form-input" style="width:100%" >' +
                     '</select></td>' +
-                    //'<td><input class="" info="gxnr" type="text" style="width:100%" class="form-gxnr"  name="form-gxnr" ></td>' +
+                        //'<td><input class="" info="gxnr" type="text" style="width:100%" class="form-gxnr"  name="form-gxnr" ></td>' +
                     '<td> <select  info= "gxnr"   linked＝"' + uuid + '" class="grid-form-input" style="width:100%" ></select> </td>' +
                     '<td><input class="" info="edgs" type="text" style="width:100%" value=""></td>' +
-                    //'<td><input class="" info="stsj" type="text" style="width:100%" value=""></td>' +
+                        //'<td><input class="" info="stsj" type="text" style="width:100%" value=""></td>' +
                     '<td><input class="" info="zysx" type="text" style="width:100%" value=""></td>' +
                     '</tr>';
                 console.log(domstr);
@@ -169,8 +210,8 @@
                         GygcManage.changeRowSerialNum("gygc");
                     }
                 });
-                loadGygcList(selector,"bomInfo_getJggyData.action");
-                loadGygcList(gxnrSelector,"bomInfo_getGxnrData.action");
+                loadGygcList(selector, "bomInfo_getJggyData.action");
+                loadGygcList(gxnrSelector, "bomInfo_getGxnrData.action");
             },
         /**
          *  的那个拖动表格时候重新更改表格序号
@@ -187,8 +228,8 @@
         /**
          *  加载加工工艺下啦列表
          */
-            loadGygcList = function (selector,url) {
-                var  successFun = function (data) {
+            loadGygcList = function (selector, url) {
+                var successFun = function (data) {
                     if (data && data.length > 0) {
                         $.AddSelectItemBySelector("空", '', selector);
                         for (var i = 0; i < data.length; i++) {
@@ -209,10 +250,8 @@
                         var domstr = "";
                         $("#gygc tbody").empty();
                         for (var i = 0; i < data.length; i++) {
-                            $("#gygc tbody").append(domstr);
-//                        var selector = "#"+$.decodeEmptyValue(data[i].id)＋" select[info='sysb']";
                             var selector = "#" + $.decodeEmptyValue(data[i].id);
-                            domstr = '<tr id="' + $.decodeEmptyValue(data[i].id) + '"> <td class="sorting_1">' + i + '</td> ' +
+                            domstr = '<tr id="' + $.decodeEmptyValue(data[i].id) + '"  bomid="' + data[i].bomid + '"> <td class="sorting_1">' + i + '</td> ' +
                             '<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
                             '<td class="text-center starttime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateStarttime(this)">开 始</a></div></td>' +
                             '<td class="text-center endtime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateEndtime(this)">结 束</a></div></td>' +
@@ -232,12 +271,12 @@
 
                             selector = selector.toString() + (" select[info='sysb']").toString();
                             //加载设备列表
-                            loadGygcList(selector,"bomInfo_getJggyData.action");
+                            loadGygcList(selector, "bomInfo_getJggyData.action");
                             $(selector).find("option[value='" + $.decodeEmptyValue(data[i].sbid) + "']").attr("selected", true);
 
                             var gxnrSelector = "#" + $.decodeEmptyValue(data[i].id);
                             gxnrSelector = gxnrSelector.toString() + (" select[info='gxnr']").toString();
-                            loadGygcList(gxnrSelector,"bomInfo_getGxnrData.action");
+                            loadGygcList(gxnrSelector, "bomInfo_getGxnrData.action");
                             $(gxnrSelector).find("option[value='" + $.decodeEmptyValue(data[i].gynr) + "']").attr("selected", true);
                         }
 
@@ -262,9 +301,9 @@
                 }
                 var urlParam = new Object();
                 urlParam = $.GetRequest();
-                if(urlParam.sbid){
+                if (urlParam.sbid) {
                     $.asyncAjax(url, {sbid: urlParam.sbid}, successFun, true);
-                }else{
+                } else {
                     $.asyncAjax(url, {bomid: bomid}, successFun, true);
                 }
 
@@ -280,6 +319,7 @@
             tableInit: tableInit,
             deleteRow: deleteRow,
             saveFormInfo: saveFormInfo,
+            updateFormInfoBySbid: updateFormInfoBySbid,
             editRow: editRow,
             addRow: addRow,
             changeRowSerialNum: changeRowSerialNum,
