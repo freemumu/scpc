@@ -228,13 +228,14 @@
                             $("#gygc tbody").append(domstr);
 
                             selector = selector.toString() + (" select[info='sysb']").toString();
+                            //加载设备列表
                             loadGygcList(selector,"bomInfo_getJggyData.action");
-                            $(selector).find("option[value='" + $.decodeEmptyValue(data[i].gyid) + "']").attr("selected", true);
+                            $(selector).find("option[value='" + $.decodeEmptyValue(data[i].sbid) + "']").attr("selected", true);
 
                             var gxnrSelector = "#" + $.decodeEmptyValue(data[i].id);
                             gxnrSelector = gxnrSelector.toString() + (" select[info='gxnr']").toString();
                             loadGygcList(gxnrSelector,"bomInfo_getGxnrData.action");
-                            $(gxnrSelector).find("option[value='" + $.decodeEmptyValue(data[i].gxnr) + "']").attr("selected", true);
+                            $(gxnrSelector).find("option[value='" + $.decodeEmptyValue(data[i].gynr) + "']").attr("selected", true);
                         }
 
 

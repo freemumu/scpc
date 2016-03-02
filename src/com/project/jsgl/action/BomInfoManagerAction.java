@@ -317,7 +317,7 @@ public class BomInfoManagerAction {
     }
 
     /**
-     * 加在加工工艺json数据列表
+     * 加在加工工艺设备json数据列表
      */
     public void getJggyData() {
 //		String sql = "select id ,gymc name from scglxt_t_jggy ";
@@ -370,9 +370,9 @@ public class BomInfoManagerAction {
         String sql = "";
         String sbid = Request.getParameter("sbid");
         if (StringUtil.returnNotEmpty(sbid) != null) {
-            sql = "select bomid ,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where sbid = '" + sbid + "'  order by serial asc ";
+            sql = "select bomid ,sbid,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where sbid = '" + sbid + "'  order by serial asc ";
         } else {
-            sql = "select bomid ,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where bomid = '" + bomid + "'  order by serial asc ";
+            sql = "select bomid ,sbid,gyid ,id ,gynr  ,edgs,serial ,zysx    from   scglxt_t_gygc where bomid = '" + bomid + "'  order by serial asc ";
         }
 
         String json = null;
