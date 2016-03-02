@@ -7,8 +7,7 @@ package com.project.jsgl.action;
 
 import java.util.List;
 
-import com.project.util.Constants;
-import com.project.util.StringUtil;
+import com.project.util.*;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.collections.map.ListOrderedMap;
@@ -18,8 +17,6 @@ import com.project.base.ActionEnum;
 import com.project.base.service.SelectDataService;
 import com.project.commonModel.util.Request;
 import com.project.commonModel.util.Response;
-import com.project.util.JsonObjectUtil;
-import com.project.util.WebUtils;
 import com.project.xsgl.action.KhxxManagerAction;
 
 public class BomInfoManagerAction {
@@ -215,8 +212,10 @@ public class BomInfoManagerAction {
      * 保存子订单的工序编排
      */
     public void saveGxbpData() {
+        String sbid =  Request.getParameter("sbid") ;
         String json = Request.getParameter("JSON");
         JSONObject JSON = JSONObject.fromObject(json);
+
         String bomid = JSON.getString("bomid");
         String sysb = JSON.getString("sysb");
         String sysbText = JSON.getString("sysbText");

@@ -7,7 +7,7 @@
 (function () {
     var operateFlag = "";
     window.GygcManage = (function () {
-        var _t = this,
+        var that = this,
             _operateFlag = "",
             _bomid = "";
         _showModel = "";
@@ -19,8 +19,8 @@
             //注册事件
             registerEvent();
             //获取参数
-            var urlParam = new Object();
-            urlParam = $.GetRequest();
+
+            that.urlParam = $.GetRequest();
             if(urlParam.sbid){
                 $("#btn-add").remove();
             }
@@ -93,6 +93,9 @@
                 var rowNum = $("#gygc tbody tr").size();
                 var url = "bomInfo_saveGxbpData.action", successFun = function (data) {
                     console.log(data);
+                }
+                if(that.urlParam.sbid){
+                    url="bomInfo_saveGxbpData.action?"+that.urlParam.sbid ;
                 }
                 var formInfo = {};
                 deleteFormInfo(_bomid);
