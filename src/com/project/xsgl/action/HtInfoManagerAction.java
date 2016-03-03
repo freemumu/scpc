@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.project.util.Constants;
 import com.project.util.StringUtil;
 import net.sf.json.JSONObject;
 
@@ -180,9 +181,9 @@ public class HtInfoManagerAction {
         }
         try {
             selectDataService.execute(sql);
-            Response.write(ActionEnum.SUCCESS.toString());
+            Response.write(Constants.UPDATE_SUCCESS);
         } catch (Exception e) {
-            Response.write(ActionEnum.ERROR.toString());
+            Response.write(Constants.UPDATE_ERROR);
             e.printStackTrace();
         }
     }

@@ -146,7 +146,7 @@ $(document).ready(function () {
              */
             editRow: function () {
                 var url = "khInfo_addUserInfo.action", JSON = jsonstr, successFun = function (resStr) {
-                    if (resStr == "SUCCESS") {
+                    if (resStr.toUpperCase() == "SUCCESS") {
                         alert("保存成功！");
                     }
                 };

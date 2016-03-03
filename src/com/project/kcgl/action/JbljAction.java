@@ -5,8 +5,10 @@ package com.project.kcgl.action;
 
 import java.util.List;
 
+import com.project.util.Constants;
 import net.sf.json.JSONObject;
 
+import oracle.jdbc.driver.Const;
 import org.apache.commons.logging.Log;
 
 import com.project.base.ActionEnum;
@@ -121,9 +123,9 @@ public class JbljAction {
 		}
 		try {
 			selectDataService.execute(sql);
-			Response.write(ActionEnum.SUCCESS.toString());
+			Response.write(Constants.UPDATE_SUCCESS);
 		} catch (Exception e) {
-			Response.write(ActionEnum.ERROR.toString());
+			Response.write(Constants.UPDATE_ERROR);
 			e.printStackTrace();
 		}
 	}

@@ -126,7 +126,7 @@
                 var $save = $('#btn_save'), $saving = $('#btn_save');
                 var url = "htInfo_updateInfo.action", successFun = function (resStr) {
                     console.log(resStr);
-                    if (resStr == "1") {
+                    if (resStr.toUpperCase() == "SUCCESS") {
                         alert('保存成功');
                     }
                 }

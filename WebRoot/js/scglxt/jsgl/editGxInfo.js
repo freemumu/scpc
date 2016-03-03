@@ -74,7 +74,7 @@
                 var $save = $('#btn_save'), $saving = $('#btn_save');
                 var url = "gxInfo_updateInfo.action", successFun = function (resStr) {
                     if (resStr == "SUCCESS") {
-                        alert('success');
+                        alert('保存成功');
                     }
                 }
                 $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);
