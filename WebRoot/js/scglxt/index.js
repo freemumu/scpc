@@ -186,7 +186,7 @@
                     case "bzgl":
                         url = "scglxt/scgl/bzxxIndex.jsp";
                         break;
-                        //排产管理
+                    //排产管理
                     case "scgl-pcgl":
                         url = "scglxt/scgl/pcglglry.jsp";
                         break;
@@ -194,7 +194,7 @@
                     case "pcrwgl":
                         url = "scglxt/scgl/pcglIndex.jsp";
                         break;
-                        //排产任务管理 生产人员组
+                    //排产任务管理 生产人员组
                     case "scgl-glry-sb":
                         url = "scglxt/scgl/pcGlSb.html";
                         break;
@@ -203,11 +203,11 @@
                         url = "scglxt/scgl/pcGlRy.html";
                         break;
                     case "jgqkhz":
-                    	
-                    	url = "scglxt/scgl/scglJgqk.jsp";
-                    	break;
+
+                        url = "scglxt/scgl/scglJgqk.jsp";
+                        break;
                     //排产任务管理
-                       
+
                     case "ghsgl":
                         url = "scglxt/cggl/ghsManager.jsp";
                         break;
@@ -235,11 +235,11 @@
                     case "cpzlgl":
                         url = "scglxt/zlgl/zlManager.jsp";
                         break;
-                        //检验人员检验
+                    //检验人员检验
                     case "jyryjy":
                         url = "scglxt/scgl/pcglJyRyJy.jsp";
                         break;
-                        //加工人员加工
+                    //加工人员加工
                     case "jgryjg":
                         url = "scglxt/scgl/pcglJgryJg.jsp";
                         break;
@@ -278,12 +278,20 @@
                 var $iframe = $outFrame.find("#mainIframe");
                 var src = $iframe.attr("src");
                 $iframe.attr('src', url)
+            },
+            disableSaveButton = function () {
+                $("#btn_save").attr("disabled", true);
+            },
+            resetSaveButton = function () {
+                $("#btn_save").removeAttr("disabled");
             }
             ;
         return {
             init: init,
             changeNavUrl: changeNavUrl,
-            swapIframUrl: swapIframUrl
+            swapIframUrl: swapIframUrl,
+            disableSaveButton:disableSaveButton,
+            resetSaveButton:resetSaveButton
         }
     })();
 

@@ -187,3 +187,23 @@ height:80%;
 .box-content>form{
 	margin-top:50px;
 }
+
+.box-content{
+	border:none;
+}
+.wrapper{
+	padding-bottom: 50px;
+}
+form.form .modal-footer{
+	position: fixed;
+	width: 30%;
+	right: 15px;
+	bottom: 15px;
+	border-top: none;
+}
+.box .box-content{
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	/*border: none;*/
+	/*border-width: 0px;*/
+}
