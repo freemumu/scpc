@@ -13,7 +13,7 @@
             init = function () {
                 var _this = this;
                 //返回按钮
-                $("#form_bomInfo_ssdd").select2();
+                //$("#form_bomInfo_ssdd").select2();
                 $("#form_return").click(function () {
                     var $outFrame = $(window.parent.document.body);
                     var $iframe = $outFrame.find("#mainIframe");
@@ -30,11 +30,11 @@
                 });
                 $("#form_bomInfo_clxz").on("change", function (e) {
                     if ($(this).val() == 1) {
-                        $("#form_bomInfo_cldx_jx").removeAttr("hidden");
-                        $("#form_bomInfo_cldx_yx").attr("hidden", true);
+                        $("#form_bomInfo_jx").removeAttr("hidden");
+                        $("#form_bomInfo_yx").attr("hidden", true);
                     } else {
-                        $("#form_bomInfo_cldx_jx").attr("hidden", true);
-                        $("#form_bomInfo_cldx_yx").removeAttr("hidden");
+                        $("#form_bomInfo_jx").attr("hidden", true);
+                        $("#form_bomInfo_yx").removeAttr("hidden");
                     }
                 });
                 registerEvent();
@@ -77,6 +77,9 @@
                             var s = select[i];
                             var id = $(s).attr("id");
                             id = id.split("_")[2];
+                            if(!id){
+                                continue;
+                            }
                             var key = id.toLowerCase();
                             var value = eval("data[0]." + key);
                             if (value == undefined) {
@@ -170,15 +173,15 @@
             calculateVolume = function () {
                 var clxz = $("#form_bomInfo_clxz").val(), volume = 0,cldx="";
                 if (clxz == 1) {
-                    var l = $("#form_bomInfo_cldx_jx input[name=length]").val();
-                    var w = $("#form_bomInfo_cldx_jx input[name=width]").val();
-                    var h = $("#form_bomInfo_cldx_jx input[name=height]").val();
+                    var l = $("#form_bomInfo_jx input[name=length]").val();
+                    var w = $("#form_bomInfo_jx input[name=width]").val();
+                    var h = $("#form_bomInfo_jx input[name=height]").val();
                     volume = l * w * h;
 cldx=l+","+w+","+h;
 
                 } else if (clxz == 2) {
-                    var d = $("#form_bomInfo_cldx_yx input[name=length]").val();
-                    var h = $("#form_bomInfo_cldx_yx input[name=height]").val();
+                    var d = $("#form_bomInfo_yx input[name=length]").val();
+                    var h = $("#form_bomInfo_yx input[name=height]").val();
                     volume = 3.14 * (d / 2) * h;
                     cldx=d+","+h ;
                 }

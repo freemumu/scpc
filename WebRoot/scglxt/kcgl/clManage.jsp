@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>合同管理</title>
+	<title>生产材料管理</title>
 	<script type="text/javascript"
 			src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
 	<script type="text/javascript" src="../../js/scglxt/kcgl/clManage.js"></script>
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class='box-content box-no-padding'>
-				<table id="clInfo" class='table table-striped table-bordered' style='margin-bottom: 0;'>
+				<table id="clInfo" class='table table-striped table-bordered tableGrid' style='margin-bottom: 0;'>
 					<thead>
 					<tr>
 						<th>

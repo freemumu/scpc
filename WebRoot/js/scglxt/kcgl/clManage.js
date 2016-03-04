@@ -27,7 +27,7 @@
 		 */
 		registerEvent = function(){
 			$("#form_add").on('click',function(){
-				Main.swapIframUrl('scglxt/jsgl/editBomInfo.jsp');//跳转iframe页面
+				Main.swapIframUrl('scglxt/kcgl/editCl.jsp');//跳转iframe页面
 			})			
 		},
 		/**
@@ -51,21 +51,20 @@
 		                    "sLast": "末页"
 		                }
 		            },
-		    "aLengthMenu":[2,3],
+		    "aLengthMenu":[10,20],
 			"ajax":"kcgl_getTableData.action",
 			scrollY:        "300px",
 			scrollX:        true,
 			scrollCollapse: true,
-			paging:         true,
-			columnDefs: [
-				{ width: '20%', targets: 0 }
-			]
+			paging:         true
+
 			,
 			"columnDefs": [ 
 		        {
 		            "render": function ( data, type, row ) {
 		                return '<div class="text-center">'+
-		                ' <a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "ClManage.deleteRow(\''+data+'\')"></i></a></div>';
+							' <a class="btn btn-success btn-xs" onclick = "ClManage.editRow(\''+data+'\')" href="#" title＝"修改"><i class="icon-edit" "></i></a> '+
+							' <a class="btn btn-danger btn-xs" onclick = "ClManage.deleteRow(\''+data+'\')" href="#" title="删除"><i class="icon-remove" ></i></a></div>';
 		            },
 		            "targets": 1
 		        },
@@ -105,25 +104,20 @@
 		 * 删除信息
 		 */
 		deleteRow = function(id){
-			 var url = "bomInfo_deleteRow.action",successFun = function(resStr){
-                 if (resStr == "SUCCESS") {
-	     			  	window.location.reload(); 
-	    			  	$("#sorting-advanced").dataTable().fnPageChange( 'previous', true );
-						alert("SUCCESS！");
+			 var url = "kcgl_deleteRow.action",successFun = function(resStr){
+                 if (resStr.toUpperCase() == "SUCCESS") {
+					 window.location.reload();
+					 $("#sorting-advanced").dataTable().fnPageChange( 'previous', true );
                  }
          } ;
          if(confirm("确定删除？")){
         	 $.asyncAjaxPost(url, {"id": id}, successFun, true);
          }
-			//判断是否要删除
-			//删除数据库成功后删除表格
-			//1、删除数据库
-			//2、删除表格			
+
 		},
 		//跳转页面
 		editRow = function(id){
-			alert();
-			Main.swapIframUrl('scglxt/jsgl/editBomInfo.jsp?id='+id);//跳转iframe页面
+			Main.swapIframUrl('scglxt/kcgl/editCl.jsp?id='+id);//跳转iframe页面
 		},
 		/**
 		 * 更新合同信息

@@ -26,7 +26,8 @@
                 </div>
                 <div class="box-content box-no-padding">
                     <form id="form_bomInfo" class='form form-horizontal ' method="post" style='margin-bottom: 0;'>
-
+                        <input style="display: none;"  id='form_bomInfo_id' info="fromInfo" name='id'
+                             type='text'>
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_zddmc'>bom(子订单名称)</label>
 
@@ -50,7 +51,7 @@
                             <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_zddcz'>材质</label>
 
                             <div class='col-sm-4 controls'>
-                                <select class='form-control select2  ' id='form_bomInfo_zddcz' info="fromInfo"
+                                <select class='form-control    ' id='form_bomInfo_zddcz' info="fromInfo"
                                         name='zddcz'>
                                 </select>
                             </div>
@@ -61,7 +62,7 @@
                             <div class='col-sm-4 controls'>
                                 <%--<input class='form-control' id='form_bomInfo_clxz' info="fromInfo"
                                        name='clxz' placeholder=' ' type='text'>--%>
-                                <select class='form-control required select2' id='form_bomInfo_clxz' name='clxz'>
+                                <select class='form-control required  ' id='form_bomInfo_clxz' name='clxz'>
 
                                     <option value="1">
                                         长方体
@@ -79,7 +80,7 @@
                             <label class='control-label col-sm-3 col-sm-3'   >材料大小</label>
                             <input  style="display: none;" id='cldx' info="fromInfo"
                                    name='cldx' placeholder=' ' type='text'>
-                            <div class="row " id="form_bomInfo_cldx_jx" >
+                            <div class="row " id="form_bomInfo_jx" >
                                 <label>长度(cm)</label>
                                 <input class="width:80px" type="text" name="length" class=" " placeholder="">
                                 <label>宽度(cm)</label><input class="width:80px" type="text" name="width"
@@ -87,7 +88,7 @@
                                 <label>高度(cm)</label><input class="width:80px" type="text" name="height"
                                                             class="form-control " placeholder="">
                             </div>
-                            <div class="row " id="form_bomInfo_cldx_yx"  hidden>
+                            <div class="row " id="form_bomInfo_yx"  hidden>
                                 <label>直径(cm)</label>
                                 <input class="width:80px" type="text" name="length" class=" " placeholder="">
                                 <label>高度(cm)</label><input class="width:80px" type="text" name="height"
