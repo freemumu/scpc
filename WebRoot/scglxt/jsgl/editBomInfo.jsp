@@ -50,10 +50,9 @@
                             <label class='control-label col-sm-3 col-sm-3' for='form_bomInfo_zddcz'>材质</label>
 
                             <div class='col-sm-4 controls'>
-                                <select class='form-control select2 required ' id='form_bomInfo_zddcz' info="fromInfo"
+                                <select class='form-control select2  ' id='form_bomInfo_zddcz' info="fromInfo"
                                         name='zddcz'>
                                 </select>
-                                <label class="textInfo"></label>
                             </div>
                         </div>
                         <div class='form-group'>

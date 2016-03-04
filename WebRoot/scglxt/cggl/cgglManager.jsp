@@ -11,7 +11,6 @@
     <div  id='content-wrapper'>
             <div class='box bordered-box ' style='margin-bottom: 0;'>
                 <div class='box-header'>
-                    <button id="form_add" class="btn btn-success btn-sm"><i class="icon-add"></i> 增加</button>
                     <div class='title'> 订单采购管理</div>
                     <div class='actions'><a class="btn box-remove btn-xs btn-link" href="#"><i class='icon-remove'></i>
                     </a> <a class="btn box-collapse btn-xs btn-link" href="#"><i></i> </a></div>

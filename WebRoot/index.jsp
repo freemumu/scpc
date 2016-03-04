@@ -210,6 +210,12 @@
                             <span id="jbljgl">基本零件管理</span>
                         </a>
                     </li>
+<%--                    <li class=''>
+                        <a href='#'>
+                            <i class='icon-caret-right'></i>
+                            <span id="scclgl">生产材料管理</span>
+                        </a>
+                        </li>--%>
                    <%-- <li class=''>
                         <a href='#'>
                             <i class='icon-caret-right'></i>
