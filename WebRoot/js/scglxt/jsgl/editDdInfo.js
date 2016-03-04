@@ -39,6 +39,14 @@
 			$('#form_khxx_planstarttime').datepicker({format: 'yyyy-mm-dd'});
 			$('#form_khxx_planendtime').datepicker({format: 'yyyy-mm-dd'});
 			$('#form_khxx_realstarttime').datepicker({format: 'yyyy-mm-dd'});
+
+			//注册表单返回按钮事件 。点击返回查询表格页面
+			$("#form_return").click(function () {
+				var $outFrame = $(window.parent.document.body);
+				var $iframe = $outFrame.find("#mainIframe");
+				var src = $iframe.attr("src");
+				$iframe.attr('src', "scglxt/jsgl/ddManager.jsp");
+			});
 		},
 		initFormInfo = function(id){
 			var url = "ddInfo_getDetailInfo.action",successFun = function(data){
@@ -98,7 +106,9 @@
             var url = "ddInfo_updateInfo.action", successFun = function(resStr){
 				if (resStr == "SUCCESS") {
                 	alert('保存成功!');
-                }
+					$("#form_return").click();
+
+				}
             }
             $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);		
 

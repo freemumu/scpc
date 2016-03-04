@@ -13,12 +13,7 @@
                          <div class="icon-edit"></div>
                         工序信息
                       </div>
-                      <div class="actions">
-                        <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-                        </a>
-                        <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-                        </a>
-                      </div>
+
                     </div>
                     <div class="box-content box-no-padding">
 	                      <form id="form_gxInfo" class='form form-horizontal ' method="post" style='margin-bottom: 0;'>

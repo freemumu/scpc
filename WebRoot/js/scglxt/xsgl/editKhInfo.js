@@ -106,12 +106,7 @@ $(document).ready(function () {
                 }
                 var JSON = $.toJsonString(khInfo);
                 this.addKhInfo(JSON);
-//						if(flag == "UPDATE"){
-//							this.updateKhInfo(JSON);
-//						}else if(flag == "ADD"){
-////							this.checkUserIsn(userinfo.userisn);
-//							this.addKhInfo(JSON);
-//						}
+
             },
             //加载客户类型列表
             loadKhlxList: function () {
@@ -135,8 +130,9 @@ $(document).ready(function () {
              */
             addKhInfo: function (jsonstr) {
                 var url = "khInfo_addUserInfo.action", JSON = jsonstr, successFun = function (resStr) {
-                    if (resStr == "SUCCESS") {
+                    if (resStr.toUpperCase() == "SUCCESS") {
                         alert("保存成功！");
+                        $("#form_return").click();
                     }
                 };
                 $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);

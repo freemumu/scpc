@@ -10,19 +10,14 @@
         <div class="col-sm-12">
             <div class="box">
                 <div class="box-header">
-                    <button id="form_add" class="btn btn-success btn-sm">
-                        <i class="icon-add"></i> 增加
+                    <button id="form_return" class="btn btn-success btn-sm">
+                        <i class="icon-add"></i> 返回
                     </button>
                     <div class="title">
                         <div class="icon-edit"></div>
                         订单信息
                     </div>
-                    <div class="actions">
-                        <a class="btn box-remove btn-xs btn-link" href="#"><i class="icon-remove"></i>
-                        </a>
-                        <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-                        </a>
-                    </div>
+
                 </div>
                 <div class="box-content box-no-padding">
                     <form id="form_ddInfo" class='form form-horizontal ' method="post" style='margin-bottom: 0;'>

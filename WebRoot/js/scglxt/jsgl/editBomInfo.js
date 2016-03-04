@@ -21,7 +21,8 @@
                     $iframe.attr('src', "scglxt/jsgl/BomManager.jsp");
                 });
                 $.addRequiredLabel();
-                $('#btn_save').live('click', function () {
+                $('#btn_save').on('click', function (e) {
+                    e.stopPropagation();
                     var tips = validata();
                     if(tips == ""){
                         saveFormInfo(_this._flag);
@@ -48,10 +49,10 @@
                 }
                 //初始化日期控件
                 $('#form_bomInfo_starttime').datetimepicker({
-                    format: 'yyyy-mm-dd hh:ii'
+                    format: 'yyyy-mm-dd hh:ii:ss'
                 });
                 $('#form_bomInfo_endtime').datetimepicker({
-                    format: 'yyyy-mm-dd hh:ii'
+                    format: 'yyyy-mm-dd hh:ii:ss'
                 });
                 loadSsddList();
             },
@@ -167,18 +168,21 @@
                 $.asyncAjax(url, {"pid": "04"}, successFun, true);
             },
             calculateVolume = function () {
-                var clxz = $("#form_bomInfo_clxz").val(), volume = 0;
+                var clxz = $("#form_bomInfo_clxz").val(), volume = 0,cldx="";
                 if (clxz == 1) {
                     var l = $("#form_bomInfo_cldx_jx input[name=length]").val();
                     var w = $("#form_bomInfo_cldx_jx input[name=width]").val();
                     var h = $("#form_bomInfo_cldx_jx input[name=height]").val();
                     volume = l * w * h;
+cldx=l+","+w+","+h;
 
                 } else if (clxz == 2) {
                     var d = $("#form_bomInfo_cldx_yx input[name=length]").val();
                     var h = $("#form_bomInfo_cldx_yx input[name=height]").val();
                     volume = 3.14 * (d / 2) * h;
+                    cldx=d+","+h ;
                 }
+                $("#cldx").attr("value",cldx);
                 $("#form_bomInfo_cltj").val(volume);
                 var clje = null;
                 var density = $("#form_bomInfo_zddcz").find("option:selected").attr("mi");

@@ -16,10 +16,7 @@
                     <div class="icon-edit"></div>
                     客户信息
                 </div>
-                <div class="actions">
-                    <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-                    </a>
-                </div>
+
             </div>
 
             <div class="box-content box-no-padding">

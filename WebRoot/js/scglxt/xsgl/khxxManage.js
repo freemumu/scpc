@@ -47,8 +47,7 @@ function editRow(id){
 function tableInit(){
 
 	var table = $('#ryxx').DataTable( {
-	"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
-	"bLengthChange": false, 
+	"bLengthChange": false,
   	"oLanguage": {
                 "sProcessing": "正在加载中......",
                 "sLengthMenu": "每页显示 _MENU_ 条记录",

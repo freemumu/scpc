@@ -4,6 +4,9 @@ function validata() {
     var tips = "";
     //验证非空
     $(".required").each(function () {
+        if($(this).hasClass("select2")){
+            return ;
+        }
         if ($(this).val() == "" || $(this).val() == null) {
             tips = " 必填项不能为空！";
                 $(this).next().html("必填项不能为空！");

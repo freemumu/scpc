@@ -50,7 +50,7 @@ top: 2px;
 }
 #form_add{
 	margin-top:-5px;
-	right:20%;
+	right:25%;
 	position:absolute;
 	z-index:1001;
 }
@@ -206,4 +206,13 @@ form.form .modal-footer{
 	box-shadow: none;
 	/*border: none;*/
 	/*border-width: 0px;*/
+}
+
+form >.form-actions{
+	width: 30%;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background: none;
+	border-top: none;
 }

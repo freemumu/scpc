@@ -24,64 +24,68 @@
                 </div>
             </div>
             <div class='box-content box-no-padding'>
-                <div class='responsive-table'>
-                    <div class='scrollable-area'>
-                        <table id="ryxx" class='table table-striped table-bordered tableGrid' style='margin-bottom: 0;'>
-                            <thead>
-                            <tr>
-                                <th class="serial" style="width:40px;">
-                                    序号
-                                </th>
-                                <th class="operate" style="width:80px;">
-                                    操作
-                                </th>
-                                <th style="width:80px;">
-                                    合同信息
-                                </th>
-                                <th style="width:100px;">
-                                    名称
-                                </th>
-                                <th style="width:100px;">
-                                    类型
-                                </th>
-                                <th style="width:100px;">
-                                    单位
-                                </th>
-                                <th style="width:160px;">
-                                    单位地址
-                                </th>
-                                <th style="width:80px;">
-                                    是否成交
-                                </th>
-                                <th>
-                                    备注
-                                </th>
-                            </tr>
-                            </thead>
+                <table id="ryxx" class='table table-striped table-bordered tableGrid' style='margin-bottom: 0;'>
+                    <thead>
+                    <tr>
+                        <th class="serial" style="width:40px;">
+                            序号
+                        </th>
+                        <th class="operate" style="width:80px;">
+                            操作
+                        </th>
+                        <th style="width:80px;">
+                            合同信息
+                        </th>
+                        <th style="width:100px;">
+                            名称
+                        </th>
+                        <th style="width:100px;">
+                            类型
+                        </th>
+                        <th style="width:100px;">
+                            单位
+                        </th>
+                        <th style="width:160px;">
+                            单位地址
+                        </th>
+                        <th style="width:80px;">
+                            是否成交
+                        </th>
+                        <th>
+                            备注
+                        </th>
+                    </tr>
+                    </thead>
 
-                        </table>
-                    </div>
-                </div>
+                </table>
             </div>
         </div>
     </div>
-    <!-- 模态框（Modal）-->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-         aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog" style="width:850px;height:550px;">
-            <div class="modal-content" style="height:90%;">
-                <div class="modal-header">
-                    <button type="button" class="close"
-                            data-dismiss="modal" aria-hidden="true" style="margin-top:-10px">
-                        &times;
-                    </button>
-                </div>
-                <div class="modal-body" id="modal-body">
-                </div>
+</div>
+<!-- 模态框（Modal）-->
+<div class=" modal fade tableModal" id="myModal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width:850px;height:550px;">
+        <div class="modal-content" style="height:90%;">
+            <div class="modal-header">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true" style="margin-top:-10px">
+                    &times;
+                </button>
             </div>
-            <!-- /.modal-content -->
+            <div class="modal-body" id="modal-body">
+            </div>
         </div>
-        <!-- /.modal -->
+        <!-- /.modal-content -->
     </div>
+    <!-- /.modal -->
+</div>
 </body>
 </html>
+
+
+
+
+
+
+

@@ -32,3 +32,12 @@ CHANGE COLUMN `dqjd` `dqjd` VARCHAR(20) NULL DEFAULT NULL COMMENT '当前进度'
 
 ALTER TABLE `scpc`.`scglxt_t_jggy`
 CHANGE COLUMN `id` `id` INT NOT NULL AUTO_INCREMENT COMMENT '工艺ID' ;
+
+
+-------------------------三月4号--------------------------------------------
+ALTER TABLE `scpc`.`scglxt_t_bom`
+CHANGE COLUMN `gs` `gs` VARCHAR(32) NULL DEFAULT NULL COMMENT '子订单工时' ;
+
+
+ALTER TABLE `scpc`.`scglxt_t_sb`
+CHANGE COLUMN `sbmc` `sbmc` VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL DEFAULT NULL COMMENT '设备名称' ;

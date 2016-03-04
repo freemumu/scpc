@@ -78,10 +78,8 @@
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3'   >材料大小</label>
-                            <%-- <div class='col-sm-4 controls' style="  ">
-                                 <input class='form-control' id='form_bomInfo_cldx' info="fromInfo"
-                                        name='cldx' placeholder=' ' type='text' >
-                             </div>--%>
+                            <input  style="display: none;" id='cldx' info="fromInfo"
+                                   name='cldx' placeholder=' ' type='text'>
                             <div class="row " id="form_bomInfo_cldx_jx" >
                                 <label>长度(cm)</label>
                                 <input class="width:80px" type="text" name="length" class=" " placeholder="">
@@ -104,9 +102,9 @@
                             <label class='control-label col-sm-3 col-sm-3'>材料体积</label>
 
                             <div class='col-sm-4 controls '>
-                                <input class='form-control' id='form_bomInfo_cltj' info="fromInfo"
+                                <input class='form-control required' id='form_bomInfo_cltj' info="fromInfo"
                                        name='cltj' placeholder=' ' type='text'>
-
+                                <label class="textInfo"></label>
                             </div>
                             <div class='col-sm-2 controls '>
                                 <span>cm<sup>2</sup></span>
@@ -125,8 +123,9 @@
                             <label class='control-label col-sm-3 col-sm-3'>加工数量</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' id='form_bomInfo_jgsl' info="fromInfo"
+                                <input class='form-control required' id='form_bomInfo_jgsl' info="fromInfo"
                                        name='jgsl' placeholder=' ' type='text'>
+                                <label class="textInfo"></label>
                             </div>
                         </div>
                         <div class='form-group'>

@@ -13,13 +13,13 @@
                 var urlParam = new Object();
                 urlParam = $.GetRequest();
                 $.addRequiredLabel();
-                $('#btn_save').live('click', function () {
-                    $("#btn_save").attr("disabled",true);
+                $('#btn_save').on('click', function () {
+                    //$("#btn_save").attr("disabled",true);
                     var tips = validata() ;
                     if(tips == ""){
                         saveFormInfo(that._flag, urlParam.id);
                     }
-                    $("#btn_save").removeAttr("disabled");
+                    //$("#btn_save").removeAttr("disabled");
                 });
                 loadFzbzList();
 

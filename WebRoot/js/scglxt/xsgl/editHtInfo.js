@@ -128,6 +128,7 @@
                     console.log(resStr);
                     if (resStr.toUpperCase() == "SUCCESS") {
                         alert('保存成功');
+                        Main.swapIframUrl('scglxt/xsgl/htManager.jsp');//跳转iframe页面
                     }
                 }
                 $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);

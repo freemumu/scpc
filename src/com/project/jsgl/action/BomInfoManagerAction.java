@@ -5,6 +5,9 @@
  */
 package com.project.jsgl.action;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import com.project.util.*;
@@ -135,7 +138,7 @@ public class BomInfoManagerAction {
     /**
      * 保存操作  ，提供新增或者更新update操作
      */
-    public void updateInfo() {
+    public void updateInfo() throws ParseException {
 //		String json = Request.getParameter("JSON");
 //		JSONObject JSON = JSONObject.fromObject(json);
         String flag = Request.getParameter("flag");
@@ -155,11 +158,11 @@ public class BomInfoManagerAction {
         String ssdd = Request.getParameter("ssdd");
         String id = Request.getParameter("id");
 
+
+
         if (flag != null && flag.equals("ADD")) {
-            sql = "INSERT INTO `scpc`.`scglxt_t_bom`" +
-                    " (`zddmc`, `zddcz`, `clxz`, `cldx`, `cltj`, `clje`, `jgsl`, `bmcl`, `starttime`, `endtime`," +
-                    " `gs`, `blqk`, `blkssj`, `ssdd`)" +
-                    " VALUES ('" + zddmc + "', '" + zddcz + "', '" + clxz + "', '" + cldx + "', '" + cltj + "', '" + clje + "', '" + jgsl + "', '" + bmcl + "', ' date_format('" + starttime + "','%Y-%m-%d %H:%i:%s')', ' date_format('" + endtime + "','%Y-%m-%d %H:%i:%s')', '" + gs + "', '', '', '" + ssdd + "');";
+            sql = " INSERT INTO  scglxt_t_bom  (id, zddmc, zddcz, clxz, cldx, cltj, clje, jgsl, bmcl, starttime, endtime, gs, blqk,  ssdd) " +
+                    " VALUES ('"+randomId+"','" + zddmc + "', '" + zddcz + "', '" + clxz + "', '" + cldx + "', '" + cltj + "', '" + clje + "', '" + jgsl + "', '" + bmcl + "', date_format('" + starttime + "','%Y-%m-%d %H:%i:%s'),  date_format('" + endtime + "','%Y-%m-%d %H:%i:%s'), '" + gs + "', '',   '" + ssdd + "');";
         } else if (flag.equals("UPDATE")) {
             sql = "update scglxt_t_bom  " +
                     "set zddmc = '" + zddmc + "', zddcz = '" + zddcz + "' , clxz = '" + clxz + "' , cldx = '" + cldx + "' ,cltj ='" + cltj + "' , clje ='" + clje + "' ,bmcl='" + bmcl + "'," +
