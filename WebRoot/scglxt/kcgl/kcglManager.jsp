@@ -240,7 +240,6 @@
 
                     },
                     changeBlqk = function(rowid ,blqk ){
-                        alert(blqk);
                         var url = "../jsgl/bomInfo_updateBlzk.action", successFun = function (resStr) {
                             if (resStr == "SUCCESS") {
                                 alert("更新库存成功！");

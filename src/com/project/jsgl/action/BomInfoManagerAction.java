@@ -106,8 +106,16 @@ public class BomInfoManagerAction {
         String sql = " update scglxt_t_bom set blqk ='" + blqk + "' ,  " +
                 " bljssj =  date_format(now(),'%Y-%m-%d %H:%i:%s') ," +
                 " starttime =date_format(now(),'%Y-%m-%d %H:%i:%s')     where id = '" + id + "'";
+        String updateGygcSl  = " UPDATE scglxt_t_gygc gygc SET kjgjs=" +
+                " (SELECT bom.jgsl FROM  scglxt_t_bom bom " +
+                " WHERE  bom.id = gygc.bomid) ,gygc.yjgjs= " +
+                " (SELECT jgsl FROM  scglxt_t_bom bom WHERE  bom.id = gygc.bomid)" +
+                "WHERE gygc.bomid = '"+id+"' AND gygc.serial = '1'" ;
         try {
             selectDataService.execute(sql);
+            if(blqk.equals("1") || blqk.equals("2")){
+                selectDataService.execute(updateGygcSl);
+            }
             Response.write(Constants.UPDATE_SUCCESS);
         } catch (Exception e) {
             e.printStackTrace();
