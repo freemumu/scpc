@@ -138,12 +138,20 @@ public class PcglAction {
 	 * 获取子订单当前状态供排产管理人员调整
 	 */
 	public void getBomStatusList(){
-		String sql = "select id ,zddmc,clxz,bmcl,date_format(starttime,'%Y-%m-%d') jhkssj,date_format(endtime,'%Y-%m-%d') jhjssj,gs,fun_dqgygc(id) ddtz from scglxt_t_bom  where 1=1 order by jhkssj";
-		log.info("获取子订单当前状态供排产管理人员调整sql"+sql);
-		List list = this.selectDataService.queryForList(sql);
-		String json = JsonObjectUtil.list2Json(list);
-		json = "{\"data\":"+json+"}";
-		Response.write(json);
+		
+		try{
+			
+			String sql = "select id ,zddmc,clxz,bmcl,date_format(starttime,'%Y-%m-%d') jhkssj,date_format(endtime,'%Y-%m-%d') jhjssj,gs,fun_dqgygc(id) ddtz from scglxt_t_bom  where 1=1 order by jhkssj";
+			log.info("获取子订单当前状态供排产管理人员调整sql"+sql);
+			List list = this.selectDataService.queryForList(sql);
+			String json = JsonObjectUtil.list2Json(list);
+			json = "{\"data\":"+json+"}";
+			Response.write(json);
+		}catch(Exception e){
+			
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/**
