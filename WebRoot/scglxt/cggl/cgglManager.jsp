@@ -2,7 +2,7 @@
 <%@ include file="/include/topFile.jsp" %>
 <!DOCTYPE html>
 <html>
-<head><title>采购管理</title>
+<head><title>采购管理</title>cgglManager
     <script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
     <%--<script type="text/javascript" src="../../js/scglxt/jsgl/CgglManager.js"></script>--%>
 </head>
@@ -142,7 +142,7 @@
                             "columnDefs": [{
                                 "render": function (data, type, row) {
 
-                                    if (row.blqk == null || row.blqk == "0") {
+                                    if (row.blqk == null || row.blqk == "0" ||row.blqk == "") {
                                         return ' <div class="clzt text-center"><input type="radio" value=1    name="' + row.id + '"/> 完成' +
                                                 '<input type="radio" value=0 checked  name="' + row.id + '"/>未完成  ' +
                                                 ' </div>';
