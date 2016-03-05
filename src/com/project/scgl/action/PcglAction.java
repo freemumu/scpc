@@ -190,7 +190,7 @@ public class PcglAction {
 		String jgglId = Request.getParameter("id");
 		String bfjs = Request.getParameter("v");
 		String jyryid = "02";
-		String sql = "update scglxt_t_jggl set bfjs = "+bfjs+",sfjy = '1',jyryid= '"+jyryid+"' where id = '"+jgglId+"'";
+		String sql = "update scglxt_t_jggl set jysj = now(), bfjs = "+bfjs+",sfjy = '1',jyryid= '"+jyryid+"' where id = '"+jgglId+"'";
 		
 		String sql2 = "update scglxt_t_gygc a set yjgjs = yjgjs-"+bfjs+"+(select c.jgjs from scglxt_t_jggl c where c.id = '"+jgglId+"') ,bfjs = bfjs+"+bfjs+",sjjs=sjjs-("+bfjs+"+(select c.jgjs from scglxt_t_jggl c where c.id = '"+jgglId+"')) where id = (select gygcid from scglxt_t_jggl b where b.id = '"+jgglId+"' and a.id = b.gygcid)";
 		
