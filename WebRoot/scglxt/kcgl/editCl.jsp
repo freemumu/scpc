@@ -14,7 +14,7 @@
 						</button>                     
                       <div class="title">
                          <div class="icon-edit"></div>
-                        Bom表
+                        材料管理
                       </div>
 
                     </div>
@@ -228,6 +228,7 @@
 						var url = "kcgl_updateInfo.action?flag=" + flag, successFun = function (resStr) {
 							if (resStr == "SUCCESS") {
 								alert('保存成功！');
+								$("#form_return").click();
 							}
 						}
 						//$.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);

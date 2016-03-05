@@ -41,3 +41,7 @@ CHANGE COLUMN `gs` `gs` VARCHAR(32) NULL DEFAULT NULL COMMENT '子订单工时' 
 
 ALTER TABLE `scpc`.`scglxt_t_sb`
 CHANGE COLUMN `sbmc` `sbmc` VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_unicode_ci' NULL DEFAULT NULL COMMENT '设备名称' ;
+
+
+ALTER TABLE `scpc`.`scglxt_t_lj`
+CHANGE COLUMN `ID` `id` VARCHAR(50) NOT NULL COMMENT '工具id' ;

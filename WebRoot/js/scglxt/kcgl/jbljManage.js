@@ -1,4 +1,5 @@
- 
+
+
  
 /**
  * @author apple
@@ -23,7 +24,7 @@
 		 */
 		registerEvent = function(){
 			$("#form_add").on('click',function(){
-				Main.swapIframUrl('scglxt/xsgl/editHtInfo.jsp');//跳转iframe页面
+				Main.swapIframUrl('scglxt/kcgl/editJbljInfo.jsp');//跳转iframe页面
 			})			
 		},
 		/**
@@ -31,8 +32,7 @@
 		 */
 		tableInit = function(){
 			var table = $('#bomInfo').DataTable( {
-//			"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
-			"bLengthChange": false, 
+			"bLengthChange": false,
 		  	"oLanguage": {
 		                "sProcessing": "正在加载中......",
 		                "sLengthMenu": "每页显示 _MENU_ 条记录",
@@ -65,8 +65,8 @@
 		        {
 		            "render": function ( data, type, row ) {
 		                return '<div class="text-center">'+
-		                ' <a class="btn btn-success btn-xs" href="#" title＝"修改"><i class="icon-edit" onclick = "HtManage.editRow(\''+data+'\')"></i></a> '+
-		                '<a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "HtManage.deleteRow(\''+data+'\')"></i></a>'+
+		                ' <a class="btn btn-success btn-xs" onclick = "HtManage.editRow(\''+data+'\')" href="#" title＝"修改"><i class="icon-edit" ></i></a> '+
+		                '<a class="btn btn-danger btn-xs" onclick = "HtManage.deleteRow(\''+data+'\')" href="#" title="删除"><i class="icon-remove" ></i></a>'+
 		                ' </div>';
 		            },
 		            "targets": 1
@@ -102,11 +102,11 @@
 		 * 删除信息
 		 */
 		deleteRow = function(id){
-			 var url = "htInfo_deleteRow.action",successFun = function(resStr){
-                 if (resStr == "SUCCESS") {
+			 var url = "jblj_deleteRow.action",successFun = function(resStr){
+                 if (resStr.toUpperCase() == "SUCCESS") {
 	     			  	window.location.reload(); 
 	    			  	$("#sorting-advanced").dataTable().fnPageChange( 'previous', true );
-						alert("SUCCESS！");
+						alert("保存成功！");
                  }
          } ;
          if(confirm("是否删除？")){
@@ -115,7 +115,7 @@
 		},
 		//跳转页面
 		editRow = function(id){
-			Main.swapIframUrl('scglxt/xsgl/editHtInfo.jsp?id='+id);//跳转iframe页面
+			Main.swapIframUrl('scglxt/kcgl/editJbljInfo.jsp?id='+id);//跳转iframe页面
 		},
 		/**
 		 * 更新合同信息
