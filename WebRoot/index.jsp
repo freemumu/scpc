@@ -48,7 +48,7 @@
                 <ul class='nav nav-stacked in'>
                     <li class=''>
                         <a href='#'>
-                            <i class='glyphicon glyphicon-envelope'></i>
+                            <i class='glyphicon glyphicon-user'></i>
                             <span id=khxxgl>客户信息管理</span>
                         </a>
                     </li>
@@ -96,7 +96,7 @@
                 <ul class='nav nav-stacked'>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-inbox'></i>
                             <span id="sbgl">设备管理</span>
                         </a>
                     </li>
@@ -157,7 +157,7 @@
                 <ul class='nav nav-stacked'>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-tags'></i>
                             <span id="ddcggl">订单采购管理</span>
                         </a>
                     </li>
@@ -177,7 +177,7 @@
             <%--</li>--%>
             <li>
                 <a class='dropdown-collapse ' href='#'>
-                    <i class='icon-tint'></i>
+                    <i class='glyphicon glyphicon-plane'></i>
                     <span>质量管理</span>
                     <i class='icon-angle-down angle-down'></i>
                 </a>
@@ -190,7 +190,7 @@
                     </li>--%>
                     <li class=''>
                         <a href='#'>
-                            <i class='glyphicon glyphicon-object-align-vertical'></i>
+                            <i class='glyphicon glyphicon-barcode'></i>
                             <span id="jyryjy">检验人员检验</span>
                         </a>
                     </li>
@@ -199,14 +199,14 @@
             </li>
             <li>
                 <a class='dropdown-collapse ' href='#'>
-                    <i class='icon-tint'></i>
+                    <i class='glyphicon glyphicon-briefcase'></i>
                     <span>库存管理</span>
                     <i class='icon-angle-down angle-down'></i>
                 </a>
                 <ul class='nav nav-stacked'>
                     <li class=''>
                         <a href='#'>
-                            <i class='icon-caret-right'></i>
+                            <i class='glyphicon glyphicon-pushpin'></i>
                             <span id="jbljgl">基本零件管理</span>
                         </a>
                     </li>
