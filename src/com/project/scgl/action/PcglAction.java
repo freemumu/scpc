@@ -138,12 +138,20 @@ public class PcglAction {
 	 * 获取子订单当前状态供排产管理人员调整
 	 */
 	public void getBomStatusList(){
-		String sql = "select id ,zddmc,clxz,bmcl,date_format(starttime,'%Y-%m-%d') jhkssj,date_format(endtime,'%Y-%m-%d') jhjssj,gs,fun_dqgygc(id) ddtz from scglxt_t_bom  where 1=1 order by jhkssj";
-		log.info("获取子订单当前状态供排产管理人员调整sql"+sql);
-		List list = this.selectDataService.queryForList(sql);
-		String json = JsonObjectUtil.list2Json(list);
-		json = "{\"data\":"+json+"}";
-		Response.write(json);
+		
+		try{
+			
+			String sql = "select id ,zddmc,clxz,bmcl,date_format(starttime,'%Y-%m-%d') jhkssj,date_format(endtime,'%Y-%m-%d') jhjssj,gs,fun_dqgygc(id) ddtz from scglxt_t_bom  where 1=1 order by jhkssj";
+			log.info("获取子订单当前状态供排产管理人员调整sql"+sql);
+			List list = this.selectDataService.queryForList(sql);
+			String json = JsonObjectUtil.list2Json(list);
+			json = "{\"data\":"+json+"}";
+			Response.write(json);
+		}catch(Exception e){
+			
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/**
@@ -190,7 +198,7 @@ public class PcglAction {
 		String jgglId = Request.getParameter("id");
 		String bfjs = Request.getParameter("v");
 		String jyryid = "02";
-		String sql = "update scglxt_t_jggl set bfjs = "+bfjs+",sfjy = '1',jyryid= '"+jyryid+"' where id = '"+jgglId+"'";
+		String sql = "update scglxt_t_jggl set jysj = now(), bfjs = "+bfjs+",sfjy = '1',jyryid= '"+jyryid+"' where id = '"+jgglId+"'";
 		
 		String sql2 = "update scglxt_t_gygc a set yjgjs = yjgjs-"+bfjs+"+(select c.jgjs from scglxt_t_jggl c where c.id = '"+jgglId+"') ,bfjs = bfjs+"+bfjs+",sjjs=sjjs-("+bfjs+"+(select c.jgjs from scglxt_t_jggl c where c.id = '"+jgglId+"')) where id = (select gygcid from scglxt_t_jggl b where b.id = '"+jgglId+"' and a.id = b.gygcid)";
 		

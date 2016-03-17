@@ -2,7 +2,7 @@
 <%@ include file="/include/topFile.jsp" %>
 <!DOCTYPE html>
 <html>
-<head><title>子订单排产管理</title>
+<head><title>生产管理总体时间调配</title>
     <script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
 	<!-- bootstrap css 引入 -->
 	<link href="../../js/plugin/bootstrap/css/bootstrap.css" media="all" rel="stylesheet" type="text/css" />
@@ -117,7 +117,7 @@
         <div class='row rowTop'>
             <div class='box bordered-box ' style='margin-bottom: 0;'>
                 <div class='box-header'>
-                    <div class='title'> 子订单</div>
+                    <div class='title'>总体时间调配</div>
                     <div class='actions'><a class="btn box-remove btn-xs btn-link" href="#"><i class='icon-remove'></i>
                     </a> <a class="btn box-collapse btn-xs btn-link" href="#"><i></i> </a></div>
                 </div>
