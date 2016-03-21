@@ -75,7 +75,7 @@ function tableInit(){
 	"columnDefs": [ 
         {
             "render": function ( data, type, row ) {
-                return '<div class="text-center">'+
+                return '<div class="">'+
                 '<a class="btn btn-info btn-xs"  title="编辑"  href="#"><i class="icon-edit"onclick = "editRow(\''+data+'\')"></i></a>'+
                 '&nbsp; <a class="btn btn-danger btn-xs" title="删除" href="#"><i class="icon-remove" onclick = "deleteRow(\''+data+'\')"></i></a></div>';
             },
@@ -85,7 +85,7 @@ function tableInit(){
             "render": function ( data, type, row ) {
                 //return '<div class="text-center">'+
                 //' <a class="btn btn-info btn-xs" title="删除" href="#">查看合同</a></div>';
-                return '<div class="text-center">'+
+                return '<div class="">'+
                     ' <a class="" href="#" title＝"查看" onclick = "showModel(\''+data+'\')">查看</a> '+
                     ' </div>';
 

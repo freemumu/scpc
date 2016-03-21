@@ -64,7 +64,7 @@
 			"columnDefs": [ 
 		        {
 		            "render": function ( data, type, row ) {
-		                return '<div class="text-center">'+
+		                return '<div class="">'+
 		                ' <a class="btn btn-success btn-xs" onclick = "HtManage.editRow(\''+data+'\')" href="#" title＝"修改"><i class="icon-edit" ></i></a> '+
 		                '<a class="btn btn-danger btn-xs" onclick = "HtManage.deleteRow(\''+data+'\')" href="#" title="删除"><i class="icon-remove" ></i></a>'+
 		                ' </div>';

@@ -184,7 +184,7 @@
                 var num = tab.rows.length;
                 var id = "";
                 var domstr = '<tr id="' + uuid + '"  bomid="' + that.urlParam.bomid + '" > <td class="sorting_1">' + rowNum + '</td> ' +
-                    '<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
+                    '<td><div class=""> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
                     '<td>  ' +
                     ' <select  info= "sysb"   linked＝"' + uuid + '" class="grid-form-input" style="width:100%" >' +
                     '</select></td>' +
@@ -252,9 +252,9 @@
                         for (var i = 0; i < data.length; i++) {
                             var selector = "#" + $.decodeEmptyValue(data[i].id);
                             domstr = '<tr id="' + $.decodeEmptyValue(data[i].id) + '"  bomid="' + data[i].bomid + '"> <td class="sorting_1">' + i + '</td> ' +
-                            '<td><div class="text-center"> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
-                            '<td class="text-center starttime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateStarttime(this)">开 始</a></div></td>' +
-                            '<td class="text-center endtime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateEndtime(this)">结 束</a></div></td>' +
+                            '<td><div class=""> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
+                            '<td class=" starttime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateStarttime(this)">开 始</a></div></td>' +
+                            '<td class=" endtime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateEndtime(this)">结 束</a></div></td>' +
                             '<td>  ' +
                             ' <select  info= "sysb" type="text" linked＝"' + $.decodeEmptyValue(data[i].id) + '" class="grid-form-input" style="width:100%" >' +
                             '</select></td>' +

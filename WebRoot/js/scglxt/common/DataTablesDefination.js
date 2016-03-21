@@ -25,7 +25,7 @@
 		columnDefs= [ 
             {
                 "render": function ( data, type, row ) {
-                    return '<div class="text-center"><a class="btn btn-success btn-xs " style="margin-left:10px;" href="${pageContext.request.contextPath}/scglxt/scgl/addSbInfo.jsp?flag=edit&id='+data+'"><i class="icon-ok"></i></a><a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scglsb_deleteSbInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
+                    return '<div ><a class="btn btn-success btn-xs " style="margin-left:10px;" href="${pageContext.request.contextPath}/scglxt/scgl/addSbInfo.jsp?flag=edit&id='+data+'"><i class="icon-ok"></i></a><a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scglsb_deleteSbInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
                 },
                 "targets": 1
             },

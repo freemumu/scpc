@@ -62,7 +62,7 @@
 			"columnDefs": [ 
 		        {
 		            "render": function ( data, type, row ) {
-		                return '<div class="text-center">'+
+		                return '<div class="">'+
 		                ' <a class="btn btn-pramy btn-xs" href="#" title＝"操作">合格<i class="icon-edit" onclick = "HtManage.editRow(\''+data+'\')"></i></a> '+
 		                ' <a class="btn btn-success btn-xs" href="#" title＝"操作">不合格<i class="icon-edit" onclick = "HtManage.editRow(\''+data+'\')"></i></a>'+
 		                '<a class="btn btn-danger btn-xs" href="#" title="删除">报废<i class="icon-remove" onclick = "HtManage.deleteRow(\''+data+'\')"></i></a>'+

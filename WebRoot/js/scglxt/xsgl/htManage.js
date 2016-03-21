@@ -71,7 +71,7 @@
 			"columnDefs": [ 
 		        {
 		            "render": function ( data, type, row ) {
-		                return '<div class="text-center">'+
+		                return '<div class="">'+
 		                ' <a class="btn btn-success btn-xs" href="#" title＝"修改"><i class="icon-edit" onclick = "HtManage.editRow(\''+data+'\')"></i></a> '+
 		                '<a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "HtManage.deleteRow(\''+data+'\')"></i></a>'+
 		                ' </div>';
@@ -80,7 +80,7 @@
 		        },
 		        {
 		            "render": function ( data, type, row ) {
-		                return '<div class="text-center">'+
+		                return '<div class="">'+
 		                ' <a class="" href="#" title＝"查看" onclick = "HtManage.showModel(\''+data+'\')">查看</a> '+
 		                ' </div>';
 		            },

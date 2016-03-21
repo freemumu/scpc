@@ -216,3 +216,22 @@ form >.form-actions{
 	background: none;
 	border-top: none;
 }
+table.dataTable thead .sorting,table.dataTable thead .sorting_desc,table.dataTable thead .sorting_asc{
+	clear: both !important;
+}
+table.dataTable thead .sorting_desc:after{
+	content: "";
+}
+
+table.dataTable thead .sorting_asc:after{
+	content: "";
+}
+table.dataTable thead .sorting:after{
+	content: none;
+	clear:both;
+}
+
+table thead tr th{
+	/*padding: 8px !important;*/
+	/*text-align: center !important;*/
+}

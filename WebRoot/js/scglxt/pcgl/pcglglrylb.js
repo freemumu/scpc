@@ -48,7 +48,7 @@
                     "columnDefs": [{
 	                        
                     	"render": function (data, type, row) {
-	                            return '<div class="text-center">' + ' <a class="btn btn-primary btn-xs" href="#" title="时间安排" onclick = "BomManage.showModel(\'' + data + '\')"><i class="icon-ok" ></i>工艺编排</a>' + ' <a class="btn btn-info btn-xs" href="#" title＝"修改" onclick = "BomManage.editRow(\'' + data + '\')"><i class="icon-edit" ></i></a>' + ' <a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "BomManage.deleteRow(\'' + data + '\')"></i></a></div>';
+	                            return '<div class="">' + ' <a class="btn btn-primary btn-xs" href="#" title="时间安排" onclick = "BomManage.showModel(\'' + data + '\')"><i class="icon-ok" ></i>工艺编排</a>' + ' <a class="btn btn-info btn-xs" href="#" title＝"修改" onclick = "BomManage.editRow(\'' + data + '\')"><i class="icon-edit" ></i></a>' + ' <a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "BomManage.deleteRow(\'' + data + '\')"></i></a></div>';
 	                        }, "targets": 1
                     	}, 
                     	{"visible": false, "targets": [2]} /*是否显示列*/

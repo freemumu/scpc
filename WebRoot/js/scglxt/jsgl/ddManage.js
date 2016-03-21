@@ -70,7 +70,7 @@
                     "columnDefs": [
                         {
                             "render": function (data, type, row) {
-                                return '<div class="text-center">' +
+                                return '<div class="">' +
                                     ' <a class="btn btn-success btn-xs" href="#" title＝"修改"><i class="icon-edit" onclick = "DdManage.editRow(\'' + data + '\')"></i></a> ' +
                                     '<a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "DdManage.deleteRow(\'' + data + '\')"></i></a>' +
                                     ' </div>';
@@ -79,7 +79,7 @@
                         },
                         {
                             "render": function (data, type, row) {
-                                return '<div class="text-center">' +
+                                return '<div class="">' +
                                     ' <a class="" href="#" title＝"修改" onclick = "DdManage.showModel(\'' + data + '\')" >查看</a> ' +
                                     ' </div>';
                             },
@@ -87,7 +87,7 @@
                         },
                         {
                             "render": function (data, type, row) {
-                                return '<div class="text-center">' +
+                                return '<div class="">' +
                                     ' <a class="" href="#"  onclick = "DdManage.showHtInfo(\'' + data + '\')" >所属合同</a> ' +
                                     ' </div>';
                             },
