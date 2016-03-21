@@ -30,7 +30,7 @@ function deleteRow(id){
 			  url: "khInfo_deleteKhInfo.action",
 			  dataType: "text",
 			  data:{
-			  	"id":id,
+			  	"id":id
 			  },
 			  success:function(str){
 			  	window.location.reload(); 
@@ -66,13 +66,12 @@ function tableInit(){
     "aLengthMenu":[20,40,60],
 	//"ajax":"xsgl_getRyInfo.action",
 	"ajax":"khxxgl_getKhxxData.action",
-        scrollY:        "200px",
+        //scrollY:        "200px",
         scrollX:        true,
-
+        scrollY:        '50vh',
 	scrollCollapse: false,
 	paging:         true,
-	
-	"columnDefs": [ 
+	"columnDefs": [
         {
             "render": function ( data, type, row ) {
                 return '<div class="">'+
@@ -83,24 +82,13 @@ function tableInit(){
             },
             "targets": 1
         },
-/*        {
-/!*            "render": function ( data, type, row ) {
-                //return '<div class="text-center">'+
-                //' <a class="btn btn-info btn-xs" title="删除" href="#">查看合同</a></div>';
-           /!*     return '<div class="">'+
-                    ' <a class="" href="#" title＝"查看" onclick = "showModel(\''+data+'\')">查看</a> '+
-                    ' </div>';*!/
 
-
-            },
-            "targets": 2*!/
-        },*/
         { "visible": true,  "targets": [ 2 ] }
     ],
+        "bProcessing":true,
     "columns": [
     	{"data":null},
     	{"data":'id'},
-    	//{ "data": "id" },
         { "data": "mc" },
         { "data": "lx" },
         { "data": "dw" },
@@ -120,7 +108,6 @@ function tableInit(){
     } );
 	  } ).draw();
     new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
-
 }
 /**
  * 

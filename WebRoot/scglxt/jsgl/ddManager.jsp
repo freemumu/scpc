@@ -38,7 +38,7 @@
 								<thead>
 								<tr>
 									<th class="">
-										序号
+
 									</th>
 									<th style="width: 150px;">
 										操作
