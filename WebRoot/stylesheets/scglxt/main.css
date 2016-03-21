@@ -230,7 +230,10 @@ table.dataTable thead .sorting:after{
 	content: none;
 	clear:both;
 }
-
+table.dataTable thead > tr > th{
+	padding-right: 8px;
+	text-align: center;
+}
 table thead tr th{
 	/*padding: 8px !important;*/
 	/*text-align: center !important;*/
