@@ -33,9 +33,9 @@
                         <th class="operate" style="width:80px;">
                             操作
                         </th>
-                        <th style="width:80px;">
+                    <%--    <th style="width:80px;">
                             合同信息
-                        </th>
+                        </th>--%>
                         <th style="width:100px;">
                             名称
                         </th>

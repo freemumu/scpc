@@ -76,29 +76,31 @@ function tableInit(){
         {
             "render": function ( data, type, row ) {
                 return '<div class="">'+
-                '<a class="btn btn-info btn-xs"  title="编辑"  href="#"><i class="icon-edit"onclick = "editRow(\''+data+'\')"></i></a>'+
-                '&nbsp; <a class="btn btn-danger btn-xs" title="删除" href="#"><i class="icon-remove" onclick = "deleteRow(\''+data+'\')"></i></a></div>';
+                '<a class=" "  onclick = "editRow(\''+data+'\')" title="编辑"  href="#">编辑 </a>'+
+                ' <a class=" " onclick = "deleteRow(\''+data+'\')" title="删除" href="#">删除 </a>' +
+                    '<a class="" href="#" title＝"查看" onclick = "showModel(\''+data+'\')">合同信息</a>' +
+                    '</div>';
             },
             "targets": 1
         },
-        {
-            "render": function ( data, type, row ) {
+/*        {
+/!*            "render": function ( data, type, row ) {
                 //return '<div class="text-center">'+
                 //' <a class="btn btn-info btn-xs" title="删除" href="#">查看合同</a></div>';
-                return '<div class="">'+
+           /!*     return '<div class="">'+
                     ' <a class="" href="#" title＝"查看" onclick = "showModel(\''+data+'\')">查看</a> '+
-                    ' </div>';
+                    ' </div>';*!/
 
 
             },
-            "targets": 2
-        },
+            "targets": 2*!/
+        },*/
         { "visible": true,  "targets": [ 2 ] }
     ],
     "columns": [
     	{"data":null},
     	{"data":'id'},
-    	{ "data": "id" },
+    	//{ "data": "id" },
         { "data": "mc" },
         { "data": "lx" },
         { "data": "dw" },
