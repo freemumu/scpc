@@ -72,7 +72,7 @@
 		        {
 		            "render": function ( data, type, row ) {
 		                return '<div class="">'+
-		                ' <a class="" href="#" nclick = "HtManage.editRow(\''+data+'\')" title＝"修改">修改 </a> '+
+		                ' <a class="" href="#" onclick = "HtManage.editRow(\''+data+'\')" title＝"修改">修改 </a> '+
 		                '<a class="" href="#" title="删除" onclick = "HtManage.deleteRow(\''+data+'\')">删除</a>'+
 							' <a class="" href="#" title＝"查看" onclick = "HtManage.showModel(\''+data+'\')">查看订单</a> '+
 		                ' </div>';

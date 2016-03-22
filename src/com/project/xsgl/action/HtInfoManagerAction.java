@@ -119,7 +119,8 @@ public class HtInfoManagerAction {
      */
     public void getDetailInfo() {
         String id = Request.getParameter("id");
-        String sql = " select id ,mc,htbh , ywlx ,htje,date_format(qssj,'%Y-%m-%d')  qssj,dqjd,fkzt,jkbfb,jkje,jscb,hkzh,hkkhh,remark from scglxt_t_ht where id = '" + id + "'";
+        String sql = " select id ,mc,htbh , ywlx ,htje,date_format(qssj,'%Y-%m-%d')  qssj,date_format(qssj,'%Y-%m-%d')  jssj," +
+                "dqjd,fkzt,jkbfb,jkje,jscb,hkzh,hkkhh,remark from scglxt_t_ht where id = '" + id + "'";
         List list = null;
         String json = null;
         try {
@@ -175,7 +176,7 @@ public class HtInfoManagerAction {
             sql = " insert into scglxt_t_ht (`id`, `mc`, `htbh`, `ywlx`, `htje`, `qssj`, `jssj`, `dqjd`, `fkzt`, `jkbfb`, `jkje`, `jscb`, `hkzh`, `hkkhh`,`remark`,`htmx`) VALUES ('" + id + "', '" + mc + "', '" + htbh + "', '" + ywlx + "', '" + htje + "',  DATE_FORMAT( '"+qssj+"', '%Y-%m-%d') ,DATE_FORMAT( '"+jssj+"', '%Y-%m-%d') , '" + dqjd + "', '" + fkzt + "', '" + jkbfb + "',  '" + jkje + "', '" + jscb + "','" + hkzh + "','" + hkkhh + "','" + remark + "' ,'"+htmx+"' );";
         } else if (flag.equals("UPDATE")) {
             id = JSON.getString("id");
-            sql = " update scglxt_t_ht set mc = '" + mc + "' , htbh = '" + htbh + "', ywlx = '" + ywlx + "' , htje = '" + htje + "',qssj = DATE_FORMAT('" + qssj + "','%Y-%m-%d'),qssj = DATE_FORMAT('"+jssj+"','%Y-%m-%d'),dqjd='" + dqjd + "', " +
+            sql = " update scglxt_t_ht set mc = '" + mc + "' , htbh = '" + htbh + "', ywlx = '" + ywlx + "' , htje = '" + htje + "',qssj = DATE_FORMAT('" + qssj + "','%Y-%m-%d'),jssj = DATE_FORMAT('"+jssj+"','%Y-%m-%d'),dqjd='" + dqjd + "', " +
                     "fkzt = '" + fkzt + "' , jkbfb='" + jkbfb + "' ,jkje='" + jkje + "', jscb='" + jscb + "' ,hkzh='" + hkzh + "' , hkkhh='" + hkkhh + "', remark='" + remark + "' ,htmx = '"+htmx+"' " +
                     "WHERE id = '" + id + "'";
         }

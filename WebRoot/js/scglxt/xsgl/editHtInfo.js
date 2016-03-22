@@ -38,8 +38,17 @@
             } else {
                 _this._flag = "ADD";
             }
-            $('#form_khxx_qssj').datepicker();
-            $('#form_khxx_jssj').datepicker();
+            $('#form_khxx_qssj').datetimepicker({
+                "format":"yyyy-mm-dd",
+                "minView":2,
+                "autoclose":true
+
+            });
+            $('#form_khxx_jssj').datetimepicker({
+                "format":"yyyy-mm-dd",
+                "minView":2,
+                "autoclose":true
+            });
             loadYwlxList();//加载业务类型列表
 
             //$("#form_htInfo").validate();
