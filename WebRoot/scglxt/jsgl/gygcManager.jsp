@@ -34,7 +34,7 @@
 									<table id="gygc" class="cell-border tableGrid table table-striped table-bordered">
 										<thead>
 											<tr>
-												<th style="width:20px">序号</th>
+												<th></th>
 												<th style="width:20px;">编辑</th>
 												<th class="starttime  hide" disabled="disabled" style="width:20px;">开始加工</th>
 												<th class="endtime  hide" style="width:20px;">结束加工</th>

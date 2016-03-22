@@ -291,7 +291,7 @@
                             <table id="pcglJgryJg" class='table table-striped table-bordered' style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th> 序号</th>
+                                    <th></th>
                                     <th> 操作</th>
                                     <th> 子订单</th>
                                     <th> 表面处理</th>

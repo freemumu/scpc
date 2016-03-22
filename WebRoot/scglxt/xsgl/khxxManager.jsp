@@ -24,31 +24,30 @@
                 </div>
             </div>
             <div class='box-content box-no-padding'>
-                <table id="ryxx" class='table table-striped table-bordered tableGrid' style='margin-bottom: 0;'>
+                <table id="ryxx" class='table table-striped table-bordered tableGrid' style='margin-bottom: 0;width:100%'>
                     <thead>
                     <tr>
-                        <th class="serial" style="width:40px;">
-                            序号
+                        <th  >
                         </th>
-                        <th class="operate" style="width:80px;">
+                        <th class="operate"  >
                             操作
                         </th>
                     <%--    <th style="width:80px;">
                             合同信息
                         </th>--%>
-                        <th style="width:100px;">
+                        <th  >
                             名称
                         </th>
-                        <th style="width:100px;">
+                        <th  >
                             类型
                         </th>
-                        <th style="width:100px;">
+                        <th  >
                             单位
                         </th>
-                        <th style="width:160px;">
+                        <th  >
                             单位地址
                         </th>
-                        <th style="width:80px;">
+                        <th  >
                             是否成交
                         </th>
                         <th>

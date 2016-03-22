@@ -127,7 +127,7 @@
                             <table id="pcglBomStatus" class='table table-striped table-bordered' style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th> 序号</th>
+                                    <th></th>
                                     <th> 操作</th>
                                     <th> 名称</th>
                                     <th> 状态</th>

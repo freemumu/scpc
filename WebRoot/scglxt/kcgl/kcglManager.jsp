@@ -22,7 +22,7 @@
                                    style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th> 序号</th>
+                                    <th></th>
                                     <th style="width:120px;"> 备料情况</th>
                                     <!-- 															<th> -->
                                     <!-- 																工序编排 -->
