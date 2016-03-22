@@ -41,8 +41,7 @@
             $('#form_khxx_qssj').datepicker();
             $('#form_khxx_jssj').datepicker();
             loadYwlxList();//加载业务类型列表
-
-            //$("#form_htInfo").validate();
+            $.loadSelectList("#form_khxx_fkzt",'14');
         },
         /**
          * 注册事件
@@ -62,6 +61,19 @@
                         $("#form_khxx_ywlx").empty();
                         for (var i = 0; i < data.length; i++) {
                             $.AddSelectItem(data[i].mc, data[i].id, "form_khxx_ywlx");
+                        }
+                    }
+                };
+                $.asyncAjax(url, {"id": "id"}, successFun, true);
+            },
+
+            loadFkztList = function (){
+                var url = "htInfo_loadYwlxList.action", successFun = function (data) {
+                    if (data && data.length > 0) {
+                        $("#form_khxx_fkzt").empty();
+                        $.AddSelectItem("","-请选择-", "form_khxx_fkzt");
+                        for (var i = 0; i < data.length; i++) {
+                            $.AddSelectItem(data[i].mc, data[i].id, "form_khxx_fkzt");
                         }
                     }
                 };

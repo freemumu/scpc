@@ -143,6 +143,18 @@ $.extend($, {
         }
         select.append('<option value="' + value + '">' + innerText + '</option>');
 	},
+            loadSelectList:function(selector,pid){
+            var url = "common_loadSjzdList.action?pid="+pid, successFun = function (data) {
+                if (data && data.length > 0) {
+                    $(selector).empty();
+                    $.AddSelectItemBySelector("-请选择-", "", selector);
+                    for (var i = 0; i < data.length; i++) {
+                        $.AddSelectItemBySelector(data[i].mc, data[i].id, selector);
+                    }
+                }
+            };
+            $.asyncAjax(url, {"id": "id"}, successFun, true);
+},
 	/*
 	*   描述:清除Select元素
 	*   SelectID:需要清除的对象ID
