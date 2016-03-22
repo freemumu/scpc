@@ -101,7 +101,7 @@
 							return data ;
 						}
 					},
-					"targets": 11
+					"targets": 12
 				},
 
 		    ],
@@ -117,7 +117,7 @@
 		        { "data": "qssj" },
 		        { "data": "jssj" },
 		        { "data": "dqjd" },
-		        { "data": "fkzt" },
+		        { "data": "fkztmc" },
 		        { "data": "jkbfb" },
 		        { "data": "jkje" },
 		        { "data": "jscb" },
