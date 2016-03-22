@@ -27,15 +27,12 @@
                 <table id="htInfo" class='table table-striped table-bordered tableGrid' style='margin-bottom: 0;'>
                     <thead>
                     <tr>
-                        <th style="width:60px;">
-                            序号
+                        <th >
                         </th>
-                        <th style="width:80px;">
+                        <th style="width:140px;">
                             操作
                         </th>
-                        <th style="width:80px;">
-                            查看订单
-                        </th>
+
                         <th style="width:80px;">
                             ID
                         </th>

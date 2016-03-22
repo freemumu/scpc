@@ -72,26 +72,19 @@
 		        {
 		            "render": function ( data, type, row ) {
 		                return '<div class="">'+
-		                ' <a class="btn btn-success btn-xs" href="#" title＝"修改"><i class="icon-edit" onclick = "HtManage.editRow(\''+data+'\')"></i></a> '+
-		                '<a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "HtManage.deleteRow(\''+data+'\')"></i></a>'+
+		                ' <a class="" href="#" nclick = "HtManage.editRow(\''+data+'\')" title＝"修改">修改 </a> '+
+		                '<a class="" href="#" title="删除" onclick = "HtManage.deleteRow(\''+data+'\')">删除</a>'+
+							' <a class="" href="#" title＝"查看" onclick = "HtManage.showModel(\''+data+'\')">查看订单</a> '+
 		                ' </div>';
 		            },
 		            "targets": 1
 		        },
-		        {
-		            "render": function ( data, type, row ) {
-		                return '<div class="">'+
-		                ' <a class="" href="#" title＝"查看" onclick = "HtManage.showModel(\''+data+'\')">查看</a> '+
-		                ' </div>';
-		            },
-		            "targets": 2
-		        },
+
 
 		        {
-	                "targets": [ 3 ],
-	                "visible": false
+	                "visible": false,
+	                "targets": [2 ]
 	            },
-		        { "visible": true,  "targets": [ 2 ] },
 
 				{
 					"render": function ( data, type, row ) {
@@ -108,7 +101,7 @@
 		    "columns": [
 		    	{"data":null},
 		    	{"data":'id'},
-		    	{"data":'id'},
+
 		    	{ "data": "id" },
 		        { "data": "mc" },
 		        { "data": "htbh" },
@@ -134,8 +127,7 @@
 		        cell.innerHTML = i+1;
 		    } );
 			  } ).draw();
-//		  new $.fn.dataTable.FixedColumns( table );
-			new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
+			new $.fn.dataTable.FixedColumns( table, {leftColumns:4});
 
 
 		},
