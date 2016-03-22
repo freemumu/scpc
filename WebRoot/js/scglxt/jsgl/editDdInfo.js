@@ -39,6 +39,7 @@
 			$('#form_khxx_planstarttime').datepicker({format: 'yyyy-mm-dd'});
 			$('#form_khxx_planendtime').datepicker({format: 'yyyy-mm-dd'});
 			$('#form_khxx_realstarttime').datepicker({format: 'yyyy-mm-dd'});
+			$('#form_khxx_ckdate').datepicker({format: 'yyyy-mm-dd'});
 
 			//注册表单返回按钮事件 。点击返回查询表格页面
 			$("#form_return").click(function () {

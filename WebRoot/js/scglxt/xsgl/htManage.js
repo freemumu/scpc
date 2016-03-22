@@ -63,12 +63,7 @@
 			scrollX:        true,
 			scrollCollapse: true,
 			paging:         true,
-//			"columnDefs": [
-//				{ width: '20%', targets: 0 },
-//				 
-//			]
-//			,
-			"columnDefs": [ 
+			"columnDefs": [
 		        {
 		            "render": function ( data, type, row ) {
 		                return '<div class="">'+
@@ -134,8 +129,7 @@
 		        cell.innerHTML = i+1;
 		    } );
 			  } ).draw();
-//		  new $.fn.dataTable.FixedColumns( table );
-			new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
+			new $.fn.dataTable.FixedColumns( table, {leftColumns:5});
 
 
 		},
