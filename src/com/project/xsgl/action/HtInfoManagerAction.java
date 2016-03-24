@@ -43,8 +43,10 @@ public class HtInfoManagerAction {
     public void getTableData() {
         String khid = Request.getParameter("khid");
         String id = Request.getParameter("id");
-        String sql = "select t1.id ,t1.mc,t1.htbh , t1.ywlx ,t1.htje,date_format(qssj,'%Y-%m-%d') qssj,date_format(jssj,'%Y-%m-%d') jssj, t1.dqjd,t1.fkzt,t1.jkbfb,jkje,jscb,t1.hkzh,t1.hkkhh,t1.remark ,t1.htmx, t2.id khid" +
-                " from scglxt_t_ht  t1 left join scglxt_t_kh t2 on t1.khid = t2.id  where 1=1 ";
+        String sql = "select t1.id ,t1.mc,t1.htbh , t1.ywlx ,t1.htje,date_format(qssj,'%Y-%m-%d') qssj,date_format(jssj,'%Y-%m-%d') jssj, " +
+                "t1.dqjd,t1.fkzt, t3.mc fkztmc,t1.jkbfb,jkje,jscb,t1.hkzh,t1.hkkhh,t1.remark ,t1.htmx, t2.id khid" +
+                " from scglxt_t_ht  t1 left join scglxt_t_kh t2 on t1.khid = t2.id  left join  scglxt_tyzd t3 on t1.fkzt= t3.id " +
+                "where 1=1 ";
         if (khid != null && !khid.equals("")) {
             sql += " and  t1.khid = '" + khid + "'";
         }else if(id != null  &&  !id.equals("")){

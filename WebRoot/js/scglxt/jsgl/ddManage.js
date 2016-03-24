@@ -57,7 +57,7 @@
                     "ajax": "ddInfo_getTableData.action?ssht=" + ssht,
                     "sScrollY": 450, //DataTables的高
                     "sScrollX": 4000, //DataTables的宽
-                    "bAutoWidth": true, //是否自适应宽度
+                    //"bAutoWidth": true, //是否自适应宽度
                     scrollY: true,
                     scrollX: true,
                     scrollCollapse: true,
@@ -70,41 +70,25 @@
                     "columnDefs": [
                         {
                             "render": function (data, type, row) {
+                                console.log(row)
                                 return '<div class="">' +
-                                    ' <a class="btn btn-success btn-xs" href="#" title＝"修改"><i class="icon-edit" onclick = "DdManage.editRow(\'' + data + '\')"></i></a> ' +
-                                    '<a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "DdManage.deleteRow(\'' + data + '\')"></i></a>' +
+                                    ' <a class=" " href="#"   onclick = "DdManage.editRow(\'' + data + '\')" title＝"修改"> 修改</a> ' +
+                                    '<a class=" " href="#" onclick = "DdManage.deleteRow(\'' + data + '\')" title="删除"> 删除</a>' +
+                                    ' <a class="" href="#" title＝"修改" onclick = "DdManage.showModel(\'' + data + '\')" >BOM</a> ' +
+                                    ' <a class="" href="#"  onclick = "DdManage.showHtInfo(\'' + row.ssht + '\')" >合同</a> ' +
                                     ' </div>';
                             },
                             "targets": 1
                         },
-                        {
-                            "render": function (data, type, row) {
-                                return '<div class="">' +
-                                    ' <a class="" href="#" title＝"修改" onclick = "DdManage.showModel(\'' + data + '\')" >查看</a> ' +
-                                    ' </div>';
-                            },
-                            "targets": 2
-                        },
-                        {
-                            "render": function (data, type, row) {
-                                return '<div class="">' +
-                                    ' <a class="" href="#"  onclick = "DdManage.showHtInfo(\'' + data + '\')" >所属合同</a> ' +
-                                    ' </div>';
-                            },
-                            "targets": 4
-                        },
-                        {
-                            "targets": [3],
-                            "visible": false
-                        },
-//		        { "visible": true,  "targets": [ 2 ] }
+
+
+
+		        { "visible": false,  "targets": [ 2 ] }
                     ],
                     "columns": [
-                        {"data": null,},
-                        {"data": 'id',},
+                        {"data": null},
                         {"data": "id"},
                         {"data": "id"},
-                        {"data": "ssht"},
                         {"data": "xmname"},
                         {"data": "ddlevel"},
                         {"data": "jhdate"},
@@ -131,8 +115,7 @@
                         cell.innerHTML = i + 1;
                     });
                 }).draw();
-                new $.fn.dataTable.FixedColumns(table, {leftColumns: 3});
-
+                new $.fn.dataTable.FixedColumns( table, {leftColumns:4});
             },
             /**
              * 删除信息

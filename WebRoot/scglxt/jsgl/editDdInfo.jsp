@@ -148,7 +148,7 @@
                             <label class='control-label col-sm-3' for='form_khxx_ckdate'>出库日期</label>
 
                             <div class='col-sm-4 controls'>
-                                <input class='form-control' readonly id='form_khxx_ckdate' info="fromInfo"
+                                <input class='form-control'   id='form_khxx_ckdate' readonly style="cursor:pointer;" info="fromInfo"
                                        name='form_khxx_ckdate' placeholder='出库日期' type='text'>
                             </div>
                         </div>

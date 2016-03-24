@@ -63,12 +63,7 @@
 			scrollX:        true,
 			scrollCollapse: true,
 			paging:         true,
-//			"columnDefs": [
-//				{ width: '20%', targets: 0 },
-//				 
-//			]
-//			,
-			"columnDefs": [ 
+			"columnDefs": [
 		        {
 		            "render": function ( data, type, row ) {
 		                return '<div class="">'+
@@ -94,7 +89,7 @@
 							return data ;
 						}
 					},
-					"targets": 11
+					"targets": 12
 				},
 
 		    ],
@@ -110,7 +105,7 @@
 		        { "data": "qssj" },
 		        { "data": "jssj" },
 		        { "data": "dqjd" },
-		        { "data": "fkzt" },
+		        { "data": "fkztmc" },
 		        { "data": "jkbfb" },
 		        { "data": "jkje" },
 		        { "data": "jscb" },
@@ -127,7 +122,8 @@
 		        cell.innerHTML = i+1;
 		    } );
 			  } ).draw();
-			new $.fn.dataTable.FixedColumns( table, {leftColumns:4});
+//		  new $.fn.dataTable.FixedColumns( table );
+			new $.fn.dataTable.FixedColumns( table, {leftColumns:3});
 
 
 		},
