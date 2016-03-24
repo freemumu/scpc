@@ -63,7 +63,12 @@
 			scrollX:        true,
 			scrollCollapse: true,
 			paging:         true,
-			"columnDefs": [
+//			"columnDefs": [
+//				{ width: '20%', targets: 0 },
+//				 
+//			]
+//			,
+			"columnDefs": [ 
 		        {
 		            "render": function ( data, type, row ) {
 		                return '<div class="">'+
