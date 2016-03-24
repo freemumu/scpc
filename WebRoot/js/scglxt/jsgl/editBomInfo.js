@@ -15,17 +15,17 @@
                 //返回按钮
                 //$("#form_bomInfo_ssdd").select2();
                 $("#form_return").click(function () {
-                    var $outFrame = $(window.parent.document.body);
-                    var $iframe = $outFrame.find("#mainIframe");
-                    var src = $iframe.attr("src");
-                    $iframe.attr('src', "scglxt/jsgl/BomManager.jsp");
+                    returnAndLoad();
                 });
                 $.addRequiredLabel();
                 $('#btn_save').on('click', function (e) {
+
                     e.stopPropagation();
                     var tips = validata();
                     if(tips == ""){
+                        $(this).attr("disabled",true);
                         saveFormInfo(_this._flag);
+
                     }
                 });
                 $("#form_bomInfo_clxz").on("change", function (e) {
@@ -49,10 +49,12 @@
                 }
                 //初始化日期控件
                 $('#form_bomInfo_starttime').datetimepicker({
-                    format: 'yyyy-mm-dd hh:ii:ss'
+                    format: 'yyyy-mm-dd hh:ii',
+                    autoclose:true
                 });
                 $('#form_bomInfo_endtime').datetimepicker({
-                    format: 'yyyy-mm-dd hh:ii:ss'
+                    format: 'yyyy-mm-dd hh:ii',
+                    autoclose:true
                 });
                 loadSsddList();
             },
@@ -112,6 +114,7 @@
                 var url = "bomInfo_updateInfo.action?flag=" + flag, successFun = function (resStr) {
                     if (resStr == "SUCCESS") {
                         alert('保存成功！');
+                        returnAndLoad();
                     }
                 }
                 //$.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);
@@ -192,7 +195,13 @@ cldx=l+","+w+","+h;
                 var price = $("#form_bomInfo_zddcz").find("option:selected").attr("cldj");
                 clje = volume * density * price;
                 $("#form_bomInfo_clje").val(clje);
-            }
+            },
+            returnAndLoad = function(){
+                var $outFrame = $(window.parent.document.body);
+                var $iframe = $outFrame.find("#mainIframe");
+                var src = $iframe.attr("src");
+                $iframe.attr('src', "scglxt/jsgl/bomManager.jsp");
+                }
             ;
         return {
             init: init,

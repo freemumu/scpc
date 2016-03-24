@@ -22,7 +22,7 @@
                                    style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th></th>
+                                    <th class="serial"></th>
                                     <th style="width:120px;"> 材料状态</th>
                                     <!-- 															<th> -->
                                     <!-- 																工序编排 -->

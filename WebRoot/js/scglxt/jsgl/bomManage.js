@@ -46,26 +46,47 @@
                     scrollY: "disabled",
                     scrollX: true, /*scrollCollapse: false,*/
                     paging: true,
-                    columnDefs: [/*{ width: '20%', targets: 0 }*/],
-                    "columnDefs": [{
-                        "render": function (data, type, row) {
-                            return '<div class="">' + ' <a class="btn btn-primary btn-xs" href="#" title="工序编排" onclick = "BomManage.showModel(\'' + data + '\')"><i class="icon-ok" ></i>工艺编排</a>' + ' <a class="btn btn-info btn-xs" href="#" title＝"修改" onclick = "BomManage.editRow(\'' + data + '\')"><i class="icon-edit" ></i></a>' + ' <a class="btn btn-danger btn-xs" href="#" title="删除"><i class="icon-remove" onclick = "BomManage.deleteRow(\'' + data + '\')"></i></a></div>';
-                        }, "targets": 1
-                    }, {"visible": false, "targets": [2]} /*是否显示列*/],
+                    "columnDefs": [
+                        {
+                            "render": function (data, type, row) {
+                                return '<div class="">' +
+                                    ' <a class=" " href="#" title="工序编排" ' +
+                                    'onclick = "BomManage.showModel(\'' + data + '\')"> 工艺编排</a>' +
+                                    ' <a class=" " href="#" title＝"修改" ' +
+                                    'onclick = "BomManage.editRow(\'' + data + '\')"> 修改</a>' +
+                                    ' <a href="#" onclick = "BomManage.deleteRow(\'' + data + '\')" title="删除">删除</a></div>';
+                            }, "targets": 1
+                        },
+                        {
+                            "render": function (data, type, row) {
+                                var str = "";
+                                if(data=='1'){
+                                    str =  "长方体" ;
+                                }else if(data=='2'){
+                                    str = "圆柱体" ;
+                                }
+                                console.log(data);
+                                return str ;
+                            }, "targets": 7
+                        },
+
+                        {"visible": false, "targets": [2]}
+                         /*是否显示列*/],
                     "columns": [{"data": null, "sWidth": "60px"}, {
                         "data": 'id',
                         "sWidth": "200px"
                     }, {"data": "id"}, {"data": "zddmc", "sWidth": "120px"}, {
-                        "data": "zddcz",
+                        "data": "clmc",
                         "sWidth": "120px"
                     }, {
                         "data": "gxnr",
                         "sWidth": "300px"
-                    }, {"data": "clxz"},
+                    },
+                        {"data": "jgsl"},
+                        {"data": "clxz"},
                         {"data": "cldx"},
                         {"data": "cltj"},
                         {"data": "clje"},
-                        {"data": "jgsl"},
                         {"data": "bmcl"},
                         {
                             "data": "starttime",
@@ -92,7 +113,7 @@
                         cell.innerHTML = i + 1;
                     });
                 }).draw();
-                new $.fn.dataTable.FixedColumns(table, {leftColumns: 3});
+                new $.fn.dataTable.FixedColumns(table, {leftColumns: 4});
             },
             /**
              * 删除信息
@@ -148,13 +169,13 @@
                 var ssdd = 1;
                 var url = "bomInfo_calculateTimeLength.action", successFun = function (data) {
                     console.log(data);
-                    var str = "(工时统计："  ;
+                    var str = "(工时统计：";
                     if (data && data.length > 0) {
                         for (var i = 0; i < data.length; i++) {
-                          str +=  data[i].gynr + "("+ data[i].timelength +")&nbsp;&nbsp;"
+                            str += data[i].gynr + "(" + data[i].timelength + ")&nbsp;&nbsp;"
                         }
-                        str +=")单位/分钟"
-                        $(".box-header .title").append("<small>"+str+"</small>")
+                        str += ")单位/分钟"
+                        $(".box-header .title").append("<small>" + str + "</small>")
                     }
                 };
                 $.asyncAjax(url, {"ssdd": ssdd}, successFun, true);

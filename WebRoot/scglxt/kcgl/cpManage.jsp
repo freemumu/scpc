@@ -35,9 +35,7 @@
 												<table id="bomInfo" class='table table-striped table-bordered' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
-															<th>
-
-															</th>
+															<th class="serial"></th>
 															<th>
 																操作
 															</th>

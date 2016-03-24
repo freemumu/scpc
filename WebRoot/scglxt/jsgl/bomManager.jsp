@@ -22,7 +22,7 @@
                                    style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th></th>
+                                    <th class=""></th>
                                     <th> 操作</th>
                                     <!-- 															<th> -->
                                     <!-- 																工序编排 -->
@@ -31,11 +31,11 @@
                                     <th> 子订单名称</th>
                                     <th> 子订单材质</th>
                                     <th> 工序内容</th>
+                                    <th> 加工数量</th>
                                     <th> 料的形状</th>
                                     <th> 料的大小</th>
                                     <th> 料的体积</th>
                                     <th> 料的金额</th>
-                                    <th> 加工数量</th>
                                     <th> 表面处理</th>
                                     <th> 子订单开始时间</th>
                                     <th> 子订单结束时间</th>

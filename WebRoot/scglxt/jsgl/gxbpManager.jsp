@@ -39,9 +39,7 @@
 												<table id="gyInfo" class='display tableGrid cell-border' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
-															<th>
-
-															</th>
+															<th class="serial"></th>
 															<th>
 																操作
 															</th>

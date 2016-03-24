@@ -30,7 +30,7 @@
                        style='margin-bottom: 0;'>
                     <thead>
                     <tr>
-                        <th class="">
+                        <th class="serial" style="width: 20px;">
 
                         </th>
                         <th class="th-xlarger">

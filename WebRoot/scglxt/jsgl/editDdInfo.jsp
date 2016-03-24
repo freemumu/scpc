@@ -161,9 +161,7 @@
                             </div>
                         </div>
                         <div class='modal-footer col-md-7'>
-                            <button class='btn btn-default' data-dismiss='modal' type='button'>
-                                关闭
-                            </button>
+
                             <input id="btn_save" class="btn btn-primary" type="button" value="保存">
                             <button id="btn_saving" class='btn btn-default' style="display:none;" type='button'>
                                 <i class="icon-1x icon-spinner icon-spin"></i>

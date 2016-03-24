@@ -46,10 +46,12 @@ public class BomInfoManagerAction {
         String ssdd = Request.getParameter("ssdd");
         String cggl = Request.getParameter("cggl");
 
-        String sql = "select id ,zddmc, zddcz,clxz,cldx,cltj,clje,jgsl,bmcl,date_format(starttime,'%Y-%m-%d') starttime, " +
+        String sql = "select t.id ,t.zddmc,t2.clmc, t.zddcz,t.clxz,t.cldx,t.cltj,t.clje,t.jgsl,t.bmcl,date_format(starttime,'%Y-%m-%d') starttime, " +
                 "date_format(endtime,'%Y-%m-%d') endtime,gs,blqk,date_format(blkssj,'%Y-%m-%d') blkssj," +
-                "date_format(bljssj,'%Y-%m-%d') bljssj, clzt, if(clzt='0','未采购','已采购')  clztformat ,cgry,cgsj,ddtz, date_format(rksj,'%Y-%m-%d') rksj,bfjs,bhgjs ,gxnr " +
-                " from scglxt_t_bom  where 1=1 ";
+                "date_format(bljssj,'%Y-%m-%d') bljssj, clzt, if(clzt='0','未采购','已采购')  clztformat ,cgry,cgsj,ddtz, " +
+                "date_format(rksj,'%Y-%m-%d') rksj,bfjs,bhgjs ,gxnr " +
+                " from scglxt_t_bom t left join scglxt_t_cl t2 " +
+                "                 on  t.zddcz = t2.id    ";
         if (ssdd != null && !ssdd.equals("") && !ssdd.equals("null")) {
             sql = sql + "and ssdd = '" + ssdd + "'";
         }
@@ -128,8 +130,8 @@ public class BomInfoManagerAction {
      */
     public void getDetailInfo() {
         String id = Request.getParameter("id");
-        String sql = " select id ,zddmc, zddcz,clxz,cldx,cltj,clje,jgsl,bmcl,date_format(starttime,'%Y-%m-%d') starttime, " +
-                "date_format(endtime,'%Y-%m-%d') endtime,gs,blqk,date_format(blkssj,'%Y-%m-%d') blkssj," +
+        String sql = " select id ,zddmc, zddcz,clxz,cldx,cltj,clje,jgsl,bmcl,date_format(starttime,'%Y-%m-%d %H:%i') starttime, " +
+                "date_format(endtime,'%Y-%m-%d %H:%i') endtime,gs,blqk,date_format(blkssj,'%Y-%m-%d') blkssj," +
                 "date_format(bljssj,'%Y-%m-%d') bljssj, clzt,cgry,cgsj,ddtz,rksj,bfjs,bhgjs from scglxt_t_bom where id = '" + id + "' ";
         List list = null;
         String json = null;

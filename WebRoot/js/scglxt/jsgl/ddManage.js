@@ -57,15 +57,12 @@
                     "ajax": "ddInfo_getTableData.action?ssht=" + ssht,
                     "sScrollY": 450, //DataTables的高
                     "sScrollX": 4000, //DataTables的宽
-                    //"bAutoWidth": true, //是否自适应宽度
+                    "bAutoWidth": true, //是否自适应宽度
                     scrollY: true,
-                    scrollX: true,
+                    //scrollX: true,
                     scrollCollapse: true,
                     paging: true,
-                    columnDefs: [
-                        {width: '20%', targets: 0}
-                    ]
-                    ,
+
 //			"ajax":"ddInfo_getTableData.action",
                     "columnDefs": [
                         {
@@ -80,8 +77,6 @@
                             },
                             "targets": 1
                         },
-
-
 
 		        { "visible": false,  "targets": [ 2 ] }
                     ],
@@ -170,27 +165,48 @@
                     console.log(data);
                     if (data) {
                         var obj = data.data[0];
-                        var str = '<dl class="dl-horizontal" style="font-size:14px"> ' +
-                            '<dt>名称</dt>' +
-                            '<dd>' + $.decodeEmptyValue(obj.mc)  + '</dd>' +
-                            '<dt>合同编号</dt>' +
-                            '<dd>' + $.decodeEmptyValue(obj.htbh) + '</dd>' +
-                            '<dt>合同金额</dt>' +
-                            '<dd>' + $.decodeEmptyValue(obj.htje) + '</dd>' +
-                            '<dt>签署时间</dt>' +
-                            '<dd>' + $.decodeEmptyValue(obj.qssj) + '</dd>' +
-                            '<dt>付款状态</dt>' +
-                            '<dd>' + $.decodeEmptyValue(obj.fkzt) + '</dd>' +
-                            '<dt>汇款账号</dt>' +
-                            '<dd>' + $.decodeEmptyValue(obj.hkzh) + '</dd>' +
-                            '<dt>汇款开户行</dt>' +
-                            '<dd>' + $.decodeEmptyValue(obj.hkkhh) + '</dd>' +
-                            '<dt>合同明细</dt>' +
-                            '<dd>' + $.decodeEmptyValue(obj.htmx) + '</dd>' +
-                            '<dt>预计完成时间</dt>' +
-                            '<dd>' + $.decodeEmptyValue(obj.htmx) + '</dd>' +
-                            '</dl>';
 
+                        $("#myModal .modal-body").html(str);
+
+                        var str = '<h4>合同信息</h4>' +
+                            '<table id="previewHt" class="table table-bordered table-striped table-hover " style="font-size:14px"> ' +
+                            '<tr>' +
+                            '<td>名称</td>' +
+                            '<td>' + $.decodeEmptyValue(obj.mc)  + '</td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td>合同编号</td>' +
+                            '<td>' + $.decodeEmptyValue(obj.htbh) + '</td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td>合同金额</td>' +
+                            '<td>' + $.decodeEmptyValue(obj.htje) + '</td>' +
+                            '</tr>' +
+                            '<tr>' +
+
+                            '<td>签署时间</td>' +
+                            '<td>' + $.decodeEmptyValue(obj.qssj) + '</td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td>付款状态</td>' +
+                            '<td>' + $.decodeEmptyValue(obj.fkzt) + '</td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td>汇款账号</td>' +
+                            '<td>' + $.decodeEmptyValue(obj.hkzh) + '</td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td>汇款开户行</td>' +
+                            '<td>' + $.decodeEmptyValue(obj.hkkhh) + '</td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td>合同明细</td>' +
+                            '<td>' + $.decodeEmptyValue(obj.htmx) + '</td>' +
+                            '</tr>' +
+                            '<tr>' +
+                            '<td>预计完成时间</td>' +
+                            '<td>' + $.decodeEmptyValue(obj.htmx) + '</td>' +
+                            '</table>';
                         $("#myModal .modal-body").html(str);
                     }
                 };
