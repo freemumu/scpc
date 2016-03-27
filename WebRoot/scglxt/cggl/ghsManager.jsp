@@ -10,7 +10,7 @@
 	function tableInit(){
 	
 		var table = $('#ghsxx').DataTable( {
-		"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+//		"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
 		"bLengthChange": false, 
       	"oLanguage": {
                     "sProcessing": "正在加载中......",
@@ -40,7 +40,10 @@
 		"columnDefs": [ 
             {
                 "render": function ( data, type, row ) {
-                    return '<div class="text-center"><a class="btn btn-success btn-xs" href="${pageContext.request.contextPath}/scglxt/cggl/addGhsInfo.jsp?flag=edit&id='+data+'"><i class="icon-ok"></i></a>&nbsp;<a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/cggl_deleteGhsInfo.action?id='+data+'"><i class="icon-remove"></i></a></div>';
+                    return '<div class="text-center">' +
+							'<a  href="${pageContext.request.contextPath}/scglxt/cggl/addGhsInfo.jsp?flag=edit&id='+data+'">修改</a>' +
+							'&nbsp;<a  href="${pageContext.request.contextPath}/scglxt/scgl/cggl_deleteGhsInfo.action?id='+data+'">删除</a>' +
+							'</div>';
                 },
                 "targets": 1
             },
@@ -92,7 +95,7 @@
 									<div class='box-content box-no-padding'>
 <!-- 										<div class='responsive-table'> -->
 <!-- 											<div class='scrollable-area'> -->
-												<table id="ghsxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
+												<table id="ghsxx" class='table tableGrid table-striped table-bordered' style='margin-bottom: 0;'>
 													<thead>
 														<tr>
 															<th class="serial"></th>

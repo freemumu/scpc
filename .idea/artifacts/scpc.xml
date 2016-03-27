@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="scpc">
+  <artifact type="exploded-war" name="scpc">
     <output-path>$PROJECT_DIR$/out/artifacts/scpc</output-path>
-    <root id="archive" name="scpc.war">
+    <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="scpc" />

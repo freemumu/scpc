@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>工艺管理</title>
+    <title>工序信息</title>
     <script type="text/javascript" src="../../js/scglxt/jsgl/gxManage.js"></script>
 </head>
 <body>
@@ -19,18 +19,15 @@
                     <div class='title'>
                         工序信息
                     </div>
-                    <div class='actions'>
-                        <a class="btn box-collapse btn-xs btn-link" href="#"><i></i>
-                        </a>
-                    </div>
+
                 </div>
                 <div class='box-content box-no-padding'>
-                    <table id="gxInfo" class='table table-striped table-bordered' style='margin-bottom: 0;'>
+                    <table id="gxInfo" class='table tableGrid table-striped table-bordered' style='margin-bottom: 0;'>
                         <thead>
                         <tr>
-                            <th>
+                            <th class="serial">
                             </th>
-                            <th>
+                            <th class="th-small">
                                 操作
                             </th>
                             <th>
@@ -45,7 +42,7 @@
                             <th>
                                 负责班组
                             </th>
-                            <th>
+                            <th class="th-small">
                                 是否外协
                             </th>
                         </tr>

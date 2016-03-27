@@ -63,19 +63,20 @@
 		        {
 		            "render": function ( data, type, row ) {
 		                return '<div class="">'+
-							' <a class="btn btn-success btn-xs" onclick = "ClManage.editRow(\''+data+'\')" href="#" title＝"修改"><i class="icon-edit" "></i></a> '+
-							' <a class="btn btn-danger btn-xs" onclick = "ClManage.deleteRow(\''+data+'\')" href="#" title="删除"><i class="icon-remove" ></i></a></div>';
+							' <a onclick = "ClManage.editRow(\''+data+'\')" href="#" title＝"修改">修改</a> '+
+								"&nbsp;"+
+							' <a onclick = "ClManage.deleteRow(\''+data+'\')" href="#" title="删除">删除</a></div>';
 		            },
 		            "targets": 1
 		        },
 		        { "visible": false,  "targets": [ 2 ] } //是否显示列
 		    ],
 		    "columns": [
-		    	{"data":null,"sWidth":"60px"},
-		    	{"data":'id', "sWidth":"200px"},
+		    	{"data":null },
+		    	{"data":'id'},
 		    	{ "data": "id" },
 		        { "data": "clmc" },
-		        { "data": "clcz","sWidth":"300px" },
+		        { "data": "clcz"},
 		        { "data": "clsl" },
 		        { "data": "cldj" },
 		        { "data": "cllx" },

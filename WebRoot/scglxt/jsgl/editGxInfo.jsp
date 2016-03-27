@@ -13,7 +13,9 @@
                          <div class="icon-edit"></div>
                         工序信息
                       </div>
-
+						<div id="form_return" class="btn btn-success btn-sm">
+							<i class="icon-add"></i> 返回
+						</div>
                     </div>
                     <div class="box-content box-no-padding">
 	                      <form id="form_gxInfo" class='form form-horizontal ' method="post" style='margin-bottom: 0;'>
@@ -25,12 +27,7 @@
 									  <label class="textInfo"></label>
 		                          </div>
 		                        </div>
-		                        <%--<div class='form-group'>--%>
-		                          <%--<label class='control-label col-sm-3 col-sm-3' for='form_khxx_gxdh'>工艺代号</label>--%>
-		                          <%--<div class='col-sm-4 controls'>--%>
-		                            <%--<input class='form-control required'  id='form_khxx_gxdh'  info="fromInfo" name='form_khxx_gxdh'  placeholder='工序代号' type='text'>--%>
-		                          <%--</div>--%>
-		                        <%--</div>--%>
+
 		                        <div class='form-group'>
 		                          <label class='control-label col-sm-3 col-sm-3' for='form_khxx_fzbz'>负责班组</label>
 		                          <div class='col-sm-4 controls'>
@@ -48,13 +45,7 @@
 										  <option value="0">否</option>
 									  </select>
 								  </div>
-							  </div>
-<!-- 		                        <div class='form-group'> -->
-<!-- 		                          <label class='control-label col-sm-3' for='form_khxx_gxsx'>工序顺序</label> -->
-<!-- 		                          <div class='col-sm-4 controls'> -->
-<!-- 			                            <input class="form-control" id="form_khxx_gxsx" info="fromInfo" name="form_khxx_gxsx" type="text" placeholder='工序顺序' 	/> -->
-<!-- 		                          </div> -->
-<!-- 		                        </div> -->
+
 					             <div class='modal-footer'>
 
 					                 <input id="btn_save" class="btn btn-primary"  type="button" value="保存">

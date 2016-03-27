@@ -31,11 +31,11 @@
 						<div class='box-content box-no-padding'>
 							<div class='responsive-table'>
 								<div class='scrollable-area'>
-									<table id="gygc" class="cell-border tableGrid table table-striped table-bordered">
+									<table id="gygc" class="cell-border  tableGygc table table-striped table-bordered">
 										<thead>
 											<tr>
-												<th></th>
-												<th style="width:20px;">编辑</th>
+												<th class="serial"></th>
+												<th class="serial" style=" ">编辑</th>
 												<th class="starttime  hide" disabled="disabled" style="width:20px;">开始加工</th>
 												<th class="endtime  hide" style="width:20px;">结束加工</th>
 												<th>所用设备</th>

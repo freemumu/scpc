@@ -28,7 +28,7 @@
 					<thead>
 					<tr>
 						<th class="serial"></th>
-						<th>
+						<th class="th-larger">
 							操作
 						</th>
 						<th>

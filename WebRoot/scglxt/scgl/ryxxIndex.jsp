@@ -33,7 +33,7 @@
     function tableInit() {
 
         var table = $('#ryxx').DataTable({
-            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+//            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
             "bLengthChange": true,
             "oLanguage": {
                 "sProcessing": "正在加载中......",
@@ -63,7 +63,10 @@
             "columnDefs": [
                 {
                     "render": function (data, type, row) {
-                        return '<div class="text-center"><a class="btn btn-success btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/addRyInfo.jsp?flag=edit&id=' + data + '"><i class="icon-edit"></i></a>&nbsp; <a class="btn btn-danger btn-xs" href="${pageContext.request.contextPath}/scglxt/scgl/scgl_deleteRyInfo.action?id=' + data + '"><i class="icon-remove"></i></a></div>';
+                        return '<div class="text-center">' +
+                                '<a  href="${pageContext.request.contextPath}/scglxt/scgl/addRyInfo.jsp?flag=edit&id=' + data + '">修改</a>&nbsp; ' +
+                                '<a href="${pageContext.request.contextPath}/scglxt/scgl/scgl_deleteRyInfo.action?id=' + data + '">删除</a>' +
+                                '</div>';
                     },
                     "targets": 1
                 },
@@ -72,8 +75,8 @@
             "columns": [
                 {"data": null, "sWidth": "40px"},
                 {"data": 'id', "sWidth": "60px"},
-                {"data": "ssbz"},
                 {"data": "rymc"},
+                {"data": "ssbz"},
                 {"data": "rynl"},
                 {"data": "jsjb"},
                 {"data": "dqgz"}
@@ -118,19 +121,19 @@
                 <div class='box-content box-no-padding'>
                     <div class='responsive-table'>
                         <div class='scrollable-area'>
-                            <table id="ryxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
+                            <table id="ryxx" class='table tableGrid table-striped table-bordered' style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th>
+                                    <th class="serial">
                                     </th>
-                                    <th>
+                                    <th class="th-middle">
                                         操作
                                     </th>
                                     <th>
-                                        班组
+                                        名称
                                     </th>
                                     <th>
-                                        名称
+                                        班组
                                     </th>
                                     <th>
                                         年龄

@@ -24,6 +24,9 @@
                     Main.swapIframUrl('scglxt/jsgl/editBomInfo.jsp');
                     /*跳转iframe页面*/
                 })
+                $("#form_reload").on('click', function () {
+                    window.location.reload();
+                })
             },
             /** 初始化表格函数 */
             tableInit = function (ssdd) {
@@ -73,8 +76,7 @@
                         {"visible": false, "targets": [2]}
                          /*是否显示列*/],
                     "columns": [{"data": null, "sWidth": "60px"}, {
-                        "data": 'id',
-                        "sWidth": "200px"
+                        "data": 'id'
                     }, {"data": "id"}, {"data": "zddmc", "sWidth": "120px"}, {
                         "data": "clmc",
                         "sWidth": "120px"
@@ -186,6 +188,7 @@
 
         return {
             init: init,
+            tableInit:tableInit,
             deleteRow: deleteRow,
             editRow: editRow,
             showModel: showModel

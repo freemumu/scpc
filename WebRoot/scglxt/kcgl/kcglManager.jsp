@@ -22,11 +22,8 @@
                                    style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th></th>
-                                    <th style="width:120px;"> 备料情况</th>
-                                    <!-- 															<th> -->
-                                    <!-- 																工序编排 -->
-                                    <!-- 															</th> -->
+                                    <th class="serial"></th>
+                                    <th style="width:180px;"> 备料情况</th>
                                     <th> ID</th>
                                     <th> 子订单名称</th>
                                     <th> 材料状态</th>
@@ -178,13 +175,18 @@
                                     "targets": 4
                                 },
                                 {"visible": false, "targets": [2]},
-//                                {"visible": false, "targets": [4]},
-                                /*是否显示列*/
-                                /*                                {
-                                 "render": function (data, type, row) {
-                                 console.log(data);
-                                 }, "targets": 18
-                                 }*/
+                                {
+                                    "render": function (data, type, row) {
+                                        var str = "";
+                                        if(data=='1'){
+                                            str =  "长方体" ;
+                                        }else if(data=='2'){
+                                            str = "圆柱体" ;
+                                        }
+                                        console.log(data);
+                                        return str ;
+                                    }, "targets": 7
+                                },
                             ],
                             "columns": [
                                 {"data": null, "sWidth": "60px"},

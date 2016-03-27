@@ -58,21 +58,20 @@
                     columnDefs: [
                         {
                             "render": function (data, type, row) {
-
                                 return '<div class="text-center">' +
-                                        '<a class="btn btn-info btn-xs"  title="编辑"  href="${pageContext.request.contextPath}/scglxt/scgl/addSbInfo.jsp?flag=edit&id=' + data + '"><i class="icon-edit" ></i></a>' +
-                                        '&nbsp; <a class="btn btn-danger btn-xs" title="删除" href="${pageContext.request.contextPath}/scglxt/scgl/scglsb_deleteSbInfo.action?id=' + data + '"><i class="icon-remove"></i></a></div>';
+                                        '<a  title="编辑"  href="${pageContext.request.contextPath}/scglxt/scgl/addSbInfo.jsp?flag=edit&id=' + data + '">修改</a>' +
+                                        '&nbsp; <a   title="删除" href="${pageContext.request.contextPath}/scglxt/scgl/scglsb_deleteSbInfo.action?id=' + data + '">删除</a></div>';
                             },
                             "targets": 1
                         },
                         {"visible": true, "targets": [2]}
                     ],
                     columns: [
-                        {"data": null, "sWidth": "40px"},
-                        {"data": 'id', "sWidth": "80px"},
+                        {"data": null },
+                        {"data": 'id'},
+                        {"data": "sbmc", "sWidth": "120px"},
                         {"data": "sbbz", "sWidth": "120px"},
                         {"data": "sblx", "sWidth": "120px"},
-                        {"data": "sbmc", "sWidth": "120px"},
                         {"data": "sbzt", "sWidth": "60px"},
                         {"data": "sbszd", "sWidth": "120px"},
                         {"data": "cgsj", "sWidth": "120px"},
@@ -123,22 +122,22 @@
                 <div class='box-content box-no-padding'>
                     <div class='responsive-table'>
                         <div class='scrollable-area'>
-                            <table id="ryxx" class='table table-striped table-bordered' style='margin-bottom: 0;'>
+                            <table id="ryxx" class='table tableGrid table-striped table-bordered' style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th>
+                                    <th class="serial">
+                                    </th>
+                                    <th class="th-small">
+                                        操作
                                     </th>
                                     <th>
-                                        操作
+                                        名称
                                     </th>
                                     <th>
                                         班组
                                     </th>
                                     <th>
                                         类型
-                                    </th>
-                                    <th>
-                                        名称
                                     </th>
                                     <th>
                                         状态

@@ -71,7 +71,8 @@ top: 2px;
 .tableGrid{
 	font-size: 14px;
 }
-.tableGrid thead tr{
+
+.tableGygc thead tr,.tableGrid thead tr{
 	background-color: #428bca;
 	color: #FFFFFF;
 }

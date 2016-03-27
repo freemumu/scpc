@@ -58,8 +58,9 @@
                         {
                             "render": function (data, type, row) {
                                 return '<div class="">' +
-                                    ' <a class="btn btn-info btn-xs" href="#" title="删除"><i class="icon-edit" onclick = "GyManage.editRow(\'' + data + '\')"></i></a>' +
-                                    ' <a class="btn btn-danger btn-xs" href="#" title＝"修改"><i class="icon-remove" onclick = "GyManage.editRow(\'' + data + '\')"></i></a></div>';
+                                    ' <a class=" " href="#" title＝"修改" onclick = "GyManage.editRow(\'' + data + '\')">修改 </a>' +
+                                    ' <a class=" " href="#" title="删除" onclick = "GyManage.deleteRow(\'' + data + '\')"> 删除 </a>' +
+                                    '</div>';
                             },
                             "targets": 1
                         },
@@ -105,7 +106,6 @@
                     if (resStr == "SUCCESS") {
                         window.location.reload();
                         $("#sorting-advanced").dataTable().fnPageChange('previous', true);
-                        alert("SUCCESS！");
                     }
                 };
                 if (confirm("确定删除？")) {

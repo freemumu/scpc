@@ -104,6 +104,7 @@
                 var formInfo = {};
                 //var bomid = $("#gygc tbody>tr").attr("bomid") ;
                 deleteFormInfo(_bomid);
+                var flag =  true ;
                 for (var i = 0; i < rowNum; i++) {
                     formInfo.bomid = _bomid;
                     formInfo.sysb = $($("#gygc tbody>tr")[i]).find('select[info="sysb"]').val();
@@ -124,7 +125,24 @@
                                 alert("保存成功！");
                             }
                         }
-                    $.syncAjaxPost(url, {"JSON": JSON}, successFun, true);
+                    $.ajax({
+                        async:false,
+                        type:"POST",
+                        url : url,
+                        data:{"JSON": JSON},
+                        success : successFun,
+                        error : function(XMLHttpRequest, textStatus, errorThrown){
+                            console.log(XMLHttpRequest);
+                            flag = false ;
+                        }
+                    });
+                }
+                if(flag){
+                    alert("保存成功！");
+                    window.parent.document.getElementById("form_reload").click();
+                    //window.parent.document.getElementById("modalClose").click();
+                }else{
+                    alert("保存失败！");
                 }
             },
 
@@ -183,7 +201,7 @@
                 var tab = document.getElementById("gygc");
                 var num = tab.rows.length;
                 var id = "";
-                var domstr = '<tr id="' + uuid + '"  bomid="' + that.urlParam.bomid + '" > <td class="sorting_1">' + rowNum + '</td> ' +
+                var domstr = '<tr id="' + uuid + '"  bomid="' + that.urlParam.bomid + '" > <td class="sorting_1">' + (rowNum+1) + '</td> ' +
                     '<td><div class=""> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
                     '<td>  ' +
                     ' <select  info= "sysb"   linked＝"' + uuid + '" class="grid-form-input" style="width:100%" >' +
@@ -251,7 +269,7 @@
                         $("#gygc tbody").empty();
                         for (var i = 0; i < data.length; i++) {
                             var selector = "#" + $.decodeEmptyValue(data[i].id);
-                            domstr = '<tr id="' + $.decodeEmptyValue(data[i].id) + '"  bomid="' + data[i].bomid + '"> <td class="sorting_1">' + i + '</td> ' +
+                            domstr = '<tr id="' + $.decodeEmptyValue(data[i].id) + '"  bomid="' + data[i].bomid + '"> <td class="sorting_1">' + (i+1) + '</td> ' +
                             '<td><div class=""> <a class="btn btn-danger btn-xs" href="#" title="删除" onclick="GygcManage.deleteRow(this)"><i class="icon-remove"></i> </a></div></td>' +
                             '<td class=" starttime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateStarttime(this)">开 始</a></div></td>' +
                             '<td class=" endtime hide"><div > <a class="btn btn-success btn-xs" href="#" title="删除" onclick="GygcManage.updateEndtime(this)">结 束</a></div></td>' +

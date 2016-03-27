@@ -74,7 +74,6 @@ $(document).ready(function () {
                         }
                         $('#form_khxx_lx').select2('val', data[0].lx);
                         $('#form_khxx_starttime').datepicker("setDate", data[0].starttime);
-                        console.log(data[0].starttime);
                     }
 
                 }

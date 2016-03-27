@@ -35,7 +35,7 @@
                                    style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th>
+                                    <th class="serial">
 
                                     </th>
                                     <th>

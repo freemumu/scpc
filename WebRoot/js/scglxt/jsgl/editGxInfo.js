@@ -30,13 +30,16 @@
                 } else {
                     that._flag = "ADD";
                 }
+                $("#form_return").on('click', function () {
+                    Main.swapIframUrl('scglxt/jsgl/gxManager.jsp');//跳转iframe页面
+                })
             },
 
             initFormInfo = function (id) {
                 var url = "gxInfo_getDetailInfo.action", successFun = function (data) {
                     console.log(data);
                     if (data && data.length > 0) {
-                        var select = $('#form_gxInfo input[info="fromInfo"]');
+                        var select = $('#form_gxInfo .form-control[info="fromInfo"]');
                         //循环给表单赋值
                         for (var i = 0; i < select.length; i++) {
                             var s = select[i];
@@ -49,7 +52,7 @@
                             }
                             for (var j in data[0]) {
                                 if (id.toLowerCase() == j) {
-                                    $(s).attr("value", value);
+                                    $(s).val(value);
                                     $(s).attr("title", value);
                                 }
                             }

@@ -12,6 +12,7 @@
             <div class='box bordered-box ' style='margin-bottom: 0;'>
                 <div class='box-header'>
                     <button id="form_add" class="btn btn-success btn-sm"><i class="icon-add"></i> 增加</button>
+                    <button id="form_reload" style="display:none;"></button>
                     <div class='title '> BOM表  </div>
 
                 </div>
@@ -23,7 +24,7 @@
                                 <thead>
                                 <tr>
                                     <th class=""></th>
-                                    <th> 操作</th>
+                                    <th class="th-larger"> 操作</th>
                                     <!-- 															<th> -->
                                     <!-- 																工序编排 -->
                                     <!-- 															</th> -->
@@ -70,7 +71,7 @@
     <div class="modal-dialog" style="width:750px;height:500px;">
         <div class="modal-content" style="height:90%;">
             <div class="modal-header">
-                <button type="button" class="close"
+                <button id="modalClose" type="button" class="close"
                         data-dismiss="modal" aria-hidden="true" style="margin-top:-10px">
                     &times;
                 </button>
