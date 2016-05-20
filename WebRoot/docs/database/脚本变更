@@ -45,3 +45,8 @@ CHANGE COLUMN `sbmc` `sbmc` VARCHAR(100) CHARACTER SET 'utf8' COLLATE 'utf8_unic
 
 ALTER TABLE `scpc`.`scglxt_t_lj`
 CHANGE COLUMN `ID` `id` VARCHAR(50) NOT NULL COMMENT '工具id' ;
+
+
+－－－－－－－－－－－－－－5.20－－－－－－－－－－－－－－－－
+ALTER TABLE `scpc`.`scglxt_t_ry`
+ADD COLUMN `password` VARCHAR(45) NULL COMMENT '密码' AFTER `dqgz`;

@@ -4,7 +4,7 @@
 <html>
 <head><title>备料库存管理</title>
     <script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
-    <%--<script type="text/javascript" src="../../js/scglxt/jsgl/CgglManager.js"></script>--%>
+    <%--<script type    ="text/javascript" src="../../js/scglxt/jsgl/CgglManager.js"></script>--%>
 </head>
 <body>
 <div class='container-fluid'>
