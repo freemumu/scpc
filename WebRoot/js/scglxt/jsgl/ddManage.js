@@ -68,7 +68,7 @@
                         {
                             "render": function (data, type, row) {
                                 console.log(row)
-                                return '<div class="">' +
+                                return '<div class="width:200px;">' +
                                     ' <a class=" " href="#"   onclick = "DdManage.editRow(\'' + data + '\')" title＝"修改"> 修改</a> ' +
                                     '<a class=" " href="#" onclick = "DdManage.deleteRow(\'' + data + '\')" title="删除"> 删除</a>' +
                                     ' <a class="" href="#" title＝"修改" onclick = "DdManage.showModel(\'' + data + '\')" >BOM</a> ' +

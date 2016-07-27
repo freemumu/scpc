@@ -2,9 +2,8 @@
 <%@ include file="/include/topFile.jsp" %>
 <!DOCTYPE html>
 <html>
-<head><title>采购管理</title>cgglManager
+<head><title>采购管理</title>
     <script type="text/javascript" src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
-    <%--<script type="text/javascript" src="../../js/scglxt/jsgl/CgglManager.js"></script>--%>
 </head>
 <body>
 <div class='container-fluid'>
@@ -24,10 +23,6 @@
                                 <tr>
                                     <th class="serial"></th>
                                     <th style="width:120px;"> 材料状态</th>
-                                    <!-- 															<th> -->
-                                    <!-- 																工序编排 -->
-                                    <!-- 															</th> -->
-                                    <th> ID</th>
                                     <th> 子订单名称</th>
                                     <th> 备料情况</th>
                                     <th> 子订单材质</th>
@@ -147,9 +142,10 @@
                                                 '<input type="radio" value=0 checked  name="' + row.id + '"/>未完成  ' +
                                                 ' </div>';
                                     } else if (row.blqk == "1") {
-                                        return ' <div class="clzt text-center"><input type="radio" checked="true" value=1 name="' + row.id + '"/>完成' +
-                                                '<input type="radio" value=0   name="' + row.id + '"/>未完成 ' +
-                                                '  </div>';
+                                        return '<div class="text-center" style="color:green">已完成</div>';
+                                    }else{
+                                    	
+                                    	return '<div class="text-center" style="color:green">自备料</div>';
                                     }
 
                                 }, "targets": 1
@@ -164,22 +160,12 @@
                                             return '<span class="label label-danger">备料未完成</span>';
                                         }
                                     },
-                                    "targets": 4
-                                },
-                                {"visible": false, "targets": [2]},
-//                                {"visible": false, "targets": [4]},
-                                /*是否显示列*/
-                                /*                                {
-                                 "render": function (data, type, row) {
-                                 console.log(data);
-                                 }, "targets": 18
-                                 }*/
+                                    "targets": 3
+                                }
                             ],
                             "columns": [
                                 {"data": null, "sWidth": "60px"},
-                                {"data": 'id', "sWidth": "100px"},
                                 {"data": "clzt", "sWidth": "160px"},
-
                                 {"data": "zddmc", "sWidth": "120px"},
                                 {"data": "blqk", "sWidth": "120px"},
                                 {"data": "zddcz", "sWidth": "120px"},

@@ -22,9 +22,9 @@
                                    style='margin-bottom: 0;'>
                                 <thead>
                                 <tr>
-                                    <th class="serial"></th>
+                                    <th class="serial">序号</th>
                                     <th style="width:180px;"> 备料情况</th>
-                                    <th> ID</th>
+                                 
                                     <th> 子订单名称</th>
                                     <th> 材料状态</th>
                                     <th> 子订单材质</th>
@@ -118,7 +118,7 @@
                     tableInit = function (ssdd) {
 
                         var table = $('#bomInfo').DataTable({
-                            /*			"sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",*/
+                          
                             "bLengthChange": false,
                             "oLanguage": {
                                 "sProcessing": "正在加载中......",
@@ -138,43 +138,29 @@
 
                             "columnDefs": [{
                                 "render": function (data, type, row) {
-                                    console.log(row.blqk);
-                                    /*                                    if (row.blqk == null || row.blqk == "0"  ) {
-                                     return '<div class="text-center operate_bl">' +
-                                     '<button class="btn btn-danger btn-block "   href="#" title="备料" onclick = "CgglManager.stock(\'' + row.id + '\')">  备料</button>   </div>';
-                                     } else if (row.blqk == "1") {
-                                     return '<div class="text-center operate_bl">' +
-                                     '<button class="btn  btn-default btn-block "  disabled="disabled"  href="#" title="备料" onclick = "CgglManager.stock(\'' + row + '\')">  备料完成</button>   </div>';
-                                     }*/
-                                    if (row.blqk == null || row.blqk == "0") {
+                                   if (row.blqk == null || row.blqk == "0"||row.blqk=="") {
                                         return ' <div class="blqk text-center"><input type="radio" value=1    name="'+row.id+'"/> 完成' +
                                                 '<input type="radio" value=0 checked  name="'+row.id+'"/>未完成  '  +
                                                 '<input type="radio" value=2   name="'+row.id+'"/>自备料 </div>';
                                     } else if (row.blqk == "1") {
-                                        return ' <div class="blqk text-center"><input type="radio" checked="true" value=1 name="'+row.id+'"/>完成' +
-                                                '<input type="radio" value=0   name="'+row.id+'"/>未完成 ' +
-                                                '<input type="radio" value=2   name="'+row.id+'"/>自备料 </div>' ;
+                                        return '<div class="blqk text-center" style="color:green">已完成</div>' ;
                                     }else if(row.blqk == "2"){
-                                        return ' <div class="blqk text-center"><input type="radio"  value=1 name="'+row.id+'"/>完成' +
-                                                '<input type="radio" value=0  name="'+row.id+'"/>未完成 ' +
-                                                '<input type="radio" value=2 checked="true" name="'+row.id+'"/>自备料 </div>' ;
+                                        return ' <div class="blqk text-center" style="color:green">自备料 </div>' ;
                                     }
 
-                                }, "targets": 1
+                                }, "targets": [1]
                             },
                                 {
 
                                     "render": function (data, type, row) {
-                                        console.log(data);
                                         if (data == 1) {
                                             return '<span class="label label-default">采购完成</span>';
                                         } else {
                                             return '<span class="label label-danger">未采购</span>';
                                         }
                                     },
-                                    "targets": 4
+                                    "targets": [3]
                                 },
-                                {"visible": false, "targets": [2]},
                                 {
                                     "render": function (data, type, row) {
                                         var str = "";
@@ -183,14 +169,13 @@
                                         }else if(data=='2'){
                                             str = "圆柱体" ;
                                         }
-                                        console.log(data);
                                         return str ;
                                     }, "targets": 7
                                 },
                             ],
                             "columns": [
                                 {"data": null, "sWidth": "60px"},
-                                {"data": 'id', "sWidth": "100px"},
+                             
                                 {"data": "blqk" ,"sWidth": "160px"},
 
                                 {"data": "zddmc", "sWidth": "120px"},
@@ -248,7 +233,7 @@
 //                                window.location.reload();
                             }
                         };
-                            $.asyncAjaxPost(url, {"id": rowid ,"blqk" :blqk}, successFun, true);
+                        $.asyncAjaxPost(url, {"id": rowid ,"blqk" :blqk}, successFun, true);
                     }
 
                     ;
