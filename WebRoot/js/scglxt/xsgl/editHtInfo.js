@@ -31,6 +31,9 @@
                 }
             });
             registerEvent();
+            loadYwlxList();//加载业务类型列表
+            loadFkztList();//加载付款状态列表
+            $.loadSelectList("#form_khxx_fkzt",'14');
             if (urlParam && urlParam.id) {
                 _this._flag = "UPDATE";
                 //如果是update模式 则加载初始化信息
@@ -49,8 +52,7 @@
                 "minView":2,
                 "autoclose":true
             });
-            loadYwlxList();//加载业务类型列表
-            $.loadSelectList("#form_khxx_fkzt",'14');
+         
         },
         /**
          * 注册事件
@@ -67,17 +69,18 @@
             loadYwlxList = function () {
                 var url = "htInfo_loadYwlxList.action", successFun = function (data) {
                     if (data && data.length > 0) {
-                        $("#form_khxx_ywlx").empty();
+                        $("#form_htInfo_ywlx").empty();
                         for (var i = 0; i < data.length; i++) {
-                            $.AddSelectItem(data[i].mc, data[i].id, "form_khxx_ywlx");
+                            $.AddSelectItem(data[i].mc, data[i].id, "form_htInfo_ywlx");
                         }
                     }
                 };
+                
                 $.asyncAjax(url, {"id": "id"}, successFun, true);
             },
 
             loadFkztList = function (){
-                var url = "htInfo_loadYwlxList.action", successFun = function (data) {
+                var url = "htInfo_loadFkztList.action", successFun = function (data) {
                     if (data && data.length > 0) {
                         $("#form_khxx_fkzt").empty();
                         $.AddSelectItem("","-请选择-", "form_khxx_fkzt");
@@ -113,7 +116,14 @@
                                 }
                             }
                         }
-                        $('#form_htInfo_ywlx').select2('val', data[0].ywlx);
+                        if(''!=data[0].ywlx){
+                        	 $('#form_htInfo_ywlx').select2('val', data[0].ywlx);
+                        }
+                        if(''!=data[0].fkzt){
+                       	 	 $('#form_khxx_fkzt').select2('val', data[0].fkzt);
+                       }
+                       
+                       // $('#form_khxx_fkzt').select2('val', data[0].fkzt);
                     }
 
                 }
@@ -126,7 +136,7 @@
                 var formInfo = {
                     mc: $('#form_khxx_mc').attr("value"),
                     htbh: $('#form_khxx_htbh').attr("value"),
-                    ywlx: $('#form_khxx_ywlx').attr("value"),
+                    ywlx: $('#form_htInfo_ywlx').attr("value"),
                     htje: $('#form_khxx_htje').attr("value"),
                     qssj: $('#form_khxx_qssj').attr("value"),
                     jssj: $('#form_khxx_jssj').attr("value"),
@@ -167,10 +177,5 @@
 
 
 $(document).ready(function () {
-//	$("#form_khxx_qssj").datetimepicker({
-//		format: 'yyyy-mm-dd hh:ii',
-//		language: 'zh-CN',
-//		pickerPosition: "bottom-left",
-//	});
     HtEditManage.init();
 });
