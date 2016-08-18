@@ -43,8 +43,9 @@
 								  <label class='control-label col-sm-3 col-sm-3' for='form_cl_clsl'>材料数量</label>
 								  <div class='col-sm-4 controls'>
 									  <input class='form-control' id='form_cl_clsl' info="fromInfo" name='clsl'
-											 placeholder='材料材质' type='text'>
+											 placeholder='材料数量' type='text'>
 								  </div>
+								  <span style="color:red">块</span>
 							  </div>
 							  <div class='form-group'>
 								  <label class='control-label col-sm-3 col-sm-3' for='form_cl_cldj'>材料等级</label>
@@ -88,6 +89,7 @@
 									  <input class='form-control' id='form_cl_cd' info="fromInfo" name='cd'
 											 placeholder='长度' type='text'>
 								  </div>
+								   <span style="color:red">厘米</span>
 							  </div>
 							  <div class='form-group'>
 								  <label class='control-label col-sm-3 col-sm-3' for='form_cl_gd'>高度</label>
@@ -95,6 +97,7 @@
 									  <input class='form-control' id='form_cl_gd' info="fromInfo" name='gd'
 											 placeholder='高度' type='text'>
 								  </div>
+								  <span style="color:red">厘米</span>
 							  </div>
 							  <div class='form-group'>
 								  <label class='control-label col-sm-3 col-sm-3' for='form_cl_kd'>宽度</label>
@@ -102,6 +105,7 @@
 									  <input class='form-control' id='form_cl_kd' info="fromInfo" name='kd'
 											 placeholder='宽度' type='text'>
 								  </div>
+								   <span style="color:red">厘米</span>
 							  </div>
 							  <div class='form-group'>
 								  <label class='control-label col-sm-3 col-sm-3' for='form_cl_clly'>材料来源</label>
@@ -181,7 +185,7 @@
 					registerEvent = function () {
 						var that = this;
 						$("#form_return").on('click', function () {
-							Main.swapIframUrl('scglxt/kcgl/clManager.jsp');//跳转iframe页面
+							Main.swapIframUrl('scglxt/kcgl/clManage.jsp');//跳转iframe页面
 						})
 
 					},
