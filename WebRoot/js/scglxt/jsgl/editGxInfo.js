@@ -78,6 +78,7 @@
                 var url = "gxInfo_updateInfo.action", successFun = function (resStr) {
                     if (resStr == "SUCCESS") {
                         alert('保存成功');
+                        Main.swapIframUrl('scglxt/jsgl/gxManager.jsp');//跳转iframe页面
                     }
                 }
                 $.asyncAjaxPost(url, {"JSON": JSON}, successFun, true);
