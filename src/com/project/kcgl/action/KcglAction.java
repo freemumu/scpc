@@ -83,6 +83,9 @@ public class KcglAction {
         String clmc = Request.getParameter("clmc");
         String clcz = Request.getParameter("clcz");
         String clsl = Request.getParameter("clsl");
+        if(null==clsl||"".equals("")){
+        	clsl = "0";
+        }
         String cldj = Request.getParameter("cldj");
         String cllx = Request.getParameter("cllx");
         String ghs = Request.getParameter("ghs");
@@ -95,7 +98,7 @@ public class KcglAction {
         String flag = Request.getParameter("flag");
         String id = Request.getParameter("id");
 
-        if (id == null) {
+        if (null == id||"".equals(id)) {
             id = WebUtils.getRandomId();
         }
         String sql = null;
@@ -104,7 +107,6 @@ public class KcglAction {
             " ('"+id+"','"+clmc+"','"+clcz+"','"+clsl+"','"+cldj+"','"+cllx+"','"+ghs+"','"+mi+"','"+clxz+"'," +
                     " '"+kd+"','"+gd+"','"+cd+"','"+clly+"')";
         } else if (flag.equals("UPDATE")) {
-            id = "1";
             sql = " update scglxt_t_cl set clmc = '"+clmc+"' ,clcz = '"+clcz+"' ,clsl = '"+clsl+"' ," +
                     " cldj = '"+cldj+"',cllx = '"+cllx+"' ,ghs='"+ghs+"' ,mi='"+mi+"' ,clxz='"+clxz+"' ," +
                     " cd = '"+cd+"',kd='"+kd+"',gd='"+gd+"' , clly='"+clly+"'  " +
