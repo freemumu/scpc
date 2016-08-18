@@ -76,6 +76,7 @@ public class DdInfoManagerAction {
 				" zgs,dqjd,tz,remark,xmlxr,xmfzr,ckzt,date_format(ckdate,'%Y-%m-%d') ckdate from scglxt_t_dd  where id = '"+id+"' ";
 		List list = null ; 
 		String json = null ;
+		log.info("获得订单信息"+sql);
 		try {
 			list = selectDataService.queryForList(sql);
 			json = JsonObjectUtil.list2Json(list);
