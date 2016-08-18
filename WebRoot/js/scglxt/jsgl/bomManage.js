@@ -75,15 +75,12 @@
 
                         {"visible": false, "targets": [2]}
                          /*是否显示列*/],
-                    "columns": [{"data": null, "sWidth": "60px"}, {
-                        "data": 'id'
-                    }, {"data": "id"}, {"data": "zddmc", "sWidth": "120px"}, {
-                        "data": "clmc",
-                        "sWidth": "120px"
-                    }, {
-                        "data": "gxnr",
-                        "sWidth": "300px"
-                    },
+                    "columns": [{"data": null, "sWidth": "60px"}, 
+                                {"data": 'id',"sWidth": "160px"},
+                                {"data": "id"}, 
+                                {"data": "zddmc", "sWidth": "120px"}, 
+                                {"data": "clmc","sWidth": "120px"}, 
+                                {"data": "gxnr","sWidth": "300px"},
                         {"data": "jgsl"},
                         {"data": "clxz"},
                         {"data": "cldx"},

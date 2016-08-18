@@ -82,7 +82,7 @@
                     ],
                     "columns": [
                         {"data": null},
-                        {"data": "id"},
+                        {"data": "id","sWidth": "200px"},
                         {"data": "id"},
                         {"data": "xmname"},
                         {"data": "ddlevel"},
