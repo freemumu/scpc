@@ -33,7 +33,7 @@
                         <th class="serial" style="width: 20px;">
 
                         </th>
-                        <th class="th-xlarger" style="width:200px;">
+                        <th class="th-xlarger" style="width:300px;">
                             操作
                         </th>
                         <th>

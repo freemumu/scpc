@@ -107,7 +107,7 @@
                                 <label class="textInfo"></label>
                             </div>
                             <div class='col-sm-2 controls '>
-                                <span>cm<sup>2</sup></span>
+                                <span>cm<sup>3</sup></span>
                                 <div id="btn-calculateValume" class="btn btn-primary">计算</div>
                             </div>
                         </div>
