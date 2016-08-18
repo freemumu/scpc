@@ -108,7 +108,7 @@ public class DdInfoManagerAction {
 		String ckzt = JSON.getString("ckzt");
 		String ckdate = StringUtil.returnNotEmpty(JSON.getString("ckdate"));
 		if(ckdate != null ){
-			ckdate = "date_format('"+ckdate+"','%Y-%m-%d))" ;
+			ckdate = "date_format('"+ckdate+"','%Y-%m-%d')" ;
 		}
 		String flag = JSON.getString("flag") ;
 		String sql = null;
@@ -116,7 +116,7 @@ public class DdInfoManagerAction {
 		 
 		if(flag !=null && flag.equals("ADD")){
 			id = WebUtils.getRandomId(); 
-			sql = "INSERT INTO `scglxt_t_dd` (`id`, `ssht`, `xmname`, `ddlevel`, `jhdate`, `planstarttime`, `planendtime`,`zgs`, `dqjd`, `tz`, `remark`, `xmlxr`, `xmfzr`, `ckzt`, `ckdate`)" +
+			sql = "INSERT INTO scglxt_t_dd (id, ssht, xmname,ddlevel,jhdate,planstarttime,planendtime,zgs,dqjd,tz,remark,xmlxr,xmfzr, ckzt, ckdate)" +
 					" VALUES ('"+id+"', '"+ssht+"', '"+xmname+"', '"+ddlevel+"', date_format('"+jhdate+"','%Y-%m-%d'), date_format('"+planstarttime+"','%Y-%m-%d'), " +
 					" date_format('"+planendtime+"','%Y-%m-%d') ,    " +
 					" '"+zgs+"', '"+dqjd+"', '"+tz+"', '"+remark+"', '"+xmlxr+"', '"+xmfzr+"', '"+ckzt+"'," + ckdate +")";
