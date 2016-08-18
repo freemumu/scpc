@@ -20,7 +20,7 @@ import com.project.util.WebUtils;
 import com.project.xsgl.action.KhxxManagerAction;
 
 public class DdInfoManagerAction {
-	private static Log log = org.apache.commons.logging.LogFactory.getLog(KhxxManagerAction.class);
+	private static Log log = org.apache.commons.logging.LogFactory.getLog(DdInfoManagerAction.class);
 	private SelectDataService selectDataService;
 	public SelectDataService getSelectDataService() {
 		return selectDataService;
@@ -122,7 +122,7 @@ public class DdInfoManagerAction {
 					" '"+zgs+"', '"+dqjd+"', '"+tz+"', '"+remark+"', '"+xmlxr+"', '"+xmfzr+"', '"+ckzt+"'," + ckdate +")";
 		}else if(flag.equals("UPDATE")){
 			id = JSON.getString("id") ; 
-			sql = " update  scglxt_t_dd set ssht='"+ssht+"',xmname = '"+xmname+"' ,ddlevel='"+ddlevel+"',jhdate=  "+jhdate+"  , " +
+			sql = " update  scglxt_t_dd set ssht='"+ssht+"',xmname = '"+xmname+"' ,ddlevel='"+ddlevel+"',jhdate= date_format('"+jhdate+"','%Y-%m-%d'), " +
 					" planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') , planendtime=  date_format('"+planstarttime+"','%Y-%m-%d') ," +
 					" zgs = '"+zgs+"',dqjd='"+dqjd+"',tz='"+remark+"',remark='"+remark+"',xmlxr='"+xmlxr+"',xmfzr='"+xmfzr+"' ,ckzt='"+ckzt+"' , " +
 					" ckdate=   " + ckdate +
