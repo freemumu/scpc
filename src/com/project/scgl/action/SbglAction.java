@@ -13,7 +13,7 @@ import com.project.util.JsonObjectUtil;
 import com.project.xsgl.action.XsglAction;
 public class SbglAction {
 
-	private static Log log = org.apache.commons.logging.LogFactory.getLog(XsglAction.class);
+	private static Log log = org.apache.commons.logging.LogFactory.getLog(SbglAction.class);
 	private SelectDataService selectDataService;
 	public SelectDataService getSelectDataService() {
 		return selectDataService;
@@ -83,8 +83,10 @@ public class SbglAction {
 		String sbwxjl = Request.getParameter("wxjl");
 		String sbremark = Request.getParameter("bz");
 		String sbbz = Request.getParameter("sbbz");
+		String sccj = Request.getParameter("sccj");
+		String sccjdetail = Request.getParameter("sccjdetail");
 		String sql = "update scglxt_t_sb set sblx='"+sblx+"',sbmc='"+sbmc+"',cgsj = '"+sbcgsj+"',bxjssj='"+sbbxjssj+"'," +
-				"sbszd = '"+sbszd+"',dqzt = '"+sbzt+"',wxjl='"+sbwxjl+"',remark = '"+sbremark+"',bzid='"+sbbz+"' where id = '"+sbid+"'";
+				"sbszd = '"+sbszd+"',dqzt = '"+sbzt+"',wxjl='"+sbwxjl+"',remark = '"+sbremark+"',bzid='"+sbbz+"',sccj='"+sccj+"',SCCJDETAIL='"+sccjdetail+"' where id = '"+sbid+"'";
 		
 		log.info("设备信息更新sql"+sql);
 		int i = this.selectDataService.update(sql);
@@ -153,7 +155,7 @@ public class SbglAction {
 		
 		String id = Request.getParameter("id");
 		String sbid = "";
-		String sql = "select sb.id, sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,dqzt sbzt,wxjl,remark bz,bzid sbbz from scglxt_t_sb sb where id = '"+id+"'";
+		String sql = "select sb.id, sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,dqzt sbzt,wxjl,remark bz,bzid sbbz,sccj,SCCJDETAIL from scglxt_t_sb sb where id = '"+id+"'";
 		
 		log.info("查询设备字典数据sql"+sql);
 		List list = this.selectDataService.queryForList(sql);
