@@ -63,7 +63,7 @@
                             <div class='col-sm-4 controls'>
                                 <%--<input class='form-control'  id='form_khxx_planstarttime'   style="cursor:pointer;" info="fromInfo" name='form_khxx_planstarttime' placeholder='计划开始时间' type='text'>--%>
                                 <input class='form-control required' id='form_khxx_planstarttime' placeholder='计划开始时间'
-                                       type="text" value="" readonly  style="cursor:pointer;"
+                                       type="text" value="" readonly  style="cursor:pointer;"  info="fromInfo"
                                        class="form_datetime">
                                     <label class="textInfo"></label>
                             </div>
