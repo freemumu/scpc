@@ -35,7 +35,7 @@
 				  	$('#sbbz').val((dt[0].sbbz));
 				  	$('#wxjl').val((dt[0].wxjl));
 				  	$('#sccj').val((dt[0].sccj));
-				  	$('#sccjdetail').val((dt[0].sccjdetail));
+				  	$('#sccjdetail').val((dt[0].SCCJDETAIL));
 				  	$('#bz').val((dt[0].bz));
 				  	
 				  }
