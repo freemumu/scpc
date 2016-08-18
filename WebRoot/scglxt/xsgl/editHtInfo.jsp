@@ -46,8 +46,7 @@
                             <label class='control-label col-sm-3' for='form_khxx_ywlx'>业务类型</label>
 
                             <div class='col-sm-4 controls'>
-                                <!-- 			                            <input class="form-control" id="form_khxx_ywlx" info="fromInfo" name="form_khxx_ywlx" type="text" placeholder='业务类型' 	/> -->
-                                <select id="form_khxx_ywlx" class='select2 form-control'>
+                                <select id="form_htInfo_ywlx" class='select2 form-control'>
                                 </select>
                             </div>
                         </div>
@@ -97,11 +96,7 @@
                             <label class='control-label col-sm-3' for='form_khxx_fkzt'>付款状态</label>
 
                             <div class='col-sm-4 controls'>
-                                <select id='form_khxx_fkzt' class='form-control' info="fromInfo" name='form_khxx_fkzt'>
-                                    <option value="">-请选择-</option>
-                                    <option value="1401">未付款</option>
-                                    <option value="1402">已付款</option>
-                                    <option value="1403">部分付款</option>
+                                <select id='form_khxx_fkzt' class='select2 form-control' info="fromInfo" name='form_khxx_fkzt'>
                                 </select>
                             </div>
                         </div>
