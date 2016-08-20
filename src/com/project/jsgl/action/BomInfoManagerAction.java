@@ -16,7 +16,7 @@ import org.apache.commons.logging.LogFactory;
 
 public class BomInfoManagerAction
 {
-  private static Log log = LogFactory.getLog(KhxxManagerAction.class);
+  private static Log log = LogFactory.getLog(BomInfoManagerAction.class);
   private SelectDataService selectDataService;
   
   public SelectDataService getSelectDataService()
@@ -47,6 +47,7 @@ public class BomInfoManagerAction
     List list = this.selectDataService.queryForList(sql);
     String json = JsonObjectUtil.list2Json(list);
     json = "{\"data\":" + json + "}";
+    log.info("执行sql语句是：===="+sql);
     log.info(json);
     Response.write(json);
   }

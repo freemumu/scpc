@@ -21,7 +21,7 @@ import com.project.util.WebUtils;
 import com.project.xsgl.action.KhxxManagerAction;
 
 public class GxInfoManagerAction {
-	private static Log log = org.apache.commons.logging.LogFactory.getLog(KhxxManagerAction.class);
+	private static Log log = org.apache.commons.logging.LogFactory.getLog(GxInfoManagerAction.class);
 	private SelectDataService selectDataService;
 	public SelectDataService getSelectDataService() {
 		return selectDataService;
@@ -36,7 +36,7 @@ public class GxInfoManagerAction {
 	public void getTableData(){
 		String limitStart = "";
 		String limitEnd = "";
-		String sql = " select  id , gymc,gydh,fzbz ,sfwx from  scglxt_t_jggy ";
+		String sql = " SELECT  scglxt_t_jggy.id , gymc,gydh,scglxt_t_bz.`bzmc` fzbz ,sfwx FROM  scglxt_t_jggy INNER JOIN scglxt_t_bz ON scglxt_t_bz.`id` = fzbz";
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":"+json+"}";

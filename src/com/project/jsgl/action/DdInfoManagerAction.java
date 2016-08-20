@@ -124,10 +124,10 @@ public class DdInfoManagerAction {
 		}else if(flag.equals("UPDATE")){
 			id = JSON.getString("id") ; 
 			sql = " update  scglxt_t_dd set ssht='"+ssht+"',xmname = '"+xmname+"' ,ddlevel='"+ddlevel+"',jhdate= date_format('"+jhdate+"','%Y-%m-%d'), " +
-					" planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') , planendtime=  date_format('"+planstarttime+"','%Y-%m-%d') ," +
+					" planstarttime=  date_format('"+planstarttime+"','%Y-%m-%d') , planendtime=  date_format('"+planendtime+"','%Y-%m-%d') ," +
 					" zgs = '"+zgs+"',dqjd='"+dqjd+"',tz='"+remark+"',remark='"+remark+"',xmlxr='"+xmlxr+"',xmfzr='"+xmfzr+"' ,ckzt='"+ckzt+"' , " +
 					" ckdate=   " + ckdate +
-					"where id = '"+id+"' ";
+					" where id = '"+id+"' ";
 		}
 		try {
 			selectDataService.execute(sql);
