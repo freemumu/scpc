@@ -31,13 +31,14 @@ public class KhxxManagerAction {
 	 * @response  : json 
 	 */
 	public void getKhxxData(){
-		String sql ="  select t.id,t.mc,t.lx lxnm , t2.MC lx ,t.dw,t.dz,t.gx, " +
+		String sql ="  select t.id,t.mc,t.lx lxnm ,DATE_FORMAT(starttime,'%Y-%m-%d') starttime, t2.MC lx ,t.dw,t.dz,t.gx, " +
 					" case  when t.iscj='1' then '是'   when t.iscj='0'  then '否'  end  as iscj , "+
 					" t.remark from scglxt_t_kh t , scglxt_tyzd t2 "+ 
 					" where t.lx = t2.id   and t2.id like '30%'";
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		json = "{\"data\":"+json+"}";
+		log.info("客户信息表格sql"+sql);
 		Response.write(json);
 	}
 	

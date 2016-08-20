@@ -121,7 +121,7 @@ public class HtInfoManagerAction {
     public void getDetailInfo() {
         String id = Request.getParameter("id");
         String sql = " select id ,mc,htbh , ywlx ,htje,date_format(qssj,'%Y-%m-%d')  qssj,date_format(qssj,'%Y-%m-%d')  jssj," +
-                "dqjd,fkzt,jkbfb,jkje,jscb,hkzh,hkkhh,remark from scglxt_t_ht where id = '" + id + "'";
+                "dqjd,fkzt,jkbfb,jkje,jscb,hkzh,hkkhh,htmx,remark from scglxt_t_ht where id = '" + id + "'";
         List list = null;
         String json = null;
         try {
@@ -131,6 +131,7 @@ public class HtInfoManagerAction {
             json = "[]";
             e.printStackTrace();
         }
+        log.info("获取合同信息info:============"+sql);
         Response.write(json);
     }
 
@@ -177,6 +178,10 @@ public class HtInfoManagerAction {
        
         
         String jscb = JSON.getString("jscb");
+        if(null==jscb||"".equals(jscb)){
+        	
+        	jscb = "0";
+        }
         String hkzh = JSON.getString("hkzh");
         String hkkhh = JSON.getString("hkkhh");
         String remark = JSON.getString("remark");
