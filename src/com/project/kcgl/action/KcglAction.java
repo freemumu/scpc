@@ -16,7 +16,7 @@ import com.project.util.WebUtils;
 import com.project.xsgl.action.KhxxManagerAction;
 
 public class KcglAction {
-    private static Log log = org.apache.commons.logging.LogFactory.getLog(KhxxManagerAction.class);
+    private static Log log = org.apache.commons.logging.LogFactory.getLog(KcglAction.class);
     private SelectDataService selectDataService;
 
     public SelectDataService getSelectDataService() {
@@ -61,7 +61,7 @@ public class KcglAction {
      * 获取客户信息
      */
     public void getDetailInfo() {
-        String id = "1";
+        String id = com.project.util.Request.getParameter("id");
         String sql = "  select * from scglxt_t_cl where id = '" + id + "' ";
         List list = null;
         String json = null;
@@ -72,6 +72,7 @@ public class KcglAction {
             json = "[]";
             e.printStackTrace();
         }
+        log.info("获取材料信息sql===="+sql);
         Response.write(json);
     }
 
