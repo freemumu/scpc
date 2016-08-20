@@ -12,7 +12,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class PcglAction
 {
-  private static Log log = LogFactory.getLog(BzglAction.class);
+  private static Log log = LogFactory.getLog(PcglAction.class);
   private SelectDataService selectDataService;
   
   public SelectDataService getSelectDataService()
@@ -139,7 +139,7 @@ public class PcglAction
   
   public void getBomGygcJg()
   {
-    String sql = "SELECT gygc.id, bom.zddmc,bom.bmcl,date_format(bom.starttime,'%Y-%m-%d') jhkssj,date_format(bom.endtime,'%Y-%m-%d') jhjssj,bom.gs,jggy.gymc,gygc.kjgjs,gygc.yjgjs,gygc.bfjs,gygc.kjgjs-gygc.yjgjs-gygc.bfjs-gygc.sjjs djgjs,gygc.sjjs FROM scpc.scglxt_t_gygc gygc,scpc.scglxt_t_bom bom,scglxt_t_jggy jggy where  gygc.bomid = bom.id and jggy.id = gygc.gynr and (gygc.bfjs+gygc.yjgjs+gygc.sjjs<gygc.kjgjs)";
+    String sql = "SELECT gygc.id, bom.zddmc,bom.bmcl,date_format(bom.starttime,'%Y-%m-%d') jhkssj,date_format(bom.endtime,'%Y-%m-%d') jhjssj,gygc.edgs gs,jggy.gymc,gygc.kjgjs,gygc.yjgjs,gygc.bfjs,gygc.kjgjs-gygc.yjgjs-gygc.bfjs-gygc.sjjs djgjs,gygc.sjjs FROM scpc.scglxt_t_gygc gygc,scpc.scglxt_t_bom bom,scglxt_t_jggy jggy where  gygc.bomid = bom.id and jggy.id = gygc.gynr and (gygc.bfjs+gygc.yjgjs+gygc.sjjs<gygc.kjgjs)";
     log.info("获取当前待加工的所有工序sql" + sql);
     List list = this.selectDataService.queryForList(sql);
     String json = JsonObjectUtil.list2Json(list);
@@ -150,7 +150,8 @@ public class PcglAction
   public void getRyByBz()
   {
     String ssbz = Request.getParameter("ssbz");
-    String sql = "SELECT id,rymc mc,ssbz bz FROM scglxt_t_ry WHERE ssbz = '" + ssbz + "'";
+  // String sql = "SELECT id,rymc mc,ssbz bz FROM scglxt_t_ry WHERE ssbz = '" + ssbz + "'";
+    String sql = "SELECT id,rymc mc,ssbz bz FROM scglxt_t_ry";
     log.info("根据班组获取该班组所有人员" + sql);
     List list = this.selectDataService.queryForList(sql);
     String json = JsonObjectUtil.list2Json(list);
