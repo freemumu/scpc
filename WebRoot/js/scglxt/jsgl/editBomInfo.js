@@ -180,7 +180,7 @@
                     var w = $("#form_bomInfo_jx input[name=width]").val();
                     var h = $("#form_bomInfo_jx input[name=height]").val();
                     volume = l * w * h;
-cldx=l+","+w+","+h;
+                    cldx=l+","+w+","+h;
 
                 } else if (clxz == 2) {
                     var d = $("#form_bomInfo_yx input[name=length]").val();
