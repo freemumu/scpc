@@ -42,7 +42,19 @@ public class GxInfoManagerAction {
 		json = "{\"data\":"+json+"}";
 		Response.write(json);
 	}
- 
+	/**
+	 * 获取合同信息数据
+	 * @response  : json 
+	 */
+	public void getTableData1(){
+		String sbid = Request.getParameter("sbid");
+		String limitEnd = "";
+		String sql = "SELECT gc.yjgjs, gc.`id`,sb.`sbmc`,edgs ,bom.`zddmc` zdd,bom.`jgsl`,DATE_FORMAT(bom.`starttime`,'%Y-%m-%d')kssj,DATE_FORMAT(bom.`endtime`,'%Y-%m-%d') jssj,dd.`xmname` dd,jggy.`gymc`,ROUND(edgs*((`bom`.`jgsl` - `gc`.`yjgjs`))/(60*6),2) t FROM scglxt_t_gygc gc INNER JOIN scglxt_t_bom bom ON gc.`bomid` = bom.`id` INNER JOIN scglxt_t_dd dd ON dd.`id` = bom.`SSDD` LEFT JOIN scglxt_t_jggy jggy ON jggy.`id` = gc.`gynr` INNER JOIN scglxt_t_sb sb ON gc.`sbid` = sb.`id` WHERE sbid = '"+sbid+"'";
+		List list = this.selectDataService.queryForList(sql);
+		String json = JsonObjectUtil.list2Json(list);
+		json = "{\"data\":"+json+"}";
+		Response.write(json);
+	}
 	 /**
 	  * 删除合同信息
 	  */
@@ -91,7 +103,8 @@ public class GxInfoManagerAction {
 		String id = StringUtil.returnNotEmpty(JSON.getString("id"));
 
 		if(flag !=null && flag.equals("ADD")){
-			sql = "insert into scglxt_t_jggy (gymc,fzbz,sfwx) values( '"+gxmc+"','"+fzbz+"','"+sfwx+"')";
+			id = WebUtils.getRandomId();
+			sql = "insert into scglxt_t_jggy (id,gymc,fzbz,sfwx) values('"+id+"', '"+gxmc+"','"+fzbz+"','"+sfwx+"')";
 		}else if(flag.equals("UPDATE")){
 			sql = "update scglxt_t_jggy  set gymc='"+gxmc+"' ,  fzbz = '"+fzbz+"'  , sfwx = '"+sfwx+"'  where id = '"+id+"' ";
 		}
