@@ -122,6 +122,10 @@
                         if(''!=data[0].fkzt){
                        	 	 $('#form_khxx_fkzt').select2('val', data[0].fkzt);
                        }
+                        if(''!=data[0].htmx){
+                      	 	 $('#form_khxx_htmx').val(data[0].htmx);
+                      }
+                        
                        
                        // $('#form_khxx_fkzt').select2('val', data[0].fkzt);
                     }

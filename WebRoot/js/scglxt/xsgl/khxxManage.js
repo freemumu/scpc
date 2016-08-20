@@ -95,6 +95,7 @@ function tableInit(){
         { "data": "dz" },
         //{ "data": "gx" },
         { "data": "iscj" },
+        { "data": "starttime"},
         { "data": "remark" }
     	 
     ]

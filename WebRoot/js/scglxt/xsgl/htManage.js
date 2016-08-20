@@ -169,7 +169,7 @@
 				show:true
 			});
 			//在modalbody 中家在iframe 内容为 工序编排的内容
-			$content = "<iframe src='../jsgl/ddManager.jsp?showModal=true&bomid="+data+"' class='modal_iframe'></iframe>" ;
+			$content = "<iframe src='../jsgl/ddManager.jsp?showModal=true&ssht="+data+"' class='modal_iframe'></iframe>" ;
 			$container = $('#modal-body');
 			$container.empty().append($content);
 		}
