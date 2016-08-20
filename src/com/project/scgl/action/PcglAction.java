@@ -177,7 +177,8 @@ public class PcglAction
     String jyryid = "02";
     String sql = "update scglxt_t_jggl set jysj = now(), bfjs = " + bfjs + ",sfjy = '1',jyryid= '" + jyryid + "' where id = '" + jgglId + "'";
     
-    String sql2 = "update scglxt_t_gygc a set yjgjs = yjgjs-" + bfjs + "+(select c.jgjs from scglxt_t_jggl c where c.id = '" + jgglId + "') ,bfjs = bfjs+" + bfjs + ",sjjs=sjjs-(" + bfjs + "+(select c.jgjs from scglxt_t_jggl c where c.id = '" + jgglId + "')) where id = (select gygcid from scglxt_t_jggl b where b.id = '" + jgglId + "' and a.id = b.gygcid)";
+  //  String sql2 = "update scglxt_t_gygc a set yjgjs = yjgjs-" + bfjs + "+(select c.jgjs from scglxt_t_jggl c where c.id = '" + jgglId + "') ,bfjs = bfjs+" + bfjs + ",sjjs=sjjs-(" + bfjs + "+(select c.jgjs from scglxt_t_jggl c where c.id = '" + jgglId + "')) where id = (select gygcid from scglxt_t_jggl b where b.id = '" + jgglId + "' and a.id = b.gygcid)";
+    String sql2 = "update scglxt_t_gygc a set yjgjs = yjgjs-" + bfjs + "+(select c.jgjs from scglxt_t_jggl c where c.id = '" + jgglId + "') ,bfjs = bfjs+" + bfjs + ",sjjs=0 where id = (select gygcid from scglxt_t_jggl b where b.id = '" + jgglId + "' and a.id = b.gygcid)";
     try
     {
       log.info("检验人员更新加工管理表" + sql);
@@ -193,7 +194,7 @@ public class PcglAction
         serial++;
         int kjgjs = rs.getInt(3);
         
-        String sql3 = "UPDATE scglxt_t_gygc  SET kjgjs = kjgjs+" + kjgjs + " WHERE `bomid` = '" + bomId + "' and serial = '" + serial + "'";
+        String sql3 = "UPDATE scglxt_t_gygc  SET kjgjs = " + kjgjs + " WHERE `bomid` = '" + bomId + "' and serial = '" + serial + "'";
         this.selectDataService.execute(sql3);
         
         log.info("更新下一步可加工件数：" + sql3);
@@ -211,6 +212,7 @@ public class PcglAction
   {
     String sql = "SELECT a.bomid,a.serial,a.yjgjs FROM  scglxt_t_gygc a WHERE id = (SELECT gygcid FROM  scglxt_t_jggl b  WHERE b.id = '" + jgglId + "'  AND a.id = b.gygcid)";
     
+    log.info("aaaaaa"+sql);
     return this.selectDataService.getSqlRowSet(sql);
   }
   
@@ -270,7 +272,26 @@ public class PcglAction
     }
     Response.write("success");
   }
-  
+  public void jgryJs1()
+  {
+    String sbid = Request.getParameter("sbid");
+    String gygcid = Request.getParameter("gygcid");
+    
+    String sql = "UPDATE scglxt_t_gygc SET sbid = '"+sbid+"' WHERE id = '"+gygcid+"'";
+    
+    try
+    {
+      log.info("调整设备" + sql);
+      this.selectDataService.execute(sql);
+      
+    }
+    catch (Exception e)
+    {
+      Response.write("error");
+      e.printStackTrace();
+    }
+    Response.write("success");
+  }
   public void getJgSbInfo()
   {
     String sql = "SELECT id,sbmc FROM scpc.scglxt_t_sb";
