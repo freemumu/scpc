@@ -25,7 +25,7 @@
                                     <th style="width:120px;"> 材料状态</th>
                                     <th> 子订单名称</th>
                                     <th> 备料情况</th>
-                                    <th> 子订单材质</th>
+                                    <th> 材料名称</th>
                                     <th> 工序内容</th>
                                     <th> 料的形状</th>
                                     <th> 料的大小</th>
@@ -138,8 +138,8 @@
                                 "render": function (data, type, row) {
 
                                     if (row.blqk == null || row.blqk == "0" ||row.blqk == "") {
-                                        return ' <div class="clzt text-center"><input type="radio" value=1    name="' + row.id + '"/> 完成' +
-                                                '<input type="radio" value=0 checked  name="' + row.id + '"/>未完成  ' +
+                                        return ' <div class="clzt text-center"><input type="radio" value=1    name="' + row.id + '"/> 已采购' +
+                                                '<input type="radio" value=0 checked  name="' + row.id + '"/>未采购  ' +
                                                 ' </div>';
                                     } else if (row.blqk == "1") {
                                         return '<div class="text-center" style="color:green">已完成</div>';
@@ -161,14 +161,27 @@
                                         }
                                     },
                                     "targets": 3
+                                },
+                                {
+                            "render": function (data, type, row) {
+                                var str = "";
+                                if(data=='1'){
+                                    str =  "长方体" ;
+                                }else if(data=='2'){
+                                    str = "圆柱体" ;
                                 }
+                                console.log(data);
+                                return str ;
+                            }, "targets": 7
+                        },
+                                
                             ],
                             "columns": [
                                 {"data": null, "sWidth": "60px"},
                                 {"data": "clzt", "sWidth": "160px"},
                                 {"data": "zddmc", "sWidth": "120px"},
                                 {"data": "blqk", "sWidth": "120px"},
-                                {"data": "zddcz", "sWidth": "120px"},
+                                {"data": "clmc", "sWidth": "120px"},
                                 {"data": "gxnr", "sWidth": "300px"},
                                 {"data": "clxz"},
                                 {"data": "cldx"},
