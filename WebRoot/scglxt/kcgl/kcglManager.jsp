@@ -27,7 +27,7 @@
                                  
                                     <th> 子订单名称</th>
                                     <th> 材料状态</th>
-                                    <th> 子订单材质</th>
+                                    <th> 材料名称</th>
                                     <th> 工序内容</th>
                                     <th> 料的形状</th>
                                     <th> 料的大小</th>
@@ -140,7 +140,7 @@
                                 "render": function (data, type, row) {
                                    if (row.blqk == null || row.blqk == "0"||row.blqk=="") {
                                         return ' <div class="blqk text-center"><input type="radio" value=1    name="'+row.id+'"/> 完成' +
-                                                '<input type="radio" value=0 checked  name="'+row.id+'"/>未完成  '  +
+                                                '<input type="radio" value=0 checked  name="'+row.id+'"/>待采购  '  +
                                                 '<input type="radio" value=2   name="'+row.id+'"/>自备料 </div>';
                                     } else if (row.blqk == "1") {
                                         return '<div class="blqk text-center" style="color:green">已完成</div>' ;
@@ -170,7 +170,7 @@
                                             str = "圆柱体" ;
                                         }
                                         return str ;
-                                    }, "targets": 7
+                                    }, "targets":[6]
                                 },
                             ],
                             "columns": [
@@ -180,7 +180,7 @@
 
                                 {"data": "zddmc", "sWidth": "120px"},
                                 {"data": "clzt", "sWidth": "120px"},
-                                {"data": "zddcz", "sWidth": "120px"},
+                                {"data": "clmc", "sWidth": "120px"},
                                 {"data": "gxnr", "sWidth": "300px"},
                                 {"data": "clxz"},
                                 {"data": "cldx"},

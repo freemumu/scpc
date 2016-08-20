@@ -48,11 +48,12 @@
 								  <span style="color:red">块</span>
 							  </div>
 							  <div class='form-group'>
-								  <label class='control-label col-sm-3 col-sm-3' for='form_cl_cldj'>材料等级</label>
+								  <label class='control-label col-sm-3 col-sm-3' for='form_cl_cldj'>材料单价</label>
 								  <div class='col-sm-4 controls'>
 									  <input class='form-control' id='form_cl_cldj' info="fromInfo" name='cldj'
-											 placeholder='材料等级' type='text'>
+											 placeholder='材料单价' type='text'>
 								  </div>
+								  <span style="color:red">元/克</span>
 							  </div>
 							  <div class='form-group'>
 								  <label class='control-label col-sm-3 col-sm-3' for='form_cl_cllx'>材料类型</label>
@@ -74,6 +75,7 @@
 									  <input class='form-control' id='form_cl_mi' info="fromInfo" name='mi'
 											 placeholder='密度' type='text'>
 								  </div>
+								  <span style="color:red">克/立方厘米</span>
 							  </div>
 
 							  <div class='form-group'>
