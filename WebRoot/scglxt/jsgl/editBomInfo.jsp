@@ -118,6 +118,7 @@
                                 <input class='form-control' id='form_bomInfo_clje' info="fromInfo"
                                        name='clje' placeholder=' ' type='text'>
                             </div>
+                            <span style="red">元</span>
                         </div>
                         <div class='form-group'>
                             <label class='control-label col-sm-3 col-sm-3'>加工数量</label>

@@ -10,8 +10,8 @@
 					var id = getValueOfURLParamter("id");
 					initForm(id);
 				}
-				$("#cgsj").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
-				$("#wbjz").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+				$("#cgsj").datepicker({format: 'yyyy-mm-dd hh:ii'});
+				$("#wbjz").datepicker({format: 'yyyy-mm-dd hh:ii'});
 
 			} );
 			

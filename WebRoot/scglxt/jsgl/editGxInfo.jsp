@@ -32,7 +32,6 @@
 		                          <label class='control-label col-sm-3 col-sm-3' for='form_khxx_fzbz'>负责班组</label>
 		                          <div class='col-sm-4 controls'>
 									  <select class='form-control' id='form_khxx_fzbz'  info="fromInfo" name='form_khxx_fzbz' >
-										  <option>123</option>
 									  </select>
 		                          </div>
 		                        </div>

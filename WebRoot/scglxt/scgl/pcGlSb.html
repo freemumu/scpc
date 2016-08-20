@@ -22,6 +22,7 @@
    <script type="text/javascript" src="../../js/plugin/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
     <script type="text/javascript">
     
+    	var json = null;
     	
         // 基于准备好的dom，初始化echarts图表
         var myChart = echarts.init(document.getElementById('sbpc')); 
@@ -165,7 +166,9 @@
 				  		value.push(dt[i].v);
 				  	
 				  	}
+				  	json = dt;
 				  	option.xAxis[0].data = key;
+				  
         			option.series[0].data = value;
         		
        		 		myChart.setOption(option); 
@@ -178,7 +181,8 @@
 		
       		
         	$('#pcglInfoWindow').window('open')
-      		$("#pcglInfo").attr("src","pcglInfoExtends.html")
+        
+      		$("#pcglInfo").attr("src","gxSbManager.jsp?sbid="+json[param.dataIndex].id)
        });
     </script>
 </body>

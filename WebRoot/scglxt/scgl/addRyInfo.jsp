@@ -12,7 +12,7 @@
                 var id = getValueOfURLParamter("id");
                 initForm(id);
             }
-            $("#rzsj").datetimepicker({format: 'yyyy-mm-dd hh:ii'});
+            $("#rzsj").datepicker({format: 'yyyy-mm-dd hh:ii'});
 
         });
 
