@@ -16,8 +16,52 @@
                 var headHeight = $("body > header").height();
                 var height = document.body.clientHeight;
                 $("#wrapper").css("height", height - headHeight + "px");
-                changeNavUrl("");
-                addNavEvent();
+                menuInit();
+                $("#user").text("当前用户："+decodeURI(GetCookie("userName")));
+                setInterval(function(){getDate()},1000);
+
+                //changeNavUrl("");
+                //addNavEvent();
+            },
+            displaychildren=function(id){
+                var ul=("#ul_"+id);
+                ul.attr("class","nav nav-stacked in");
+                ul.css("display","block");
+            },
+            menuInit= function(){
+                var menu=$("#main_Menu");
+                var url = "common_loadMenuTree.action", successFun = function (data) {
+                        if (data && data.length > 0) {
+                            for (var i = 0; i < data.length; i++) {
+                                var mli=$("<li class></li>");
+                                var link=$("<a class='dropdown-collapse in' href='#'></a>");
+                                var icons=$("<i class='"+data[i].cdtb+"'></i>");
+                                var mspan=$("<span id='"+data[i].cddz+"'>"+data[i].cdmc+"</span>");
+                                var dli=$("<i class='icon-angle-down angle-down'></i>");
+                                link.append(icons);
+                                link.append(mspan);
+                                link.append(dli);
+                                mli.append(link);
+                                if(data[i].children.length>0) {
+                                    var pul = $("<ul id='ul_"+ data[i].cddz +"' class='nav nav-stacked' style='display:block;'></ul>");
+                                    for (var j = 0; j < data[i].children.length; j++) {
+                                        var pli = $("<li id='"+  data[i].children[j].cddz +"'></li>");
+                                        var plink = $("<a href='#'></a>");
+                                        var picons = $("<i class='" +  data[i].children[j].cdtb + "'></i>");
+                                        var pspan = $("<span onclick='Main.changeNavUrl(\""+  data[i].children[j].cddz +"\");' id='" +  data[i].children[j].cddz + "'>" +  data[i].children[j].cdmc + "</span>");
+                                        plink.append(picons);
+                                        plink.append(pspan);
+                                        pli.append(plink);
+                                        pul.append(pli);
+                                    }
+                                    mli.append(pul);
+                                }
+                                menu.append(mli);
+                            }
+                            Main.changeNavUrl($("#main_Menu > li > ul > li")[0].id);
+                        }
+                };
+                $.asyncAjax(url, {"pid": 0}, successFun, true);
             },
             addNavEvent = function () {
                 //  客户信息管理
@@ -209,7 +253,7 @@
                     //排产任务管理
 
                     case "ghsgl":
-                        url = "scglxt/cggl/ghsManager.jsp";
+                        url = "scglxt/scgl/ghsManager.jsp";
                         break;
                     //基本零件管理
                     case "jbljgl":
@@ -267,6 +311,36 @@
             initHtInfo = function (flag) {
 
             },
+            getDate = function(){
+                var info="";
+                var today=new Date();
+                function initArray(){
+                    this.length=initArray.arguments.length
+                    for(var i=0;i<this.length;i++)
+                        this[i+1]=initArray.arguments[i] }
+                var d=new initArray(
+                    "星期日",
+                    "星期一",
+                    "星期二",
+                    "星期三",
+                    "星期四",
+                    "星期五",
+                    "星期六");
+                info=today.getFullYear()+"年"+eval(today.getMonth()+1)+"月"+today.getDate()+"日"+d[today.getDay()+1]+" ";
+
+
+                    var now = new Date();
+                    var hours = now.getHours();
+                    var minutes = now.getMinutes();
+                    var seconds = now.getSeconds()
+                    var timeValue = "" +((hours >= 12) ? "下午 " : "上午 " )
+                    timeValue += ((hours >12) ? hours -12 :hours)
+                    timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+                    timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+                    info+=timeValue;
+                    $("#datetime").text(info);
+
+            },
             /**
              *
              * @param curPageNum跳转之前所在的页面页数
@@ -291,7 +365,9 @@
             changeNavUrl: changeNavUrl,
             swapIframUrl: swapIframUrl,
             disableSaveButton:disableSaveButton,
-            resetSaveButton:resetSaveButton
+            resetSaveButton:resetSaveButton,
+            getDate:getDate,
+            displaychildren:displaychildren
         }
     })();
 

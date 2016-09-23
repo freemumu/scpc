@@ -24,9 +24,8 @@
 		$('#ksjg').dialog('open');
 		
 		gygcid = data;
-		
-		initBzRy();
 
+        initBzzd();
 		disableButtonByJgr(data);
 	}
 	function initSbzd(){
@@ -45,7 +44,27 @@
             }
         });
 	}
-	
+    function initBzzd(){
+
+        $.ajax({
+            type: "post",
+            url: "scglbz_getBzTableData.action",
+            dataType: "json",
+            success: function (dt) {
+                $("#selbzry").html('');
+                var ssbz=GetCookie("userSsbz");
+                for (var i = 0; i < dt.data.length; i++) {
+                    var html = "<option value=" + dt.data[i].id + ">" + dt.data[i].bzmc + "</option>";
+                    if( dt.data[i].id==ssbz)
+                    {
+                        html = "<option value=" + dt.data[i].id + "  selected='selected'>" + dt.data[i].bzmc + "</option>";
+                    }
+                    $("#selbzry").append(html);
+                }
+                initBzRy();
+            }
+        });
+    }
 	
 	function initBzRy(){
 		
@@ -55,19 +74,16 @@
             dataType: "json",
             data:{
             	
-            	ssbz:'01'
+            	ssbz: $("#selbzry option:selected").val()
             },
             async:false,
             success: function (dt) {
 
-            	$("#ksjg").html('');
+                $("#bzry").html('');
                 for (var i = 0; i < dt.length; i++) {
                     var html = "<a href='#' onclick='ryKsJg(event)' class='btn' id=ks"+dt[i].id+">"+dt[i].mc+"</a>";
-                    $("#ksjg").append(html);
+                    $("#bzry").append(html);
                 }
-                
-                
-
             }
         });
 	}
@@ -270,7 +286,7 @@
 	
 		tableInit();
 		initSbzd();
-		initBzRy();
+
 	} );
 	
 	</script>
@@ -327,8 +343,8 @@
 </div>
 
 	<div id="ksjg" class="easyui-dialog" title="开始加工" style="width:400px;height:200px;padding:10px"	data-options="closed:true">
-	
-	
+	    班组人员：<select onchange='initBzRy(event)' style="height:28px;width:175px;" id='selbzry'></select>
+	    <div id="bzry"></div>
 	</div>
 </body>
 </html>

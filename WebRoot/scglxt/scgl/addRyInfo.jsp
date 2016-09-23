@@ -23,7 +23,7 @@
                 url: "scgl_getRyInfoById.action",
                 dataType: "json",
                 data: {
-                    "id": id,
+                    "id": id
                 },
                 success: function (dt) {
 

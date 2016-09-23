@@ -1,0 +1,118 @@
+[2016-09-17 10:47:42,121]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:47:46,359]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:48:08,191]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:51:33,641]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:55:37,688]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:56:28,328]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:56:45,405]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:56:58,674]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:58:13,517]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:58:44,419]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 10:59:56,995]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:00:17,502]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:00:56,660]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:01:03,162]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:01:09,896]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:01:16,884]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:01:24,070]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:02:03,583]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:02:12,997]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:02:18,813]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:03:14,134]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:03:39,603]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:03:57,516]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:04:04,112]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:04:10,235]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:04:20,399]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:04:22,641]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:11:54,680]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:12:10,802]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 11:30:04,779]-INFO  (AbstractApplicationContext.java:816)|Closing org.springframework.web.context.support.XmlWebApplicationContext@27991d59: display name [Root WebApplicationContext]; startup date [Fri Sep 16 22:49:43 CST 2016]; root of context hierarchy
+[2016-09-17 11:30:04,784]-INFO  (DefaultSingletonBeanRegistry.java:396)|Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@78bb34df: defining beans [messageSource,propertyConfigurer,dataSourceA,dataSource,sessionFactory,transactionIntercetorTemplate,hibernateTransactionInterceptor,jdbcTransactionInterceptor,autoProxy,nativeJdbcExtractor,lobHandler,baseDao,baseService,selectDataDao,selectDataService,loginAction,xsglAction,khxxManagerAction,ddInfoManagerAction,bomInfoManagerAction,gxInfoManagerAction,gyInfoManagerAction]; root of factory hierarchy
+[2016-09-17 11:30:04,786]-INFO  (AbstractSessionFactoryBean.java:246)|Closing Hibernate SessionFactory
+[2016-09-17 11:30:04,787]-INFO  (SessionFactoryImpl.java:769)|closing
+[2016-09-17 16:53:14,960]-INFO  (ContextLoader.java:189)|Root WebApplicationContext: initialization started
+[2016-09-17 16:53:15,079]-INFO  (AbstractApplicationContext.java:412)|Refreshing org.springframework.web.context.support.XmlWebApplicationContext@793d639e: display name [Root WebApplicationContext]; startup date [Sat Sep 17 16:53:15 CST 2016]; root of context hierarchy
+[2016-09-17 16:53:15,157]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [F:\workspace\scpc\WebRoot\WEB-INF\classes\xml\spring\applicationContext.xml]
+[2016-09-17 16:53:15,338]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [F:\workspace\scpc\WebRoot\WEB-INF\classes\xml\spring\applicationContext_base.xml]
+[2016-09-17 16:53:15,373]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [F:\workspace\scpc\WebRoot\WEB-INF\classes\xml\spring\applicationContext_login.xml]
+[2016-09-17 16:53:15,398]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [F:\workspace\scpc\WebRoot\WEB-INF\classes\xml\spring\applicationContext_xsgl.xml]
+[2016-09-17 16:53:15,424]-INFO  (AbstractApplicationContext.java:427)|Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@793d639e]: org.springframework.beans.factory.support.DefaultListableBeanFactory@50f23b6b
+[2016-09-17 16:53:15,568]-INFO  (PropertiesLoaderSupport.java:178)|Loading properties file from class path resource [ApplicationResources.properties]
+[2016-09-17 16:53:15,657]-INFO  (DefaultListableBeanFactory.java:414)|Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@50f23b6b: defining beans [messageSource,propertyConfigurer,dataSourceA,dataSource,sessionFactory,transactionIntercetorTemplate,hibernateTransactionInterceptor,jdbcTransactionInterceptor,autoProxy,nativeJdbcExtractor,lobHandler,baseDao,baseService,selectDataDao,selectDataService,loginAction,xsglAction,khxxManagerAction,ddInfoManagerAction,bomInfoManagerAction,gxInfoManagerAction,gyInfoManagerAction]; root of factory hierarchy
+[2016-09-17 16:53:15,687]-INFO  (MLog.java:80)|MLog clients using log4j logging.
+[2016-09-17 16:53:15,753]-INFO  (C3P0Registry.java:204)|Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[2016-09-17 16:53:15,991]-INFO  (Environment.java:514)|Hibernate 3.2.5
+[2016-09-17 16:53:15,998]-INFO  (Environment.java:547)|hibernate.properties not found
+[2016-09-17 16:53:16,002]-INFO  (Environment.java:681)|Bytecode provider name : cglib
+[2016-09-17 16:53:16,008]-INFO  (Environment.java:598)|using JDK 1.4 java.sql.Timestamp handling
+[2016-09-17 16:53:16,107]-INFO  (LocalSessionFactoryBean.java:730)|Building new Hibernate SessionFactory
+[2016-09-17 16:53:16,117]-INFO  (ConnectionProviderFactory.java:72)|Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[2016-09-17 16:53:16,309]-INFO  (AbstractPoolBackedDataSource.java:462)|Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 6000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge1669jfcvej5z3v4m0|59d4316b, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge1669jfcvej5z3v4m0|59d4316b, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/scpc?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 30, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+[2016-09-17 16:53:16,906]-INFO  (SettingsFactory.java:89)|RDBMS: MySQL, version: 5.6.24
+[2016-09-17 16:53:16,912]-INFO  (SettingsFactory.java:90)|JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.1.5 ( Revision: ${svn.Revision} )
+[2016-09-17 16:53:16,944]-INFO  (Dialect.java:152)|Using dialect: org.hibernate.dialect.MySQLDialect
+[2016-09-17 16:53:17,010]-INFO  (TransactionFactoryFactory.java:34)|Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[2016-09-17 16:53:17,012]-INFO  (TransactionManagerLookupFactory.java:33)|No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[2016-09-17 16:53:17,013]-INFO  (SettingsFactory.java:143)|Automatic flush during beforeCompletion(): disabled
+[2016-09-17 16:53:17,015]-INFO  (SettingsFactory.java:147)|Automatic session close at end of transaction: disabled
+[2016-09-17 16:53:17,015]-INFO  (SettingsFactory.java:154)|JDBC batch size: 15
+[2016-09-17 16:53:17,016]-INFO  (SettingsFactory.java:157)|JDBC batch updates for versioned data: disabled
+[2016-09-17 16:53:17,018]-INFO  (SettingsFactory.java:162)|Scrollable result sets: enabled
+[2016-09-17 16:53:17,019]-INFO  (SettingsFactory.java:170)|JDBC3 getGeneratedKeys(): enabled
+[2016-09-17 16:53:17,020]-INFO  (SettingsFactory.java:178)|Connection release mode: auto
+[2016-09-17 16:53:17,023]-INFO  (SettingsFactory.java:202)|Maximum outer join fetch depth: 2
+[2016-09-17 16:53:17,024]-INFO  (SettingsFactory.java:205)|Default batch fetch size: 1
+[2016-09-17 16:53:17,024]-INFO  (SettingsFactory.java:209)|Generate SQL with comments: disabled
+[2016-09-17 16:53:17,025]-INFO  (SettingsFactory.java:213)|Order SQL updates by primary key: disabled
+[2016-09-17 16:53:17,026]-INFO  (SettingsFactory.java:217)|Order SQL inserts for batching: disabled
+[2016-09-17 16:53:17,027]-INFO  (SettingsFactory.java:386)|Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[2016-09-17 16:53:17,032]-INFO  (ASTQueryTranslatorFactory.java:24)|Using ASTQueryTranslatorFactory
+[2016-09-17 16:53:17,033]-INFO  (SettingsFactory.java:225)|Query language substitutions: {}
+[2016-09-17 16:53:17,034]-INFO  (SettingsFactory.java:230)|JPA-QL strict compliance: disabled
+[2016-09-17 16:53:17,036]-INFO  (SettingsFactory.java:235)|Second-level cache: enabled
+[2016-09-17 16:53:17,036]-INFO  (SettingsFactory.java:239)|Query cache: disabled
+[2016-09-17 16:53:17,037]-INFO  (SettingsFactory.java:373)|Cache provider: org.hibernate.cache.NoCacheProvider
+[2016-09-17 16:53:17,038]-INFO  (SettingsFactory.java:254)|Optimize cache for minimal puts: disabled
+[2016-09-17 16:53:17,038]-INFO  (SettingsFactory.java:263)|Structured second-level cache entries: disabled
+[2016-09-17 16:53:17,049]-INFO  (SettingsFactory.java:290)|Statistics: disabled
+[2016-09-17 16:53:17,050]-INFO  (SettingsFactory.java:294)|Deleted entity synthetic identifier rollback: disabled
+[2016-09-17 16:53:17,052]-INFO  (SettingsFactory.java:309)|Default entity-mode: pojo
+[2016-09-17 16:53:17,053]-INFO  (SettingsFactory.java:313)|Named query checking : enabled
+[2016-09-17 16:53:17,262]-INFO  (SessionFactoryImpl.java:161)|building session factory
+[2016-09-17 16:53:17,279]-INFO  (SessionFactoryObjectFactory.java:82)|Not binding factory to JNDI, no JNDI name configured
+[2016-09-17 16:53:17,349]-INFO  (HibernateTransactionManager.java:390)|Using DataSource [com.project.base.DynamicDataSource@572ae748] of Hibernate SessionFactory for HibernateTransactionManager
+[2016-09-17 16:53:17,566]-INFO  (ContextLoader.java:209)|Root WebApplicationContext: initialization completed in 2533 ms
+[2016-09-17 16:53:17,567]-INFO  (DefaultContextLoaderListener.java:27)|load WebApplicationContext into ContextHolder
+[2016-09-17 16:53:18,000]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-default.xml]
+[2016-09-17 16:53:18,454]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-plugin.xml]
+[2016-09-17 16:53:18,587]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts.xml]
+[2016-09-17 16:53:18,766]-INFO  (CommonsLogger.java:42)|Initializing Struts-Spring integration...
+[2016-09-17 16:53:18,767]-INFO  (CommonsLogger.java:42)|Setting autowire strategy to name
+[2016-09-17 16:53:18,767]-INFO  (CommonsLogger.java:42)|... initialized Struts-Spring integration successfully
+[2016-09-17 16:53:20,194]-WARN  (JavaUtils.java:1308)|Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+[2016-09-17 16:54:41,099]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 16:54:41,541]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 16:54:42,393]-INFO  (KhxxManagerAction.java:41)|客户信息表格sql  select t.id,t.mc,t.lx lxnm ,DATE_FORMAT(starttime,'%Y-%m-%d') starttime, t2.MC lx ,t.dw,t.dz,t.gx,  case  when t.iscj='1' then '是'   when t.iscj='0'  then '否'  end  as iscj ,  t.remark from scglxt_t_kh t , scglxt_tyzd t2  where t.lx = t2.id   and t2.id like '30%'
+[2016-09-17 17:16:25,265]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 17:16:25,685]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 17:16:25,939]-INFO  (KhxxManagerAction.java:41)|客户信息表格sql  select t.id,t.mc,t.lx lxnm ,DATE_FORMAT(starttime,'%Y-%m-%d') starttime, t2.MC lx ,t.dw,t.dz,t.gx,  case  when t.iscj='1' then '是'   when t.iscj='0'  then '否'  end  as iscj ,  t.remark from scglxt_t_kh t , scglxt_tyzd t2  where t.lx = t2.id   and t2.id like '30%'
+[2016-09-17 17:24:27,718]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 17:24:28,164]-INFO  (CommonAction.java:48)|获取一级菜单权限：select * from scglxt_t_cd where cdfjd='0' and id in (select cdid from scglxt_t_qxgl where bzid='759007553955134000000')
+[2016-09-17 17:24:28,462]-INFO  (KhxxManagerAction.java:41)|客户信息表格sql  select t.id,t.mc,t.lx lxnm ,DATE_FORMAT(starttime,'%Y-%m-%d') starttime, t2.MC lx ,t.dw,t.dz,t.gx,  case  when t.iscj='1' then '是'   when t.iscj='0'  then '否'  end  as iscj ,  t.remark from scglxt_t_kh t , scglxt_tyzd t2  where t.lx = t2.id   and t2.id like '30%'
+[2016-09-17 21:07:27,821]-WARN  (BasicResourcePool.java:972)|Failed to destroy resource: com.mchange.v2.c3p0.impl.NewPooledConnection@6ad0ce6c
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextNode(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at com.mysql.jdbc.ConnectionImpl.closeAllOpenStatements(ConnectionImpl.java:1472)
+	at com.mysql.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:4216)
+	at com.mysql.jdbc.ConnectionImpl.close(ConnectionImpl.java:1453)
+	at com.mchange.v2.c3p0.impl.NewPooledConnection.close(NewPooledConnection.java:549)
+	at com.mchange.v2.c3p0.impl.NewPooledConnection.close(NewPooledConnection.java:234)
+	at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.destroyResource(C3P0PooledConnectionPool.java:470)
+	at com.mchange.v2.resourcepool.BasicResourcePool$1DestroyResourceTask.run(BasicResourcePool.java:964)
+	at com.mchange.v2.async.ThreadPoolAsynchronousRunner$PoolThread.run(ThreadPoolAsynchronousRunner.java:547)
+[2016-09-17 21:28:58,233]-INFO  (AbstractApplicationContext.java:816)|Closing org.springframework.web.context.support.XmlWebApplicationContext@793d639e: display name [Root WebApplicationContext]; startup date [Sat Sep 17 16:53:15 CST 2016]; root of context hierarchy
+[2016-09-17 21:28:58,235]-INFO  (DefaultSingletonBeanRegistry.java:396)|Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@50f23b6b: defining beans [messageSource,propertyConfigurer,dataSourceA,dataSource,sessionFactory,transactionIntercetorTemplate,hibernateTransactionInterceptor,jdbcTransactionInterceptor,autoProxy,nativeJdbcExtractor,lobHandler,baseDao,baseService,selectDataDao,selectDataService,loginAction,xsglAction,khxxManagerAction,ddInfoManagerAction,bomInfoManagerAction,gxInfoManagerAction,gyInfoManagerAction]; root of factory hierarchy
+[2016-09-17 21:28:58,237]-INFO  (AbstractSessionFactoryBean.java:246)|Closing Hibernate SessionFactory
+[2016-09-17 21:28:58,237]-INFO  (SessionFactoryImpl.java:769)|closing

@@ -1,5 +1,6 @@
 package com.project.scgl.action;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.project.base.service.SelectDataService;
 import com.project.commonModel.util.Request;
 import com.project.commonModel.util.Response;
@@ -140,7 +141,12 @@ public class PcglAction
   public void getBomGygcJg()
   {
     String sql = "SELECT gygc.id, bom.zddmc,bom.bmcl,date_format(bom.starttime,'%Y-%m-%d') jhkssj,date_format(bom.endtime,'%Y-%m-%d') jhjssj,gygc.edgs gs,jggy.gymc,gygc.kjgjs,gygc.yjgjs,gygc.bfjs,gygc.kjgjs-gygc.yjgjs-gygc.bfjs-gygc.sjjs djgjs,gygc.sjjs FROM scpc.scglxt_t_gygc gygc,scpc.scglxt_t_bom bom,scglxt_t_jggy jggy where  gygc.bomid = bom.id and jggy.id = gygc.gynr and (gygc.bfjs+gygc.yjgjs+gygc.sjjs<gygc.kjgjs)";
-    log.info("获取当前待加工的所有工序sql" + sql);
+    String ssbz=ActionContext.getContext().getSession().get("userssbz").toString();
+      if(!ssbz.equals("759007553955134000000"))//如果不是管理组就过滤所述班组权限
+      {
+          sql=sql+" and jggy.fzbz='"+ssbz+"'";
+      }
+      log.info("获取当前待加工的所有工序sql" + sql);
     List list = this.selectDataService.queryForList(sql);
     String json = JsonObjectUtil.list2Json(list);
     json = "{\"data\":" + json + "}";
@@ -150,8 +156,8 @@ public class PcglAction
   public void getRyByBz()
   {
     String ssbz = Request.getParameter("ssbz");
-  // String sql = "SELECT id,rymc mc,ssbz bz FROM scglxt_t_ry WHERE ssbz = '" + ssbz + "'";
-    String sql = "SELECT id,rymc mc,ssbz bz FROM scglxt_t_ry";
+    String sql = "SELECT id,rymc mc,ssbz bz FROM scglxt_t_ry WHERE ssbz = '" + ssbz + "'";
+      //  String sql = "SELECT id,rymc mc,ssbz bz FROM scglxt_t_ry";
     log.info("根据班组获取该班组所有人员" + sql);
     List list = this.selectDataService.queryForList(sql);
     String json = JsonObjectUtil.list2Json(list);
@@ -174,7 +180,8 @@ public class PcglAction
   {
     String jgglId = Request.getParameter("id");
     String bfjs = Request.getParameter("v");
-    String jyryid = "02";
+    //String jyryid = "02";
+      String jyryid= ActionContext.getContext().getSession().get("userid").toString();
     String sql = "update scglxt_t_jggl set jysj = now(), bfjs = " + bfjs + ",sfjy = '1',jyryid= '" + jyryid + "' where id = '" + jgglId + "'";
     
   //  String sql2 = "update scglxt_t_gygc a set yjgjs = yjgjs-" + bfjs + "+(select c.jgjs from scglxt_t_jggl c where c.id = '" + jgglId + "') ,bfjs = bfjs+" + bfjs + ",sjjs=sjjs-(" + bfjs + "+(select c.jgjs from scglxt_t_jggl c where c.id = '" + jgglId + "')) where id = (select gygcid from scglxt_t_jggl b where b.id = '" + jgglId + "' and a.id = b.gygcid)";

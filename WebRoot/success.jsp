@@ -16,48 +16,48 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-			<link rel="stylesheet" href="${pageContext.request.contextPath}/commonModel/js/zTree/zTreeStyle.css" type="text/css">
-		<script type="text/javascript" src="${pageContext.request.contextPath}/js/zTree/js/jquery-1.4.4.min.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/commonModel/js/zTree/jquery.ztree.core-3.5.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/commonModel/js/zTree/jquery.ztree.excheck-3.5.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/commonModel/js/zTree/jquery.ztree.exedit-3.5.js"></script>
+			<%--<link rel="stylesheet" href="${pageContext.request.contextPath}/commonModel/js/zTree/zTreeStyle.css" type="text/css">--%>
+		<%--<script type="text/javascript" src="${pageContext.request.contextPath}/js/zTree/js/jquery-1.4.4.min.js"></script>--%>
+<%--<script type="text/javascript" src="${pageContext.request.contextPath}/commonModel/js/zTree/jquery.ztree.core-3.5.js"></script>--%>
+<%--<script type="text/javascript" src="${pageContext.request.contextPath}/commonModel/js/zTree/jquery.ztree.excheck-3.5.js"></script>--%>
+<%--<script type="text/javascript" src="${pageContext.request.contextPath}/commonModel/js/zTree/jquery.ztree.exedit-3.5.js"></script>--%>
 
 <script type="text/javascript">
 
-	$(function() {
-	showZTree('ZDID','ZDID_sn','4041','0');
-	});
-	function showZTree(key,value,columnid,ischecked){
-	var setting = {
-			check: {
-				enable: true,
-				
-			},
-			data: {
-				key: {
-					name: "NAME"
-				},
-				simpleData: {
-					enable: true,
-					idKey: "ID",
-					pIdKey: "PID",
-				}
-			}
-		};
-	 $.ajax({
-				type:'POST',
-				url:'maintable_getZTreeData.action?columnid='+columnid,
-				dataType:'json',
-				success:function(data){
-					$.fn.zTree.init($("#treeDemo"), setting, data);
-				},
-				error:function(error){
-					alert(error);
-				}
-			});
-	 
-	
-	 }
+//	$(function() {
+//	showZTree('ZDID','ZDID_sn','4041','0');
+//	});
+//	function showZTree(key,value,columnid,ischecked){
+//	var setting = {
+//			check: {
+//				enable: true,
+//
+//			},
+//			data: {
+//				key: {
+//					name: "NAME"
+//				},
+//				simpleData: {
+//					enable: true,
+//					idKey: "ID",
+//					pIdKey: "PID"
+//				}
+//			}
+//		};
+//	 $.ajax({
+//				type:'POST',
+//				url:'maintable_getZTreeData.action?columnid='+columnid,
+//				dataType:'json',
+//				success:function(data){
+//					$.fn.zTree.init($("#treeDemo"), setting, data);
+//				},
+//				error:function(error){
+//					alert(error);
+//				}
+//			});
+//
+//
+//	 }
 </script>
 
 
@@ -65,6 +65,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
       <div id='tt' align="left">
+
+          <h1 style="margin-top:200px;margin-left:200px;">欢迎登录生产管理系统。</h1>
 		<ul id="treeDemo" class="ztree"></ul>
 	</div>
   </body>

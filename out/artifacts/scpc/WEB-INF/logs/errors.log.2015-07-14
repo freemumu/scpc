@@ -1,0 +1,251 @@
+[2015-07-14 06:28:57,854]-INFO  (ContextLoader.java:189)|Root WebApplicationContext: initialization started
+[2015-07-14 06:28:57,929]-INFO  (AbstractApplicationContext.java:412)|Refreshing org.springframework.web.context.support.XmlWebApplicationContext@31ed8ffd: display name [Root WebApplicationContext]; startup date [Tue Jul 14 06:28:57 CST 2015]; root of context hierarchy
+[2015-07-14 06:28:58,101]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext.xml]
+[2015-07-14 06:28:58,377]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_base.xml]
+[2015-07-14 06:28:58,443]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_login.xml]
+[2015-07-14 06:28:58,509]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_xsgl.xml]
+[2015-07-14 06:28:58,579]-INFO  (AbstractApplicationContext.java:427)|Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@31ed8ffd]: org.springframework.beans.factory.support.DefaultListableBeanFactory@156803e8
+[2015-07-14 06:28:58,859]-INFO  (PropertiesLoaderSupport.java:178)|Loading properties file from class path resource [ApplicationResources.properties]
+[2015-07-14 06:28:59,028]-INFO  (DefaultListableBeanFactory.java:414)|Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@156803e8: defining beans [messageSource,propertyConfigurer,dataSourceA,dataSource,sessionFactory,transactionIntercetorTemplate,hibernateTransactionInterceptor,jdbcTransactionInterceptor,autoProxy,nativeJdbcExtractor,lobHandler,baseDao,baseService,selectDataDao,selectDataService,loginAction,xsglAction,khxxManagerAction,ddInfoManagerAction,bomInfoManagerAction,gxInfoManagerAction,gyInfoManagerAction]; root of factory hierarchy
+[2015-07-14 06:28:59,076]-INFO  (MLog.java:80)|MLog clients using log4j logging.
+[2015-07-14 06:28:59,204]-INFO  (C3P0Registry.java:204)|Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[2015-07-14 06:28:59,661]-INFO  (Environment.java:514)|Hibernate 3.2.5
+[2015-07-14 06:28:59,672]-INFO  (Environment.java:547)|hibernate.properties not found
+[2015-07-14 06:28:59,679]-INFO  (Environment.java:681)|Bytecode provider name : cglib
+[2015-07-14 06:28:59,691]-INFO  (Environment.java:598)|using JDK 1.4 java.sql.Timestamp handling
+[2015-07-14 06:28:59,861]-INFO  (LocalSessionFactoryBean.java:730)|Building new Hibernate SessionFactory
+[2015-07-14 06:28:59,872]-INFO  (ConnectionProviderFactory.java:72)|Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[2015-07-14 06:29:00,108]-INFO  (AbstractPoolBackedDataSource.java:462)|Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 3000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge13j9a125sxb4iyepva|7a9728ec, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge13j9a125sxb4iyepva|7a9728ec, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/scpc?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+[2015-07-14 06:29:00,828]-INFO  (SettingsFactory.java:89)|RDBMS: MySQL, version: 5.1.40-community
+[2015-07-14 06:29:00,829]-INFO  (SettingsFactory.java:90)|JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.1.5 ( Revision: ${svn.Revision} )
+[2015-07-14 06:29:00,878]-INFO  (Dialect.java:152)|Using dialect: org.hibernate.dialect.MySQLDialect
+[2015-07-14 06:29:00,984]-INFO  (TransactionFactoryFactory.java:34)|Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[2015-07-14 06:29:00,988]-INFO  (TransactionManagerLookupFactory.java:33)|No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[2015-07-14 06:29:00,989]-INFO  (SettingsFactory.java:143)|Automatic flush during beforeCompletion(): disabled
+[2015-07-14 06:29:00,990]-INFO  (SettingsFactory.java:147)|Automatic session close at end of transaction: disabled
+[2015-07-14 06:29:00,991]-INFO  (SettingsFactory.java:154)|JDBC batch size: 15
+[2015-07-14 06:29:00,992]-INFO  (SettingsFactory.java:157)|JDBC batch updates for versioned data: disabled
+[2015-07-14 06:29:00,994]-INFO  (SettingsFactory.java:162)|Scrollable result sets: enabled
+[2015-07-14 06:29:00,995]-INFO  (SettingsFactory.java:170)|JDBC3 getGeneratedKeys(): enabled
+[2015-07-14 06:29:00,996]-INFO  (SettingsFactory.java:178)|Connection release mode: auto
+[2015-07-14 06:29:00,999]-INFO  (SettingsFactory.java:202)|Maximum outer join fetch depth: 2
+[2015-07-14 06:29:01,000]-INFO  (SettingsFactory.java:205)|Default batch fetch size: 1
+[2015-07-14 06:29:01,001]-INFO  (SettingsFactory.java:209)|Generate SQL with comments: disabled
+[2015-07-14 06:29:01,002]-INFO  (SettingsFactory.java:213)|Order SQL updates by primary key: disabled
+[2015-07-14 06:29:01,003]-INFO  (SettingsFactory.java:217)|Order SQL inserts for batching: disabled
+[2015-07-14 06:29:01,004]-INFO  (SettingsFactory.java:386)|Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[2015-07-14 06:29:01,011]-INFO  (ASTQueryTranslatorFactory.java:24)|Using ASTQueryTranslatorFactory
+[2015-07-14 06:29:01,012]-INFO  (SettingsFactory.java:225)|Query language substitutions: {}
+[2015-07-14 06:29:01,013]-INFO  (SettingsFactory.java:230)|JPA-QL strict compliance: disabled
+[2015-07-14 06:29:01,014]-INFO  (SettingsFactory.java:235)|Second-level cache: enabled
+[2015-07-14 06:29:01,015]-INFO  (SettingsFactory.java:239)|Query cache: disabled
+[2015-07-14 06:29:01,016]-INFO  (SettingsFactory.java:373)|Cache provider: org.hibernate.cache.NoCacheProvider
+[2015-07-14 06:29:01,017]-INFO  (SettingsFactory.java:254)|Optimize cache for minimal puts: disabled
+[2015-07-14 06:29:01,018]-INFO  (SettingsFactory.java:263)|Structured second-level cache entries: disabled
+[2015-07-14 06:29:01,033]-INFO  (SettingsFactory.java:290)|Statistics: disabled
+[2015-07-14 06:29:01,034]-INFO  (SettingsFactory.java:294)|Deleted entity synthetic identifier rollback: disabled
+[2015-07-14 06:29:01,037]-INFO  (SettingsFactory.java:309)|Default entity-mode: pojo
+[2015-07-14 06:29:01,038]-INFO  (SettingsFactory.java:313)|Named query checking : enabled
+[2015-07-14 06:29:01,139]-INFO  (SessionFactoryImpl.java:161)|building session factory
+[2015-07-14 06:29:01,154]-INFO  (SessionFactoryObjectFactory.java:82)|Not binding factory to JNDI, no JNDI name configured
+[2015-07-14 06:29:01,263]-INFO  (HibernateTransactionManager.java:390)|Using DataSource [com.project.base.DynamicDataSource@13aee390] of Hibernate SessionFactory for HibernateTransactionManager
+[2015-07-14 06:29:01,599]-INFO  (ContextLoader.java:209)|Root WebApplicationContext: initialization completed in 3736 ms
+[2015-07-14 06:29:01,600]-INFO  (DefaultContextLoaderListener.java:27)|load WebApplicationContext into ContextHolder
+[2015-07-14 06:29:01,936]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-default.xml]
+[2015-07-14 06:29:02,194]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-plugin.xml]
+[2015-07-14 06:29:02,331]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts.xml]
+[2015-07-14 06:29:02,608]-INFO  (CommonsLogger.java:42)|Initializing Struts-Spring integration...
+[2015-07-14 06:29:02,610]-INFO  (CommonsLogger.java:42)|Setting autowire strategy to name
+[2015-07-14 06:29:02,610]-INFO  (CommonsLogger.java:42)|... initialized Struts-Spring integration successfully
+[2015-07-14 06:29:04,384]-WARN  (JavaUtils.java:1308)|Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+[2015-07-14 06:29:27,312]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 06:31:47,847]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 06:39:41,859]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 06:40:09,229]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 07:12:43,580]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 07:14:08,960]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 07:16:06,488]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 07:18:53,860]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 07:20:06,513]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 07:21:20,862]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-14 13:25:31,402]-INFO  (ContextLoader.java:189)|Root WebApplicationContext: initialization started
+[2015-07-14 13:25:31,598]-INFO  (AbstractApplicationContext.java:412)|Refreshing org.springframework.web.context.support.XmlWebApplicationContext@66ac6adc: display name [Root WebApplicationContext]; startup date [Tue Jul 14 13:25:31 CST 2015]; root of context hierarchy
+[2015-07-14 13:25:31,753]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext.xml]
+[2015-07-14 13:25:32,151]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_base.xml]
+[2015-07-14 13:25:32,236]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_login.xml]
+[2015-07-14 13:25:32,323]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_xsgl.xml]
+[2015-07-14 13:25:32,450]-INFO  (AbstractApplicationContext.java:427)|Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@66ac6adc]: org.springframework.beans.factory.support.DefaultListableBeanFactory@604bb76d
+[2015-07-14 13:25:32,868]-INFO  (PropertiesLoaderSupport.java:178)|Loading properties file from class path resource [ApplicationResources.properties]
+[2015-07-14 13:25:33,082]-INFO  (DefaultListableBeanFactory.java:414)|Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@604bb76d: defining beans [messageSource,propertyConfigurer,dataSourceA,dataSource,sessionFactory,transactionIntercetorTemplate,hibernateTransactionInterceptor,jdbcTransactionInterceptor,autoProxy,nativeJdbcExtractor,lobHandler,baseDao,baseService,selectDataDao,selectDataService,loginAction,xsglAction,khxxManagerAction,ddInfoManagerAction,bomInfoManagerAction,gxInfoManagerAction,gyInfoManagerAction]; root of factory hierarchy
+[2015-07-14 13:25:33,142]-INFO  (MLog.java:80)|MLog clients using log4j logging.
+[2015-07-14 13:25:33,304]-INFO  (C3P0Registry.java:204)|Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[2015-07-14 13:25:33,954]-INFO  (Environment.java:514)|Hibernate 3.2.5
+[2015-07-14 13:25:33,968]-INFO  (Environment.java:547)|hibernate.properties not found
+[2015-07-14 13:25:33,976]-INFO  (Environment.java:681)|Bytecode provider name : cglib
+[2015-07-14 13:25:33,987]-INFO  (Environment.java:598)|using JDK 1.4 java.sql.Timestamp handling
+[2015-07-14 13:25:34,183]-INFO  (LocalSessionFactoryBean.java:730)|Building new Hibernate SessionFactory
+[2015-07-14 13:25:34,195]-INFO  (ConnectionProviderFactory.java:72)|Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[2015-07-14 13:25:34,450]-INFO  (AbstractPoolBackedDataSource.java:462)|Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 3000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge3479a12komvi15se0kb|c6696cf, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge3479a12komvi15se0kb|c6696cf, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/scpc?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+[2015-07-14 13:25:35,228]-INFO  (SettingsFactory.java:89)|RDBMS: MySQL, version: 5.1.40-community
+[2015-07-14 13:25:35,230]-INFO  (SettingsFactory.java:90)|JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.1.5 ( Revision: ${svn.Revision} )
+[2015-07-14 13:25:35,296]-INFO  (Dialect.java:152)|Using dialect: org.hibernate.dialect.MySQLDialect
+[2015-07-14 13:25:35,428]-INFO  (TransactionFactoryFactory.java:34)|Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[2015-07-14 13:25:35,431]-INFO  (TransactionManagerLookupFactory.java:33)|No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[2015-07-14 13:25:35,432]-INFO  (SettingsFactory.java:143)|Automatic flush during beforeCompletion(): disabled
+[2015-07-14 13:25:35,433]-INFO  (SettingsFactory.java:147)|Automatic session close at end of transaction: disabled
+[2015-07-14 13:25:35,435]-INFO  (SettingsFactory.java:154)|JDBC batch size: 15
+[2015-07-14 13:25:35,436]-INFO  (SettingsFactory.java:157)|JDBC batch updates for versioned data: disabled
+[2015-07-14 13:25:35,439]-INFO  (SettingsFactory.java:162)|Scrollable result sets: enabled
+[2015-07-14 13:25:35,440]-INFO  (SettingsFactory.java:170)|JDBC3 getGeneratedKeys(): enabled
+[2015-07-14 13:25:35,441]-INFO  (SettingsFactory.java:178)|Connection release mode: auto
+[2015-07-14 13:25:35,444]-INFO  (SettingsFactory.java:202)|Maximum outer join fetch depth: 2
+[2015-07-14 13:25:35,446]-INFO  (SettingsFactory.java:205)|Default batch fetch size: 1
+[2015-07-14 13:25:35,446]-INFO  (SettingsFactory.java:209)|Generate SQL with comments: disabled
+[2015-07-14 13:25:35,447]-INFO  (SettingsFactory.java:213)|Order SQL updates by primary key: disabled
+[2015-07-14 13:25:35,448]-INFO  (SettingsFactory.java:217)|Order SQL inserts for batching: disabled
+[2015-07-14 13:25:35,449]-INFO  (SettingsFactory.java:386)|Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[2015-07-14 13:25:35,457]-INFO  (ASTQueryTranslatorFactory.java:24)|Using ASTQueryTranslatorFactory
+[2015-07-14 13:25:35,458]-INFO  (SettingsFactory.java:225)|Query language substitutions: {}
+[2015-07-14 13:25:35,459]-INFO  (SettingsFactory.java:230)|JPA-QL strict compliance: disabled
+[2015-07-14 13:25:35,461]-INFO  (SettingsFactory.java:235)|Second-level cache: enabled
+[2015-07-14 13:25:35,462]-INFO  (SettingsFactory.java:239)|Query cache: disabled
+[2015-07-14 13:25:35,463]-INFO  (SettingsFactory.java:373)|Cache provider: org.hibernate.cache.NoCacheProvider
+[2015-07-14 13:25:35,464]-INFO  (SettingsFactory.java:254)|Optimize cache for minimal puts: disabled
+[2015-07-14 13:25:35,464]-INFO  (SettingsFactory.java:263)|Structured second-level cache entries: disabled
+[2015-07-14 13:25:35,486]-INFO  (SettingsFactory.java:290)|Statistics: disabled
+[2015-07-14 13:25:35,488]-INFO  (SettingsFactory.java:294)|Deleted entity synthetic identifier rollback: disabled
+[2015-07-14 13:25:35,492]-INFO  (SettingsFactory.java:309)|Default entity-mode: pojo
+[2015-07-14 13:25:35,495]-INFO  (SettingsFactory.java:313)|Named query checking : enabled
+[2015-07-14 13:25:35,609]-INFO  (SessionFactoryImpl.java:161)|building session factory
+[2015-07-14 13:25:35,639]-INFO  (SessionFactoryObjectFactory.java:82)|Not binding factory to JNDI, no JNDI name configured
+[2015-07-14 13:25:35,763]-INFO  (HibernateTransactionManager.java:390)|Using DataSource [com.project.base.DynamicDataSource@41cc28b] of Hibernate SessionFactory for HibernateTransactionManager
+[2015-07-14 13:25:36,216]-INFO  (ContextLoader.java:209)|Root WebApplicationContext: initialization completed in 4706 ms
+[2015-07-14 13:25:36,217]-INFO  (DefaultContextLoaderListener.java:27)|load WebApplicationContext into ContextHolder
+[2015-07-14 13:25:36,688]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-default.xml]
+[2015-07-14 13:25:36,996]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-plugin.xml]
+[2015-07-14 13:25:37,164]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts.xml]
+[2015-07-14 13:25:37,504]-INFO  (CommonsLogger.java:42)|Initializing Struts-Spring integration...
+[2015-07-14 13:25:37,506]-INFO  (CommonsLogger.java:42)|Setting autowire strategy to name
+[2015-07-14 13:25:37,508]-INFO  (CommonsLogger.java:42)|... initialized Struts-Spring integration successfully
+[2015-07-14 13:25:39,948]-WARN  (JavaUtils.java:1308)|Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+[2015-07-14 13:41:04,679]-INFO  (ContextLoader.java:189)|Root WebApplicationContext: initialization started
+[2015-07-14 13:41:04,768]-INFO  (AbstractApplicationContext.java:412)|Refreshing org.springframework.web.context.support.XmlWebApplicationContext@6c083703: display name [Root WebApplicationContext]; startup date [Tue Jul 14 13:41:04 CST 2015]; root of context hierarchy
+[2015-07-14 13:41:04,953]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext.xml]
+[2015-07-14 13:41:05,468]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_base.xml]
+[2015-07-14 13:41:05,617]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_login.xml]
+[2015-07-14 13:41:05,907]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_xsgl.xml]
+[2015-07-14 13:41:06,016]-INFO  (AbstractApplicationContext.java:427)|Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@6c083703]: org.springframework.beans.factory.support.DefaultListableBeanFactory@25c68283
+[2015-07-14 13:41:06,398]-INFO  (PropertiesLoaderSupport.java:178)|Loading properties file from class path resource [ApplicationResources.properties]
+[2015-07-14 13:41:06,591]-INFO  (DefaultListableBeanFactory.java:414)|Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@25c68283: defining beans [messageSource,propertyConfigurer,dataSourceA,dataSource,sessionFactory,transactionIntercetorTemplate,hibernateTransactionInterceptor,jdbcTransactionInterceptor,autoProxy,nativeJdbcExtractor,lobHandler,baseDao,baseService,selectDataDao,selectDataService,loginAction,xsglAction,khxxManagerAction,ddInfoManagerAction,bomInfoManagerAction,gxInfoManagerAction,gyInfoManagerAction]; root of factory hierarchy
+[2015-07-14 13:41:06,670]-INFO  (MLog.java:80)|MLog clients using log4j logging.
+[2015-07-14 13:41:06,910]-INFO  (C3P0Registry.java:204)|Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[2015-07-14 13:41:07,579]-INFO  (Environment.java:514)|Hibernate 3.2.5
+[2015-07-14 13:41:07,598]-INFO  (Environment.java:547)|hibernate.properties not found
+[2015-07-14 13:41:07,605]-INFO  (Environment.java:681)|Bytecode provider name : cglib
+[2015-07-14 13:41:07,623]-INFO  (Environment.java:598)|using JDK 1.4 java.sql.Timestamp handling
+[2015-07-14 13:41:07,930]-INFO  (LocalSessionFactoryBean.java:730)|Building new Hibernate SessionFactory
+[2015-07-14 13:41:07,946]-INFO  (ConnectionProviderFactory.java:72)|Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[2015-07-14 13:41:08,322]-INFO  (AbstractPoolBackedDataSource.java:462)|Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 3000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge3479a12l8n891swsu6u|2bb8a47f, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge3479a12l8n891swsu6u|2bb8a47f, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/scpc?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+[2015-07-14 13:41:09,052]-INFO  (SettingsFactory.java:89)|RDBMS: MySQL, version: 5.1.40-community
+[2015-07-14 13:41:09,054]-INFO  (SettingsFactory.java:90)|JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.1.5 ( Revision: ${svn.Revision} )
+[2015-07-14 13:41:09,103]-INFO  (Dialect.java:152)|Using dialect: org.hibernate.dialect.MySQLDialect
+[2015-07-14 13:41:09,231]-INFO  (TransactionFactoryFactory.java:34)|Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[2015-07-14 13:41:09,235]-INFO  (TransactionManagerLookupFactory.java:33)|No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[2015-07-14 13:41:09,236]-INFO  (SettingsFactory.java:143)|Automatic flush during beforeCompletion(): disabled
+[2015-07-14 13:41:09,237]-INFO  (SettingsFactory.java:147)|Automatic session close at end of transaction: disabled
+[2015-07-14 13:41:09,238]-INFO  (SettingsFactory.java:154)|JDBC batch size: 15
+[2015-07-14 13:41:09,239]-INFO  (SettingsFactory.java:157)|JDBC batch updates for versioned data: disabled
+[2015-07-14 13:41:09,244]-INFO  (SettingsFactory.java:162)|Scrollable result sets: enabled
+[2015-07-14 13:41:09,246]-INFO  (SettingsFactory.java:170)|JDBC3 getGeneratedKeys(): enabled
+[2015-07-14 13:41:09,248]-INFO  (SettingsFactory.java:178)|Connection release mode: auto
+[2015-07-14 13:41:09,252]-INFO  (SettingsFactory.java:202)|Maximum outer join fetch depth: 2
+[2015-07-14 13:41:09,253]-INFO  (SettingsFactory.java:205)|Default batch fetch size: 1
+[2015-07-14 13:41:09,254]-INFO  (SettingsFactory.java:209)|Generate SQL with comments: disabled
+[2015-07-14 13:41:09,255]-INFO  (SettingsFactory.java:213)|Order SQL updates by primary key: disabled
+[2015-07-14 13:41:09,256]-INFO  (SettingsFactory.java:217)|Order SQL inserts for batching: disabled
+[2015-07-14 13:41:09,257]-INFO  (SettingsFactory.java:386)|Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[2015-07-14 13:41:09,268]-INFO  (ASTQueryTranslatorFactory.java:24)|Using ASTQueryTranslatorFactory
+[2015-07-14 13:41:09,269]-INFO  (SettingsFactory.java:225)|Query language substitutions: {}
+[2015-07-14 13:41:09,271]-INFO  (SettingsFactory.java:230)|JPA-QL strict compliance: disabled
+[2015-07-14 13:41:09,272]-INFO  (SettingsFactory.java:235)|Second-level cache: enabled
+[2015-07-14 13:41:09,273]-INFO  (SettingsFactory.java:239)|Query cache: disabled
+[2015-07-14 13:41:09,275]-INFO  (SettingsFactory.java:373)|Cache provider: org.hibernate.cache.NoCacheProvider
+[2015-07-14 13:41:09,276]-INFO  (SettingsFactory.java:254)|Optimize cache for minimal puts: disabled
+[2015-07-14 13:41:09,277]-INFO  (SettingsFactory.java:263)|Structured second-level cache entries: disabled
+[2015-07-14 13:41:09,297]-INFO  (SettingsFactory.java:290)|Statistics: disabled
+[2015-07-14 13:41:09,299]-INFO  (SettingsFactory.java:294)|Deleted entity synthetic identifier rollback: disabled
+[2015-07-14 13:41:09,302]-INFO  (SettingsFactory.java:309)|Default entity-mode: pojo
+[2015-07-14 13:41:09,304]-INFO  (SettingsFactory.java:313)|Named query checking : enabled
+[2015-07-14 13:41:09,414]-INFO  (SessionFactoryImpl.java:161)|building session factory
+[2015-07-14 13:41:09,441]-INFO  (SessionFactoryObjectFactory.java:82)|Not binding factory to JNDI, no JNDI name configured
+[2015-07-14 13:41:09,582]-INFO  (HibernateTransactionManager.java:390)|Using DataSource [com.project.base.DynamicDataSource@51330b8a] of Hibernate SessionFactory for HibernateTransactionManager
+[2015-07-14 13:41:10,043]-INFO  (ContextLoader.java:209)|Root WebApplicationContext: initialization completed in 5357 ms
+[2015-07-14 13:41:10,044]-INFO  (DefaultContextLoaderListener.java:27)|load WebApplicationContext into ContextHolder
+[2015-07-14 13:41:10,508]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-default.xml]
+[2015-07-14 13:41:10,908]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-plugin.xml]
+[2015-07-14 13:41:11,131]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts.xml]
+[2015-07-14 13:41:11,500]-INFO  (CommonsLogger.java:42)|Initializing Struts-Spring integration...
+[2015-07-14 13:41:11,505]-INFO  (CommonsLogger.java:42)|Setting autowire strategy to name
+[2015-07-14 13:41:11,506]-INFO  (CommonsLogger.java:42)|... initialized Struts-Spring integration successfully
+[2015-07-14 13:41:14,483]-WARN  (JavaUtils.java:1308)|Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+[2015-07-14 18:42:36,920]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:43:00,517]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-14 18:43:10,224]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-14 18:43:10,225]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-14 18:43:13,619]-INFO  (PcglAction.java:70)|查询排产信息select 'A任务排产' title,cast(jhkssj as char)start,cast(jhwcsj as char) end,'red' color from scglxt_mk_scpc;
+[2015-07-14 18:44:36,172]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:51:03,478]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:51:16,670]-INFO  (SbglAction.java:124)|查询设备字典数据sqlselect id ,mc from scglxt_tyzd where xh like  '0101__%'
+[2015-07-14 18:51:16,684]-INFO  (SbglAction.java:124)|查询设备字典数据sqlselect id ,mc from scglxt_tyzd where xh like  '0102__%'
+[2015-07-14 18:51:16,702]-INFO  (SbglAction.java:139)|查询设备字典数据sqlselect sb.id, sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,dqzt sbzt,wxjl,remark bz from scglxt_t_sb sb where id = '01'
+[2015-07-14 18:51:24,974]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:52:12,194]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:52:30,492]-INFO  (SbglAction.java:124)|查询设备字典数据sqlselect id ,mc from scglxt_tyzd where xh like  '0101__%'
+[2015-07-14 18:52:30,492]-INFO  (SbglAction.java:124)|查询设备字典数据sqlselect id ,mc from scglxt_tyzd where xh like  '0102__%'
+[2015-07-14 18:52:43,605]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:52:55,028]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-14 18:52:57,065]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-14 18:52:57,066]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-14 18:53:12,071]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:53:22,687]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-14 18:53:22,689]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-14 18:53:24,867]-INFO  (PcglAction.java:70)|查询排产信息select 'A任务排产' title,cast(jhkssj as char)start,cast(jhwcsj as char) end,'red' color from scglxt_mk_scpc;
+[2015-07-14 18:53:26,024]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-14 18:53:28,127]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-14 18:54:36,402]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:54:38,922]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-14 18:54:43,732]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-14 18:54:43,733]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-14 18:54:56,075]-INFO  (PcglAction.java:70)|查询排产信息select 'A任务排产' title,cast(jhkssj as char)start,cast(jhwcsj as char) end,'red' color from scglxt_mk_scpc;
+[2015-07-14 18:54:58,043]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-14 18:54:58,044]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-14 18:55:00,327]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-14 18:55:04,142]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:55:06,338]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-14 18:55:13,233]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-14 18:55:13,233]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-14 18:56:42,889]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-14 18:56:42,890]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-14 18:56:44,375]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-14 18:56:44,376]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-14 18:57:00,324]-INFO  (GhsglAction.java:31)|供货商列表sqlselect id,spmc,gsmc,gsdz,lxr,lxfs from cggl_ghs_info
+[2015-07-14 18:57:00,370]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+[2015-07-14 18:57:00,452]-INFO  (SQLErrorCodesFactory.java:128)|SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase]
+[2015-07-14 18:57:10,728]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 18:57:11,488]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-14 18:57:13,119]-INFO  (RyglAction.java:35)|查询人员的sql是：===select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb
+[2015-07-14 18:57:13,120]-INFO  (RyglAction.java:37)|查询人员列表结果是：{"data":[{"ssbz":"生产备料部","id":"01","rymc":"王清","rynl":"24","jsjb":"技术三级","dqgz":3456},{"ssbz":"生产备料部","id":"02","rymc":"霍晓琳","rynl":"22","jsjb":"技术三级","dqgz":4453},{"ssbz":"生产备料部","id":"03","rymc":"孙武","rynl":"22","jsjb":"技术三级","dqgz":33},{"ssbz":"铣工组","id":"04","rymc":"素丽","rynl":"22","jsjb":"技术三级","dqgz":122222},{"ssbz":"加工中心","id":"05","rymc":"戴明","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"加工中心","id":"06","rymc":"王伟","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"07","rymc":"文涛","rynl":"23","jsjb":"技术二级","dqgz":23},{"ssbz":"钳组","id":"09","rymc":"艳丽","rynl":"23","jsjb":"技术二级","dqgz":23}]}
+[2015-07-14 18:57:26,027]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 19:04:10,311]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190410848','1005','规格','40','0') 
+[2015-07-14 19:04:10,486]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190410296','1002','磨','20','1') 
+[2015-07-14 19:04:10,502]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190410233','1002','规格','30','2') 
+[2015-07-14 19:04:10,517]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190410651','1003','规格','50','4') 
+[2015-07-14 19:04:10,517]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190410166','1004','规格','40','3') 
+[2015-07-14 19:04:11,268]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190411284','1005','规格','40','0') 
+[2015-07-14 19:04:11,272]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190411528','1002','规格','30','2') 
+[2015-07-14 19:04:11,277]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190411470','1004','规格','40','3') 
+[2015-07-14 19:04:11,278]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190411213','1002','磨','20','1') 
+[2015-07-14 19:04:11,283]-INFO  (BomInfoManagerAction.java:177)|insert into scglxt_t_gygc (bomid,id,sbid,gynr,edgs,serial) values ('001','20150714190411545','1003','规格','50','4') 
+[2015-07-14 19:04:20,192]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx
+[2015-07-14 19:04:29,163]-INFO  (BzglAction.java:27)|班组信息查询sqlselect id,bzmc,bzfzr from scglxt_t_bz
+[2015-07-14 19:04:31,227]-INFO  (SbglAction.java:30)|设备信息查询sqlselect sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,remark from scglxt_t_sb sb,scglxt_tyzd sblx,scglxt_tyzd sbzt where sbzt.id = dqzt and sblx.id = sblx

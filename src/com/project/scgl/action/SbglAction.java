@@ -26,7 +26,7 @@ public class SbglAction {
 	 * 获取设备列表
 	 */
 	public void getSbTableData(){
-		String sql = "select sbbz.bzmc sbbz,sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, " +
+		String sql = "select sbbz.bzmc sbbz,sb.sbxh,sb.ccbh,sb.id,sblx.mc sblx,sbmc, cast(cgsj as char) cgsj, " +
 				" cast(bxjssj as char) bxjssj,sbszd,sbzt.mc sbzt,wxjl,sb.sccj,sb.sccjdetail ,remark from " +
 				" scglxt_t_sb sb, scglxt_tyzd sblx,scglxt_tyzd sbzt,scglxt_t_bz sbbz " +
 				" where sbzt.id = dqzt and sblx.id = sblx and bzid = sbbz.id";
@@ -54,8 +54,10 @@ public class SbglAction {
 		String sbbz = Request.getParameter("sbbz");
 		String sccj = Request.getParameter("sccj");
 		String sccjdetail = Request.getParameter("sccjdetail");
-		String sql = "insert into scglxt_t_sb (id,sblx,sbmc,cgsj,bxjssj,sbszd,dqzt,wxjl,remark,bzid,sccj,sccjdetail) values ('"+sbid+"'" +
-				",'"+sblx+"','"+sbmc+"','"+sbcgsj+"','"+sbbxjssj+"','"+sbszd+"','"+sbzt+"','"+sbwxjl+"','"+sbremark+"','"+sbbz+"','"+sccj+"','"+sccjdetail+"')";
+        String sbxh=Request.getParameter("sbxh");
+        String ccbh=Request.getParameter("ccbh");
+		String sql = "insert into scglxt_t_sb (id,sblx,sbmc,cgsj,bxjssj,sbszd,dqzt,wxjl,remark,bzid,sccj,sccjdetail,sbxh,ccbh) values ('"+sbid+"'" +
+				",'"+sblx+"','"+sbmc+"','"+sbcgsj+"','"+sbbxjssj+"','"+sbszd+"','"+sbzt+"','"+sbwxjl+"','"+sbremark+"','"+sbbz+"','"+sccj+"','"+sccjdetail+"','"+sbxh+"','"+ccbh+"')";
 		log.info("设备信息添加sql"+sql);
 		int i = this.selectDataService.update(sql);
 		
@@ -85,8 +87,10 @@ public class SbglAction {
 		String sbbz = Request.getParameter("sbbz");
 		String sccj = Request.getParameter("sccj");
 		String sccjdetail = Request.getParameter("sccjdetail");
+        String sbxh=Request.getParameter("sbxh");
+        String ccbh=Request.getParameter("ccbh");
 		String sql = "update scglxt_t_sb set sblx='"+sblx+"',sbmc='"+sbmc+"',cgsj = '"+sbcgsj+"',bxjssj='"+sbbxjssj+"'," +
-				"sbszd = '"+sbszd+"',dqzt = '"+sbzt+"',wxjl='"+sbwxjl+"',remark = '"+sbremark+"',bzid='"+sbbz+"',sccj='"+sccj+"',SCCJDETAIL='"+sccjdetail+"' where id = '"+sbid+"'";
+				"sbszd = '"+sbszd+"',dqzt = '"+sbzt+"',wxjl='"+sbwxjl+"',remark = '"+sbremark+"',bzid='"+sbbz+"',sccj='"+sccj+"',SCCJDETAIL='"+sccjdetail+"',sbxh='"+sbxh+"',ccbh='"+ccbh+"' where id = '"+sbid+"'";
 		
 		log.info("设备信息更新sql"+sql);
 		int i = this.selectDataService.update(sql);

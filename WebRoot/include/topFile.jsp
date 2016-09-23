@@ -12,6 +12,7 @@
 	<!-- fullcalendar插件样式 -->
    	<link href="${pageContext.request.contextPath}/stylesheets/plugins/fullcalendar/fullcalendar.css" media="all" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/stylesheets/scglxt/main.css" type="text/css"></link>
+      <%--<link rel="stylesheet" href="${pageContext.request.contextPath}/stylesheets/default.css" type="text/css"></link>--%>
     <script src="${pageContext.request.contextPath}/js/jquery/jquery.min.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/jquery/jquery-migrate.min.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/jquery/jquery-ui.min.js" type="text/javascript"></script>
@@ -26,15 +27,27 @@
   	<script src="${pageContext.request.contextPath}/js/plugin/bootstrap_datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
   	<script src="${pageContext.request.contextPath}/js/plugin/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js" type="text/javascript"></script>
     <!-- 控制主页面左侧及头部导航、控制收缩空间 -->
+    <script src="${pageContext.request.contextPath}/js/util/Cookies.js"></script>
     <script src="${pageContext.request.contextPath}/js/scglxt/index.js" type="text/javascript"></script>
     <%--<script src="${pageContext.request.contextPath}/js/plugin/fullcalendar/fullcalendar.min.js"--%>
             <%--type="text/javascript"></script>--%>
+
     <style>
         #content {
             /* margin-left: 251px; */
             background: #fbfbfb;
             min-width: 276px;
+            height: 100%;
             background: #fbfbfb;
+        }
+        #user{
+            padding-right:200px;
+        }
+        #datetime{
+             padding-right:150px;
+         }
+        #exit a{
+            color:white;
         }
     </style>
 

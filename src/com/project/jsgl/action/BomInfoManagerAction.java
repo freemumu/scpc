@@ -84,28 +84,39 @@ public class BomInfoManagerAction
       Response.write("ERROR");
     }
   }
-  
+
+    /***
+     * 更新BOM表备料情况
+     * 同时开始第一道工序
+     */
   public void updateBlzk()
   {
     String id = Request.getParameter("id");
     String blqk = Request.getParameter("blqk");
-    String sql = " update scglxt_t_bom set blqk ='" + blqk + "' ,  " + 
+    String clzt="0";
+      if ((blqk.equals("1")) || (blqk.equals("2")))//如果备料情况是已完成或者自备料则材料状态修改为采购完成
+      {
+          clzt="1";
+      }
+    String sql = " update scglxt_t_bom set blqk ='" + blqk + "' ,clzt='"+clzt+"', " +
       " bljssj =  date_format(now(),'%Y-%m-%d %H:%i:%s') ," + 
       " starttime =date_format(now(),'%Y-%m-%d %H:%i:%s')     where id = '" + id + "'";
-    String updateGygcSl = " UPDATE scglxt_t_gygc gygc SET kjgjs= (SELECT bom.jgsl FROM  scglxt_t_bom bom  WHERE  bom.id = gygc.bomid) ,gygc.yjgjs=  (SELECT jgsl FROM  scglxt_t_bom bom WHERE  bom.id = gygc.bomid)WHERE gygc.bomid = '" + 
-    
+   // String updateGygcSl = " UPDATE scglxt_t_gygc gygc SET kjgjs= (SELECT bom.jgsl FROM  scglxt_t_bom bom  WHERE  bom.id = gygc.bomid) ,gygc.yjgjs=  (SELECT jgsl FROM  scglxt_t_bom bom WHERE  bom.id = gygc.bomid)WHERE gygc.bomid = '" +
+      String updateGygcSl = " UPDATE scglxt_t_gygc gygc SET kjgjs= (SELECT bom.jgsl FROM  scglxt_t_bom bom  WHERE  bom.id = gygc.bomid)  WHERE gygc.bomid = '" +
       id + "' AND gygc.serial = '0'";
     
-    String updateGygcSl2 = " UPDATE scglxt_t_gygc gygc SET kjgjs= (SELECT bom.jgsl FROM  scglxt_t_bom bom  WHERE  bom.id = gygc.bomid) WHERE gygc.bomid = '" + 
+    //String updateGygcSl2 = " UPDATE scglxt_t_gygc gygc SET kjgjs= (SELECT bom.jgsl FROM  scglxt_t_bom bom  WHERE  bom.id = gygc.bomid) WHERE gygc.bomid = '" +
     
-      id + "' AND gygc.serial = '1'";
+   //   id + "' AND gygc.serial = '1'";
     try
     {
       this.selectDataService.execute(sql);
+        log.info("执行sql语句是：===="+sql);
       if ((blqk.equals("1")) || (blqk.equals("2")))
       {
         this.selectDataService.execute(updateGygcSl);
-        this.selectDataService.execute(updateGygcSl2);
+          log.info("执行sql语句是：===="+updateGygcSl);
+       // this.selectDataService.execute(updateGygcSl2);
       }
       Response.write("SUCCESS");
     }
@@ -158,16 +169,18 @@ public class BomInfoManagerAction
     String id = Request.getParameter("id");
     if ((starttime == null) || ("".equals(starttime))) {
       starttime = "now()";
+    }else{
+        starttime = "'"+starttime+"'";
     }
     if ((endtime == null) || ("".equals(endtime))) {
       endtime = "now()";
     }
     if ((flag != null) && (flag.equals("ADD"))) {
-      sql = 
-        " INSERT INTO  scglxt_t_bom  (id, zddmc, zddcz, clxz, cldx, cltj, clje, jgsl, bmcl, starttime, endtime, gs, blqk,  ssdd)  VALUES ('" + randomId + "','" + zddmc + "', '" + zddcz + "', '" + clxz + "', '" + cldx + "', '" + cltj + "', '" + clje + "', '" + jgsl + "', '" + bmcl + "', date_format('" + starttime + "','%Y-%m-%d %H:%i:%s'),  date_format('" + endtime + "','%Y-%m-%d %H:%i:%s'), '" + gs + "', '',   '" + ssdd + "');";
+      sql =
+        " INSERT INTO  scglxt_t_bom  (id, zddmc, zddcz, clxz, cldx, cltj, clje, jgsl, bmcl, starttime, endtime, gs, blqk,  ssdd)  VALUES ('" + randomId + "','" + zddmc + "', '" + zddcz + "', '" + clxz + "', '" + cldx + "', '" + cltj + "', '" + clje + "', '" + jgsl + "', '" + bmcl + "', date_format(" + starttime + ",'%Y-%m-%d %H:%i:%s'),  date_format('" + endtime + "','%Y-%m-%d %H:%i:%s'), '" + gs + "', '',   '" + ssdd + "');";
     } else if (flag.equals("UPDATE")) {
-      sql = 
-      
+      sql =
+
         "update scglxt_t_bom  set zddmc = '" + zddmc + "', zddcz = '" + zddcz + "' , clxz = '" + clxz + "' , cldx = '" + cldx + "' ,cltj ='" + cltj + "' , clje ='" + clje + "' ,bmcl='" + bmcl + "'," + "starttime = date_format('" + starttime + "','%Y-%m-%d %H:%i:%s'),endtime = date_format('" + endtime + "','%Y-%m-%d %H:%i:%s')  ," + "gs='" + gs + "'  " + "where  id = '" + id + "'";
     }
     try

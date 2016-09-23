@@ -29,7 +29,7 @@ public class RyglAction {
 	 */
 	public void getRyTableData() {
 
-		String sql = "select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.ssbz = b.id and jb.id = a.jsjb";
+		String sql = "select b.bzmc ssbz,a.id,rymc,rynl,jb.mc jsjb,dqgz from scglxt_t_ry a,scglxt_t_bz b,scglxt_tyzd jb where a.id<>'01' and a.ssbz = b.id and jb.id = a.jsjb";
 		List list = this.selectDataService.queryForList(sql);
 		String json = JsonObjectUtil.list2Json(list);
 		log.info("查询人员的sql是：===" + sql);

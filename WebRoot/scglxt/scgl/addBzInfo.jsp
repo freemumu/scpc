@@ -96,8 +96,9 @@
 								班组名称
 							</label>
 							<div class="col-md-6">
-								<input class="form-control" name="bzmc" id="bzmc" placeholder="请输入班组名称"
+								<input class="form-control required" name="bzmc" id="bzmc" placeholder="请输入班组名称"
 									type="text">
+                                <label class="textInfo"></label>
 							</div>
 						</div>
 						<div class="form-group">
@@ -105,15 +106,16 @@
 								负责人
 							</label>
 							<div class="col-md-6">
-								<input class="form-control" name="bzfzr" id="bzfzr" placeholder="请输入负责人"
+								<input class="form-control required" name="bzfzr" id="bzfzr" placeholder="请输入负责人"
 									type="text">
+                                <label class="textInfo"></label>
 							</div>
 						</div>
 						
 						<div class="form-actions" style="margin-bottom: 0;">
 							<div class="row">
 								<div class="col-md-6 col-md-offset-3">
-									<div class="btn btn-primary btn-lg" onclick = "saveBzInfo()">
+									<div class="btn btn-primary" onclick = "saveBzInfo()">
 										<i class="icon-save" ></i> 保存
 									</div>
 								</div>

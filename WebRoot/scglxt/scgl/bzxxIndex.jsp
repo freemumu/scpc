@@ -7,7 +7,27 @@
             src="../../js/plugin/datatables/dataTables.fixedColumns.js"></script>
 </head>
 <script type="text/javascript">
+    function deleteRow(id){
+        var flag = confirm("是否删除？");
+        if(flag){
+            $.ajax({
+                type: "post",
+                url: "scglbz_deleteBzInfo.action",
+                dataType: "text",
+                data:{
+                    "id":id
+                },
+                success:function(str){
+                    alert("删除成功！");
+                    window.location.reload();
+                    $("#sorting-advanced").dataTable().fnPageChange( 'previous', true );
+                }
+            });
+        }
+    }
     function tableInit() {
+
+        var height = document.body.offsetHeight;
 
         var table = $('#bzxx').DataTable({
 //            "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
@@ -29,7 +49,7 @@
             },
             "aLengthMenu": [15, 30],
             "ajax": "scglbz_getBzTableData.action",
-            scrollY: "300px",
+            scrollY: height-150+ "px",
             scrollX: false,
             scrollCollapse: false,
             paging: true,
@@ -39,7 +59,8 @@
                         return '<div class="text-center">' +
                                 '<a href="${pageContext.request.contextPath}/scglxt/scgl/addBzInfo.jsp?flag=edit&id=' + data + '">修改</a>' +
                                         "&nbsp;"+
-                                '<a  href="${pageContext.request.contextPath}/scglxt/scgl/scglbz_deleteBzInfo.action?id=' + data + '">删除</a>' +
+                                <%--'<a  href="${pageContext.request.contextPath}/scglxt/scgl/scglbz_deleteBzInfo.action?id=' + data + '">删除</a>' +--%>
+                                '<a  href="#" onclick="deleteRow(\'' + data + '\')">删除</a>'
                                 '</div>';
                     },
                     "targets": 1

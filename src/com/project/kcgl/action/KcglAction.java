@@ -102,6 +102,15 @@ public class KcglAction {
         if (null == id||"".equals(id)) {
             id = WebUtils.getRandomId();
         }
+        if (null == kd||"".equals(kd)) {
+            kd = "0";
+        }
+        if (null == gd||"".equals(gd)) {
+            gd = "0";
+        }
+        if (null == cd||"".equals(cd)) {
+            cd = "0";
+        }
         String sql = null;
         if (flag != null && flag.equals("ADD")) {
             sql = "  insert into scglxt_t_cl(id,clmc,clcz,clsl,cldj,cllx,ghs,mi,clxz,kd,gd,cd,clly ) values"+

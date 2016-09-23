@@ -1,0 +1,79 @@
+[2015-07-10 06:34:47,898]-INFO  (ContextLoader.java:189)|Root WebApplicationContext: initialization started
+[2015-07-10 06:34:47,937]-INFO  (AbstractApplicationContext.java:412)|Refreshing org.springframework.web.context.support.XmlWebApplicationContext@88775b: display name [Root WebApplicationContext]; startup date [Fri Jul 10 06:34:47 CST 2015]; root of context hierarchy
+[2015-07-10 06:34:48,044]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext.xml]
+[2015-07-10 06:34:48,165]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_base.xml]
+[2015-07-10 06:34:48,189]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_login.xml]
+[2015-07-10 06:34:48,215]-INFO  (XmlBeanDefinitionReader.java:323)|Loading XML bean definitions from file [E:\work\server\apache-tomcat-8.0.23\webapps\scpc\WEB-INF\classes\xml\spring\applicationContext_xsgl.xml]
+[2015-07-10 06:34:48,241]-INFO  (AbstractApplicationContext.java:427)|Bean factory for application context [org.springframework.web.context.support.XmlWebApplicationContext@88775b]: org.springframework.beans.factory.support.DefaultListableBeanFactory@13930aa0
+[2015-07-10 06:34:48,347]-INFO  (PropertiesLoaderSupport.java:178)|Loading properties file from class path resource [ApplicationResources.properties]
+[2015-07-10 06:34:48,407]-INFO  (DefaultListableBeanFactory.java:414)|Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@13930aa0: defining beans [messageSource,propertyConfigurer,dataSourceA,dataSource,sessionFactory,transactionIntercetorTemplate,hibernateTransactionInterceptor,jdbcTransactionInterceptor,autoProxy,nativeJdbcExtractor,lobHandler,baseDao,baseService,selectDataDao,selectDataService,loginAction,xsglAction,khxxManagerAction,ddInfoManagerAction,bomInfoManagerAction,gxInfoManagerAction,gyInfoManagerAction]; root of factory hierarchy
+[2015-07-10 06:34:48,426]-INFO  (MLog.java:80)|MLog clients using log4j logging.
+[2015-07-10 06:34:48,468]-INFO  (C3P0Registry.java:204)|Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+[2015-07-10 06:34:48,648]-INFO  (Environment.java:514)|Hibernate 3.2.5
+[2015-07-10 06:34:48,655]-INFO  (Environment.java:547)|hibernate.properties not found
+[2015-07-10 06:34:48,657]-INFO  (Environment.java:681)|Bytecode provider name : cglib
+[2015-07-10 06:34:48,660]-INFO  (Environment.java:598)|using JDK 1.4 java.sql.Timestamp handling
+[2015-07-10 06:34:48,725]-INFO  (LocalSessionFactoryBean.java:730)|Building new Hibernate SessionFactory
+[2015-07-10 06:34:48,730]-INFO  (ConnectionProviderFactory.java:72)|Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+[2015-07-10 06:34:48,806]-INFO  (AbstractPoolBackedDataSource.java:462)|Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 1, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 3000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge13t9awg905j1cpyuub|1529fef8, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge13t9awg905j1cpyuub|1529fef8, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/scpc?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 60, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 5, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> null, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+[2015-07-10 06:34:49,004]-INFO  (SettingsFactory.java:89)|RDBMS: MySQL, version: 5.1.40-community
+[2015-07-10 06:34:49,004]-INFO  (SettingsFactory.java:90)|JDBC driver: MySQL-AB JDBC Driver, version: mysql-connector-java-5.1.5 ( Revision: ${svn.Revision} )
+[2015-07-10 06:34:49,019]-INFO  (Dialect.java:152)|Using dialect: org.hibernate.dialect.MySQLDialect
+[2015-07-10 06:34:49,050]-INFO  (TransactionFactoryFactory.java:34)|Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+[2015-07-10 06:34:49,051]-INFO  (TransactionManagerLookupFactory.java:33)|No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+[2015-07-10 06:34:49,052]-INFO  (SettingsFactory.java:143)|Automatic flush during beforeCompletion(): disabled
+[2015-07-10 06:34:49,052]-INFO  (SettingsFactory.java:147)|Automatic session close at end of transaction: disabled
+[2015-07-10 06:34:49,053]-INFO  (SettingsFactory.java:154)|JDBC batch size: 15
+[2015-07-10 06:34:49,054]-INFO  (SettingsFactory.java:157)|JDBC batch updates for versioned data: disabled
+[2015-07-10 06:34:49,055]-INFO  (SettingsFactory.java:162)|Scrollable result sets: enabled
+[2015-07-10 06:34:49,056]-INFO  (SettingsFactory.java:170)|JDBC3 getGeneratedKeys(): enabled
+[2015-07-10 06:34:49,057]-INFO  (SettingsFactory.java:178)|Connection release mode: auto
+[2015-07-10 06:34:49,058]-INFO  (SettingsFactory.java:202)|Maximum outer join fetch depth: 2
+[2015-07-10 06:34:49,058]-INFO  (SettingsFactory.java:205)|Default batch fetch size: 1
+[2015-07-10 06:34:49,059]-INFO  (SettingsFactory.java:209)|Generate SQL with comments: disabled
+[2015-07-10 06:34:49,059]-INFO  (SettingsFactory.java:213)|Order SQL updates by primary key: disabled
+[2015-07-10 06:34:49,059]-INFO  (SettingsFactory.java:217)|Order SQL inserts for batching: disabled
+[2015-07-10 06:34:49,060]-INFO  (SettingsFactory.java:386)|Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+[2015-07-10 06:34:49,062]-INFO  (ASTQueryTranslatorFactory.java:24)|Using ASTQueryTranslatorFactory
+[2015-07-10 06:34:49,062]-INFO  (SettingsFactory.java:225)|Query language substitutions: {}
+[2015-07-10 06:34:49,062]-INFO  (SettingsFactory.java:230)|JPA-QL strict compliance: disabled
+[2015-07-10 06:34:49,063]-INFO  (SettingsFactory.java:235)|Second-level cache: enabled
+[2015-07-10 06:34:49,063]-INFO  (SettingsFactory.java:239)|Query cache: disabled
+[2015-07-10 06:34:49,063]-INFO  (SettingsFactory.java:373)|Cache provider: org.hibernate.cache.NoCacheProvider
+[2015-07-10 06:34:49,064]-INFO  (SettingsFactory.java:254)|Optimize cache for minimal puts: disabled
+[2015-07-10 06:34:49,064]-INFO  (SettingsFactory.java:263)|Structured second-level cache entries: disabled
+[2015-07-10 06:34:49,069]-INFO  (SettingsFactory.java:290)|Statistics: disabled
+[2015-07-10 06:34:49,069]-INFO  (SettingsFactory.java:294)|Deleted entity synthetic identifier rollback: disabled
+[2015-07-10 06:34:49,070]-INFO  (SettingsFactory.java:309)|Default entity-mode: pojo
+[2015-07-10 06:34:49,071]-INFO  (SettingsFactory.java:313)|Named query checking : enabled
+[2015-07-10 06:34:49,097]-INFO  (SessionFactoryImpl.java:161)|building session factory
+[2015-07-10 06:34:49,100]-INFO  (SessionFactoryObjectFactory.java:82)|Not binding factory to JNDI, no JNDI name configured
+[2015-07-10 06:34:49,137]-INFO  (HibernateTransactionManager.java:390)|Using DataSource [com.project.base.DynamicDataSource@3e9d0492] of Hibernate SessionFactory for HibernateTransactionManager
+[2015-07-10 06:34:49,264]-INFO  (ContextLoader.java:209)|Root WebApplicationContext: initialization completed in 1359 ms
+[2015-07-10 06:34:49,264]-INFO  (DefaultContextLoaderListener.java:27)|load WebApplicationContext into ContextHolder
+[2015-07-10 06:34:49,387]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-default.xml]
+[2015-07-10 06:34:49,482]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts-plugin.xml]
+[2015-07-10 06:34:49,538]-INFO  (CommonsLogger.java:42)|Parsing configuration file [struts.xml]
+[2015-07-10 06:34:49,635]-INFO  (CommonsLogger.java:42)|Initializing Struts-Spring integration...
+[2015-07-10 06:34:49,635]-INFO  (CommonsLogger.java:42)|Setting autowire strategy to name
+[2015-07-10 06:34:49,635]-INFO  (CommonsLogger.java:42)|... initialized Struts-Spring integration successfully
+[2015-07-10 06:34:50,323]-WARN  (JavaUtils.java:1308)|Unable to find required classes (javax.activation.DataHandler and javax.mail.internet.MimeMultipart). Attachment support is disabled.
+[2015-07-10 06:35:32,678]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:36:28,358]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:37:38,702]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:37:55,338]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:39:45,651]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:41:05,667]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:51:50,350]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:52:16,187]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:54:10,976]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:57:00,289]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:57:03,780]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 06:58:40,405]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 07:05:21,159]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 07:06:58,252]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 07:07:57,570]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 07:08:56,062]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 07:09:22,055]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 07:10:20,510]-INFO  (PcglAction.java:84)|请求班组图表
+[2015-07-10 07:11:17,681]-INFO  (PcglAction.java:84)|请求班组图表

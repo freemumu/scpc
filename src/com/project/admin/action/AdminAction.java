@@ -7,8 +7,10 @@ import org.apache.commons.logging.Log;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.net.URLEncoder;
 import java.util.Map;
 
 /**
@@ -51,13 +53,22 @@ public class AdminAction {
             // 用户存在记录cookies
             if (user != null) {
                 ActionContext.getContext().getSession().put("username",user.getRymc());//在session中放入用户真实名
+                ActionContext.getContext().getSession().put("userid",user.getId());
+                ActionContext.getContext().getSession().put("userssbz",user.getSsbz());
+                String name= URLEncoder.encode(user.getRymc(),"UTF-8");
+                Cookie cookie=new Cookie("userName",name);
+                Cookie cookie2=new Cookie("userSsbz",user.getSsbz());
+                response.addCookie(cookie);
+                response.addCookie(cookie2);
                 request.getRequestDispatcher("index.jsp").forward(request,
                         response);
+                return;
             } else {
                 // 查询对应用户失败传递对应信息
                 request.setAttribute("message", "您输入的用户名或者密码错误请重试！");
                 request.getRequestDispatcher("login.jsp").forward(request,
                         response);
+                return;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,6 +85,8 @@ public class AdminAction {
             user = new User();
             user.setId(rs.getString("ID"));
             user.setRymc(rs.getString("RYMC"));
+            user.setSsbz(rs.getString("SSBZ"));
+            user.setRynl(rs.getString("RYNL"));
             return user;
         } else {
 

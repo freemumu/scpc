@@ -70,15 +70,17 @@
                         {"data": null },
                         {"data": 'id'},
                         {"data": "sbmc", "sWidth": "120px"},
+                        {"data": "sbxh", "sWidth": "120px"},
                         {"data": "sbbz", "sWidth": "120px"},
                         {"data": "sblx", "sWidth": "120px"},
+                        {"data": "sccjdetail", "sWidth": "120px"},
                         {"data": "sbzt", "sWidth": "60px"},
                         {"data": "sbszd", "sWidth": "120px"},
                         {"data": "cgsj", "sWidth": "120px"},
                         {"data": "bxjssj", "sWidth": "120px"},
                         {"data": "wxjl", "sWidth": "120px"},
                         {"data": "sccj", "sWidth": "120px"},
-                        {"data": "sccjdetail", "sWidth": "120px"},
+                        {"data": "ccbh", "sWidth": "120px"},
                         {"data": "remark", "sWidth": "120px"}
                     ]
 
@@ -134,10 +136,16 @@
                                         名称
                                     </th>
                                     <th>
+                                        型号
+                                    </th>
+                                    <th>
                                         班组
                                     </th>
                                     <th>
                                         类型
+                                    </th>
+                                    <th>
+                                        设备详情
                                     </th>
                                     <th>
                                         状态
@@ -158,7 +166,7 @@
                                         生产厂家
                                     </th>
                                     <th>
-                                        生产厂家详情
+                                        出厂编号
                                     </th>
 
                                     <th>
